@@ -1,8 +1,8 @@
 {{ define "main" }}
 <main class="pa3 pa4-ns w-100 w-70-ns center">
-  <article>
-    <h1>{{ .Title }}</h1>
+  <h1>{{ .Title }}</h1>
 
+  {{ if eq .Section "events" }}
     {{ with .Params.event_start }}
       <p>
         <strong>When:</strong>
@@ -31,10 +31,10 @@
         Add to Calendar
       </a>
     </p>
+  {{ end }}
 
-    <div class="measure-wide mt4">
-      {{ .Content }}
-    </div>
-  </article>
+  <div class="measure-wide mt4">
+    {{ .Content }}
+  </div>
 </main>
 {{ end }}

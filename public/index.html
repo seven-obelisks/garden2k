@@ -15,7 +15,7 @@
     
     
 
-    <link rel="stylesheet" href="/ananke/css/main.css">
+    <link rel="stylesheet" href="/ananke/css/main.css"><link rel="stylesheet" href="/css/custom.css">
     
 
 
@@ -44,17 +44,29 @@
 	<meta property="og:type" content="website">
 
 	<meta itemprop="name" content="Home">
-	<meta itemprop="datePublished" content="2026-06-06T00:31:22-05:00">
-	<meta itemprop="dateModified" content="2026-06-06T00:31:22-05:00">
+	<meta itemprop="datePublished" content="2026-06-06T01:20:00-05:00">
+	<meta itemprop="dateModified" content="2026-06-06T01:20:00-05:00">
 	<meta name="twitter:card" content="summary">
 	<meta name="twitter:title" content="Home">
 
-	
+	<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script>
+if (window.netlifyIdentity) {
+  window.netlifyIdentity.on("init", function(user) {
+    if (!user && window.location.hash.includes("invite_token")) {
+      window.netlifyIdentity.open("signup");
+    }
+    if (!user && window.location.hash.includes("recovery_token")) {
+      window.netlifyIdentity.open();
+    }
+  });
+}
+</script>
   </head><body class="ma0 avenir bg-near-white development is-home">
     
 
   <header>
-    <div class="pb3-m pb6-l bg-black">
+    <div class="bg-black">
       <nav class="pv3 ph3 ph4-ns" role="navigation">
   <div class="flex-l center items-center justify-between">
     <a href="/" class="f3 fw2 hover-white white-90 dib no-underline">
@@ -88,109 +100,135 @@
   </div>
 </nav>
 
-      <div class="tc-l pv3 ph3 ph4-ns">
-        <h1 class="f2 f-subheadline-l fw2 light-silver mb0 lh-title">
-          Home
-        </h1>
-        
-      </div>
+
+      
     </div>
   </header>
 
-
     <main class="pb7" role="main">
-      <article class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy nested-links mid-gray">
+      
+<main>
+  
+    <section class="home-slider" data-slider>
+      
+        <div class="slide is-active" style="background-image: url('/uploads/colorful-flower-bed-og.jpg');">
+          <div class="slide-content">
+            <h1>Garden2k</h1>
+
+            
+              <p>Community events, workshops, and gatherings.</p>
+            
+
+            
+              <a href="/events/" class="link dim br2 ph3 pv2 dib white bg-dark-blue">
+                View Events
+              </a>
+            
+          </div>
+        </div>
+      
+        <div class="slide" style="background-image: url('/uploads/banner-2.jpg');">
+          <div class="slide-content">
+            <h1>Workshops and Gatherings</h1>
+
+            
+              <p>Find practical local events.</p>
+            
+
+            
+              <a href="/events/" class="link dim br2 ph3 pv2 dib white bg-dark-blue">
+                Browse Calendar
+              </a>
+            
+          </div>
+        </div>
+      
+
+      <button class="slider-control slider-prev" type="button" data-prev aria-label="Previous slide">‹</button>
+      <button class="slider-control slider-next" type="button" data-next aria-label="Next slide">›</button>
+    </section>
+  
+
+  <section class="pa3 pa4-ns w-100 w-70-ns center">
     
-  </article>
 
-  
-  
-  
-  
-  
-
-  
-    <div class="pa3 pa4-ns w-100 w-70-ns center">
+    <div class="cf pa2">
       
-
-      <section class="w-100 mw8">
-        
-        
-          <div class="w-100 mb4 relative">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l dark-gray no-underline">
-    <div class="flex-column flex-row-ns flex">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/events/sample-archetype-event/" class="color-inherit dim link">
-            Sample Archetype Event
+        <article class="fl w-100 w-50-m w-33-l pa2">
+          <h2 class="f3">
+            <a class="link dark-blue hover-blue" href="/events/decap-test/">
+              Decap test
             </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          <p>Event description goes here.</p>
-        </div>
-        <a href="/events/sample-archetype-event/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
-          <div class="w-100 mb4 relative">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l dark-gray no-underline">
-    <div class="flex-column flex-row-ns flex">
+          </h2>
+          <p><p>Decap test</p></p>
+        </article>
       
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/events/cool-test-event/" class="color-inherit dim link">
-            Cool test event
+        <article class="fl w-100 w-50-m w-33-l pa2">
+          <h2 class="f3">
+            <a class="link dark-blue hover-blue" href="/events/sample-archetype-event/">
+              Sample Archetype Event
             </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          <p>Insanely cool event</p>
-        </div>
-        <a href="/events/cool-test-event/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
-          <div class="w-100 mb4 relative">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l dark-gray no-underline">
-    <div class="flex-column flex-row-ns flex">
+          </h2>
+          <p><p>Event description goes here.</p></p>
+        </article>
       
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/events/test-event/" class="color-inherit dim link">
-            Test Event
+        <article class="fl w-100 w-50-m w-33-l pa2">
+          <h2 class="f3">
+            <a class="link dark-blue hover-blue" href="/events/cool-test-event/">
+              Cool test event
             </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          <p>This is a test event for the calendar system.</p>
-        </div>
-        <a href="/events/test-event/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
-      </section>
-
+          </h2>
+          <p><p>Insanely cool event</p></p>
+        </article>
       
-
+        <article class="fl w-100 w-50-m w-33-l pa2">
+          <h2 class="f3">
+            <a class="link dark-blue hover-blue" href="/events/test-event/">
+              Test Event
+            </a>
+          </h2>
+          <p><p>This is a test event for the calendar system.</p></p>
+        </article>
+      
+        <article class="fl w-100 w-50-m w-33-l pa2">
+          <h2 class="f3">
+            <a class="link dark-blue hover-blue" href="/about/">
+              About
+            </a>
+          </h2>
+          <p><p>Garden2k is an open source static site template built with Hugo and Decap CMS. It is designed for non-profits and features a built-in event calendar system. Some features:</p>
+<ul>
+<li>Homepage banner can be edited via the CMS</li>
+<li>Events automatically generate in an .ICS format so attendees can easily add an event reminder to their personal calendar</li>
+</ul></p>
+        </article>
+      
     </div>
-  
+  </section>
+</main>
+
+<script>
+(function () {
+  const slider = document.querySelector("[data-slider]");
+  if (!slider) return;
+
+  const slides = Array.from(slider.querySelectorAll(".slide"));
+  const prev = slider.querySelector("[data-prev]");
+  const next = slider.querySelector("[data-next]");
+  let current = 0;
+
+  function showSlide(index) {
+    slides[current].classList.remove("is-active");
+    current = (index + slides.length) % slides.length;
+    slides[current].classList.add("is-active");
+  }
+
+  if (prev) prev.addEventListener("click", () => showSlide(current - 1));
+  if (next) next.addEventListener("click", () => showSlide(current + 1));
+
+  setInterval(() => showSlide(current + 1), 6000);
+})();
+</script>
 
     </main>
     <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
