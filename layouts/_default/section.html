@@ -1,6 +1,6 @@
 {{ define "main" }}
-<main class="pa3 pa4-ns w-100 w-70-ns center">
-  <h1>{{ .Title }}</h1>
+<main class="events-page pa3 pa4-ns w-100 w-70-ns center">
+  <h1 class="events-title">{{ .Title }}</h1>
 
   {{ with .Content }}
     <div class="measure-wide mb4">
@@ -13,34 +13,25 @@
 
     <h2>Upcoming Events</h2>
 
-    <ul class="list pl0">
+    <ul class="events-list">
       {{ range sort .Pages "Params.event_start" "asc" }}
         {{ if ge (time .Params.event_end) $now }}
-          <li class="mb4 pb4 bb b--moon-gray">
-            <h2 class="f3 mb2">
-              <a class="link dark-blue hover-blue" href="{{ .RelPermalink }}">
+          <li class="event-card">
+            <h2 class="event-card-title">
+              <a href="{{ .RelPermalink }}">
                 {{ .Title }}
               </a>
             </h2>
 
-            <p class="mb2">
+            <p>
               <strong>When:</strong>
               {{ time.Format "Monday, Jan 2, 2006, 3:04 PM" (time .Params.event_start) }}
             </p>
 
             {{ with .Params.location }}
-              <p class="mb2">
+              <p>
                 <strong>Where:</strong>
                 {{ . }}
-              </p>
-            {{ end }}
-
-            {{ with .Params.event_url }}
-              <p class="mb2">
-                <strong>More Information:</strong>
-                <a href="{{ . }}" target="_blank" rel="noopener">
-                  {{ . }}
-                </a>
               </p>
             {{ end }}
 
@@ -50,9 +41,9 @@
               </p>
             {{ end }}
 
-            <p class="mt3">
+            <p class="event-actions">
               {{ with .Params.event_url }}
-                <a class="link dim br2 ph3 pv2 dib dark-blue ba b--dark-blue mr2"
+                <a class="event_button link dim br2 ph3 pv2 dib mr2"
                    href="{{ . }}"
                    target="_blank"
                    rel="noopener">
@@ -60,12 +51,12 @@
                 </a>
               {{ end }}
 
-              <a class="link dim br2 ph3 pv2 dib white bg-dark-blue mr2"
+              <a class="event_button link dim br2 ph3 pv2 dib mr2"
                  href="{{ .RelPermalink }}event.ics">
                 Add to Calendar
               </a>
 
-              <a class="link dim br2 ph3 pv2 dib dark-blue ba b--dark-blue"
+              <a class="event_button link dim br2 ph3 pv2 dib"
                  href="{{ .RelPermalink }}">
                 View Details
               </a>
@@ -84,22 +75,22 @@
       {{ end }}
     {{ end }}
 
-    <ul class="list pl0">
+    <ul class="events-list events-list-past">
       {{ range first 3 (sort $past "Params.event_start" "desc") }}
-        <li class="mb4 pb4 bb b--moon-gray o-70">
-          <h2 class="f3 mb2">
-            <a class="link dark-gray hover-dark-blue" href="{{ .RelPermalink }}">
+        <li class="event-card event-card-past">
+          <h2 class="event-card-title">
+            <a href="{{ .RelPermalink }}">
               {{ .Title }}
             </a>
           </h2>
 
-          <p class="mb2">
+          <p>
             <strong>When:</strong>
             {{ time.Format "Monday, Jan 2, 2006, 3:04 PM" (time .Params.event_start) }}
           </p>
 
           {{ with .Params.location }}
-            <p class="mb2">
+            <p>
               <strong>Where:</strong>
               {{ . }}
             </p>
@@ -111,8 +102,8 @@
             </p>
           {{ end }}
 
-          <p class="mt3">
-            <a class="link dim br2 ph3 pv2 dib dark-blue ba b--dark-blue"
+          <p class="event-actions">
+            <a class="event_button link dim br2 ph3 pv2 dib"
                href="{{ .RelPermalink }}">
               View Details
             </a>
@@ -123,9 +114,9 @@
 
   {{ else }}
 
-    <ul class="list pl0">
+    <ul class="events-list">
       {{ range .Pages }}
-        <li class="mb3">
+        <li class="event-card">
           <a href="{{ .RelPermalink }}">{{ .Title }}</a>
         </li>
       {{ end }}

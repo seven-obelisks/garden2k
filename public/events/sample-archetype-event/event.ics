@@ -4,13 +4,13 @@ PRODID:-//Garden2k//Hugo//EN
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
 BEGIN:VEVENT
-UID:a7543f7adf40acc3a592d98fe619a26c@garden2k.com
-DTSTAMP:20260606T181257Z
+UID:a7543f7adf40acc3a592d98fe619a26c@localhost:1313
+DTSTAMP:20260606T221502Z
 DTSTART:20260606T053122Z
 DTEND:20260608T053100Z
 SUMMARY:Sample Archetype Event
 LOCATION:Ocean
 DESCRIPTION:Event description goes here.\n
-URL:https://garden2k.com/events/sample-archetype-event/
+URL:http://localhost:1313/events/sample-archetype-event/
 END:VEVENT
 END:VCALENDAR

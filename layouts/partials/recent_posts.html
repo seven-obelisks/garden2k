@@ -1,0 +1,11 @@
+    <div class="cf">
+      {{ range .Site.RegularPages }}
+        <article class="w-100">
+          <h2 class="f3">
+            <a class="link dark-blue hover-blue" href="{{ .RelPermalink }}">
+              {{ .Title }}
+            </a>
+          </h2>
+        </article>
+      {{ end }}
+    </div>
