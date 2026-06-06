@@ -5,6 +5,9 @@ title = 'Garden2k'
 [module]
   [[module.imports]]
     path = "github.com/gohugo-ananke/ananke/v2"
+    
+[params]
+  custom_css = ["css/custom.css"]
 
 [mediaTypes]
   [mediaTypes."text/calendar"]

@@ -6,7 +6,11 @@
     
     <title>About | Garden2k</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="description" content="This is a small community events site.">
+    <meta name="description" content="Garden2k is an open source static site template built with Hugo and Decap CMS. It is designed for non-profits and features a built-in event calendar system. Some features:
+
+Homepage banner can be edited via the CMS
+Events automatically generate in an .ICS format so attendees can easily add an event reminder to their personal calendar
+">
     <meta name="generator" content="Hugo 0.162.1">
     
     
@@ -15,7 +19,7 @@
     
     
 
-    <link rel="stylesheet" href="/ananke/css/main.css">
+    <link rel="stylesheet" href="/ananke/css/main.css"><link rel="stylesheet" href="/css/custom.css">
     
 
 
@@ -35,23 +39,40 @@
     <meta property="og:url" content="http://localhost:1313/about/">
 	<meta property="og:site_name" content="Garden2k">
 	<meta property="og:title" content="About">
-	<meta property="og:description" content="This is a small community events site.">
+	<meta property="og:description" content="Garden2k is an open source static site template built with Hugo and Decap CMS. It is designed for non-profits and features a built-in event calendar system. Some features:
+Homepage banner can be edited via the CMS Events automatically generate in an .ICS format so attendees can easily add an event reminder to their personal calendar">
 	<meta property="og:locale" content="en_us">
 	<meta property="og:type" content="article">
 
 	<meta itemprop="name" content="About">
-	<meta itemprop="description" content="This is a small community events site.">
-	<meta itemprop="wordCount" content="7">
+	<meta itemprop="description" content="Garden2k is an open source static site template built with Hugo and Decap CMS. It is designed for non-profits and features a built-in event calendar system. Some features:
+Homepage banner can be edited via the CMS Events automatically generate in an .ICS format so attendees can easily add an event reminder to their personal calendar">
+	<meta itemprop="wordCount" content="55">
 	<meta name="twitter:card" content="summary">
 	<meta name="twitter:title" content="About">
-	<meta name="twitter:description" content="This is a small community events site.">
+	<meta name="twitter:description" content="Garden2k is an open source static site template built with Hugo and Decap CMS. It is designed for non-profits and features a built-in event calendar system. Some features:
+Homepage banner can be edited via the CMS Events automatically generate in an .ICS format so attendees can easily add an event reminder to their personal calendar">
 
-	
+	<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script>
+if (window.netlifyIdentity) {
+  window.netlifyIdentity.on("init", function(user) {
+    if (!user && window.location.hash.includes("invite_token")) {
+      window.netlifyIdentity.open("signup");
+    }
+    if (!user && window.location.hash.includes("recovery_token")) {
+      window.netlifyIdentity.open();
+    }
+  });
+}
+</script>
   </head><body class="ma0 avenir bg-near-white development is-page is-page page-about">
     
+   
+  
 
   <header>
-    <div class="pb3-m pb6-l bg-black">
+    <div class="bg-black">
       <nav class="pv3 ph3 ph4-ns" role="navigation">
   <div class="flex-l center items-center justify-between">
     <a href="/" class="f3 fw2 hover-white white-90 dib no-underline">
@@ -85,40 +106,36 @@
   </div>
 </nav>
 
-      <div class="tc-l pv3 ph3 ph4-ns">
-        <h1 class="f2 f-subheadline-l fw2 light-silver mb0 lh-title">
-          About
-        </h1>
-        
-      </div>
     </div>
   </header>
 
 
+
     <main class="pb7" role="main">
       
-<main class="pa3 pa4-ns w-100 w-70-ns center">
-  <article>
-    <h1>About</h1>
+  
 
-    
+  <article class="page-about flex-l mw7 center ph3 flex-wrap justify-between">
+    <header class="mt4 w-100"><div id="sharing" class="mt3 ananke-socials"></div>
+<h1 class="f1 athelas mt3 mb1">About</h1>
+      
+      
+      
 
-    
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-100-l"><p>Garden2k is an open source static site template built with Hugo and Decap CMS. It is designed for non-profits and features a built-in event calendar system. Some features:</p>
+<ul>
+<li>Homepage banner can be edited via the CMS</li>
+<li>Events automatically generate in an .ICS format so attendees can easily add an event reminder to their personal calendar</li>
+</ul>
+<ul class="pa0">
+  
+</ul>
 
-    
-
-    <p class="mt3">
-      <a class="link dim br2 ph3 pv2 dib white bg-dark-blue" href="/about/event.ics">
-        Add to Calendar
-      </a>
-    </p>
-
-    <div class="measure-wide mt4">
-      <p>This is a small community events site.</p>
-
-    </div>
-  </article>
-</main>
+      
+    </div></article>
 
     </main>
     <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">

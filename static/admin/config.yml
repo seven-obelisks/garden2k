@@ -16,37 +16,28 @@ collections:
       field: "type"
       value: "event"
     fields:
-      - label: "Type"
-        name: "type"
-        widget: "hidden"
-        default: "event"
+      - { label: "Type", name: "type", widget: "hidden", default: "event" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Event Start", name: "event_start", widget: "datetime" }
+      - { label: "Event End", name: "event_end", widget: "datetime" }
+      - { label: "Location", name: "location", widget: "string", required: false }
+      - { label: "Event URL", name: "event_url", widget: "string", required: false }
+      - { label: "Description", name: "body", widget: "markdown" }
 
-      - label: "Title"
-        name: "title"
-        widget: "string"
-
-      - label: "Publish Date"
-        name: "date"
-        widget: "datetime"
-
-      - label: "Event Start"
-        name: "event_start"
-        widget: "datetime"
-
-      - label: "Event End"
-        name: "event_end"
-        widget: "datetime"
-
-      - label: "Location"
-        name: "location"
-        widget: "string"
-        required: false
-
-      - label: "Event URL"
-        name: "event_url"
-        widget: "string"
-        required: false
-
-      - label: "Description"
-        name: "body"
-        widget: "markdown"
+  - name: "settings"
+    label: "Site Settings"
+    files:
+      - name: "homepage"
+        label: "Homepage"
+        file: "data/homepage.yml"
+        fields:
+          - label: "Homepage Banners"
+            name: "banners"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Text", name: "text", widget: "text", required: false }
+              - { label: "Button Text", name: "button_text", widget: "string", required: false }
+              - { label: "Button URL", name: "button_url", widget: "string", required: false }
+              - { label: "Image", name: "image", widget: "image", required: false }

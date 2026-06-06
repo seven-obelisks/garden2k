@@ -15,7 +15,7 @@
     
     
 
-    <link rel="stylesheet" href="/ananke/css/main.css">
+    <link rel="stylesheet" href="/ananke/css/main.css"><link rel="stylesheet" href="/css/custom.css">
     
 
 
@@ -42,7 +42,19 @@
 	<meta name="twitter:card" content="summary">
 	<meta name="twitter:title" content="404 Page not found">
 
-	
+	<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script>
+if (window.netlifyIdentity) {
+  window.netlifyIdentity.on("init", function(user) {
+    if (!user && window.location.hash.includes("invite_token")) {
+      window.netlifyIdentity.open("signup");
+    }
+    if (!user && window.location.hash.includes("recovery_token")) {
+      window.netlifyIdentity.open();
+    }
+  });
+}
+</script>
   </head><body class="ma0 avenir bg-near-white development is-404">
     
 

@@ -1,0 +1,68 @@
+{{ define "main" }}
+<main>
+  {{ with site.Data.homepage.banners }}
+    <section class="home-slider" data-slider>
+      {{ range $index, $banner := . }}
+        <div class="slide{{ if eq $index 0 }} is-active{{ end }}" {{ with $banner.image }}style="background-image: url('{{ . }}');"{{ end }}>
+          <div class="slide-content">
+            <h1>{{ $banner.title }}</h1>
+
+            {{ with $banner.text }}
+              <p>{{ . }}</p>
+            {{ end }}
+
+            {{ if and $banner.button_text $banner.button_url }}
+              <a href="{{ $banner.button_url }}" class="link dim br2 ph3 pv2 dib white bg-dark-blue">
+                {{ $banner.button_text }}
+              </a>
+            {{ end }}
+          </div>
+        </div>
+      {{ end }}
+
+      <button class="slider-control slider-prev" type="button" data-prev aria-label="Previous slide">‹</button>
+      <button class="slider-control slider-next" type="button" data-next aria-label="Next slide">›</button>
+    </section>
+  {{ end }}
+
+  <section class="pa3 pa4-ns w-100 w-70-ns center">
+    {{ .Content }}
+
+    <div class="cf pa2">
+      {{ range .Site.RegularPages }}
+        <article class="fl w-100 w-50-m w-33-l pa2">
+          <h2 class="f3">
+            <a class="link dark-blue hover-blue" href="{{ .RelPermalink }}">
+              {{ .Title }}
+            </a>
+          </h2>
+          <p>{{ .Summary }}</p>
+        </article>
+      {{ end }}
+    </div>
+  </section>
+</main>
+
+<script>
+(function () {
+  const slider = document.querySelector("[data-slider]");
+  if (!slider) return;
+
+  const slides = Array.from(slider.querySelectorAll(".slide"));
+  const prev = slider.querySelector("[data-prev]");
+  const next = slider.querySelector("[data-next]");
+  let current = 0;
+
+  function showSlide(index) {
+    slides[current].classList.remove("is-active");
+    current = (index + slides.length) % slides.length;
+    slides[current].classList.add("is-active");
+  }
+
+  if (prev) prev.addEventListener("click", () => showSlide(current - 1));
+  if (next) next.addEventListener("click", () => showSlide(current + 1));
+
+  setInterval(() => showSlide(current + 1), 6000);
+})();
+</script>
+{{ end }}
