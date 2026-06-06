@@ -1,0 +1,18 @@
+{{- $start := time .Params.event_start -}}
+{{- $end := time .Params.event_end -}}
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//{{ .Site.Title }}//Hugo//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:{{ .File.UniqueID }}@{{ (urls.Parse .Site.BaseURL).Host }}
+DTSTAMP:{{ now.UTC.Format "20060102T150405Z" }}
+DTSTART:{{ $start.UTC.Format "20060102T150405Z" }}
+DTEND:{{ $end.UTC.Format "20060102T150405Z" }}
+SUMMARY:{{ .Title | replaceRE "([,;])" "\\$1" }}
+LOCATION:{{ .Params.location | default "TBD" | replaceRE "([,;])" "\\$1" }}
+DESCRIPTION:{{ .Summary | plainify | htmlUnescape | replaceRE "\n" "\\n" | replaceRE "([,;])" "\\$1" | chomp }}
+URL:{{ .Permalink }}
+END:VEVENT
+END:VCALENDAR

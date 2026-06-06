@@ -1,0 +1,53 @@
+local_backend: true
+
+backend:
+  name: git-gateway
+
+media_folder: "static/uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "events"
+    label: "Events"
+    folder: "content/events"
+    create: true
+    slug: "{{slug}}"
+    format: "frontmatter"
+    filter:
+      field: "type"
+      value: "event"
+    fields:
+      - label: "Type"
+        name: "type"
+        widget: "hidden"
+        default: "event"
+
+      - label: "Title"
+        name: "title"
+        widget: "string"
+
+      - label: "Publish Date"
+        name: "date"
+        widget: "datetime"
+
+      - label: "Event Start"
+        name: "event_start"
+        widget: "datetime"
+
+      - label: "Event End"
+        name: "event_end"
+        widget: "datetime"
+
+      - label: "Location"
+        name: "location"
+        widget: "string"
+        required: false
+
+      - label: "Event URL"
+        name: "event_url"
+        widget: "string"
+        required: false
+
+      - label: "Description"
+        name: "body"
+        widget: "markdown"
