@@ -1,0 +1,40 @@
+{{ define "main" }}
+<main class="pa3 pa4-ns w-100 w-70-ns center">
+  <article class="mw8 center">
+    <p class="ttu tracked f6 dark-gray">Event</p>
+
+    <h1 class="event_title f1 mb3">{{ .Title }}</h1>
+
+    <div class="pa3 ba br2 mb4">
+      {{ with .Params.event_start }}
+        <p><strong>Starts:</strong> {{ time.Format "Monday, Jan 2, 2006, 3:04 PM" . }}</p>
+      {{ end }}
+
+      {{ with .Params.event_end }}
+        <p><strong>Ends:</strong> {{ time.Format "Monday, Jan 2, 2006, 3:04 PM" . }}</p>
+      {{ end }}
+
+      {{ with .Params.location }}
+        <p><strong>Location:</strong> {{ . }}</p>
+      {{ end }}
+    </div>
+
+    <p class="mt3">
+      {{ with .Params.event_url }}
+        <a class="event_button link dim br2 ph3 pv2 dib mr2"
+           href="{{ . }}"
+           target="_blank"
+           rel="noopener">
+          Event Website
+        </a>
+      {{ end }}
+
+      <a class="event_button link dim br2 ph3 pv2 dib"
+         href="{{ .RelPermalink }}event.ics">
+        Add to Calendar
+      </a>
+    </p>
+
+  </article>
+</main>
+{{ end }}
