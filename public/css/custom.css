@@ -30,6 +30,13 @@ body * {
   font-style: normal;
 }
 
+.site-logo-img {
+  max-width: 175px !important;
+  height: auto;
+}
+
+
+
 /* ========================================
    TEXT CLASSES
 ======================================== */
@@ -52,14 +59,25 @@ body * {
    LINK CLASSES
 ======================================== */
 
+a,
 .title_link{
-  color: var(--color-accent);
+  color: var(--color-accent) !important;
   text-decoration: none;
 }
 
+a:hover,
 .title_link:hover{
-  color: white;
+  color: white !important;
 }
+
+.event_button{
+  color: white !important;
+}
+
+.event_button:hover{
+  color: var(--color-accent) !important;
+}
+
 
 /* ========================================
    HEADER
@@ -98,6 +116,8 @@ header nav a:hover {
 .event_button {
   color: var(--color-bg);
   background-color: var(--color-primary);
+  text-decoration: none;
+  margin-bottom: 1rem;
 }
 
 .event_button:hover {
@@ -108,18 +128,6 @@ header nav a:hover {
 /* ========================================
    EVENTS
 ======================================== */
-
-
-.event_button {
-  color: var(--color-bg);
-  background-color: var(--color-primary);
-  text-decoration: none;
-}
-
-.event_button:hover {
-  color: var(--color-bg);
-  background-color: white;
-}
 
 .event_details .event_url,
 .event_details .event_url:visited,
@@ -175,6 +183,11 @@ header nav a:hover {
   opacity: 0.7;
 }
 
+.event-data,
+.event-data strong {
+  color: var(--color-accent);
+}
+
 /* ========================================
    HOME SLIDER
 ======================================== */
@@ -201,6 +214,9 @@ header nav a:hover {
   opacity: 0;
   pointer-events: none;
   transition: opacity 600ms ease;
+
+  border:15px solid var(--color-bg);
+  border-radius:30px;
 }
 
 .home-slider .slide.is-active {
@@ -211,7 +227,9 @@ header nav a:hover {
 .home-slider .slide-content {
   max-width: 800px;
   padding: 2rem;
-  background: var(--color-bg);
+  background-color:rgba(0, 0, 0, 0.5);
+  border:0px solid var(--color-bg);
+  border-radius:15px;
 }
 
 .home-slider h1 {
