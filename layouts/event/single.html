@@ -3,7 +3,7 @@
   <article class="mw8 center">
     <p class="ttu tracked f6 dark-gray">Event</p>
 
-    <h1 class="event_title f1 mb3">{{ .Title }}</h1>
+    <h1 class="page_title">{{ .Title }}</h1>
 
     <div class="pa3 ba br2 mb4">
       {{ with .Params.event_start }}
@@ -17,6 +17,10 @@
       {{ with .Params.location }}
         <p><strong>Location:</strong> {{ . }}</p>
       {{ end }}
+    </div>
+
+    <div class="event-content lh-copy mb4">
+      {{ .Content }}
     </div>
 
     <p class="mt3">

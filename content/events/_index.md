@@ -6,4 +6,3 @@ cascade:
     - HTML
     - ICS
 ---
-Upcoming events will appear here.

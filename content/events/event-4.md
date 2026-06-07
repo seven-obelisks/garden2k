@@ -5,7 +5,7 @@ date: 2026-06-06T01:20:00.000-05:00
 event_start: 2026-07-03T01:20:00.000-05:00
 event_end: 2026-06-11T01:20:00.000-05:00
 location: The Greenest Garden
-event_url: garden.com
+event_url: https://garden.com
 ---
 
 This is the descriptive text about the event.

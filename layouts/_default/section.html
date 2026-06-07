@@ -1,6 +1,8 @@
 {{ define "main" }}
 <main class="events-page pa3 pa4-ns w-100 w-70-ns center">
-  <h1 class="events-title">{{ .Title }}</h1>
+  <h1 class="page_title">{{ .Title }}</h1>
+
+  <br>
 
   {{ with .Content }}
     <div class="measure-wide mb4">
@@ -11,7 +13,7 @@
   {{ if eq .Section "events" }}
     {{ $now := now }}
 
-    <h2>Upcoming Events</h2>
+    <h2 class="events_h2">Upcoming Events</h2>
 
     <ul class="events-list">
       {{ range sort .Pages "Params.event_start" "asc" }}
@@ -66,7 +68,9 @@
       {{ end }}
     </ul>
 
-    <h2 class="mt5">Recent Past Events</h2>
+    <br>
+
+    <h2 class="events_h2">Recent Past Events</h2>
 
     {{ $past := slice }}
     {{ range .Pages }}
