@@ -5,7 +5,7 @@ date: 2026-06-06T01:20:00.000-05:00
 event_start: 2026-06-01T01:20:00.000-05:00
 event_end: 2026-06-03T01:20:00.000-05:00
 location: The Big Park
-event_url: park.com
+event_url: https://park.com
 ---
 
 This is the descriptive text about the event.

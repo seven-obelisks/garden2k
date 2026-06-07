@@ -30,16 +30,36 @@ body * {
   font-style: normal;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "Roboto Mono", monospace !important;
+/* ========================================
+   TEXT CLASSES
+======================================== */
+
+/* h1 */
+
+.page_title {
   color: var(--color-primary);
 }
 
+/* h2 */
+
+.home_h2,
+.events_h2{
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--color-primary);
+}
+
+/* ========================================
+   LINK CLASSES
+======================================== */
+
+.title_link{
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+.title_link:hover{
+  color: white;
+}
 
 /* ========================================
    HEADER
@@ -48,8 +68,8 @@ h6 {
 .site-logo {
   color: var(--color-accent);
   font-family: "Roboto Mono", monospace;
-  font-size: 2rem;
-  font-weight: 700;
+  font-size: 1rem;
+  font-weight: 600;
   letter-spacing: 0.08em;
 }
 
@@ -58,9 +78,18 @@ h6 {
 }
 
 header nav a {
+  font-size: 0.9rem;
   font-family: "Roboto Mono", monospace;
 }
 
+header nav a:hover {
+  color:var(--color-bg);
+}
+
+.navbar{
+  padding-top:.5rem;
+  min-height:75px !important;
+}
 
 /* ========================================
    BUTTONS
@@ -76,17 +105,10 @@ header nav a {
   background-color: white;
 }
 
-
 /* ========================================
    EVENTS
 ======================================== */
 
-.event_title,
-.events-title {
-  color: var(--color-primary);
-}
-
-/* Single event page */
 
 .event_button {
   color: var(--color-bg);
@@ -210,22 +232,16 @@ header nav a {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-
   z-index: 5;
-
   border: 0;
-
-  background: var(--color-bg);
+  background: transparent;
   color: white;
-
   font-size: 3rem;
   line-height: 1;
-
   padding-top: 0.5rem;
   padding-bottom:1rem;
   padding-left:.5rem;
   padding-right:.5rem;
-
   cursor: pointer;
 }
 
@@ -235,4 +251,13 @@ header nav a {
 
 .slider-next {
   right: 1rem;
+}
+
+/* ========================================
+   RECENT POSTS
+======================================== */
+
+.recent_post{
+  border-bottom: 1px solid var(--color-accent);
+  padding:.5rem 0rem;
 }

@@ -28,7 +28,7 @@
 				<description>&lt;p&gt;This is the descriptive text about the event.&lt;/p&gt;</description>
 			</item>
 			<item>
-				<title>Event 3 - A Visit to the Bottom of the Well</title>
+				<title>Event 3 - A Journey to the Bottom of the Well</title>
 				<link>http://localhost:1313/events/event-3/</link>
 				<pubDate>Sat, 06 Jun 2026 01:20:00 -0500</pubDate>
 				<guid>http://localhost:1313/events/event-3/</guid>
@@ -40,6 +40,13 @@
 				<pubDate>Sat, 06 Jun 2026 01:20:00 -0500</pubDate>
 				<guid>http://localhost:1313/events/event-4/</guid>
 				<description>&lt;p&gt;This is the descriptive text about the event.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Post 1 - The Telling of the Bees</title>
+				<link>http://localhost:1313/posts/post-1/</link>
+				<pubDate>Sat, 06 Jun 2026 01:20:00 -0500</pubDate>
+				<guid>http://localhost:1313/posts/post-1/</guid>
+				<description>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</description>
 			</item>
 			<item>
 				<title>About</title>

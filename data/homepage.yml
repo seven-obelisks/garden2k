@@ -1,6 +1,6 @@
 banners:
   - title: Garden2k
-    text: Community events, workshops, and gatherings.
+    text: Hugo template for event-focused organizations.
     button_text: View Events
     button_url: /events/
     image: /uploads/banner-1.jpg

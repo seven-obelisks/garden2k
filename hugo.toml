@@ -7,7 +7,7 @@ title = 'Garden2k'
     path = "github.com/gohugo-ananke/ananke/v2"
     
 [params]
-  custom_css = ["css/custom.css"]
+  custom_css = ["css/custom.css", "css/overrides.css"]
 
 [mediaTypes]
   [mediaTypes."text/calendar"]
@@ -34,6 +34,11 @@ title = 'Garden2k'
   weight = 20
 
 [[menus.main]]
+  name = "Posts"
+  pageRef = "/posts"
+  weight = 30
+
+[[menus.main]]
   name = "GitHub"
   url = "https://github.com/garden2k"
-  weight = 30
+  weight = 40

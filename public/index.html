@@ -15,7 +15,7 @@
     
     
 
-    <link rel="stylesheet" href="/ananke/css/main.css"><link rel="stylesheet" href="/css/custom.css">
+    <link rel="stylesheet" href="/ananke/css/main.css"><link rel="stylesheet" href="/css/custom.css"><link rel="stylesheet" href="/css/overrides.css">
     
 
 
@@ -40,18 +40,12 @@
     <meta property="og:url" content="http://localhost:1313/">
 	<meta property="og:site_name" content="Garden2k">
 	<meta property="og:title" content="Home">
-	<meta property="og:description" content="Test">
 	<meta property="og:locale" content="en_us">
 	<meta property="og:type" content="website">
 
 	<meta itemprop="name" content="Home">
-	<meta itemprop="description" content="Test">
-	<meta itemprop="datePublished" content="2026-06-06T01:20:00-05:00">
-	<meta itemprop="dateModified" content="2026-06-06T01:20:00-05:00">
-	<meta itemprop="wordCount" content="1">
 	<meta name="twitter:card" content="summary">
 	<meta name="twitter:title" content="Home">
-	<meta name="twitter:description" content="Test">
 
 	<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 <script>
@@ -75,8 +69,8 @@ if (window.netlifyIdentity) {
 
   <header>
     <div class="bg-black">
-      <nav class="pv3 ph3 ph4-ns" role="navigation">
-  <div class="flex-l center items-center justify-between">
+      <nav class="ph3 ph4-ns" role="navigation">
+  <div class="navbar flex-l center items-center justify-between">
     <a href="/"
        class="site-logo f3 fw2 hover-white white-90 dib no-underline">
       
@@ -98,6 +92,12 @@ if (window.netlifyIdentity) {
           <li class="list f5 f4-ns fw4 dib pr3">
             <a class="hover-white white-90 no-underline" href="/about/" title="About page">
               About
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/posts/" title="Posts page">
+              Posts
             </a>
           </li>
           
@@ -128,10 +128,10 @@ if (window.netlifyIdentity) {
       
         <div class="slide is-active" style="background-image: url('/uploads/banner-1.jpg');">
           <div class="slide-content">
-            <h1>Garden2k</h1>
+            <h1 class="page_title">Garden2k</h1>
 
             
-              <p>Community events, workshops, and gatherings.</p>
+              <p>Hugo template for event-focused organizations.</p>
             
 
             
@@ -144,7 +144,7 @@ if (window.netlifyIdentity) {
       
         <div class="slide" style="background-image: url('/uploads/banner-2.jpg');">
           <div class="slide-content">
-            <h1>Workshops and More</h1>
+            <h1 class="page_title">Workshops and More</h1>
 
             
               <p>Find practical local events.</p>
@@ -164,54 +164,105 @@ if (window.netlifyIdentity) {
     </section>
   
 
-  <section class="pa3 pa4-ns w-100 w-70-ns center">
-    <p>Test</p>
 
+  <section class="pa2 pa4-ns w-100 w-90-ns center">
+    
+    
+
+    
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+
+    
+      <div class="next-event event-card">
+        <h2>Next Upcoming Event</h2>
+
+        <h3 class="event-card-title">
+          <a href="/events/event-2/">
+            Event 2 - A Visit to the Top of a Very Tall Building
+          </a>
+        </h3>
+
+        
+          <p>
+            <strong>Starts:</strong>
+            Saturday, Jun 6, 2026, 1:20 AM
+          </p>
+        
+
+        
+          <p>
+            <strong>Ends:</strong>
+            Thursday, Jun 11, 2026, 1:20 AM
+          </p>
+        
+
+        
+          <p>
+            <strong>Location:</strong>
+            The Tallest Building
+          </p>
+        
+
+        
+          <div class="event-summary measure">
+            <p>This is the descriptive text about the event.</p>
+          </div>
+        
+
+        <p class="event-actions">
+          
+            <a class="event_button link dim br2 ph3 pv2 dib mr2"
+              href="https://searstower.com"
+              target="_blank"
+              rel="noopener">
+              Event Website
+            </a>
+          
+
+          <a class="event_button link dim br2 ph3 pv2 dib mr2"
+            href="/events/event-2/event.ics">
+            Add to Calendar
+          </a>
+
+          <a class="event_button link dim br2 ph3 pv2 dib"
+            href="/events/event-2/">
+            View Details
+          </a>
+        </p>
+      </div>
+    
   </section>
-  <section class="pa3 pa4-ns w-100 w-70-ns center">
-        <div class="cf">
-      
-        <article class="w-100">
-          <h2 class="f3">
-            <a class="link dark-blue hover-blue" href="/events/event-1/">
-              Event 1 - A Nice Stroll Through the Nearby Park
-            </a>
-          </h2>
-        </article>
-      
-        <article class="w-100">
-          <h2 class="f3">
-            <a class="link dark-blue hover-blue" href="/events/event-2/">
-              Event 2 - A Visit to the Top of a Very Tall Building
-            </a>
-          </h2>
-        </article>
-      
-        <article class="w-100">
-          <h2 class="f3">
-            <a class="link dark-blue hover-blue" href="/events/event-3/">
-              Event 3 - A Visit to the Bottom of the Well
-            </a>
-          </h2>
-        </article>
-      
-        <article class="w-100">
-          <h2 class="f3">
-            <a class="link dark-blue hover-blue" href="/events/event-4/">
-              Event 4 - A Trip to a Delightful Garden
-            </a>
-          </h2>
-        </article>
-      
-        <article class="w-100">
-          <h2 class="f3">
-            <a class="link dark-blue hover-blue" href="/about/">
-              About
-            </a>
-          </h2>
-        </article>
-      
-    </div>
+
+  <section class="pa2 pa4-ns w-100 w-90-ns center">
+    <h2>Recent Posts</h2>
+    <div class="cf">
+  
+    <article class="recent_post w-100">
+        <a class="title_link" href="/posts/post-1/">
+          Post 1 - The Telling of the Bees >>>
+        </a>
+    </article>
+  
+    <article class="recent_post w-100">
+        <a class="title_link" href="/about/">
+          About >>>
+        </a>
+    </article>
+  
+</div>
   </section>
   
 </main>
@@ -242,7 +293,7 @@ if (window.netlifyIdentity) {
     </main>
     <footer class=" bottom-0 w-100 pa3" role="contentinfo">
   <div class="flex justify-between">
-  <a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href="http://localhost:1313/" >
+  <a class="copyright no-underline" href="http://localhost:1313/" >
     &copy;  Garden2k 2026 
   </a>
     <div><div class="ananke-socials"></div>

@@ -5,7 +5,7 @@ date: 2026-06-06T01:20:00.000-05:00
 event_start: 2026-06-06T01:20:00.000-05:00
 event_end: 2026-06-11T01:20:00.000-05:00
 location: The Tallest Building
-event_url: building.com
+event_url: https://searstower.com
 ---
 
 This is the descriptive text about the event.

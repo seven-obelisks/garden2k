@@ -20,7 +20,7 @@ Events automatically generate an .ICS file so attendees can easily add an event 
     
     
 
-    <link rel="stylesheet" href="/ananke/css/main.css"><link rel="stylesheet" href="/css/custom.css">
+    <link rel="stylesheet" href="/ananke/css/main.css"><link rel="stylesheet" href="/css/custom.css"><link rel="stylesheet" href="/css/overrides.css">
     
 
 
@@ -78,8 +78,8 @@ if (window.netlifyIdentity) {
 
   <header>
     <div class="bg-black">
-      <nav class="pv3 ph3 ph4-ns" role="navigation">
-  <div class="flex-l center items-center justify-between">
+      <nav class="ph3 ph4-ns" role="navigation">
+  <div class="navbar flex-l center items-center justify-between">
     <a href="/"
        class="site-logo f3 fw2 hover-white white-90 dib no-underline">
       
@@ -101,6 +101,12 @@ if (window.netlifyIdentity) {
           <li class="list f5 f4-ns fw4 dib pr3">
             <a class="hover-white white-90 no-underline" href="/about/" title="About page">
               About
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/posts/" title="Posts page">
+              Posts
             </a>
           </li>
           
@@ -129,7 +135,7 @@ if (window.netlifyIdentity) {
 
   <article class="page-about flex-l mw7 center ph3 flex-wrap justify-between">
     <header class="mt4 w-100"><div id="sharing" class="mt3 ananke-socials"></div>
-<h1 class="f1 athelas mt3 mb1">About</h1>
+<h1 class="page_title">About</h1>
       
       
       
@@ -153,7 +159,7 @@ if (window.netlifyIdentity) {
     </main>
     <footer class=" bottom-0 w-100 pa3" role="contentinfo">
   <div class="flex justify-between">
-  <a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href="http://localhost:1313/" >
+  <a class="copyright no-underline" href="http://localhost:1313/" >
     &copy;  Garden2k 2026 
   </a>
     <div><div class="ananke-socials"></div>
