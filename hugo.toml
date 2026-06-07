@@ -8,6 +8,7 @@ title = 'Garden2k'
     
 [params]
   custom_css = ["css/custom.css", "css/overrides.css"]
+  site_logo = "/images/logo.png"
 
 [mediaTypes]
   [mediaTypes."text/calendar"]
@@ -29,16 +30,22 @@ title = 'Garden2k'
   weight = 10
 
 [[menus.main]]
-  name = "About"
-  pageRef = "/about"
-  weight = 20
-
-[[menus.main]]
   name = "Posts"
   pageRef = "/posts"
-  weight = 30
+  weight = 20
 
 [[menus.main]]
   name = "GitHub"
   url = "https://github.com/garden2k"
-  weight = 40
+  weight = 30
+
+
+[[menus.footer]]
+  name = "About"
+  pageRef = "/about"
+  weight = 10
+
+[[menus.footer]]
+  name = "Login"
+  url = "https://garden2k.com/admin"
+  weight = 20

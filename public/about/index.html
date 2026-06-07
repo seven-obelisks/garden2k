@@ -73,7 +73,6 @@ if (window.netlifyIdentity) {
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
   </head><body class="ma0 avenir bg-near-white development is-page is-page page-about">
     
-   
   
 
   <header>
@@ -81,9 +80,9 @@ if (window.netlifyIdentity) {
       <nav class="ph3 ph4-ns" role="navigation">
   <div class="navbar flex-l center items-center justify-between">
     <a href="/"
-       class="site-logo f3 fw2 hover-white white-90 dib no-underline">
+       class="site-logo no-underline">
       
-        Garden2k
+        <img src="/images/logo.png" class="site-logo-img" alt="Garden2k" />
       
     </a>
     <div class="flex-l items-center">
@@ -95,12 +94,6 @@ if (window.netlifyIdentity) {
           <li class="list f5 f4-ns fw4 dib pr3">
             <a class="hover-white white-90 no-underline" href="/events/" title="Events Calendar page">
               Events Calendar
-            </a>
-          </li>
-          
-          <li class="list f5 f4-ns fw4 dib pr3">
-            <a class="hover-white white-90 no-underline" href="/about/" title="About page">
-              About
             </a>
           </li>
           
@@ -133,28 +126,44 @@ if (window.netlifyIdentity) {
       
   
 
-  <article class="page-about flex-l mw7 center ph3 flex-wrap justify-between">
-    <header class="mt4 w-100"><div id="sharing" class="mt3 ananke-socials"></div>
-<h1 class="page_title">About</h1>
-      
-      
-      
+  <main class="pa2 pa4-ns w-100 w-90-ns center">
 
-      
-      
-    </header>
-    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-100-l"><p>Garden2k is an open source static site template built with Hugo and Decap CMS on top of the Ananke theme. It is designed for event-heavy organizations that need a low-cost static site. Some features:</p>
+    <article class="page-about mw8 center">
+
+      <header class="mb4"><h1 class="page_title">
+          About
+        </h1>
+
+        
+
+        
+
+      </header>
+
+      <div class="event-content lh-copy mb4">
+        <p>Garden2k is an open source static site template built with Hugo and Decap CMS on top of the Ananke theme. It is designed for event-heavy organizations that need a low-cost static site. Some features:</p>
 <ul>
 <li>Free to deploy and maintain on Netlify</li>
 <li>Homepage slider banner can be edited via the CMS, including adding additional slides</li>
 <li>Events automatically generate an .ICS file so attendees can easily add an event reminder to their calendar</li>
 </ul>
-<ul class="pa0">
+
+
+        <ul class="pa0">
   
 </ul>
 
+
+        
+
+        
+      </div>
+
       
-    </div></article>
+
+    </article>
+
+  </main>
 
     </main>
     <footer class=" bottom-0 w-100 pa3" role="contentinfo">
@@ -164,7 +173,27 @@ if (window.netlifyIdentity) {
   </a>
     <div><div class="ananke-socials"></div>
 </div>
+    
+  <nav class="footer-menu">
+    <ul class="list pl0 ma0">
+      
+        <li class="dib mr3">
+          <a class="footer-link no-underline" href="/about/">
+            About
+          </a>
+        </li>
+      
+        <li class="dib mr3">
+          <a class="footer-link no-underline" href="https://garden2k.com/admin">
+            Login
+          </a>
+        </li>
+      
+    </ul>
+  </nav>
+
   </div>
+  
 </footer>
 
   </body>
