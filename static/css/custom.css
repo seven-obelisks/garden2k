@@ -55,6 +55,11 @@ body * {
   padding-bottom: 1rem;
 }
 
+.list-container,
+.post-container{
+  max-width:60rem !important;
+}
+
 .header-shell,
 .footer-shell {
   padding-top: 0.75rem;
@@ -321,6 +326,6 @@ header nav a:hover {
 /* RECENT POSTS */
 
 .recent_post {
-  border-bottom: 1px solid var(--color-accent);
-  padding: 0.5rem 0;
+  border-bottom: 1px solid #333;
+  padding: 1rem 0;
 }
