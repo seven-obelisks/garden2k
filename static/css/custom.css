@@ -1,6 +1,4 @@
-/* ========================================
-   COLOR VARIABLES
-======================================== */
+/* COLOR VARIABLES */
 
 :root {
   --color-primary: #357edd;
@@ -11,23 +9,25 @@
   --color-overlay: rgba(0, 0, 0, 0.45);
 }
 
+/* GLOBAL STYLES */
 
-/* ========================================
-   GLOBAL STYLES
-======================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
 body {
   background: var(--color-bg) !important;
-
 }
 
 body,
 body * {
-  font-family: "Roboto Mono", monospace;
   color: var(--color-text);
+  font-family: "Roboto Mono", monospace;
   font-optical-sizing: auto;
-  font-weight: 400;
   font-style: normal;
+  font-weight: 400;
 }
 
 .site-logo-img {
@@ -35,9 +35,7 @@ body * {
   height: auto;
 }
 
-/* ========================================
-   LAYOUT
-======================================== */
+/* LAYOUT */
 
 .header-shell,
 .footer-shell,
@@ -47,15 +45,20 @@ body * {
   max-width: 80rem;
   margin-left: auto;
   margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.site-shell,
+.site-container {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .header-shell,
 .footer-shell {
-  padding: 0.75rem 1rem;
-}
-
-.footer-shell {
-  margin-bottom: 6rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
 }
 
 .footer-inner {
@@ -64,6 +67,7 @@ body * {
   justify-content: space-between;
   gap: 1rem;
   flex-wrap: wrap;
+  padding-bottom: 2rem;
 }
 
 .footer-menu-list {
@@ -74,69 +78,48 @@ body * {
 
 @media screen and (min-width: 30em) {
   .header-shell,
-  .footer-shell {
-    padding: 0.75rem 2rem;
-  }
-
+  .footer-shell,
   .site-shell,
   .site-container {
-    padding: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
+
 }
 
 @media screen and (max-width: 59.99em) {
-  .footer-inner,
-  .footer-menu-list {
-    justify-content: center;
-    text-align: center;
+  .footer-inner {
+    flex-direction: column;
   }
 }
 
-/* ========================================
-   TEXT CLASSES
-======================================== */
 
-/* h1 */
+/* TEXT */
 
 .page_title {
   color: var(--color-primary);
 }
 
-/* h2 */
-
 .home_h2,
-.events_h2{
+.events_h2 {
   padding-bottom: 1rem;
   border-bottom: 2px solid var(--color-primary);
 }
 
-/* ========================================
-   LINK CLASSES
-======================================== */
+/* LINKS */
 
 a,
-.title_link{
+.title_link {
   color: var(--color-accent) !important;
   text-decoration: none;
 }
 
 a:hover,
-.title_link:hover{
+.title_link:hover {
   color: white !important;
 }
 
-.event_button{
-  color: white !important;
-}
-
-.event_button:hover{
-  color: var(--color-accent) !important;
-}
-
-
-/* ========================================
-   HEADER
-======================================== */
+/* HEADER */
 
 .site-logo {
   color: var(--color-accent);
@@ -151,16 +134,16 @@ a:hover,
 }
 
 header nav a {
-  font-size: 0.9rem;
   font-family: "Roboto Mono", monospace;
+  font-size: 0.9rem;
 }
 
 header nav a:hover {
-  color:var(--color-bg);
+  color: var(--color-bg);
 }
 
 .navbar {
-  padding-top: .5rem;
+  padding-top: 0.5rem;
   min-height: 75px !important;
   text-align: center;
 }
@@ -170,7 +153,6 @@ header nav a:hover {
 }
 
 @media screen and (max-width: 59.99em) {
-
   .navbar,
   .navbar > div {
     display: flex;
@@ -184,10 +166,7 @@ header nav a:hover {
   }
 }
 
-
-/* ========================================
-   BUTTONS
-======================================== */
+/* BUTTONS */
 
 .event_button {
   color: var(--color-bg);
@@ -196,14 +175,17 @@ header nav a:hover {
   margin-bottom: 1rem;
 }
 
+.event_button,
+.event_button:visited {
+  color: white !important;
+}
+
 .event_button:hover {
-  color: var(--color-bg);
+  color: var(--color-accent) !important;
   background-color: white;
 }
 
-/* ========================================
-   EVENTS
-======================================== */
+/* EVENTS */
 
 .event_details .event_url,
 .event_details .event_url:visited,
@@ -218,9 +200,6 @@ header nav a:hover {
 .event-card .event_url:hover {
   color: white;
 }
-
-
-/* Event list page */
 
 .events-list {
   list-style: none;
@@ -264,9 +243,7 @@ header nav a:hover {
   color: var(--color-accent);
 }
 
-/* ========================================
-   HOME SLIDER
-======================================== */
+/* HOME SLIDER */
 
 .home-slider {
   position: relative;
@@ -290,8 +267,8 @@ header nav a:hover {
   opacity: 0;
   pointer-events: none;
   transition: opacity 600ms ease;
-  border:0px solid var(--color-bg);
-  border-radius:15px;
+  border: 0 solid var(--color-bg);
+  border-radius: 15px;
 }
 
 .home-slider .slide.is-active {
@@ -302,10 +279,9 @@ header nav a:hover {
 .home-slider .slide-content {
   max-width: 800px;
   padding: 2rem;
-  background-color:rgba(0, 0, 0, 0.5);
-  border:0px solid var(--color-bg);
-  border-radius:15px;
-
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 0 solid var(--color-bg);
+  border-radius: 15px;
 }
 
 .home-slider h1 {
@@ -318,9 +294,7 @@ header nav a:hover {
   margin-bottom: 2rem;
 }
 
-/* ========================================
-   SLIDER CONTROLS
-======================================== */
+/* SLIDER CONTROLS */
 
 .slider-control {
   position: absolute;
@@ -332,10 +306,7 @@ header nav a:hover {
   color: white;
   font-size: 3rem;
   line-height: 1;
-  padding-top: 0.5rem;
-  padding-bottom:1rem;
-  padding-left:.5rem;
-  padding-right:.5rem;
+  padding: 0.5rem 0.5rem 1rem;
   cursor: pointer;
 }
 
@@ -347,11 +318,9 @@ header nav a:hover {
   right: 1rem;
 }
 
-/* ========================================
-   RECENT POSTS
-======================================== */
+/* RECENT POSTS */
 
-.recent_post{
+.recent_post {
   border-bottom: 1px solid var(--color-accent);
-  padding:.5rem 0rem;
+  padding: 0.5rem 0;
 }
