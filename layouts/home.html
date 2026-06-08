@@ -9,14 +9,14 @@
             {{ with $banner.image }}style="background-image: url('{{ . }}');"{{ end }}
           >
             <div class="slide-content">
-              <h1 class="page_title">{{ $banner.title }}</h1>
+              <h2 class="page_title">{{ $banner.title }}</h2>
 
               {{ with $banner.text }}
                 <p>{{ . }}</p>
               {{ end }}
 
               {{ if and $banner.button_text $banner.button_url }}
-                <a href="{{ $banner.button_url }}" class="event_button link dim br2 ph3 pv2 dib">
+                <a href="{{ $banner.button_url }}" class="slider_button">
                   {{ $banner.button_text }}
                 </a>
               {{ end }}
@@ -42,13 +42,20 @@
 
     {{ with index (sort $upcoming "Params.event_start" "asc") 0 }}
       <div class="next-event event-card">
-        <h2>Next Upcoming Event</h2>
+        <h3>Next Upcoming Event</h3>
 
-        <h3 class="event-card-title">
+        <h4 class="event-card-title">
           <a href="{{ .RelPermalink }}">
             {{ .Title }}
           </a>
-        </h3>
+        </h4>
+
+        {{ with .Params.event_organizer }}
+          <p class="event-organizer">
+          Hosted by
+              {{ . }}
+            </p>
+          {{ end }}
 
         {{ with .Params.event_start }}
           <p>
@@ -80,7 +87,7 @@
         <p class="event-actions">
           {{ with .Params.event_url }}
             <a
-              class="event_button link dim br2 ph3 pv2 dib mr2"
+              class="event_button"
               href="{{ . }}"
               target="_blank"
               rel="noopener"
@@ -89,11 +96,11 @@
             </a>
           {{ end }}
 
-          <a class="event_button link dim br2 ph3 pv2 dib mr2" href="{{ .RelPermalink }}event.ics">
+          <a class="event_button" href="{{ .RelPermalink }}event.ics">
             Add to Calendar
           </a>
 
-          <a class="event_button link dim br2 ph3 pv2 dib" href="{{ .RelPermalink }}">
+          <a class="event_button" href="{{ .RelPermalink }}">
             View Details
           </a>
         </p>

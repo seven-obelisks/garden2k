@@ -111,6 +111,11 @@ body * {
   border-bottom: 2px solid var(--color-primary);
 }
 
+.post-list-date {
+  font-size: .75rem;
+  font-style: italic;
+}
+
 /* LINKS */
 
 a,
@@ -173,19 +178,34 @@ header nav a:hover {
 
 /* BUTTONS */
 
+button,
+.button,
+.slider_button,
+.event_button {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  text-decoration: none;
+}
+
+.slider_button,
 .event_button {
   color: var(--color-bg);
   background-color: var(--color-primary);
   text-decoration: none;
   margin-bottom: 1rem;
+  font-size: .85rem !important;
 }
 
 .event_button,
-.event_button:visited {
+.slider_button,
+.event_button:visited,
+.slider_button:visited{
   color: white !important;
 }
 
-.event_button:hover {
+.event_button:hover,
+.slider_button:hover {
   color: var(--color-accent) !important;
   background-color: white;
 }
@@ -206,6 +226,16 @@ header nav a:hover {
   color: white;
 }
 
+.event-details{
+  border: 1px solid var(--color-accent);
+  padding: 1rem;
+}
+
+.event-organizer {
+  font-size: .85rem;
+  font-style: italic;
+}
+
 .events-list {
   list-style: none;
   padding: 0;
@@ -214,8 +244,9 @@ header nav a:hover {
 
 .event-card {
   margin-bottom: 2rem;
-  padding-bottom: 2rem;
+  padding-bottom: 1rem;
   border-bottom: 1px solid #333;
+  font-size: 1.25rem;
 }
 
 .event-card-title {
@@ -313,6 +344,8 @@ header nav a:hover {
   line-height: 1;
   padding: 0.5rem 0.5rem 1rem;
   cursor: pointer;
+  font-size: 2.5rem;
+  opacity: 0.75;
 }
 
 .slider-prev {
