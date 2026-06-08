@@ -49,6 +49,10 @@ body * {
   padding-right: 1rem;
 }
 
+.site-container{
+  max-width:60rem !important;
+}
+
 .site-shell,
 .site-container {
   padding-top: 1rem;
