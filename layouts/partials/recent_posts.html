@@ -2,7 +2,7 @@
   {{ range first 5 (where .Site.RegularPages "Section" "!=" "events") }}
     <article class="recent_post w-100">
         <a class="title_link" href="{{ .RelPermalink }}">
-          {{ .Title }} >>>
+          {{ .Title }}
         </a>
     </article>
   {{ end }}
