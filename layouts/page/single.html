@@ -1,13 +1,17 @@
-{{ define "header" }}{{ partials.Include "page-header.html" . }}{{ end }}
+{{ define "header" }}
+  {{ partials.Include "page-header.html" . }}
+{{ end }}
 
 {{ define "main" }}
-<main class="pa2 pa4-ns w-100 w-90-ns center">
+<main class="site-container">
+
   {{- $post_class := "" -}}
   {{- with .File -}}
     {{- $post_class = printf "page-%s" .ContentBaseName -}}
   {{- end -}}
 
-  <article class="{{ $post_class }} mw8 center">
+  <article class="{{ $post_class }}">
+
     <header>
       <h1 class="page_title">
         {{ .Title }}
@@ -17,6 +21,8 @@
     <div class="event-content lh-copy mb4">
       {{ .Content }}
     </div>
+
   </article>
+
 </main>
 {{ end }}

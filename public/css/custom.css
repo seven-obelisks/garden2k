@@ -35,7 +35,52 @@ body * {
   height: auto;
 }
 
+/* ========================================
+   LAYOUT
+======================================== */
 
+.header-shell,
+.footer-shell,
+.site-shell,
+.site-container {
+  width: 100%;
+  max-width:80rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.header-shell{
+  padding: 0.5rem 0;
+}
+
+.footer-shell{
+  padding: 1rem 0;
+  margin-bottom:6rem;
+}
+
+.site-shell {
+  padding: 1rem;
+}
+
+.site-container {
+  padding: 1rem;
+}
+
+.menu-list {
+  gap: 1rem;
+}
+
+@media screen and (min-width: 30em) {
+  .header-shell,
+  .footer-shell {
+    padding: 0.5rem 2rem;
+  }
+
+  .site-shell,
+  .site-container {
+    padding: 2rem;
+  }
+}
 
 /* ========================================
    TEXT CLASSES
@@ -214,9 +259,8 @@ header nav a:hover {
   opacity: 0;
   pointer-events: none;
   transition: opacity 600ms ease;
-
-  border:15px solid var(--color-bg);
-  border-radius:30px;
+  border:0px solid var(--color-bg);
+  border-radius:15px;
 }
 
 .home-slider .slide.is-active {
@@ -230,6 +274,7 @@ header nav a:hover {
   background-color:rgba(0, 0, 0, 0.5);
   border:0px solid var(--color-bg);
   border-radius:15px;
+
 }
 
 .home-slider h1 {

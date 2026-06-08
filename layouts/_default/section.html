@@ -1,99 +1,23 @@
 {{ define "main" }}
-<main class="events-page pa2 pa4-ns w-100 w-90-ns center">
+<main class="events-page site-container">
 
-  <div class="mw8 center">
+  <h1 class="page_title">{{ .Title }}</h1>
 
-    <h1 class="page_title">{{ .Title }}</h1>
+  {{ with .Content }}
+    <div class="mb4">
+      {{ . }}
+    </div>
+  {{ end }}
 
-    <br>
+  {{ if eq .Section "events" }}
+    {{ $now := now }}
 
-    {{ with .Content }}
-      <div class="measure-wide mb4">
-        {{ . }}
-      </div>
-    {{ end }}
+    <h2 class="events_h2">Upcoming Events</h2>
 
-    {{ if eq .Section "events" }}
-      {{ $now := now }}
-
-      <h2 class="events_h2">Upcoming Events</h2>
-
-      <ul class="events-list">
-        {{ range sort .Pages "Params.event_start" "asc" }}
-          {{ if ge (time .Params.event_end) $now }}
-            <li class="event-card">
-              <h2 class="event-card-title">
-                <a href="{{ .RelPermalink }}">
-                  {{ .Title }}
-                </a>
-              </h2>
-
-              {{ with .Params.event_start }}
-                <p>
-                  <span class="event-data"><strong>Starts:</strong></span>
-                  {{ time.Format "Monday, Jan 2, 2006, 3:04 PM" . }}
-                </p>
-              {{ end }}
-
-              {{ with .Params.event_end }}
-                <p>
-                  <span class="event-data"><strong>Ends:</strong></span>
-                  {{ time.Format "Monday, Jan 2, 2006, 3:04 PM" . }}
-                </p>
-              {{ end }}
-
-              {{ with .Params.location }}
-                <p>
-                  <span class="event-data"><strong>Location:</strong></span>
-                  {{ . }}
-                </p>
-              {{ end }}
-
-              {{ with .Summary }}
-                <p class="measure">
-                  {{ . }}
-                </p>
-              {{ end }}
-
-              <p class="event-actions">
-                {{ with .Params.event_url }}
-                  <a class="event_button link dim br2 ph3 pv2 dib mr2"
-                     href="{{ . }}"
-                     target="_blank"
-                     rel="noopener">
-                    Event Website
-                  </a>
-                {{ end }}
-
-                <a class="event_button link dim br2 ph3 pv2 dib mr2"
-                   href="{{ .RelPermalink }}event.ics">
-                  Add to Calendar
-                </a>
-
-                <a class="event_button link dim br2 ph3 pv2 dib"
-                   href="{{ .RelPermalink }}">
-                  View Details
-                </a>
-              </p>
-            </li>
-          {{ end }}
-        {{ end }}
-      </ul>
-
-      <br>
-
-      <h2 class="events_h2">Recent Past Events</h2>
-
-      {{ $past := slice }}
-      {{ range .Pages }}
-        {{ if lt (time .Params.event_end) $now }}
-          {{ $past = $past | append . }}
-        {{ end }}
-      {{ end }}
-
-      <ul class="events-list events-list-past">
-        {{ range first 3 (sort $past "Params.event_start" "desc") }}
-          <li class="event-card event-card-past">
+    <ul class="events-list">
+      {{ range sort .Pages "Params.event_start" "asc" }}
+        {{ if ge (time .Params.event_end) $now }}
+          <li class="event-card">
             <h2 class="event-card-title">
               <a href="{{ .RelPermalink }}">
                 {{ .Title }}
@@ -122,12 +46,26 @@
             {{ end }}
 
             {{ with .Summary }}
-              <p class="measure">
+              <div class="event-summary">
                 {{ . }}
-              </p>
+              </div>
             {{ end }}
 
             <p class="event-actions">
+              {{ with .Params.event_url }}
+                <a class="event_button link dim br2 ph3 pv2 dib mr2"
+                   href="{{ . }}"
+                   target="_blank"
+                   rel="noopener">
+                  Event Website
+                </a>
+              {{ end }}
+
+              <a class="event_button link dim br2 ph3 pv2 dib mr2"
+                 href="{{ .RelPermalink }}event.ics">
+                Add to Calendar
+              </a>
+
               <a class="event_button link dim br2 ph3 pv2 dib"
                  href="{{ .RelPermalink }}">
                 View Details
@@ -135,21 +73,75 @@
             </p>
           </li>
         {{ end }}
-      </ul>
+      {{ end }}
+    </ul>
 
-    {{ else }}
+    <h2 class="events_h2">Recent Past Events</h2>
 
-      <ul class="events-list">
-        {{ range .Pages }}
-          <li class="event-card">
-            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-          </li>
-        {{ end }}
-      </ul>
-
+    {{ $past := slice }}
+    {{ range .Pages }}
+      {{ if lt (time .Params.event_end) $now }}
+        {{ $past = $past | append . }}
+      {{ end }}
     {{ end }}
 
-  </div>
+    <ul class="events-list events-list-past">
+      {{ range first 3 (sort $past "Params.event_start" "desc") }}
+        <li class="event-card event-card-past">
+          <h2 class="event-card-title">
+            <a href="{{ .RelPermalink }}">
+              {{ .Title }}
+            </a>
+          </h2>
+
+          {{ with .Params.event_start }}
+            <p>
+              <span class="event-data"><strong>Starts:</strong></span>
+              {{ time.Format "Monday, Jan 2, 2006, 3:04 PM" . }}
+            </p>
+          {{ end }}
+
+          {{ with .Params.event_end }}
+            <p>
+              <span class="event-data"><strong>Ends:</strong></span>
+              {{ time.Format "Monday, Jan 2, 2006, 3:04 PM" . }}
+            </p>
+          {{ end }}
+
+          {{ with .Params.location }}
+            <p>
+              <span class="event-data"><strong>Location:</strong></span>
+              {{ . }}
+            </p>
+          {{ end }}
+
+          {{ with .Summary }}
+            <div class="event-summary">
+              {{ . }}
+            </div>
+          {{ end }}
+
+          <p class="event-actions">
+            <a class="event_button link dim br2 ph3 pv2 dib"
+               href="{{ .RelPermalink }}">
+              View Details
+            </a>
+          </p>
+        </li>
+      {{ end }}
+    </ul>
+
+  {{ else }}
+
+    <ul class="events-list">
+      {{ range .Pages }}
+        <li class="event-card">
+          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        </li>
+      {{ end }}
+    </ul>
+
+  {{ end }}
 
 </main>
 {{ end }}

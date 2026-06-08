@@ -1,22 +1,36 @@
-<footer class="{{ .Site.Params.background_color_class }} bottom-0 w-100 pa3" role="contentinfo">
-  <div class="flex justify-between">
-  <a class="copyright no-underline" href="{{ .Site.Home.Permalink }}" >
-    &copy; {{ with .Site.Copyright | compare.Default .Site.Title }} {{ . | safe.HTML }} {{ now.Format "2006"}} {{ end }}
-  </a>
-    <div>{{ partials.IncludeCached "social/follow.html" . }}</div>
-    {{ if .Site.Menus.footer }}
-  <nav class="footer-menu">
-    <ul class="list pl0 ma0">
-      {{ range .Site.Menus.footer }}
-        <li class="dib mr3">
-          <a class="footer-link no-underline" href="{{ .URL }}">
-            {{ .Name }}
-          </a>
-        </li>
+<footer class="{{ .Site.Params.background_color_class }}" role="contentinfo">
+
+  <div class="footer-shell">
+
+    <div class="flex justify-between items-center flex-wrap">
+
+      <a class="copyright no-underline" href="{{ .Site.Home.Permalink }}">
+        &copy;
+        {{ with .Site.Copyright | compare.Default .Site.Title }}
+          {{ . | safe.HTML }} {{ now.Format "2006" }}
+        {{ end }}
+      </a>
+
+      <div>
+        {{ partials.IncludeCached "social/follow.html" . }}
+      </div>
+
+      {{ if .Site.Menus.footer }}
+        <nav class="footer-menu">
+          <ul class="list pl0 ma0">
+            {{ range .Site.Menus.footer }}
+              <li class="dib mr3">
+                <a class="footer-link no-underline" href="{{ .URL }}">
+                  {{ .Name }}
+                </a>
+              </li>
+            {{ end }}
+          </ul>
+        </nav>
       {{ end }}
-    </ul>
-  </nav>
-{{ end }}
+
+    </div>
+
   </div>
-  
+
 </footer>
