@@ -1,11 +1,10 @@
 {{ $featured_image := partials.Include "func/GetFeaturedImage.html" . }}
 
 {{ if $featured_image }}
-  {{ $featured_image_class := site.Params.featured_image_class | compare.Default "cover bg-top" }}
+  {{ $featured_image_class := .Params.featured_image_class | compare.Default "cover bg-center" }}
+  {{ $cover_dimming_class := .Params.cover_dimming_class | compare.Default "" }}
 
   <header class="{{ $featured_image_class }}" style="background-image: url('{{ $featured_image }}');">
-    {{ $cover_dimming_class := site.Params.cover_dimming_class | compare.Default "" }}
-
     <div class="{{ $cover_dimming_class }}">
       <div class="header-shell">
         {{ partials.Include "site-navigation.html" . }}

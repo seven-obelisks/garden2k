@@ -1,5 +1,6 @@
-<nav class="ph3 ph4-ns" role="navigation">
+<nav class="nav-shell" role="navigation">
   <div class="navbar flex-l center items-center justify-between">
+
     <a href="{{ .Site.Home.RelPermalink }}"
        class="site-logo no-underline">
       {{ with .Site.Params.site_logo }}
@@ -8,20 +9,28 @@
         {{ .Site.Title }}
       {{ end }}
     </a>
+
     <div class="flex-l items-center">
+
       {{ partials.Include "i18nlist.html" . }}
+
       {{ if .Site.Menus.main }}
-        <ul class="{{ compare.Conditional (compare.Eq $.Site.Language.Direction "rtl") "pr0 ml3" "pl0 mr3" }}">
+        <ul class="pl0 flex items-center menu-list">
           {{ range .Site.Menus.main }}
-          <li class="list f5 f4-ns fw4 dib {{ compare.Conditional (compare.Eq $.Site.Language.Direction "rtl") "pl3" "pr3" }}">
-            <a class="hover-white white-90 no-underline" href="{{ .URL }}" title="{{ lang.Translate "pageTitle" . }}">
-              {{ .Name }}
-            </a>
-          </li>
+            <li class="list f5 f4-ns fw4">
+              <a class="hover-white white-90 no-underline"
+                 href="{{ .URL }}"
+                 title="{{ lang.Translate "pageTitle" . }}">
+                {{ .Name }}
+              </a>
+            </li>
           {{ end }}
         </ul>
       {{ end }}
+
       {{ partials.IncludeCached "social/follow.html" . }}
+
     </div>
+
   </div>
 </nav>

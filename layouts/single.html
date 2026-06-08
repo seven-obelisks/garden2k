@@ -14,9 +14,9 @@
     {{- $post_class = printf "page-%s" .ContentBaseName -}}
   {{- end -}}
 
-  <main class="pa2 pa4-ns w-100 w-90-ns center">
+  <main class="site-container">
 
-    <article class="{{ $post_class }} mw8 center">
+    <article class="{{ $post_class }}">
 
       <header class="mb4">
         {{- partials.Include "hook.html" (dict "hook" "article/section-link" "context" .) -}}

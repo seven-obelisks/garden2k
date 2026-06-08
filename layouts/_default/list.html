@@ -1,25 +1,47 @@
 {{ define "main" }}
-<main class="pa2 pa4-ns w-100 w-90-ns center">
+<main class="site-container">
+
   <h1 class="page_title">{{ .Title }}</h1>
 
   {{ if eq .Section "events" }}
+
     <ul class="list pl0">
       {{ range sort .Pages "Params.event_start" "asc" }}
         <li class="mb4 pb3 bb b--moon-gray">
-          <h2 class="f3 mb2"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
 
-          <p><strong>When:</strong> {{ time.Format "Monday, Jan 2, 2006, 3:04 PM" .Params.event_start }}</p>
+          <h2 class="f3 mb2">
+            <a href="{{ .RelPermalink }}">
+              {{ .Title }}
+            </a>
+          </h2>
+
+          <p>
+            <span class="event-data"><strong>Starts:</strong></span>
+            {{ time.Format "Monday, Jan 2, 2006, 3:04 PM" .Params.event_start }}
+          </p>
 
           {{ with .Params.location }}
-            <p><strong>Where:</strong> {{ . }}</p>
+            <p>
+              <span class="event-data"><strong>Location:</strong></span>
+              {{ . }}
+            </p>
           {{ end }}
 
-          <p><a href="{{ .RelPermalink }}event.ics">Add to Calendar</a></p>
+          <p>
+            <a href="{{ .RelPermalink }}event.ics">
+              Add to Calendar
+            </a>
+          </p>
+
         </li>
       {{ end }}
     </ul>
+
   {{ else }}
+
     {{ .Content }}
+
   {{ end }}
+
 </main>
 {{ end }}
