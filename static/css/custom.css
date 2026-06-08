@@ -149,10 +149,31 @@ header nav a:hover {
   color:var(--color-bg);
 }
 
-.navbar{
-  padding-top:.5rem;
-  min-height:75px !important;
+.navbar {
+  padding-top: .5rem;
+  min-height: 75px !important;
+  text-align: center;
 }
+
+.menu-list {
+  gap: 1rem;
+}
+
+@media screen and (max-width: 59.99em) {
+
+  .navbar,
+  .navbar > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .menu-list {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
 
 /* ========================================
    BUTTONS
