@@ -44,41 +44,51 @@ body * {
 .site-shell,
 .site-container {
   width: 100%;
-  max-width:80rem;
+  max-width: 80rem;
   margin-left: auto;
   margin-right: auto;
 }
 
-.header-shell{
-  padding: 0.5rem 0;
+.header-shell,
+.footer-shell {
+  padding: 0.75rem 1rem;
 }
 
-.footer-shell{
-  padding: 1rem 0;
-  margin-bottom:6rem;
+.footer-shell {
+  margin-bottom: 6rem;
 }
 
-.site-shell {
-  padding: 1rem;
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
-.site-container {
-  padding: 1rem;
-}
-
-.menu-list {
+.footer-menu-list {
+  display: flex;
+  align-items: center;
   gap: 1rem;
 }
 
 @media screen and (min-width: 30em) {
   .header-shell,
   .footer-shell {
-    padding: 0.5rem 2rem;
+    padding: 0.75rem 2rem;
   }
 
   .site-shell,
   .site-container {
     padding: 2rem;
+  }
+}
+
+@media screen and (max-width: 59.99em) {
+  .footer-inner,
+  .footer-menu-list {
+    justify-content: center;
+    text-align: center;
   }
 }
 
