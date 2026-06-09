@@ -25,19 +25,24 @@ title = 'Garden2k'
   page = ["HTML"]
 
 [[menus.main]]
-  name = "Events Calendar"
+  name = "Events"
   pageRef = "/events"
   weight = 10
 
 [[menus.main]]
+  name = "Calendar"
+  pageRef = "/calendar"
+  weight = 20
+
+[[menus.main]]
   name = "Posts"
   pageRef = "/posts"
-  weight = 20
+  weight = 30
 
 [[menus.main]]
   name = "GitHub"
   url = "https://github.com/garden2k"
-  weight = 30
+  weight = 40
 
 
 [[menus.footer]]
