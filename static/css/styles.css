@@ -109,6 +109,12 @@ body * {
   color: var(--color-primary);
 }
 
+@media screen and (max-width: 59.99em) {
+  .page_title {
+    text-align: center;
+  }
+}
+
 .home_h2,
 .events_h2 {
   padding-bottom: 1rem;
