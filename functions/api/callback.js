@@ -4,6 +4,7 @@ export async function onRequestGet(context) {
 
   const code = url.searchParams.get("code");
   const state = url.searchParams.get("state");
+  const siteOrigin = env.SITE_ORIGIN || "https://garden2k.com";
 
   if (!code) {
     return new Response("Missing GitHub OAuth code", { status: 400 });
@@ -59,6 +60,7 @@ export async function onRequestGet(context) {
   });
 
   const safePayload = JSON.stringify(payload);
+  const safeOrigin = JSON.stringify(siteOrigin);
 
   return new Response(
     `<!doctype html>
@@ -67,11 +69,12 @@ export async function onRequestGet(context) {
     <script>
       (function () {
         var payload = ${safePayload};
+        var targetOrigin = ${safeOrigin};
 
         if (window.opener) {
           window.opener.postMessage(
             "authorization:github:success:" + payload,
-            "*"
+            targetOrigin
           );
           window.close();
         } else {
