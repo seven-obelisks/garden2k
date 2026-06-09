@@ -4,7 +4,6 @@ export async function onRequestGet(context) {
 
   const code = url.searchParams.get("code");
   const state = url.searchParams.get("state");
-  const siteOrigin = env.SITE_ORIGIN || "https://garden2k.com";
 
   if (!code) {
     return new Response("Missing GitHub OAuth code", { status: 400 });
@@ -15,26 +14,30 @@ export async function onRequestGet(context) {
   }
 
   const cookieHeader = request.headers.get("Cookie") || "";
-  const storedState = cookieHeader.match(/(?:^|;\s*)oauth_state=([^;]+)/)?.[1];
+  const storedState =
+    cookieHeader.match(/(?:^|;\s*)oauth_state=([^;]+)/)?.[1];
 
   if (!storedState || storedState !== state) {
     return new Response("Invalid state parameter", { status: 403 });
   }
 
-  const tokenResponse = await fetch("https://github.com/login/oauth/access_token", {
-    method: "POST",
-    signal: AbortSignal.timeout(8000),
-    headers: {
-      Accept: "application/json",
-      "Content-Type": "application/json",
-      "User-Agent": "garden2k-decap-cms",
-    },
-    body: JSON.stringify({
-      client_id: env.GITHUB_CLIENT_ID,
-      client_secret: env.GITHUB_CLIENT_SECRET,
-      code,
-    }),
-  });
+  const tokenResponse = await fetch(
+    "https://github.com/login/oauth/access_token",
+    {
+      method: "POST",
+      signal: AbortSignal.timeout(8000),
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+        "User-Agent": "garden2k-decap-cms",
+      },
+      body: JSON.stringify({
+        client_id: env.GITHUB_CLIENT_ID,
+        client_secret: env.GITHUB_CLIENT_SECRET,
+        code,
+      }),
+    }
+  );
 
   const tokenData = await tokenResponse.json();
 
@@ -43,7 +46,8 @@ export async function onRequestGet(context) {
       JSON.stringify({
         error: tokenData.error || "oauth_token_exchange_failed",
         error_description:
-          tokenData.error_description || "GitHub OAuth token exchange failed.",
+          tokenData.error_description ||
+          "GitHub OAuth token exchange failed.",
       }),
       {
         status: 500,
@@ -57,26 +61,22 @@ export async function onRequestGet(context) {
 
   const payload = JSON.stringify({
     token: tokenData.access_token,
-    provider: "github",
   });
 
   const safePayload = JSON.stringify(payload);
-  const safeOrigin = JSON.stringify(siteOrigin);
 
   return new Response(
     `<!doctype html>
 <html>
   <body>
-    <p>Authorizing Decap...</p>
     <script>
       (function () {
         var payload = ${safePayload};
-        var targetOrigin = ${safeOrigin};
 
         if (window.opener) {
           window.opener.postMessage(
             "authorization:github:success:" + payload,
-            targetOrigin
+            "*"
           );
           window.close();
         } else {
