@@ -3,8 +3,8 @@ local_backend: true
 backend:
   name: github
   repo: seven-obelisks/garden2k
-  branch: cloudflare-version
-  base_url: https://garden2k.pages.dev
+  branch: main
+  base_url: https://garden2k.com
   auth_endpoint: /api/auth
 
 media_folder: "static/uploads"
