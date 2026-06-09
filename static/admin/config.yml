@@ -2,7 +2,6 @@ backend:
   name: github
   repo: seven-obelisks/garden2k
   branch: main
-  base_url: https://garden2k.com
   auth_endpoint: /api/auth
 
 media_folder: "static/uploads"
