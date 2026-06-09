@@ -1,0 +1,32 @@
+{{ define "main" }}
+
+{{ $events := where site.RegularPages "Type" "event" }}
+
+<main class="calendar-page site-container">
+  <div class="calendar-header">
+    <button id="calendar-prev" type="button">← Prev</button>
+    <h1 id="calendar-title"></h1>
+    <button id="calendar-next" type="button">Next →</button>
+  </div>
+
+  <section id="calendar-grid" class="calendar-grid"></section>
+</main>
+
+<script id="calendar-events" type="application/json">
+[
+  {{- range $i, $event := $events -}}
+    {{- if $i }},{{ end -}}
+    {
+      "title": {{ $event.Title }},
+      "url": {{ $event.RelPermalink }},
+      "start": {{ (time $event.Params.event_start).Format "2006-01-02" }},
+      "end": {{ (time ($event.Params.event_end | default $event.Params.event_start)).Format "2006-01-02" }}
+    }
+  {{- end -}}
+]
+</script>
+
+{{ $calendarJS := resources.Get "js/calendar.js" }}
+<script src="{{ $calendarJS.RelPermalink }}"></script>
+
+{{ end }}
