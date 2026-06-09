@@ -57,6 +57,8 @@ export async function onRequestGet(context) {
 
   const payload = JSON.stringify({
     token: tokenData.access_token,
+    provider: "github",
+    state,
   });
 
   const safePayload = JSON.stringify(payload);
@@ -78,8 +80,7 @@ export async function onRequestGet(context) {
           );
           window.close();
         } else {
-          document.body.innerText =
-            "Authentication complete. You can close this tab.";
+          document.body.innerText = "Authentication complete. You can close this tab.";
         }
       })();
     </script>
