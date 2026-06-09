@@ -1,28 +1,27 @@
-const events = JSON.parse(
+const rawEvents = JSON.parse(
   document.getElementById("calendar-events").textContent
-).map((event) => ({
-  title: event.title.replace(/^"|"$/g, ""),
-  url: event.url.replace(/^"|"$/g, ""),
-  start: event.start.replace(/^"|"$/g, ""),
-  end: event.end.replace(/^"|"$/g, ""),
-}));
+);
+
+const isValidDate = (value) => /^\d{4}-\d{2}-\d{2}$/.test(value);
+
+const toNum = (value) => parseInt(value.replaceAll("-", ""), 10);
+
+const events = rawEvents
+  .map((event) => ({
+    title: event.title || "",
+    url: event.url || "",
+    start: event.start || "",
+    end: event.end || event.start || "",
+  }))
+  .filter((event) => isValidDate(event.start) && isValidDate(event.end))
+  .sort((a, b) => toNum(a.start) - toNum(b.start));
 
 const title = document.getElementById("calendar-title");
 const grid = document.getElementById("calendar-grid");
 const prev = document.getElementById("calendar-prev");
 const next = document.getElementById("calendar-next");
 
-function toNum(value) {
-  return Number(String(value).replaceAll("-", ""));
-}
-
-let current = events.length
-  ? new Date(
-      Number(events[0].start.slice(0, 4)),
-      Number(events[0].start.slice(5, 7)) - 1,
-      1
-    )
-  : new Date();
+let current = new Date();
 
 function renderCalendar() {
   const year = current.getFullYear();
@@ -51,11 +50,11 @@ function renderCalendar() {
   }
 
   for (let dayNumber = 1; dayNumber <= last.getDate(); dayNumber++) {
-    const dateNum = Number(
-      String(year) +
-        String(month + 1).padStart(2, "0") +
-        String(dayNumber).padStart(2, "0")
-    );
+    const dateString = `${year}-${String(month + 1).padStart(2, "0")}-${String(
+      dayNumber
+    ).padStart(2, "0")}`;
+
+    const dateNum = toNum(dateString);
 
     const cell = document.createElement("div");
     cell.className = "calendar-day";
@@ -65,15 +64,20 @@ function renderCalendar() {
     number.textContent = dayNumber;
     cell.appendChild(number);
 
-    events.forEach((event) => {
-      if (dateNum >= toNum(event.start) && dateNum <= toNum(event.end)) {
+    for (const event of events) {
+      const startNum = toNum(event.start);
+
+      if (startNum > dateNum) break;
+
+      // ISO date strings can be compared as YYYYMMDD numbers across month/year boundaries.
+      if (toNum(event.end) >= dateNum) {
         const link = document.createElement("a");
         link.className = "calendar-event";
         link.href = event.url;
         link.textContent = event.title;
         cell.appendChild(link);
       }
-    });
+    }
 
     grid.appendChild(cell);
   }
