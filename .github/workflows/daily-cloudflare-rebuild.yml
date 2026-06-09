@@ -1,0 +1,15 @@
+name: Daily Cloudflare rebuild
+
+on:
+  schedule:
+    - cron: "15 10 * * *"
+  workflow_dispatch:
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Cloudflare build
+        run: curl -X POST "$CLOUDFLARE_BUILD_HOOK"
+        env:
+          CLOUDFLARE_BUILD_HOOK: ${{ secrets.CLOUDFLARE_BUILD_HOOK }}
