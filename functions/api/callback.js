@@ -14,30 +14,26 @@ export async function onRequestGet(context) {
   }
 
   const cookieHeader = request.headers.get("Cookie") || "";
-  const storedState =
-    cookieHeader.match(/(?:^|;\s*)oauth_state=([^;]+)/)?.[1];
+  const storedState = cookieHeader.match(/(?:^|;\s*)oauth_state=([^;]+)/)?.[1];
 
   if (!storedState || storedState !== state) {
     return new Response("Invalid state parameter", { status: 403 });
   }
 
-  const tokenResponse = await fetch(
-    "https://github.com/login/oauth/access_token",
-    {
-      method: "POST",
-      signal: AbortSignal.timeout(8000),
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-        "User-Agent": "garden2k-decap-cms",
-      },
-      body: JSON.stringify({
-        client_id: env.GITHUB_CLIENT_ID,
-        client_secret: env.GITHUB_CLIENT_SECRET,
-        code,
-      }),
-    }
-  );
+  const tokenResponse = await fetch("https://github.com/login/oauth/access_token", {
+    method: "POST",
+    signal: AbortSignal.timeout(8000),
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+      "User-Agent": "garden2k-decap-cms",
+    },
+    body: JSON.stringify({
+      client_id: env.GITHUB_CLIENT_ID,
+      client_secret: env.GITHUB_CLIENT_SECRET,
+      code,
+    }),
+  });
 
   const tokenData = await tokenResponse.json();
 
@@ -46,8 +42,7 @@ export async function onRequestGet(context) {
       JSON.stringify({
         error: tokenData.error || "oauth_token_exchange_failed",
         error_description:
-          tokenData.error_description ||
-          "GitHub OAuth token exchange failed.",
+          tokenData.error_description || "GitHub OAuth token exchange failed.",
       }),
       {
         status: 500,
