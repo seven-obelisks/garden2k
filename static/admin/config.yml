@@ -1,8 +1,11 @@
 local_backend: true
 
 backend:
-  name: git-gateway
-  branch: main
+  name: github
+  repo: seven-obelisks/garden2k
+  branch: cloudflare-version
+  base_url: https://YOUR-SITE.pages.dev
+  auth_endpoint: /api/auth
 
 media_folder: "static/uploads"
 public_folder: "/uploads"
