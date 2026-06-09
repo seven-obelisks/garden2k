@@ -1,6 +1,7 @@
 export async function onRequestGet(context) {
   const { request, env } = context;
   const url = new URL(request.url);
+
   const code = url.searchParams.get("code");
   const state = url.searchParams.get("state");
   const siteOrigin = env.SITE_ORIGIN || "https://garden2k.com";
@@ -58,6 +59,7 @@ export async function onRequestGet(context) {
     token: tokenData.access_token,
     provider: "github",
   });
+
   const safePayload = JSON.stringify(payload);
   const safeOrigin = JSON.stringify(siteOrigin);
 
@@ -70,6 +72,7 @@ export async function onRequestGet(context) {
       (function () {
         var payload = ${safePayload};
         var targetOrigin = ${safeOrigin};
+
         if (window.opener) {
           window.opener.postMessage(
             "authorization:github:success:" + payload,
@@ -77,7 +80,8 @@ export async function onRequestGet(context) {
           );
           window.close();
         } else {
-          document.body.innerText = "Authentication complete. You can close this tab.";
+          document.body.innerText =
+            "Authentication complete. You can close this tab.";
         }
       })();
     </script>
@@ -87,7 +91,8 @@ export async function onRequestGet(context) {
       headers: {
         "Content-Type": "text/html; charset=utf-8",
         "Cache-Control": "no-store",
-        "Set-Cookie": "oauth_state=; HttpOnly; Secure; SameSite=Lax; Max-Age=0; Path=/",
+        "Set-Cookie":
+          "oauth_state=; HttpOnly; Secure; SameSite=Lax; Max-Age=0; Path=/",
       },
     }
   );
