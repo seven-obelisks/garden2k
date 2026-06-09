@@ -2,11 +2,9 @@
 
 {{ $events := where site.RegularPages "Type" "event" }}
 
-<main class="calendar-page site-container">
+<main class="calendar-page site-container list-container">
 
-  <header class="page-header">
-    <h1 class="page_title">{{ .Title }}</h1>
-  </header>
+  <h1 class="page_title">{{ .Title }}</h1>
 
   <div class="calendar-header">
     <button id="calendar-prev" type="button">← Prev</button>
