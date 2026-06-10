@@ -27,7 +27,7 @@ export async function onRequestGet(context) {
     headers: {
       Accept: "application/json",
       "Content-Type": "application/json",
-      "User-Agent": "garden2k-decap-cms",
+      "User-Agent": "garden2k-sveltia-cms",
     },
     body: JSON.stringify({
       client_id: env.GITHUB_CLIENT_ID,
