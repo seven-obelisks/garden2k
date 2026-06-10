@@ -55,11 +55,15 @@ export async function onRequestGet(context) {
     );
   }
 
-  const payload = JSON.stringify({
-  token: tokenData.access_token,
+  const messagePayload = JSON.stringify({
+    token: tokenData.access_token,
+    provider: "github",
   });
 
-  const safePayload = JSON.stringify(payload);
+  const safeMessage = JSON.stringify(
+    "authorization:github:success:" + messagePayload
+  );
+
   const safeOrigin = JSON.stringify(siteOrigin);
 
   return new Response(
@@ -68,17 +72,15 @@ export async function onRequestGet(context) {
   <body>
     <script>
       (function () {
-        var payload = ${safePayload};
-        var targetOrigin = ${safeOrigin};
-
         if (window.opener) {
           window.opener.postMessage(
-            "authorization:github:success:" + payload,
-            targetOrigin
+            ${safeMessage},
+            ${safeOrigin}
           );
           window.close();
         } else {
-          document.body.innerText = "Authentication complete. You can close this tab.";
+          document.body.innerText =
+            "Authentication complete. You can close this tab.";
         }
       })();
     </script>
