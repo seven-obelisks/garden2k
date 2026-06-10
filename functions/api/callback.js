@@ -85,7 +85,7 @@ export async function onRequestGet(context) {
 
           setTimeout(function () {
             window.close();
-          }, 1000);
+          }, 2000);
         } else {
           document.body.innerText =
             "Authentication complete. You can close this tab.";
