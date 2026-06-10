@@ -56,9 +56,7 @@ export async function onRequestGet(context) {
   }
 
   const payload = JSON.stringify({
-    token: tokenData.access_token,
-    provider: "github",
-    state,
+  token: tokenData.access_token,
   });
 
   const safePayload = JSON.stringify(payload);
