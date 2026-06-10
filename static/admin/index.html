@@ -5,6 +5,14 @@
   <title>Content Manager</title>
 </head>
 <body>
-  <script src="https://unpkg.com/decap-cms@3.14.0/dist/decap-cms.js"></script>
+  <script>
+    window.addEventListener("storage", function (e) {
+      if (e.key === "netlify-cms-auth" && e.newValue) {
+        window.postMessage(e.newValue, window.location.origin);
+        localStorage.removeItem("netlify-cms-auth");
+      }
+    });
+  </script>
+  <script src="https://unpkg.com/decap-cms@3.3.3/dist/decap-cms.js"></script>
 </body>
 </html>
