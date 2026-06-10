@@ -25,6 +25,7 @@ collections:
       - { label: "Event Start", name: "event_start", widget: "datetime" }
       - { label: "Event End", name: "event_end", widget: "datetime" }
       - { label: "Location", name: "location", widget: "string", required: false }
+      - { label: "Organizer", name: "event_organizer", widget: "string", required: false }
       - { label: "Event URL", name: "event_url", widget: "string", required: false }
       - { label: "Description", name: "body", widget: "markdown" }
 
