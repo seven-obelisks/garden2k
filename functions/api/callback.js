@@ -18,7 +18,10 @@ export async function onRequestGet(context) {
   const storedState = cookieHeader.match(/(?:^|;\s*)oauth_state=([^;]+)/)?.[1];
 
   if (!storedState || storedState !== state) {
-    return new Response("Invalid state parameter", { status: 403 });
+    return new Response(
+      `debug | cookie header: "${cookieHeader}" | storedState: "${storedState}" | state param: "${state}"`,
+      { status: 403 }
+    );
   }
 
   const tokenResponse = await fetch("https://github.com/login/oauth/access_token", {
