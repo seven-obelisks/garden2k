@@ -36,7 +36,18 @@ export async function onRequestGet(context) {
     }),
   });
 
-  const tokenData = await tokenResponse.json();
+  let tokenData;
+
+  try {
+    tokenData = await tokenResponse.json();
+  } catch {
+    return new Response("Invalid GitHub OAuth response", {
+      status: 502,
+      headers: {
+        "Cache-Control": "no-store",
+      },
+    });
+  }
 
   if (!tokenResponse.ok || !tokenData.access_token) {
     return new Response(

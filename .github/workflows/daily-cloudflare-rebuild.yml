@@ -2,7 +2,7 @@ name: Daily Cloudflare rebuild
 
 on:
   schedule:
-    - cron: "15 10 * * *"
+    - cron: "37 10 * * *"
   workflow_dispatch:
 
 jobs:
