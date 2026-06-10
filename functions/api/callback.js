@@ -55,6 +55,33 @@ export async function onRequestGet(context) {
     );
   }
 
+  const allowedUsers = (env.ALLOWED_GITHUB_USERS || "")
+    .split(",")
+    .map((user) => user.trim().toLowerCase())
+    .filter(Boolean);
+
+  if (allowedUsers.length > 0) {
+    const userResponse = await fetch("https://api.github.com/user", {
+      signal: AbortSignal.timeout(8000),
+      headers: {
+        Authorization: `Bearer ${tokenData.access_token}`,
+        Accept: "application/vnd.github+json",
+        "User-Agent": "garden2k-sveltia-cms",
+      },
+    });
+
+    if (!userResponse.ok) {
+      return new Response("Could not verify GitHub user", { status: 500 });
+    }
+
+    const user = await userResponse.json();
+    const login = String(user.login || "").toLowerCase();
+
+    if (!allowedUsers.includes(login)) {
+      return new Response("Unauthorized GitHub user", { status: 403 });
+    }
+  }
+
   const messagePayload = JSON.stringify({
     token: tokenData.access_token,
     provider: "github",
