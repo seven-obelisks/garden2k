@@ -1,6 +1,6 @@
 {{ define "main" }}
 <main>
-  {{ with site.Data.homepage.banners }}
+  {{ with hugo.Data.homepage.banners }}
     <div class="site-shell">
       <section class="home-slider" data-slider>
         {{ range $index, $banner := . }}
