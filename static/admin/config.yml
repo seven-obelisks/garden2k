@@ -27,7 +27,12 @@ collections:
       - { label: "Location", name: "location", widget: "string", required: false }
       - { label: "Organizer", name: "event_organizer", widget: "string", required: false }
       - { label: "Event URL", name: "event_url", widget: "string", required: false }
-      - { label: "Event Color", name: "event_color", widget: "color", default: "#357edd" }
+      - label: "Event Color"
+        name: "event_color"
+        widget: "string"
+        default: "var(--color-primary)"
+        required: false
+        hint: "Examples: var(--color-primary), red, orange, limegreen"
       - { label: "Description", name: "body", widget: "markdown" }
 
   - name: "settings"
