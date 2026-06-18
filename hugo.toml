@@ -7,8 +7,10 @@ title = 'Garden2k'
     path = "github.com/gohugo-ananke/ananke/v2"
     
 [params]
-  custom_css = ["css/styles.css", "css/overrides.css", "css/calendar.css", "css/slider.css"]
   site_logo = "/images/logo.png"
+
+[params.ananke]
+  custom_css = ["css/styles.css", "css/overrides.css", "css/calendar.css", "css/slider.css"]
 
 [mediaTypes]
   [mediaTypes."text/calendar"]

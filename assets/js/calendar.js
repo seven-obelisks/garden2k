@@ -12,6 +12,7 @@ const events = rawEvents
     url: event.url || "",
     start: event.start || "",
     end: event.end || event.start || "",
+    color: event.color || "#357edd",
   }))
   .filter((event) => isValidDate(event.start) && isValidDate(event.end))
   .sort((a, b) => toNum(a.start) - toNum(b.start));
@@ -75,6 +76,7 @@ function renderCalendar() {
         link.className = "calendar-event";
         link.href = event.url;
         link.textContent = event.title;
+        link.style.setProperty("--event-color", event.color);
         cell.appendChild(link);
       }
     }

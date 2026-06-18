@@ -42,7 +42,7 @@
 
     {{ with index (sort $upcoming "Params.event_start" "asc") 0 }}
       <div class="next-event event-card">
-        <h3>Next Upcoming Event</h3>
+        <h2>Next Upcoming Event</h2>
 
         <h4 class="event-card-title">
           <a href="{{ .RelPermalink }}">

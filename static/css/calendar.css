@@ -80,17 +80,18 @@
 .calendar-event {
   display: block;
   margin-bottom: 0.35rem;
-  padding: 0.25rem ;
-  color: var(--color-primary) !important;
+  padding: 0.25rem;
+  color: var(--event-color, var(--color-primary)) !important;
   font-size: 0.65rem;
   line-height: 1.2;
   text-decoration: none;
-  border: 1px solid var(--color-accent);
+  border: 1px solid var(--event-color, var(--color-accent));
   border-radius: 5px;
 }
 
 .calendar-event:hover {
   color: white !important;
+  background: var(--event-color, var(--color-primary));
 }
 
 @media screen and (max-width: 59.99em) {
@@ -106,5 +107,18 @@
   .calendar-day {
     min-height: 6rem;
     padding: 0.4rem;
+  }
+
+  .calendar-event {
+    width: 0.8rem;
+    height: 0.8rem;
+    margin-bottom: 0.35rem;
+    padding: 0;
+    border: 0;
+    border-radius: 999px;
+    background: var(--event-color, var(--color-primary));
+    overflow: hidden;
+    text-indent: -9999px;
+    white-space: nowrap;
   }
 }

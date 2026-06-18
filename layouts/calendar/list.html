@@ -24,7 +24,8 @@
       "title": {{ $event.Title }},
       "url": {{ $event.RelPermalink }},
       "start": {{ (time $event.Params.event_start).Format "2006-01-02" }},
-      "end": {{ (time ($event.Params.event_end | default $event.Params.event_start)).Format "2006-01-02" }}
+      "end": {{ (time ($event.Params.event_end | default $event.Params.event_start)).Format "2006-01-02" }},
+      "color": {{ $event.Params.event_color | default "#357edd" }}
     }
   {{- end -}}
 ]
