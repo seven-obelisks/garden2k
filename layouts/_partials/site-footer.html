@@ -1,24 +1,25 @@
-<footer class="{{ .Site.Params.background_color_class }}" role="contentinfo">
+<footer class="site-footer" role="contentinfo">
   <div class="footer-shell">
+
     <div class="footer-inner">
 
-      <a class="copyright no-underline" href="{{ .Site.Home.Permalink }}">
+      <a class="copyright" href="{{ .Site.Home.Permalink }}">
         &copy;
         {{ with .Site.Copyright | compare.Default .Site.Title }}
           {{ . | safe.HTML }} {{ now.Format "2006" }}
         {{ end }}
       </a>
 
-      <div>
+      <div class="footer-social">
         {{ partials.IncludeCached "social/follow.html" . }}
       </div>
 
       {{ if .Site.Menus.footer }}
         <nav class="footer-menu">
-          <ul class="footer-menu-list list pl0 ma0">
+          <ul class="footer-menu-list">
             {{ range .Site.Menus.footer }}
               <li>
-                <a class="footer-link no-underline" href="{{ .URL }}">
+                <a class="footer-link" href="{{ .URL }}">
                   {{ .Name }}
                 </a>
               </li>
@@ -28,5 +29,6 @@
       {{ end }}
 
     </div>
+
   </div>
 </footer>

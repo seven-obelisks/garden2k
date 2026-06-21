@@ -49,6 +49,10 @@
   margin-bottom: 2rem;
 }
 
+.banner-text{
+  color: var(--color-bg);
+}
+
 /* SLIDER CONTROLS */
 
 .slider-control {

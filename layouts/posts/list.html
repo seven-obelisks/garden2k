@@ -11,11 +11,15 @@
 
   {{ if .Pages }}
     <ul class="content-list">
-      {{ range .Pages.ByWeight }}
+      {{ range .Pages.ByDate.Reverse }}
         <li class="content-card">
           <h2 class="content-card-title">
             <a href="{{ .RelPermalink }}">{{ .Title }}</a>
           </h2>
+
+          <p class="post-list-date">
+            {{ .Date.Format "January 2, 2006" }}
+          </p>
 
           {{ with .Summary }}
             <div class="content-summary">

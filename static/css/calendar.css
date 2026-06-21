@@ -67,8 +67,7 @@
 }
 
 .calendar-day.empty {
-  background: var(--color-surface);
-  opacity: 0.45;
+  background: var(--color-bg);
 }
 
 .calendar-day-number {

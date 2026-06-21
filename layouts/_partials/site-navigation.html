@@ -1,8 +1,7 @@
 <nav class="nav-shell" role="navigation">
-  <div class="navbar flex-l center items-center justify-between">
+  <div class="navbar">
 
-    <a href="{{ .Site.Home.RelPermalink }}"
-       class="site-logo no-underline">
+    <a href="{{ .Site.Home.RelPermalink }}" class="site-logo">
       {{ with .Site.Params.site_logo }}
         <img src="{{ urls.RelURL . }}" class="site-logo-img" alt="{{ $.Site.Title }}" />
       {{ else }}
@@ -10,19 +9,33 @@
       {{ end }}
     </a>
 
-    <div class="flex-l items-center">
+    <div class="nav-menu">
 
       {{ partials.Include "i18nlist.html" . }}
 
       {{ if .Site.Menus.main }}
-        <ul class="pl0 flex items-center menu-list">
+        <ul class="menu-list">
           {{ range .Site.Menus.main }}
-            <li class="list f5 f4-ns fw4">
-              <a class="hover-white white-90 no-underline"
+            <li class="menu-item{{ if .HasChildren }} has-children{{ end }}">
+              <a class="menu-link"
                  href="{{ .URL }}"
                  title="{{ lang.Translate "pageTitle" . }}">
                 {{ .Name }}
               </a>
+
+              {{ if .HasChildren }}
+                <ul class="submenu-list">
+                  {{ range .Children }}
+                    <li class="submenu-item">
+                      <a class="submenu-link"
+                         href="{{ .URL }}"
+                         title="{{ lang.Translate "pageTitle" . }}">
+                        {{ .Name }}
+                      </a>
+                    </li>
+                  {{ end }}
+                </ul>
+              {{ end }}
             </li>
           {{ end }}
         </ul>

@@ -10,7 +10,7 @@ title = 'Garden2k'
   site_logo = "/images/logo.png"
 
 [params.ananke]
-  custom_css = ["css/styles.css", "css/overrides.css", "css/calendar.css", "css/slider.css"]
+  custom_css = ["css/styles.css", "css/overrides.css", "css/calendar.css", "css/slider.css", "css/mobile.css", "css/typography.css"]
 
 [mediaTypes]
   [mediaTypes."text/calendar"]
@@ -26,33 +26,51 @@ title = 'Garden2k'
 [outputs]
   page = ["HTML"]
 
-[[menus.main]]
+[[menu.main]]
   name = "Events"
   pageRef = "/events"
   weight = 10
 
-[[menus.main]]
+[[menu.main]]
   name = "Calendar"
   pageRef = "/calendar"
   weight = 20
 
-[[menus.main]]
-  name = "Posts"
-  pageRef = "/posts"
+[[menu.main]]
+  identifier = "examples"
+  name = "Example Pages"
+  pageRef = "/examples"
   weight = 30
 
-[[menus.main]]
-  name = "GitHub"
-  url = "https://github.com/garden2k"
+[[menu.main]]
+  name = "Photo Page Example"
+  parent = "examples"
+  pageRef = "/examples/photo-page"
+  weight = 10
+
+[[menu.main]]
+  name = "Mixed Content Page Example"
+  parent = "examples"
+  pageRef = "/examples/mixed-page"
+  weight = 20
+
+[[menu.main]]
+  name = "Blog"
+  pageRef = "/posts"
   weight = 40
 
+[[menu.main]]
+  name = "GitHub"
+  url = "https://github.com/garden2k"
+  weight = 50
 
-[[menus.footer]]
+
+[[menu.footer]]
   name = "About"
   pageRef = "/about"
   weight = 10
 
-[[menus.footer]]
+[[menu.footer]]
   name = "Login"
   url = "https://garden2k.com/admin"
   weight = 20

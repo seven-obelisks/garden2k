@@ -1,9 +1,10 @@
 <div class="cf">
   {{ range first 5 (where .Site.RegularPages "Section" "!=" "events") }}
     <article class="recent_post w-100">
-        <a class="title_link" href="{{ .RelPermalink }}">
+        <h3><a href="{{ .RelPermalink }}">
           {{ .Title }}
         </a>
+        </h3>
     </article>
   {{ end }}
 </div>
