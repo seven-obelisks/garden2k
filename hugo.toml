@@ -10,7 +10,7 @@ title = 'Garden2k'
   site_logo = "/images/logo.png"
 
 [params.ananke]
-  custom_css = ["css/styles.css", "css/overrides.css", "css/calendar.css", "css/slider.css", "css/mobile.css", "css/typography.css"]
+  custom_css = ["css/styles.css", "css/overrides.css", "css/calendar.css", "css/slider.css", "css/mobile.css", "css/typography.css", "css/events.css"]
 
 [mediaTypes]
   [mediaTypes."text/calendar"]

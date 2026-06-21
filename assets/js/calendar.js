@@ -70,7 +70,6 @@ function renderCalendar() {
 
       if (startNum > dateNum) break;
 
-      // ISO date strings can be compared as YYYYMMDD numbers across month/year boundaries.
       if (toNum(event.end) >= dateNum) {
         const link = document.createElement("a");
         link.className = "calendar-event";

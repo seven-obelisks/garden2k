@@ -10,11 +10,14 @@ font-family: "IBM Plex Sans", sans-serif;
 
 }
 
+h1,h2,h3,h4,h5{
+    font-weight:700;
+}
+
 h2{
     font-weight: bold !important;
 }
 
 h3{
     font-size: 1.25rem !important;
-    margin-bottom: 0.25rem !important;
 }
