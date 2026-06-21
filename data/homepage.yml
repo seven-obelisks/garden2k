@@ -4,8 +4,8 @@ banners:
     button_text: View Events
     button_url: /events/
     image: /uploads/banner-1.jpg
-  - title: Workshops and More
-    text: Find practical local events.
-    button_text: Browse Calendar
-    button_url: /events/
+  - title: Calendar View and More
+    text: Publicize local events for free.
+    button_text: View Calendar
+    button_url: /calendar/
     image: /uploads/banner-2.jpg
