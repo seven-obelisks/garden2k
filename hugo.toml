@@ -37,33 +37,14 @@ title = 'Garden2k'
   weight = 20
 
 [[menu.main]]
-  identifier = "examples"
-  name = "Example Pages"
-  pageRef = "/examples"
-  weight = 30
-
-[[menu.main]]
-  name = "Photo Page Example"
-  parent = "examples"
-  pageRef = "/examples/photo-page"
-  weight = 10
-
-[[menu.main]]
-  name = "Mixed Content Page Example"
-  parent = "examples"
-  pageRef = "/examples/mixed-page"
-  weight = 20
-
-[[menu.main]]
   name = "Blog"
   pageRef = "/posts"
-  weight = 40
+  weight = 30
 
 [[menu.main]]
   name = "GitHub"
   url = "https://github.com/garden2k"
-  weight = 50
-
+  weight = 40
 
 [[menu.footer]]
   name = "About"

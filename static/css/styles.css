@@ -2,6 +2,7 @@
   --color-primary: #357edd;
   --color-accent: #357edd;
   --color-bg: rgb(1, 11, 25);
+  --color-footer: rgb(0, 7, 16);
   --color-text: #f4f4f4;
   --color-darktext: #dadada;
   --color-surface: rgb(1, 11, 25);
@@ -213,7 +214,7 @@ h3{
 .site-footer {
   padding-top: 2rem;
   padding-bottom: 10rem;
-  background: var(--color-surface);
+  background: var(--color-footer);
 }
 
 .footer-inner {
