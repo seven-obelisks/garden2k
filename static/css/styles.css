@@ -6,7 +6,8 @@
   --color-darktext: #dadada;
   --color-surface: rgb(1, 11, 25);
   --color-border: rgb(4, 31, 68);
-  --color-overlay: rgba(0, 0, 0, 0.45);
+  --color-overlay: rgba(1, 11, 25, 0.75);
+  --color-overlayborder: rgba(1, 11, 25, 0.5);
 
   --radius-sm: 0.25rem;
   --radius-md: 0.5rem;
@@ -35,6 +36,40 @@ body {
 main {
   flex: 1;
 }
+
+body,
+body * {
+    color: var(--color-text);
+    font-family: "IBM Plex Mono", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+h1,h2,h3,h4,h5{
+    font-weight:700 !important;
+}
+
+h2{
+    font-weight: bold !important;
+    color: var(--color-accent)
+}
+
+h3{
+    font-size: 1.25rem !important;
+    margin-top:15px;
+}
+
+.post-content p{
+    line-height: calc(1ex / 0.36);
+    margin: calc(1ex / 0.36) 0;
+    text-align: justify;
+    hyphens: none;
+}
+
+.post-content ul{
+    line-height: 1.5rem;
+}
+
 
 /* LAYOUT */
 
