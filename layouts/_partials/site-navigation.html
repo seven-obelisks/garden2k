@@ -9,7 +9,25 @@
       {{ end }}
     </a>
 
-    <div class="nav-menu">
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-label="Open menu"
+      aria-expanded="false"
+      aria-controls="site-menu">
+      <span class="menu-toggle-bar"></span>
+      <span class="menu-toggle-bar"></span>
+      <span class="menu-toggle-bar"></span>
+    </button>
+
+    <div id="site-menu" class="nav-menu" aria-hidden="true">
+
+      <button
+        class="menu-close"
+        type="button"
+        aria-label="Close menu">
+        ×
+      </button>
 
       {{ partials.Include "i18nlist.html" . }}
 

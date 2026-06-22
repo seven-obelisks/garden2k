@@ -68,7 +68,6 @@
   justify-self: end;
   width: auto;
   min-width: 0;
-  padding-top: 0.6rem;
 }
 
 .event-card-image-link {
@@ -93,9 +92,7 @@
 }
 
 .event-details {
-  padding: 0.25rem 1rem;
-  border: 1px solid var(--color-accent);
-  border-radius: var(--radius-sm);
+  padding: 0.25rem;
 }
 
 .event-organizer {
@@ -162,7 +159,7 @@
 }
 
 .event-content {
-  margin-top: 1.5rem;
+  padding:.25rem;
 }
 
 .event-single-actions {

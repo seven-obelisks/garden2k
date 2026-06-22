@@ -12,35 +12,104 @@
 
 /* MOBILE */
 
+.menu-toggle,
+.menu-close {
+  display: none;
+}
+
 @media screen and (max-width: 59.99em) {
-  .navbar,
-  .nav-menu {
+  .navbar {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
+    justify-content: space-between;
+  }
+
+  .menu-toggle {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.3rem;
+    width: 2.75rem;
+    height: 2.75rem;
+    padding: 0;
+    border: 0px;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  .menu-toggle-bar {
+    display: block;
+    width: 1.5rem;
+    height: 2px;
+    margin: 0 auto;
+    background: var(--color-text);
   }
 
   .nav-menu {
-    width: 100%;
-    margin-top: 1rem;
+    position: fixed;
+    inset: 0 0 0 auto;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: min(22rem, 85vw);
+    min-height: 100vh;
+    margin-top: 0;
+    padding: 5rem 2rem 2rem;
+    background: var(--color-surface);
+    box-shadow: -1rem 0 2rem rgba(0, 0, 0, 0.35);
+    transform: translateX(100%);
+    transition: transform 180ms ease;
+  }
+
+  .nav-menu.is-open {
+    transform: translateX(0);
+  }
+
+  .menu-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    border: 1px solid var(--color-primary);
+    border-radius: 0.25rem;
+    background: transparent;
+    color: var(--color-text);
+    font-size: 2rem;
+    line-height: 1;
+    cursor: pointer;
   }
 
   .menu-list {
     display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    justify-content: center;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
     width: 100%;
   }
 
   .menu-item {
-    text-align: center;
+    width: 100%;
+    text-align: left;
+  }
+
+  .menu-link {
+    display: block;
+    width: 100%;
+    padding: .75rem 0;
   }
 
   .submenu-list {
-    left: 50%;
-    text-align: center;
-    transform: translateX(-50%);
+    position: static;
+    display: block;
+    padding-left: 1rem;
+    text-align: left;
+    transform: none;
   }
 
   .home-next-event-layout,
@@ -56,7 +125,6 @@
   .event-actions {
     width: 100%;
   }
-
 
   .event-card .event-actions {
     display: flex !important;
