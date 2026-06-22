@@ -106,3 +106,14 @@ h3{
     margin-top:15px;
 }
 
+.post-content p{
+    line-height: calc(1ex / 0.36);
+    margin: calc(1ex / 0.36) 0;
+    text-align: justify;
+    hyphens: auto;
+}
+
+.post-content ul{
+    line-height: 1.5rem;
+}
+
