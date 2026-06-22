@@ -1,10 +1,10 @@
 :root {
   --color-primary: #357edd;
   --color-accent: #357edd;
-  --color-bg: #f4f4f4;
-  --color-text: #111;
-  --color-surface: rgb(5, 30, 63);
-  --color-border: #9e9e9e;
+  --color-bg: rgb(1, 11, 25);
+  --color-text: #f4f4f4;
+  --color-surface: rgb(1, 11, 25);
+  --color-border: rgb(4, 31, 68);
   --color-overlay: rgba(0, 0, 0, 0.45);
 
   --radius-sm: 0.25rem;
@@ -49,7 +49,6 @@ main {
 }
 
 .site-shell {
-  padding-top: 2rem;
   padding-bottom: 1rem;
 }
 
@@ -64,7 +63,12 @@ main {
   max-width: 60rem !important;
 }
 
-.header-shell,
+.header-shell {
+  padding-top: .1rem;
+  padding-bottom: .1rem;
+}
+
+
 .footer-shell {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
@@ -108,7 +112,7 @@ main {
 }
 
 .site-logo-img {
-  max-width: 175px;
+  max-width: 150px;
   height: auto;
 }
 
@@ -128,7 +132,7 @@ main {
 
 .menu-list {
   display: flex;
-  gap: 2rem;
+  gap: 1.5rem;
   align-items: center;
 }
 
@@ -138,8 +142,8 @@ main {
 
 .menu-link,
 .submenu-link {
-  color: var(--color-bg) !important;
-  font-size: 1rem;
+  color: var(--color-text) !important;
+  font-size: .85rem;
   text-decoration: none;
 }
 
@@ -184,6 +188,7 @@ main {
   justify-content: space-between;
   gap: 1rem;
   padding-bottom: 2rem;
+  font-size: .75rem;
 }
 
 .footer-menu-list {
@@ -220,12 +225,12 @@ main {
 /* LINKS */
 
 a {
-  color: var(--color-accent) !important;
+  color: var(--color-text) !important;
   text-decoration: none;
 }
 
 a:hover {
-  color: white !important;
+  color: var(--color-accent) !important;
 }
 
 /* BUTTONS */
@@ -235,25 +240,26 @@ button,
 .slider_button,
 .event_button {
   display: inline-block;
-  padding: 0.5rem 1rem;
+  padding: 0.2rem .4rem;
   border-radius: var(--radius-sm);
   text-decoration: none;
+  text-transform: uppercase;
 }
 
 .slider_button,
 .event_button {
   background-color: var(--event-color, var(--color-primary));
   color: white !important;
-  font-size: 1rem !important;
+  font-size: .8rem !important;
 }
 
 .event_button {
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 
 .event_button:hover,
 .slider_button:hover {
-  background-color: white;
+  background-color: var(--color-bg);
   color: var(--color-accent) !important;
 }
 

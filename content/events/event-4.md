@@ -7,7 +7,8 @@ event_end: 2026-07-11T01:20:00.000-05:00
 location: The Greenest Garden
 event_url: https://garden.com
 event_organizer: Garden Club 2
-event_color: green
+event_color: '#0ca19f'
+image: /uploads/garden.png
 ---
 
-This is the descriptive text about the event.
+This is the descriptive text about the event. You can provide context about the event or important details for guests here.

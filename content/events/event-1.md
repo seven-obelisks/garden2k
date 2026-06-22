@@ -7,7 +7,8 @@ event_end: 2026-10-03T01:20:00.000-05:00
 location: The Big Park
 event_url: https://park.com
 event_organizer: Park Walkers United
-event_color: deeppink
+event_color: '#800080'
+image: /uploads/forest.jpg
 ---
 
-This is the descriptive text about the event.
+This is the descriptive text about the event. You can provide context about the event or important details for guests here.

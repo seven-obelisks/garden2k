@@ -1,4 +1,4 @@
 ---
-title: "Posts"
+title: "Blog Posts"
 date: 2026-06-06T01:20:00.000-05:00
 ---

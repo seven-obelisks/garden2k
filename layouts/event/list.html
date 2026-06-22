@@ -24,6 +24,12 @@
           </h3>
 
           <div class="event-card-layout">
+            {{ with .Params.image }}
+              <a class="event-card-image-link" href="{{ $.RelPermalink }}">
+                <img class="event-card-image" src="{{ . | relURL }}" alt="">
+              </a>
+            {{ end }}
+
             <div class="event-card-info">
               {{ with .Params.event_organizer }}
                 <p class="event-organizer">
@@ -101,6 +107,12 @@
         </h3>
 
         <div class="event-card-layout">
+          {{ with .Params.image }}
+            <a class="event-card-image-link" href="{{ $.RelPermalink }}">
+              <img class="event-card-image" src="{{ . | relURL }}" alt="">
+            </a>
+          {{ end }}
+
           <div class="event-card-info">
             {{ with .Params.event_start }}
               <p>

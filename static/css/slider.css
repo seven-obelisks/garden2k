@@ -45,12 +45,11 @@
 }
 
 .home-slider p {
-  margin-bottom: 2rem;
   font-size: 1rem;
 }
 
 .banner-text {
-  color: var(--color-bg);
+  color: var(--color-text);
 }
 
 /* SLIDER CONTROLS */

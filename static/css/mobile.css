@@ -45,20 +45,39 @@
 
   .home-next-event-layout,
   .event-card-layout {
-    display: flex;
+    display: flex !important;
     flex-direction: column;
   }
 
   .home-next-event-info,
   .home-next-event-actions,
+  .event-card-image-link,
   .event-card-info,
   .event-actions {
     width: 100%;
   }
 
-  .home-next-event-actions,
-  .event-actions {
-    margin-top: 1rem;
+
+  .event-card .event-actions {
+    display: flex !important;
+    flex-direction: column;
+    align-items: stretch !important;
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  .event-card .event-actions > .event_button {
+    display: block !important;
+    box-sizing: border-box;
+    width: 100% !important;
+    min-width: 100% !important;
+    max-width: 100% !important;
+    text-align: center;
+  }
+
+  .event-card-image {
+    width: 100%;
+    aspect-ratio: 16 / 9;
   }
 
   .footer-inner {
