@@ -1,5 +1,5 @@
 banners:
-  - title: An Events-Focused Hugo Template
+  - title: Hugo Template for Events
     text: Share your events with the world.
     button_text: View Events
     button_url: /events/

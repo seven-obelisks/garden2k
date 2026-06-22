@@ -19,6 +19,7 @@
         <li class="event-card" style="--event-color: {{ $eventColor }};">
           <h3 class="event-card-title">
             <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            <span class="event-card-color-dot" aria-hidden="true"></span>
           </h3>
 
           <div class="event-card-layout">
@@ -102,6 +103,7 @@
       <li class="event-card event-card-past" style="--event-color: {{ $eventColor }};">
         <h3 class="event-card-title">
           <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+          <span class="event-card-color-dot" aria-hidden="true"></span>
         </h3>
 
         <div class="event-card-layout">

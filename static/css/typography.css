@@ -1,10 +1,10 @@
 body,
 body * {
-  color: var(--color-text);
-font-family: "IBM Plex Mono", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
+    color: var(--color-text);
+    font-family: "IBM Plex Mono", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
 }
 
 .ibm-plex-mono-thin {
@@ -110,7 +110,7 @@ h3{
     line-height: calc(1ex / 0.36);
     margin: calc(1ex / 0.36) 0;
     text-align: justify;
-    hyphens: auto;
+    hyphens: none;
 }
 
 .post-content ul{

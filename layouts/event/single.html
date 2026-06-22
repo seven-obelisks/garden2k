@@ -9,7 +9,8 @@
     <p class="event-label">Event</p>
 
     <h1 class="event-single-title">
-      {{ .Title }}
+      <span>{{ .Title }}</span>
+      <span class="event-card-color-dot" aria-hidden="true"></span>
     </h1>
 
     {{ with .Params.image }}
