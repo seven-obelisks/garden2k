@@ -14,9 +14,10 @@
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
+  padding-bottom: 1rem;
 }
 
-.calendar-header h1 {
+.calendar-header h2 {
   margin: 0;
   color: var(--color-primary);
   text-align: center;
@@ -94,8 +95,25 @@
 }
 
 @media screen and (max-width: 59.99em) {
+
   .calendar-header {
-    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+  }
+
+  #calendar-title {
+    flex: 1;
+    margin: 0;
+    text-align: center;
+    font-size: 1.1rem;
+  }
+
+  #calendar-prev,
+  #calendar-next {
+    flex-shrink: 0;
+    white-space: nowrap;
   }
 
   .calendar-grid {
@@ -120,4 +138,5 @@
     text-indent: -9999px;
     white-space: nowrap;
   }
+
 }
