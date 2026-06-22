@@ -7,7 +7,7 @@ event_end: 2026-09-12T01:20:00.000-05:00
 location: A Very Deep Well
 event_url: https://well.com
 event_organizer: Well Divers Anonymous
-event_color: '#031b90'
+event_color: '#4527A0' 
 image: /uploads/well.webp
 ---
 

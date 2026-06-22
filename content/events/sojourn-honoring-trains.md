@@ -8,7 +8,7 @@ location: Under the Bridge
 event_organizer: Train Lovers of America
 event_url: trains.com
 image: /uploads/638485929621067445.png
-event_color: "#fc03cf"
+event_color: '#880E4F'
 ---
 
 This is the descriptive text about the event. You can provide context about the event or important details for guests here.

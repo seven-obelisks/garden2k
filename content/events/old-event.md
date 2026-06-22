@@ -7,7 +7,7 @@ event_end: 2026-05-03T01:20:00.000-05:00
 location: The Past
 event_url: https://time.com
 event_organizer: Time Travelers Anonymous
-event_color: orange
+event_color: '#6EC6FF'
 image: /uploads/old.png
 ---
 

@@ -7,7 +7,7 @@ event_end: 2026-11-11T01:20:00.000-05:00
 location: The Tallest Building
 event_url: https://searstower.com
 event_organizer: Big Building Society
-event_color: '#8c2500'
+event_color: '#357EDD'
 image: /uploads/building.jpg
 ---
 

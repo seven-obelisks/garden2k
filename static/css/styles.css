@@ -3,6 +3,7 @@
   --color-accent: #357edd;
   --color-bg: rgb(1, 11, 25);
   --color-text: #f4f4f4;
+  --color-darktext: #dadada;
   --color-surface: rgb(1, 11, 25);
   --color-border: rgb(4, 31, 68);
   --color-overlay: rgba(0, 0, 0, 0.45);
@@ -239,18 +240,12 @@ button,
   text-transform: uppercase;
 }
 
-.slider_button,
-.event_button {
-  background-color: var(--event-color, var(--color-primary));
+.slider_button{
+  background-color: var(--color-primary);
   color: white !important;
   font-size: .8rem !important;
 }
 
-.event_button {
-  margin-bottom: 10px;
-}
-
-.event_button:hover,
 .slider_button:hover {
   background-color: var(--color-bg);
   color: var(--color-accent) !important;
@@ -289,10 +284,21 @@ button,
 /* RECENT POSTS */
 
 .recent-post {
-  padding-bottom: 0rem;
-  border-bottom: 1px solid var(--color-border);
+  padding: 0rem 1rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-accent);
+  background-color: color-mix(
+    in srgb,
+    var(--color-accent) 75%,
+    transparent
+  );
+  margin-bottom: .5rem;
 }
 
 .recent-post-header{
   margin: 1rem 0 !important
+}
+
+.recent-post a:hover{
+  color: var(--color-bg) !important;
 }

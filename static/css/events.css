@@ -169,3 +169,24 @@
 .event-single-actions .event_button {
   margin-right: 0.5rem;
 }
+
+.event_button {
+  background-color: color-mix(
+    in srgb,
+    var(--event-color, transparent) 75%,
+    transparent
+  );
+  border:1px solid var(--event-color);
+  color: white !important;
+  font-size: .8rem !important;
+  margin-bottom:.75rem;
+}
+
+.event_button:hover {
+  background-color: color-mix(
+    in srgb,
+    var(--event-color, transparent) 15%,
+    transparent
+  );
+  color: var(--color-darktext) !important;
+}

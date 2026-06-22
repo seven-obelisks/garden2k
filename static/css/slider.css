@@ -5,7 +5,12 @@
   min-height: 400px;
   overflow: hidden;
   background: var(--color-bg);
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-sm);
+  border: 1px solid color-mix(
+    in srgb,
+    var(--color-primary) 25%,
+    transparent
+  );
 }
 
 .home-slider .slide {
@@ -33,7 +38,7 @@
 .home-slider .slide-content {
   max-width: 800px;
   padding: 2rem;
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-sm);
   background-color: var(--color-overlay);
 }
 
