@@ -80,10 +80,16 @@ h3 {
 
 .header-shell,
 .footer-shell,
-.site-shell,
 .site-container {
   width: 100%;
   max-width: 80rem;
+  margin: 0 auto;
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+.site-shell{
+  width: 100%;
   margin: 0 auto;
   padding-right: 1rem;
   padding-left: 1rem;
@@ -286,6 +292,7 @@ h3 {
 
 .page_title {
   color: var(--color-primary);
+  margin-top: 0px !important;
 }
 
 .post-list-date {
