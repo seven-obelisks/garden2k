@@ -8,6 +8,7 @@ title = 'Garden2k'
     
 [params]
   site_logo = "/images/logo.png"
+  favicon = "/favicon.ico"
   nav_button_text = "Download"
   nav_button_url = "https://github.com/garden2k"
 
