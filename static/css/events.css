@@ -123,6 +123,7 @@
 /* EVENT SINGLE */
 
 .event-single {
+  margin-top: 2rem;
   padding-bottom: 1rem;
 }
 
@@ -186,4 +187,25 @@
     transparent
   );
   color: var(--color-darktext) !important;
+}
+
+.clickable-card {
+  cursor: pointer;
+}
+
+.clickable-card:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+.clickable-card,
+.clickable-card * {
+  cursor: pointer;
+}
+
+.clickable-card input,
+.clickable-card select,
+.clickable-card textarea,
+.clickable-card label {
+  cursor: auto;
 }

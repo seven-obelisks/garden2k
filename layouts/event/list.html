@@ -14,9 +14,16 @@
   <ul class="events-list">
     {{ range sort .Pages "Params.event_start" "asc" }}
       {{ if ge (time .Params.event_end) $now }}
+        {{ $event := . }}
         {{ $eventColor := .Params.event_color | default "transparent" }}
 
-        <li class="event-card" style="--event-color: {{ $eventColor }};">
+        <li
+          class="event-card clickable-card"
+          data-href="{{ .RelPermalink }}"
+          role="link"
+          tabindex="0"
+          style="--event-color: {{ $eventColor }};"
+        >
           <h3 class="event-card-title">
             <a href="{{ .RelPermalink }}">{{ .Title }}</a>
             <span class="event-card-color-dot" aria-hidden="true"></span>
@@ -24,7 +31,7 @@
 
           <div class="event-card-layout">
             {{ with .Params.image }}
-              <a class="event-card-image-link" href="{{ $.RelPermalink }}">
+              <a class="event-card-image-link" href="{{ $event.RelPermalink }}">
                 <img class="event-card-image" src="{{ . | relURL }}" alt="">
               </a>
             {{ end }}
@@ -98,9 +105,16 @@
 
   <ul class="events-list events-list-past">
     {{ range first 3 (sort $past "Params.event_start" "desc") }}
+      {{ $event := . }}
       {{ $eventColor := .Params.event_color | default "transparent" }}
 
-      <li class="event-card event-card-past" style="--event-color: {{ $eventColor }};">
+      <li
+        class="event-card event-card-past clickable-card"
+        data-href="{{ .RelPermalink }}"
+        role="link"
+        tabindex="0"
+        style="--event-color: {{ $eventColor }};"
+      >
         <h3 class="event-card-title">
           <a href="{{ .RelPermalink }}">{{ .Title }}</a>
           <span class="event-card-color-dot" aria-hidden="true"></span>
@@ -108,7 +122,7 @@
 
         <div class="event-card-layout">
           {{ with .Params.image }}
-            <a class="event-card-image-link" href="{{ $.RelPermalink }}">
+            <a class="event-card-image-link" href="{{ $event.RelPermalink }}">
               <img class="event-card-image" src="{{ . | relURL }}" alt="">
             </a>
           {{ end }}
@@ -153,4 +167,9 @@
   </ul>
 
 </main>
+
+{{ $cardJS := resources.Get "js/card.js" }}
+{{ if $cardJS }}
+  <script src="{{ $cardJS.RelPermalink }}"></script>
+{{ end }}
 {{ end }}

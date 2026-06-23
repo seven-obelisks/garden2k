@@ -152,5 +152,16 @@
     flex-direction: column;
   }
 
+}
 
+@media screen and (max-width: 30em) {
+  .recent-post-link {
+    grid-template-columns: 1fr;
+    gap: 0.35rem;
+  }
+
+  .recent-post-date {
+    justify-self: start;
+    white-space: normal;
+  }
 }

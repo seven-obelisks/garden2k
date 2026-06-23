@@ -209,6 +209,15 @@ h3{
   margin-top: 0.5rem;
 }
 
+.nav-menu .menu-link.is-current,
+.nav-menu .submenu-link.is-current,
+.nav-menu .menu-item.is-current > .menu-link,
+.nav-menu .submenu-item.is-current > .submenu-link {
+  color: var(--color-primary) !important;
+  text-decoration: underline;
+  text-underline-offset: 0.5em;
+}
+
 /* FOOTER */
 
 .site-footer {
@@ -320,21 +329,38 @@ button,
 /* RECENT POSTS */
 
 .recent-post {
-  padding: 0rem 1rem;
-  border-radius: var(--radius-sm);
+  margin-bottom: 0.5rem;
+}
+
+.recent-post-link {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  padding: 1rem;
   border: 1px solid var(--color-accent);
+  border-radius: var(--radius-sm);
   background-color: color-mix(
     in srgb,
     var(--color-accent) 75%,
     transparent
   );
-  margin-bottom: .5rem;
+  text-decoration: none;
 }
 
-.recent-post-header{
-  margin: 1rem 0 !important
+.recent-post-title {
+  min-width: 0;
 }
 
-.recent-post a:hover{
+.recent-post-date {
+  justify-self: end;
+  white-space: nowrap;
+  font-size: 0.875rem;
+}
+
+.recent-post-link:hover,
+.recent-post-link:hover .recent-post-title,
+.recent-post-link:hover .recent-post-date {
   color: var(--color-bg) !important;
 }

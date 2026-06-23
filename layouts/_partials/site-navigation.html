@@ -1,3 +1,6 @@
+{{ $currentPage := . }}
+{{ $currentURL := .RelPermalink }}
+
 <nav class="nav-shell" role="navigation">
   <div class="navbar">
 
@@ -34,20 +37,36 @@
       {{ if .Site.Menus.main }}
         <ul class="menu-list">
           {{ range .Site.Menus.main }}
-            <li class="menu-item{{ if .HasChildren }} has-children{{ end }}">
-              <a class="menu-link"
-                 href="{{ .URL }}"
-                 title="{{ lang.Translate "pageTitle" . }}">
+            {{ $menuURL := .URL | relLangURL }}
+            {{ $isExact := eq $currentURL $menuURL }}
+            {{ $isParent := and (ne $menuURL "/") (hasPrefix $currentURL $menuURL) }}
+            {{ $isCurrent := or $isExact $isParent ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }}
+
+            <li class="menu-item{{ if .HasChildren }} has-children{{ end }}{{ if $isCurrent }} is-current{{ end }}">
+              <a
+                class="menu-link{{ if $isCurrent }} is-current{{ end }}"
+                href="{{ .URL }}"
+                title="{{ lang.Translate "pageTitle" . }}"
+                {{ if $isExact }}aria-current="page"{{ end }}
+              >
                 {{ .Name }}
               </a>
 
               {{ if .HasChildren }}
                 <ul class="submenu-list">
                   {{ range .Children }}
-                    <li class="submenu-item">
-                      <a class="submenu-link"
-                         href="{{ .URL }}"
-                         title="{{ lang.Translate "pageTitle" . }}">
+                    {{ $childURL := .URL | relLangURL }}
+                    {{ $isChildExact := eq $currentURL $childURL }}
+                    {{ $isChildParent := and (ne $childURL "/") (hasPrefix $currentURL $childURL) }}
+                    {{ $isChildCurrent := or $isChildExact $isChildParent ($currentPage.IsMenuCurrent "main" .) }}
+
+                    <li class="submenu-item{{ if $isChildCurrent }} is-current{{ end }}">
+                      <a
+                        class="submenu-link{{ if $isChildCurrent }} is-current{{ end }}"
+                        href="{{ .URL }}"
+                        title="{{ lang.Translate "pageTitle" . }}"
+                        {{ if $isChildExact }}aria-current="page"{{ end }}
+                      >
                         {{ .Name }}
                       </a>
                     </li>
@@ -65,3 +84,8 @@
 
   </div>
 </nav>
+
+{{ $mobileMenuJS := resources.Get "js/mobile-menu.js" }}
+{{ if $mobileMenuJS }}
+  <script defer src="{{ $mobileMenuJS.RelPermalink }}"></script>
+{{ end }}

@@ -1,10 +1,15 @@
-<div>
+<div class="recent-posts-list">
   {{ range first 5 (where .Site.RegularPages "Section" "!=" "events") }}
-    <article class="recent-post w-100">
-        <h4 class="recent-post-header"><a href="{{ .RelPermalink }}">
+    <article class="recent-post">
+      <a class="recent-post-link" href="{{ .RelPermalink }}">
+        <span class="recent-post-title">
           {{ .Title }} →
-        </a>
-        </h4>
+        </span>
+
+        <time class="recent-post-date" datetime="{{ .Date.Format "2006-01-02" }}">
+          {{ .Date.Format "Jan 2, 2006" }}
+        </time>
+      </a>
     </article>
   {{ end }}
 </div>
