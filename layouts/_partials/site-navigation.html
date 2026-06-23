@@ -1,5 +1,7 @@
 {{ $currentPage := . }}
 {{ $currentURL := .RelPermalink }}
+{{ $navButtonText := .Site.Params.nav_button_text | default "Button" }}
+{{ $navButtonURL := .Site.Params.nav_button_url }}
 
 <nav class="nav-shell" role="navigation">
   <div class="navbar">
@@ -11,17 +13,6 @@
         {{ .Site.Title }}
       {{ end }}
     </a>
-
-    <button
-      class="menu-toggle"
-      type="button"
-      aria-label="Open menu"
-      aria-expanded="false"
-      aria-controls="site-menu">
-      <span class="menu-toggle-bar"></span>
-      <span class="menu-toggle-bar"></span>
-      <span class="menu-toggle-bar"></span>
-    </button>
 
     <div id="site-menu" class="nav-menu" aria-hidden="true">
 
@@ -78,9 +69,32 @@
         </ul>
       {{ end }}
 
+      {{ with $navButtonURL }}
+        <a class="nav-cta nav-cta-mobile" href="{{ . }}">
+          {{ $navButtonText }}
+        </a>
+      {{ end }}
+
       {{ partials.IncludeCached "social/follow.html" . }}
 
     </div>
+
+    {{ with $navButtonURL }}
+      <a class="nav-cta nav-cta-desktop" href="{{ . }}">
+        {{ $navButtonText }}
+      </a>
+    {{ end }}
+
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-label="Open menu"
+      aria-expanded="false"
+      aria-controls="site-menu">
+      <span class="menu-toggle-bar"></span>
+      <span class="menu-toggle-bar"></span>
+      <span class="menu-toggle-bar"></span>
+    </button>
 
   </div>
 </nav>

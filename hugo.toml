@@ -8,6 +8,8 @@ title = 'Garden2k'
     
 [params]
   site_logo = "/images/logo.png"
+  nav_button_text = "Download"
+  nav_button_url = "https://github.com/garden2k"
 
 [params.ananke]
   custom_css = ["css/styles.css", "css/mobile.css", "css/overrides.css", "css/calendar.css", "css/slider.css", "css/events.css"]
@@ -42,16 +44,11 @@ title = 'Garden2k'
   weight = 30
 
 [[menu.main]]
-  name = "GitHub"
-  url = "https://github.com/garden2k"
-  weight = 40
-
-[[menu.footer]]
   name = "About"
-  pageRef = "/about"
-  weight = 10
+  url = "/about"
+  weight = 40
 
 [[menu.footer]]
   name = "Login"
   url = "https://garden2k.com/admin"
-  weight = 20
+  weight = 10

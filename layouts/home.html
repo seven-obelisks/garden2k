@@ -43,6 +43,8 @@
     {{ with index (sort $upcoming "Params.event_start" "asc") 0 }}
       {{ $event := . }}
       {{ $eventColor := .Params.event_color | default "transparent" }}
+      {{ $eventStart := .Params.event_start }}
+      {{ $eventEnd := .Params.event_end }}
 
       <h2 class="events_h2">Next Upcoming Event</h2>
 
@@ -74,23 +76,22 @@
               </p>
             {{ end }}
 
-            {{ with .Params.event_start }}
-              <p>
-                <span class="event-data"><strong>Starts:</strong></span>
-                {{ time.Format "Monday, Jan 2, 2006, 3:04 PM" . }}
-              </p>
-            {{ end }}
+            {{ if or $eventStart $eventEnd }}
+              <p class="event-meta-line">
+                {{- with $eventStart -}}
+                  {{ time.Format "Monday, Jan 2, 2006, 3:04 PM" . }}
+                {{- end -}}
 
-            {{ with .Params.event_end }}
-              <p>
-                <span class="event-data"><strong>Ends:</strong></span>
-                {{ time.Format "Monday, Jan 2, 2006, 3:04 PM" . }}
+                {{- if and $eventStart $eventEnd }} - {{ end -}}
+
+                {{- with $eventEnd -}}
+                  {{ time.Format "Monday, Jan 2, 2006, 3:04 PM" . }}
+                {{- end -}}
               </p>
             {{ end }}
 
             {{ with .Params.location }}
-              <p>
-                <span class="event-data"><strong>Location:</strong></span>
+              <p class="event-location-line">
                 {{ . }}
               </p>
             {{ end }}

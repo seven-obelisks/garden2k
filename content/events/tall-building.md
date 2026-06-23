@@ -8,7 +8,7 @@ location: The Tallest Building
 event_url: https://searstower.com
 event_organizer: Big Building Society
 event_color: '#357EDD'
-image: /uploads/building.jpg
+image: /uploads/building.png
 ---
 
 This is the descriptive text about the event. You can provide context about the event or important details for guests here.

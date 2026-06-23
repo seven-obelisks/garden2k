@@ -8,7 +8,7 @@ location: The Big Park
 event_url: https://park.com
 event_organizer: Park Walkers United
 event_color: '#0097A7'
-image: /uploads/forest.jpg
+image: /uploads/park.jpeg
 ---
 
-This is the descriptive text about the event. You can provide context about the event or important details for guests here.
+Vestibulum nec diam finibus, euismod nulla ut, pharetra odio. Aliquam volutpat ut tortor in mattis. Maecenas faucibus, justo non faucibus tristique, enim lacus tincidunt diam, et suscipit purus lorem vitae orci. Cras sed tortor id lacus mollis volutpat sed in erat.

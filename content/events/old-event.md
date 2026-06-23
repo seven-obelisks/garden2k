@@ -8,7 +8,7 @@ location: The Past
 event_url: https://time.com
 event_organizer: Time Travelers Anonymous
 event_color: '#6EC6FF'
-image: /uploads/old.png
+image: /uploads/party.png
 ---
 
 This is the descriptive text about the event.

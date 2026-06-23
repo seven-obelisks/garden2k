@@ -8,7 +8,7 @@ location: A Very Deep Well
 event_url: https://well.com
 event_organizer: Well Divers Anonymous
 event_color: '#4527A0' 
-image: /uploads/well.webp
+image: /uploads/well.png
 ---
 
 This is the descriptive text about the event. You can provide context about the event or important details for guests here.
