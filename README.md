@@ -22,6 +22,7 @@ Deployed via CloudFlare Pages' free tier, sites using Garden2k can be run in per
 
 - Hugo Extended
 - Ananke theme
+- hugo-shortcode-gallery
 - GitHub OAuth app
 - Cloudflare Pages
 

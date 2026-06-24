@@ -44,7 +44,6 @@ body * {
   color: var(--color-text);
   font-family: "IBM Plex Mono", sans-serif;
   font-optical-sizing: auto;
-  font-style: normal;
 }
 
 h1,
@@ -346,6 +345,10 @@ button,
   margin-bottom: 2rem;
 }
 
+.section-page{
+  max-width: 60rem;
+}
+
 .content-list {
   margin: 0;
   padding: 0;
@@ -359,7 +362,7 @@ button,
 }
 
 .content-card-title {
-  margin-bottom: 0rem;
+  margin-bottom: 1rem;
 }
 
 .content-card-title a {
