@@ -1,7 +1,9 @@
 ---
 title: "What Merry Little Tales We Tell of Derry's Biggest Whales"
 date: 2026-06-07T01:20:00.000-05:00
-summary: Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+summary: Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+cover_image: "/uploads/derry.jpeg"
+cover_image_alt: "Rainy coastal whaling harbor" 
 ---
 
 Nam tincidunt ex purus, ut sodales eros suscipit at. Donec sed ipsum sit amet urna placerat suscipit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris hendrerit in velit sed molestie. Ut eu placerat magna, at pulvinar ex. Vestibulum ullamcorper est nisi, et mollis erat lobortis ut. Vestibulum facilisis odio non congue iaculis. Mauris gravida mi aliquet, ultricies eros id, volutpat urna. Nunc eu libero sit amet erat placerat lacinia sed id magna. Suspendisse potenti. Nulla et erat eu lacus pellentesque laoreet.

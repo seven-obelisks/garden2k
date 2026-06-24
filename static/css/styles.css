@@ -424,5 +424,4 @@ button,
   max-height: 28rem;
   object-fit: cover;
   border-radius: var(--radius-sm);
-  border: 1px solid var(--color-accent);
 }
