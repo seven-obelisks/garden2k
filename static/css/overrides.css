@@ -1,0 +1,7 @@
+#swipebox-overlay{
+    background: var(--color-bg) !important;
+}
+
+#swipebox-bottom-bar{
+    background: var(--color-surface) !important;
+}
