@@ -45,9 +45,22 @@ title = 'Garden2k'
   weight = 30
 
 [[menu.main]]
-  name = "Examples"
+  name = "Page Examples"
+  identifier = "examples"
   url = "/examples"
   weight = 40
+
+[[menu.main]]
+  name = "Mixed Content Page"
+  url = "/examples/mixed-page"
+  parent = "examples"
+  weight = 10
+
+[[menu.main]]
+  name = "Photo Content Page"
+  url = "/examples/photo-page"
+  parent = "examples"
+  weight = 20
 
 [[menu.main]]
   name = "About"
