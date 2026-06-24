@@ -293,6 +293,11 @@ h3 {
 .page_title {
   color: var(--color-primary);
   margin-top: 0px !important;
+  margin-bottom:2rem;
+}
+
+.events_h2{
+  margin-bottom:2rem;
 }
 
 .post-list-date {
@@ -349,7 +354,6 @@ button,
 
 .content-card {
   margin-bottom: 2rem;
-  padding-bottom: 1rem;
   border-bottom: 1px solid var(--color-border);
 }
 

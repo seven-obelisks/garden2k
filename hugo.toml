@@ -45,9 +45,14 @@ title = 'Garden2k'
   weight = 30
 
 [[menu.main]]
+  name = "Examples"
+  url = "/examples"
+  weight = 40
+
+[[menu.main]]
   name = "About"
   url = "/about"
-  weight = 40
+  weight = 50
 
 [[menu.footer]]
   name = "Login"
