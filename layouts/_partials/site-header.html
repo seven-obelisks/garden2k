@@ -1,26 +1,5 @@
-{{ $featured_image := partials.Include "func/GetFeaturedImage.html" . }}
-
-{{ if $featured_image }}
-  {{ $featured_image_class := site.Params.featured_image_class | compare.Default "cover bg-top" }}
-  {{ $cover_dimming_class := site.Params.cover_dimming_class | compare.Default "" }}
-
-  <header class="site-header {{ $featured_image_class }}"
-          style="background-image: url('{{ $featured_image }}');">
-
-    <div class="{{ $cover_dimming_class }}">
-      <div class="header-shell">
-        {{ partials.Include "site-navigation.html" . }}
-      </div>
-    </div>
-
-  </header>
-
-{{ else }}
-
-  <header class="site-header">
-    <div class="header-shell">
-      {{ partials.Include "site-navigation.html" . }}
-    </div>
-  </header>
-
-{{ end }}
+<header class="site-header">
+  <div class="header-shell">
+    {{ partials.Include "site-navigation.html" . }}
+  </div>
+</header>

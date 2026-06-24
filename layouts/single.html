@@ -62,6 +62,17 @@
       </header>
 
       <div class="post-content">
+
+        {{ if and (eq .Section "posts") .Params.cover_image }}
+          <figure class="post-cover">
+            <img
+              src="{{ .Params.cover_image | relURL }}"
+              alt="{{ with .Params.cover_image_alt }}{{ . }}{{ else }}{{ .Title }}{{ end }}"
+              loading="eager"
+            >
+          </figure>
+        {{ end }}
+
         {{ .Content }}
 
         {{ partials.Include "tags.html" . }}

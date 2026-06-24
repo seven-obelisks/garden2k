@@ -1,17 +1,5 @@
-{{ $featured_image := partials.Include "func/GetFeaturedImage.html" . }}
-
-{{ if $featured_image }}
-  <header class="site-header site-header-featured" style="background-image: url('{{ $featured_image }}');">
-    <div class="site-header-overlay">
-      <div class="header-shell">
-        {{ partials.Include "site-navigation.html" . }}
-      </div>
-    </div>
-  </header>
-{{ else }}
-  <header class="site-header">
-    <div class="header-shell">
-      {{ partials.Include "site-navigation.html" . }}
-    </div>
-  </header>
-{{ end }}
+<header class="site-header">
+  <div class="header-shell">
+    {{ partials.Include "site-navigation.html" . }}
+  </div>
+</header>

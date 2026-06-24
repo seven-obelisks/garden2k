@@ -411,3 +411,18 @@ button,
 .recent-post-link:hover .recent-post-date {
   color: var(--color-bg) !important;
 }
+
+/* POST COVER */
+
+.post-cover {
+  margin: 0 0 2rem;
+}
+
+.post-cover img {
+  display: block;
+  width: 100%;
+  max-height: 28rem;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-accent);
+}
