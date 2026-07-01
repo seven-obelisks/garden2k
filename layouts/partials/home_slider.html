@@ -1,0 +1,29 @@
+{{ with hugo.Data.homepage.banners }}
+  <div class="site-shell">
+    <section class="home-slider" data-slider>
+      {{ range $index, $banner := . }}
+        <div
+          class="slide{{ if eq $index 0 }} is-active{{ end }}"
+          {{ with $banner.image }}style="background-image: url('{{ . }}');"{{ end }}
+        >
+          <div class="slide-content">
+            <h1 class="slider-title">{{ $banner.title }}</h1>
+
+            {{ with $banner.text }}
+              <p class="banner-text">{{ . }}</p>
+            {{ end }}
+
+            {{ if and $banner.button_text $banner.button_url }}
+              <a href="{{ $banner.button_url }}" class="slider_button">
+                {{ $banner.button_text }}
+              </a>
+            {{ end }}
+          </div>
+        </div>
+      {{ end }}
+
+      <button class="slider-control slider-prev" type="button" data-prev aria-label="Previous slide">‹</button>
+      <button class="slider-control slider-next" type="button" data-next aria-label="Next slide">›</button>
+    </section>
+  </div>
+{{ end }}

@@ -1,10 +1,14 @@
 /* EVENTS */
 
+/* Shared list reset */
+
 .events-list {
   margin: 0;
   padding: 0;
   list-style: none;
 }
+
+/* HOMEPAGE EVENT CARD / SHARED EVENT CARD */
 
 .event-card {
   margin-bottom: 10px;
@@ -31,8 +35,8 @@
 }
 
 .event-card-title {
-  font-size:26px !important;
   margin-bottom: 0.25rem;
+  font-size: 26px !important;
 }
 
 .event-single-title {
@@ -65,25 +69,30 @@
 
 .event-card-layout {
   display: grid;
-  grid-template-columns: clamp(240px, 30%, 380px) minmax(0, 1fr) auto;
+  grid-template-columns: clamp(240px, 30%, 380px) minmax(0, 1fr);
   gap: 1.5rem;
   align-items: center;
   padding-top: 0.5rem;
   padding-bottom: 1rem;
 }
 
-
 .event-card-info {
   min-width: 0;
 }
 
 .event-card-info p {
-  margin: 0.5rem 0 !important;
-  font-size: 0.85rem;
+  margin: 0 0 .5rem 0 !important;
+}
+
+.event-meta-line{
+  font-size:.9rem !important;
+}
+
+.event-location-line{
+  font-size:.9rem !important;
 }
 
 .event-organizer {
-  font-size: 0.85rem;
   font-style: italic;
   font-weight: 700;
 }
@@ -93,14 +102,17 @@
   font-weight: 700;
 }
 
+.event-summary{
+  font-size:.7rem !important;
+  line-height:1rem;
+}
+
 .event-actions {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-end;
-  justify-self: end;
-  width: auto;
+  flex-wrap: wrap;
+  align-items: center;
   gap: 0.5rem;
+  margin-top: 1rem;
 }
 
 .event-card-image-link {
@@ -118,10 +130,9 @@
 
 .event-card-image {
   height: auto;
-  max-height:150px;
-  aspect-ratio: 2 / 1;
+  max-height: 250px;
+  aspect-ratio: 1.9 / 1;
 }
-
 
 .event_details .event_url,
 .event_details .event_url:visited,
@@ -135,6 +146,143 @@
 .event_details .event_url:hover,
 .event-card .event_url:hover {
   color: white !important;
+}
+
+/* EVENT LIST PAGE */
+
+.events-list-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media screen and (min-width: 60em) {
+  .events-list-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.event-list-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 1rem;
+  border: 1px solid var(--event-color, transparent);
+  border-radius: var(--radius-sm);
+  background-color: color-mix(
+    in srgb,
+    var(--event-color, transparent) 75%,
+    transparent
+  );
+}
+
+.event-list-card-past {
+  opacity: 0.7;
+}
+
+.event-list-card-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  font-size: 1.35rem !important;
+}
+
+.event-list-card-title a,
+.event-list-card-title a:visited {
+  min-width: 0;
+  color: var(--color-text) !important;
+  font-weight: 700;
+}
+
+.event-list-card-title a:hover {
+  color: var(--event-color, var(--color-primary)) !important;
+}
+
+.event-list-card-color-dot {
+  flex: 0 0 auto;
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+  background: var(--event-color, transparent);
+}
+
+.event-list-card-layout {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.event-list-card-image-link {
+  display: block;
+  width: 100%;
+}
+
+.event-list-card-image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+}
+
+.event-list-card-info {
+  min-width: 0;
+}
+
+.event-list-card-info p {
+  margin: 0.5rem 0 !important;
+}
+
+.event-list-organizer {
+  font-style: italic;
+  font-weight: 700;
+}
+
+.event-list-meta-line,
+.event-list-location-line {
+  font-size: 0.95rem;
+}
+
+.event-list-summary p {
+  margin-bottom: 0;
+  line-height: 1.4;
+}
+
+.event-list-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: auto;
+}
+
+.event-list-button {
+  display: inline-block;
+  padding: 0.2rem 0.4rem;
+  border: 1px solid var(--event-color);
+  border-radius: var(--radius-sm);
+  background-color: color-mix(
+    in srgb,
+    var(--event-color, transparent) 75%,
+    transparent
+  );
+  color: white !important;
+  font-size: 0.8rem !important;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.event-list-button:hover {
+  background-color: color-mix(
+    in srgb,
+    var(--event-color, transparent) 15%,
+    transparent
+  );
+  color: var(--color-darktext) !important;
 }
 
 /* EVENT SINGLE */
@@ -183,6 +331,8 @@
   );
   color: var(--color-darktext) !important;
 }
+
+/* CLICKABLE CARDS */
 
 .clickable-card,
 .clickable-card * {

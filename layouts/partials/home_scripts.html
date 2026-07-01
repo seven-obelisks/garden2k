@@ -1,0 +1,9 @@
+{{ $sliderJS := resources.Get "js/home-slider.js" }}
+{{ if $sliderJS }}
+  <script src="{{ $sliderJS.RelPermalink }}"></script>
+{{ end }}
+
+{{ $cardJS := resources.Get "js/card.js" }}
+{{ if $cardJS }}
+  <script src="{{ $cardJS.RelPermalink }}"></script>
+{{ end }}

@@ -1,6 +1,6 @@
 /* TABLET+ */
 
-@media screen and (min-width: 30em) {
+@media screen and (min-width: 29.99em) {
   .header-shell,
   .footer-shell,
   .site-shell,
@@ -19,7 +19,7 @@
 
 @media screen and (max-width: 59.99em) {
   .post-content p {
-  text-align:left !important;
+    text-align: left !important;
   }
 
   .navbar {
@@ -81,7 +81,7 @@
     min-height: 100vh;
     margin-top: 0;
     padding: 5rem 2rem 2rem;
-    background: var(--color-surface);
+    background: var(--color-bg);
     box-shadow: -1rem 0 2rem rgba(0, 0, 0, 0.35);
     transform: translateX(100%);
     transition: transform 180ms ease;
@@ -136,6 +136,47 @@
     transform: none;
   }
 
+  /* EVENT LIST PAGE MOBILE */
+
+  .events-list-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .event-list-card {
+    width: 100%;
+  }
+
+  .event-list-card-title {
+    align-items: flex-start;
+    font-size: 1.2rem !important;
+  }
+
+  .event-list-card-layout {
+    gap: 0.75rem;
+  }
+
+  .event-list-card-image {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+  }
+
+  .event-list-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .event-list-button {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* HOMEPAGE / TABLET COLLAPSE */
+
+@media screen and (max-width: 84.99em) {
   .home-next-event-layout,
   .event-card-layout {
     display: flex !important;
@@ -177,16 +218,18 @@
   }
 
   .home-content-grid {
+    display: flex;
     flex-direction: column;
     align-items: stretch;
+    width: 100%;
   }
 
   .home-main-column,
   .home-featured-posts-column {
-    flex: 0 0 auto;
-    width: 100%;
-    max-width: none;
-    min-width: 0;
+    flex: 0 0 auto !important;
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
   }
 
   .featured-posts-list,
@@ -194,10 +237,9 @@
   .featured-post-link {
     width: 100%;
   }
-
 }
 
-@media screen and (max-width: 30em) {
+@media screen and (max-width: 29.99em) {
   .recent-post-link {
     grid-template-columns: 1fr;
     gap: 0.35rem;

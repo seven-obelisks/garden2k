@@ -427,7 +427,7 @@ button,
 .home-featured-posts-column {
   flex: 0 1 30%;
   max-width: 30%;
-  min-width: 30rem;
+  min-width: 25rem;
 }
 
 .featured-post {

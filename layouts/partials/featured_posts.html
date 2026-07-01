@@ -1,25 +1,37 @@
-<div class="featured-posts-list">
-  {{ $featuredPosts := where (where .Site.RegularPages.ByDate.Reverse "Section" "posts") "Params.featured" true }}
+{{ $featuredItems := where (where site.RegularPages.ByDate.Reverse "Section" "!=" "events") "Params.featured" true }}
 
-  {{ range first 3 $featuredPosts }}
-    <article class="featured-post">
-      <a class="featured-post-link" href="{{ .RelPermalink }}">
-        {{ with .Params.cover_image }}
-          <span class="featured-post-cover">
-            <img src="{{ . | relURL }}" alt="" loading="lazy">
-          </span>
-        {{ end }}
+{{ if gt (len $featuredItems) 0 }}
+  <aside class="home-featured-posts-column">
+    <h2 class="events_h2">Featured Content</h2>
 
-        <span class="featured-post-title">
-          {{ .Title }} →
-        </span>
+    <div class="featured-posts-list">
+      {{ range first 3 $featuredItems }}
+        <article class="featured-post">
+          <a class="featured-post-link" href="{{ .RelPermalink }}">
+            <span class="featured-post-title">
+              {{ .Title }} →
+            </span>
 
-        {{ with .Summary }}
-          <span class="featured-post-summary">
-            {{ . | plainify | truncate 110 }}
-          </span>
-        {{ end }}
-      </a>
-    </article>
-  {{ end }}
-</div>
+            {{ if not .Date.IsZero }}
+              <time class="featured-post-date" datetime="{{ .Date.Format "2006-01-02" }}">
+                {{ .Date.Format "Jan 2, 2006" }}
+              </time>
+            {{ end }}
+
+            {{ with .Params.summary }}
+              <span class="featured-post-summary">
+                {{ . | plainify | truncate 110 }}
+              </span>
+            {{ else }}
+              {{ with .Summary }}
+                <span class="featured-post-summary">
+                  {{ . | plainify | truncate 110 }}
+                </span>
+              {{ end }}
+            {{ end }}
+          </a>
+        </article>
+      {{ end }}
+    </div>
+  </aside>
+{{ end }}
