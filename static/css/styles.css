@@ -1,6 +1,6 @@
 :root {
   --color-primary: #357edd;
-  --color-accent: #357edd;
+  --color-accent: #b635dd;
   --color-bg: rgb(1, 18, 43);
   --color-header: rgb(1, 10, 28);
   --color-footer: rgb(1, 10, 28);
@@ -54,7 +54,7 @@ h5 {
 }
 
 h2 {
-  color: var(--color-accent);
+  color: var(--color-primary);
   font-weight: 700 !important;
 }
 
@@ -143,7 +143,7 @@ h3 {
 
 .site-logo {
   justify-self: start;
-  color: var(--color-accent);
+  color: var(--color-primary);
   font-size: 1rem;
   font-weight: 600;
   letter-spacing: 0.08em;
@@ -194,7 +194,7 @@ h3 {
 
 .menu-link:hover,
 .submenu-link:hover {
-  color: var(--color-accent) !important;
+  color: var(--color-primary) !important;
 }
 
 .submenu-list {
@@ -243,7 +243,7 @@ h3 {
 
 .nav-cta:hover {
   background-color: transparent;
-  color: var(--color-accent) !important;
+  color: var(--color-primary) !important;
 }
 
 .nav-cta-desktop {
@@ -311,7 +311,7 @@ a {
 }
 
 a:hover {
-  color: var(--color-accent) !important;
+  color: var(--color-primary) !important;
 }
 
 /* BUTTONS */
@@ -335,7 +335,7 @@ button,
 
 .slider_button:hover {
   background-color: var(--color-bg);
-  color: var(--color-accent) !important;
+  color: var(--color-primary) !important;
 }
 
 /* SECTION LISTS */
@@ -385,11 +385,11 @@ button,
   gap: 1rem;
   width: 100%;
   padding: 1rem;
-  border: 1px solid var(--color-accent);
+  border: 1px solid var(--color-primary);
   border-radius: var(--radius-sm);
   background-color: color-mix(
     in srgb,
-    var(--color-accent) 75%,
+    var(--color-primary) 75%,
     transparent
   );
   text-decoration: none;

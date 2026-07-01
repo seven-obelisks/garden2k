@@ -127,7 +127,7 @@
 .event_details .event_url:visited,
 .event-card .event_url,
 .event-card .event_url:visited {
-  color: var(--color-accent) !important;
+  color: var(--color-primary) !important;
   text-decoration: underline;
   word-break: break-word;
 }
