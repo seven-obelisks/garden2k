@@ -2,6 +2,7 @@
 title: "Mixed Content Page"
 date: 2026-06-20
 summary: "Example of page with a mix of content: text, images, videos, downloads, and more."
+featured: true
 ---
 
 Aenean ultrices euismod urna, vitae luctus turpis. Proin vitae massa lectus. Cras ac aliquet augue, vel suscipit massa. Suspendisse scelerisque lobortis arcu. Donec pulvinar gravida velit, quis tincidunt urna imperdiet at. Sed nisl leo, condimentum lacinia mauris mattis, vehicula tempor orci. Proin quis purus leo. Sed tempus pharetra arcu, sed fermentum ipsum pellentesque eu.

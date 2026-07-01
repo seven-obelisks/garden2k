@@ -1,12 +1,11 @@
 :root {
   --color-primary: #357edd;
   --color-accent: #357edd;
-  --color-bg: rgb(1, 11, 25);
-  --color-header: rgb(0, 7, 16);
-  --color-footer: rgb(0, 7, 16);
+  --color-bg: rgb(1, 18, 43);
+  --color-header: rgb(1, 10, 28);
+  --color-footer: rgb(1, 10, 28);
   --color-text: #f4f4f4;
   --color-darktext: #dadada;
-  --color-surface: rgb(1, 11, 25);
   --color-border: rgb(4, 31, 68);
   --color-overlay: rgba(1, 11, 25, 0.75);
   --color-overlayborder: rgba(1, 11, 25, 0.5);
@@ -206,7 +205,7 @@ h3 {
   display: none;
   min-width: 200px;
   padding: 0.75rem;
-  background: var(--color-surface);
+  background: var(--color-bg);
   text-align: left;
 }
 
@@ -412,8 +411,6 @@ button,
   color: var(--color-bg) !important;
 }
 
-/* HOMEPAGE FEATURED POSTS */
-
 /* HOMEPAGE FEATURED ITEMS */
 
 .home-content-grid {
@@ -430,7 +427,7 @@ button,
 .home-featured-posts-column {
   flex: 0 1 30%;
   max-width: 30%;
-  min-width: 16rem;
+  min-width: 30rem;
 }
 
 .featured-post {

@@ -1,6 +1,8 @@
 ---
 title: "About Garden2K"
 date: 2026-06-01T01:20:00.000-05:00
+summary: Learn about Garden2K's purpose and the tools you'll need to install it on your website.
+featured: true
 ---
 
 Garden2K is a heavily modified version of the Ananke theme for Hugo that comes with an event management system. It features a calendar view and .ICS exports, and allows for authorized users to edit site content via Sveltia CMS / GitHub OAuth. It is configured to automatically redeploy every 24 hours to update event hierarchy based on date values provided by the user. 
