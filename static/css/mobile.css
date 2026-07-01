@@ -175,6 +175,16 @@
   .footer-inner {
     flex-direction: column;
   }
+
+  .home-content-grid {
+    flex-direction: column;
+  }
+
+  .home-main-column,
+  .home-featured-posts-column {
+    width: 100%;
+    max-width: none;
+  }
 }
 
 @media screen and (max-width: 30em) {

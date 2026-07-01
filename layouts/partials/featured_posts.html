@@ -1,0 +1,25 @@
+<div class="featured-posts-list">
+  {{ $featuredPosts := where (where .Site.RegularPages.ByDate.Reverse "Section" "posts") "Params.featured" true }}
+
+  {{ range first 3 $featuredPosts }}
+    <article class="featured-post">
+      <a class="featured-post-link" href="{{ .RelPermalink }}">
+        {{ with .Params.cover_image }}
+          <span class="featured-post-cover">
+            <img src="{{ . | relURL }}" alt="" loading="lazy">
+          </span>
+        {{ end }}
+
+        <span class="featured-post-title">
+          {{ .Title }} →
+        </span>
+
+        {{ with .Summary }}
+          <span class="featured-post-summary">
+            {{ . | plainify | truncate 110 }}
+          </span>
+        {{ end }}
+      </a>
+    </article>
+  {{ end }}
+</div>

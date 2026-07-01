@@ -81,7 +81,7 @@ h3 {
 .footer-shell,
 .site-container {
   width: 100%;
-  max-width: 80rem;
+  max-width: 100rem;
   margin: 0 auto;
   padding-right: 1rem;
   padding-left: 1rem;
@@ -411,6 +411,71 @@ button,
 .recent-post-link:hover .recent-post-date {
   color: var(--color-bg) !important;
 }
+
+/* HOMEPAGE FEATURED POSTS */
+
+/* HOMEPAGE FEATURED ITEMS */
+
+.home-content-grid {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.home-main-column {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.home-featured-posts-column {
+  flex: 0 1 30%;
+  max-width: 30%;
+  min-width: 16rem;
+}
+
+.featured-post {
+  margin-bottom: 0.5rem;
+}
+
+.featured-post-link {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid var(--color-accent);
+  border-radius: var(--radius-sm);
+  background-color: color-mix(
+    in srgb,
+    var(--color-accent) 75%,
+    transparent
+  );
+  text-decoration: none;
+}
+
+.featured-post-title {
+  display: block;
+  font-weight: 700;
+}
+
+.featured-post-date {
+  display: block;
+  margin-top: 0.35rem;
+  white-space: nowrap;
+  font-size: 0.875rem;
+}
+
+.featured-post-summary {
+  display: block;
+  margin-top: 0.5rem;
+  line-height: 1.4;
+}
+
+.featured-post-link:hover,
+.featured-post-link:hover .featured-post-title,
+.featured-post-link:hover .featured-post-date,
+.featured-post-link:hover .featured-post-summary {
+  color: var(--color-bg) !important;
+}
+
 
 /* POST COVER */
 

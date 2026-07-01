@@ -46,9 +46,30 @@ collections:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime", format: "YYYY-MM-DDTHH:mm:ssZ" }
       - { label: "Summary", name: "summary", widget: "text", required: false }
+      - { label: "Featured", name: "featured", widget: "boolean", required: false, default: false }
       - { label: "Cover Image", name: "cover_image", widget: "image", required: false }
       - { label: "Cover Image Alt Text", name: "cover_image_alt", widget: "string", required: false }
       - { label: "Tags", name: "tags", widget: "list", required: false }
+      - { label: "Draft", name: "draft", widget: "boolean", required: false, default: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "pages"
+    label: "Pages"
+    folder: "content/examples"
+    create: true
+    slug: "{{slug}}"
+    path: "{{slug}}/index"
+    format: "frontmatter"
+    nested:
+      depth: 10
+      summary: "{{title}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime", format: "YYYY-MM-DDTHH:mm:ssZ", required: false }
+      - { label: "Summary", name: "summary", widget: "text", required: false }
+      - { label: "Featured", name: "featured", widget: "boolean", required: false, default: false }
+      - { label: "Cover Image", name: "cover_image", widget: "image", required: false }
+      - { label: "Cover Image Alt Text", name: "cover_image_alt", widget: "string", required: false }
       - { label: "Draft", name: "draft", widget: "boolean", required: false, default: false }
       - { label: "Body", name: "body", widget: "markdown" }
 
