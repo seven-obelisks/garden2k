@@ -26,7 +26,7 @@ Deployed via CloudFlare Pages' free tier, sites using Garden2k can be run in per
 - GitHub OAuth app
 - Cloudflare Pages
 
-## Local Development
 
-```bash
-hugo server
+## Installation
+
+A full installation guide is coming soon.
