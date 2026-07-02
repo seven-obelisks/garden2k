@@ -329,11 +329,6 @@
   background: var(--event-color, var(--color-primary));
 }
 
-.event-list-card:hover .event-list-card-color-dot {
-  border-color: var(--color-on-bright);
-  background: var(--color-on-bright);
-}
-
 .event-list-card-layout {
   display: flex;
   flex: 1;

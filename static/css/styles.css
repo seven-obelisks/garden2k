@@ -1,6 +1,5 @@
 :root {
   --color-primary: #55dfff;
-  --color-accent: #86f27a;
   --color-bg: #020f18;
   --color-header: #00070c;
   --color-footer: #00070c;
@@ -14,11 +13,6 @@
   --color-card-primary: color-mix(
     in srgb,
     var(--color-primary) 32%,
-    var(--color-bg)
-  );
-  --color-card-accent: color-mix(
-    in srgb,
-    var(--color-accent) 32%,
     var(--color-bg)
   );
 
@@ -455,9 +449,9 @@ button,
   display: block;
   width: 100%;
   padding: .75rem;
-  border: 1px solid var(--color-accent);
+  border: 1px solid var(--color-primary);
   border-radius: var(--radius-sm);
-  background-color: var(--color-card-accent);
+  background-color: var(--color-bg);
   text-decoration: none;
 }
 
@@ -481,7 +475,7 @@ button,
 }
 
 .featured-post-link:hover {
-  background-color: var(--color-accent);
+  background-color: var(--color-primary);
 }
 
 .featured-post-link:hover,
