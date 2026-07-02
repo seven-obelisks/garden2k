@@ -20,7 +20,7 @@
   background-color: var(--color-header);
   background-position: center;
   background-size: cover;
-  background-blend-mode: soft-light;
+  background-blend-mode: screen;
   color: var(--color-text);
   text-align: center;
   opacity: 0;
