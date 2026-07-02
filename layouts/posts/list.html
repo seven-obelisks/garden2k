@@ -13,19 +13,21 @@
     <ul class="content-list">
       {{ range .Pages.ByDate.Reverse }}
         <li class="content-card">
-          <h2 class="content-card-title">
-            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-          </h2>
+          <a class="content-card-link" href="{{ .RelPermalink }}">
+            <span class="content-card-title">{{ .Title }}</span>
 
-          <p class="post-list-date">
-            {{ .Date.Format "January 2, 2006" }}
-          </p>
+            {{ if not .Date.IsZero }}
+              <span class="content-card-date">
+                {{ .Date.Format "January 2, 2006" }}
+              </span>
+            {{ end }}
 
-          {{ with .Summary }}
-            <div class="content-summary">
-              {{ . }}
-            </div>
-          {{ end }}
+            {{ with .Summary }}
+              <span class="content-card-summary">
+                {{ . | plainify }}
+              </span>
+            {{ end }}
+          </a>
         </li>
       {{ end }}
     </ul>

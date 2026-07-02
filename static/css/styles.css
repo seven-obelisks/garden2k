@@ -365,21 +365,50 @@ button,
 }
 
 .content-card {
-  margin-bottom: 2rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid var(--color-border);
+  margin-bottom: 0.5rem;
+}
+
+.content-card-link {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--color-primary);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-bg);
+  text-decoration: none;
 }
 
 .content-card-title {
-  margin-bottom: 1rem;
+  display: block;
+  color: var(--color-text);
+  font-weight: 700;
+  font-size: 1.5rem;
 }
 
-.content-card-title a {
-  color: var(--color-primary) !important;
+.content-card-date {
+  display: block;
+  margin-top: 0.35rem;
+  white-space: nowrap;
+  color: var(--color-darktext);
+  font-size: 0.875rem;
 }
 
-.content-summary p:last-child {
-  margin-bottom: 0;
+.content-card-summary {
+  display: block;
+  margin-top: 0.5rem;
+  color: var(--color-text);
+  line-height: 1.4;
+}
+
+.content-card-link:hover {
+  background-color: var(--color-primary);
+}
+
+.content-card-link:hover,
+.content-card-link:hover .content-card-title,
+.content-card-link:hover .content-card-date,
+.content-card-link:hover .content-card-summary {
+  color: var(--color-on-bright) !important;
 }
 
 /* RECENT POSTS */
