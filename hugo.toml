@@ -13,7 +13,7 @@ title = 'Garden2k'
   site_logo = "/images/logo.png"
   favicon = "/favicon.ico"
   nav_button_text = "Download"
-  nav_button_url = "https://github.com/garden2k"
+  nav_button_url = "https://github.com/seven-obelisks/garden2k"
 
 [params.ananke]
   custom_css = ["css/styles.css", "css/mobile.css", "css/overrides.css", "css/calendar.css", "css/slider.css", "css/events.css"]

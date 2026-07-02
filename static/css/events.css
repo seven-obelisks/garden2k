@@ -11,19 +11,48 @@
 /* HOMEPAGE EVENT CARD / SHARED EVENT CARD */
 
 .event-card {
-  margin-bottom: 10px;
+  margin-bottom: 30px;
   padding: 0 1rem;
-  border: 1px solid var(--event-color, transparent);
+  border: 1px solid color-mix(
+    in srgb,
+    var(--event-color, var(--color-primary)) 70%,
+    var(--color-border)
+  );
   border-radius: var(--radius-sm);
   background-color: color-mix(
     in srgb,
-    var(--event-color, transparent) 75%,
-    transparent
+    var(--event-color, var(--color-primary)) 24%,
+    var(--color-bg)
+  );
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease,
+    color 180ms ease;
+}
+
+.event-card:hover {
+  border-color: var(--event-color, var(--color-primary));
+  background-color: color-mix(
+    in srgb,
+    var(--event-color, var(--color-primary)) 78%,
+    var(--color-text)
   );
 }
 
+.event-card:hover,
+.event-card:hover *,
+.event-card:hover a,
+.event-card:hover a:visited,
+.event-card:hover strong {
+  color: var(--color-on-bright) !important;
+}
+
 .event-card-past {
-  opacity: 0.7;
+  opacity: 0.82;
+}
+
+.event-card-past:hover {
+  opacity: 1;
 }
 
 .event-card-title,
@@ -56,22 +85,31 @@
 }
 
 .event-card-title a:hover {
-  color: var(--event-color, var(--color-primary)) !important;
+  color: var(--color-primary) !important;
+}
+
+.event-card:hover .event-card-title a:hover {
+  color: var(--color-on-bright) !important;
 }
 
 .event-card-color-dot {
   flex: 0 0 auto;
   width: 0.75rem;
   height: 0.75rem;
+  border: 1px solid color-mix(
+    in srgb,
+    var(--event-color, var(--color-primary)) 70%,
+    var(--color-text)
+  );
   border-radius: 50%;
-  background: var(--event-color, transparent);
+  background: var(--event-color, var(--color-primary));
 }
 
 .event-card-layout {
   display: grid;
   grid-template-columns: clamp(240px, 30%, 380px) minmax(0, 1fr);
   gap: 1.5rem;
-  align-items: center;
+  align-items: stretch;
   padding-top: 0.5rem;
   padding-bottom: 1rem;
 }
@@ -81,30 +119,35 @@
 }
 
 .event-card-info p {
-  margin: 0 0 .5rem 0 !important;
+  margin: 0 0 0.5rem 0 !important;
 }
 
-.event-meta-line{
-  font-size:.9rem !important;
+.event-meta-line {
+  color: var(--color-darktext);
+  font-size: 1rem !important;
 }
 
-.event-location-line{
-  font-size:.9rem !important;
+.event-location-line {
+  color: var(--color-darktext);
+  font-size: 1rem !important;
 }
 
 .event-organizer {
+  color: var(--color-text);
   font-style: italic;
   font-weight: 700;
 }
 
 .event-data,
 .event-data strong {
+  color: var(--color-text);
   font-weight: 700;
 }
 
-.event-summary{
-  font-size:.7rem !important;
-  line-height:1rem;
+.event-summary {
+  color: var(--color-darktext);
+  font-size: 0.8rem !important;
+  line-height: 1rem;
 }
 
 .event-actions {
@@ -118,20 +161,52 @@
 .event-card-image-link {
   display: block;
   width: 100%;
+  overflow: hidden;
+  border-radius: var(--radius-sm);
 }
 
 .event-card-image,
 .event-single-image {
   display: block;
   width: 100%;
-  object-fit: cover;
+  border: 1px solid color-mix(
+    in srgb,
+    var(--event-color, var(--color-primary)) 35%,
+    var(--color-border)
+  );
   border-radius: var(--radius-sm);
+  object-fit: cover;
 }
 
 .event-card-image {
   height: auto;
-  max-height: 250px;
-  aspect-ratio: 1.9 / 1;
+  max-height: none;
+  aspect-ratio: 16 / 9;
+}
+
+.event-card:hover .event-card-image {
+  border-color: color-mix(
+    in srgb,
+    var(--color-on-bright) 70%,
+    transparent
+  );
+}
+
+@media screen and (min-width: 70em) {
+  .event-card-image-link {
+    position: relative;
+    align-self: stretch;
+    height: 100%;
+    min-height: 0;
+  }
+
+  .event-card-image-link .event-card-image {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    max-height: none;
+    aspect-ratio: auto;
+  }
 }
 
 .event_details .event_url,
@@ -140,12 +215,19 @@
 .event-card .event_url:visited {
   color: var(--color-primary) !important;
   text-decoration: underline;
+  text-underline-offset: 0.2em;
   word-break: break-word;
 }
 
 .event_details .event_url:hover,
 .event-card .event_url:hover {
-  color: white !important;
+  color: var(--color-text) !important;
+}
+
+.event-card:hover .event_url,
+.event-card:hover .event_url:visited,
+.event-card:hover .event_url:hover {
+  color: var(--color-on-bright) !important;
 }
 
 /* EVENT LIST PAGE */
@@ -167,17 +249,46 @@
   flex-direction: column;
   min-width: 0;
   padding: 1rem;
-  border: 1px solid var(--event-color, transparent);
+  border: 1px solid color-mix(
+    in srgb,
+    var(--event-color, var(--color-primary)) 70%,
+    var(--color-border)
+  );
   border-radius: var(--radius-sm);
   background-color: color-mix(
     in srgb,
-    var(--event-color, transparent) 75%,
-    transparent
+    var(--event-color, var(--color-primary)) 24%,
+    var(--color-bg)
+  );
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease,
+    color 180ms ease;
+}
+
+.event-list-card:hover {
+  border-color: var(--event-color, var(--color-primary));
+  background-color: color-mix(
+    in srgb,
+    var(--event-color, var(--color-primary)) 78%,
+    var(--color-text)
   );
 }
 
+.event-list-card:hover,
+.event-list-card:hover *,
+.event-list-card:hover a,
+.event-list-card:hover a:visited,
+.event-list-card:hover strong {
+  color: var(--color-on-bright) !important;
+}
+
 .event-list-card-past {
-  opacity: 0.7;
+  opacity: 0.82;
+}
+
+.event-list-card-past:hover {
+  opacity: 1;
 }
 
 .event-list-card-title {
@@ -187,7 +298,7 @@
   gap: 1rem;
   margin-top: 0;
   margin-bottom: 0.75rem;
-  font-size: 1.35rem !important;
+  font-size: 1.75rem !important;
 }
 
 .event-list-card-title a,
@@ -198,15 +309,29 @@
 }
 
 .event-list-card-title a:hover {
-  color: var(--event-color, var(--color-primary)) !important;
+  color: var(--color-primary) !important;
+}
+
+.event-list-card:hover .event-list-card-title a:hover {
+  color: var(--color-on-bright) !important;
 }
 
 .event-list-card-color-dot {
   flex: 0 0 auto;
   width: 0.75rem;
   height: 0.75rem;
+  border: 1px solid color-mix(
+    in srgb,
+    var(--event-color, var(--color-primary)) 70%,
+    var(--color-text)
+  );
   border-radius: 50%;
-  background: var(--event-color, transparent);
+  background: var(--event-color, var(--color-primary));
+}
+
+.event-list-card:hover .event-list-card-color-dot {
+  border-color: var(--color-on-bright);
+  background: var(--color-on-bright);
 }
 
 .event-list-card-layout {
@@ -224,9 +349,22 @@
 .event-list-card-image {
   display: block;
   width: 100%;
+  border: 1px solid color-mix(
+    in srgb,
+    var(--event-color, var(--color-primary)) 35%,
+    var(--color-border)
+  );
+  border-radius: var(--radius-sm);
   aspect-ratio: 16 / 9;
   object-fit: cover;
-  border-radius: var(--radius-sm);
+}
+
+.event-list-card:hover .event-list-card-image {
+  border-color: color-mix(
+    in srgb,
+    var(--color-on-bright) 70%,
+    transparent
+  );
 }
 
 .event-list-card-info {
@@ -238,17 +376,20 @@
 }
 
 .event-list-organizer {
+  color: var(--color-text);
   font-style: italic;
   font-weight: 700;
 }
 
 .event-list-meta-line,
 .event-list-location-line {
+  color: var(--color-darktext);
   font-size: 0.95rem;
 }
 
 .event-list-summary p {
   margin-bottom: 0;
+  color: var(--color-darktext);
   line-height: 1.4;
 }
 
@@ -262,27 +403,38 @@
 .event-list-button {
   display: inline-block;
   padding: 0.2rem 0.4rem;
-  border: 1px solid var(--event-color);
+  border: 1px solid var(--event-color, var(--color-primary));
   border-radius: var(--radius-sm);
   background-color: color-mix(
     in srgb,
-    var(--event-color, transparent) 75%,
-    transparent
+    var(--event-color, var(--color-primary)) 22%,
+    var(--color-bg)
   );
-  color: white !important;
+  color: var(--color-text) !important;
   font-size: 0.8rem !important;
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
 }
 
-.event-list-button:hover {
-  background-color: color-mix(
-    in srgb,
-    var(--event-color, transparent) 15%,
-    transparent
-  );
-  color: var(--color-darktext) !important;
+.event-list-card:hover .event-list-button {
+  border-color: var(--color-on-bright);
+  background-color: transparent;
+  color: var(--color-on-bright) !important;
+}
+
+.event-list-card:hover .event-list-button:hover,
+.event-list-card:hover .event-list-button:focus-visible,
+.event-list-button:hover,
+.event-list-button:focus-visible {
+  border-color: var(--color-on-bright);
+  background-color: var(--color-on-bright) !important;
+  color: var(--color-text) !important;
+}
+
+.event-list-card:hover .event-list-button:hover *,
+.event-list-card:hover .event-list-button:focus-visible * {
+  color: var(--color-text) !important;
 }
 
 /* EVENT SINGLE */
@@ -313,23 +465,34 @@
 }
 
 .event_button {
-  border: 1px solid var(--event-color);
+  border: 1px solid var(--event-color, var(--color-primary));
   background-color: color-mix(
     in srgb,
-    var(--event-color, transparent) 75%,
-    transparent
+    var(--event-color, var(--color-primary)) 22%,
+    var(--color-bg)
   );
-  color: white !important;
+  color: var(--color-text) !important;
   font-size: 0.8rem !important;
 }
 
-.event_button:hover {
-  background-color: color-mix(
-    in srgb,
-    var(--event-color, transparent) 15%,
-    transparent
-  );
-  color: var(--color-darktext) !important;
+.event-card:hover .event_button {
+  border-color: var(--color-on-bright);
+  background-color: transparent;
+  color: var(--color-on-bright) !important;
+}
+
+.event-card:hover .event_button:hover,
+.event-card:hover .event_button:focus-visible,
+.event_button:hover,
+.event_button:focus-visible {
+  border-color: var(--color-on-bright);
+  background-color: var(--color-on-bright) !important;
+  color: var(--color-text) !important;
+}
+
+.event-card:hover .event_button:hover *,
+.event-card:hover .event_button:focus-visible * {
+  color: var(--color-text) !important;
 }
 
 /* CLICKABLE CARDS */

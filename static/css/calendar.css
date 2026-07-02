@@ -24,39 +24,44 @@
 
 #calendar-prev,
 #calendar-next {
-  color: white;
+  border: 1px solid var(--color-primary);
+  border-radius: var(--radius-sm);
   background-color: var(--color-primary);
-  border: 0;
+  color: var(--color-on-bright) !important;
   cursor: pointer;
   font-size: 0.85rem;
-  border:1px solid var(--color-primary)
 }
 
 #calendar-prev:hover,
-#calendar-next:hover {
-  color: var(--color-primary);
-  background-color: var(--color-bg);
-  border:1px solid var(--color-primary)
+#calendar-next:hover,
+#calendar-prev:focus-visible,
+#calendar-next:focus-visible {
+  background-color: transparent;
+  color: var(--color-primary) !important;
 }
 
 .calendar-grid {
   display: grid;
   grid-template-columns: repeat(7, minmax(0, 1fr));
   gap: 0;
+  overflow: hidden;
   border-top: 1px solid var(--color-border);
   border-left: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-header);
 }
 
 .calendar-weekday {
   padding: 0.75rem 0.5rem;
   border-right: 1px solid var(--color-border);
   border-bottom: 1px solid var(--color-border);
+  background: var(--color-header);
   color: var(--color-primary);
-  font-size: .9rem;
-  font-weight:700;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.15rem;
   text-align: center;
   text-transform: uppercase;
-  letter-spacing: .15rem;
 }
 
 .calendar-day {
@@ -64,40 +69,62 @@
   padding: 0.5rem;
   border-right: 1px solid var(--color-border);
   border-bottom: 1px solid var(--color-border);
-  background: var(--color-bg);
+  background: color-mix(
+    in srgb,
+    var(--color-primary) 5%,
+    var(--color-bg)
+  );
   overflow-wrap: break-word;
 }
 
 .calendar-day.empty {
-  background: var(--color-bg);
+  background: color-mix(
+    in srgb,
+    var(--color-header) 72%,
+    var(--color-bg)
+  );
 }
 
 .calendar-day-number {
   margin-bottom: 0.5rem;
-  color: var(--color-primary);
+  color: var(--color-darktext);
   font-size: 0.85rem;
+  font-weight: 700;
 }
 
 .calendar-event {
   display: block;
   margin-bottom: 0.35rem;
   padding: 0.25rem;
+  border: 1px solid var(--event-color, var(--color-primary));
+  border-radius: var(--radius-sm);
+  background-color: color-mix(
+    in srgb,
+    var(--event-color, var(--color-primary)) 24%,
+    var(--color-bg)
+  );
   color: var(--color-text) !important;
-  background-color: var(--event-color, var(--color-primary)) !important;
   font-size: 0.65rem;
   line-height: 1.2;
   text-decoration: none;
-  border: 1px solid var(--event-color, var(--color-primary));
-  border-radius: 5px;
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease,
+    color 180ms ease;
 }
 
-.calendar-event:hover {
-  color: white !important;
-  background: var(--event-color, var(--color-primary));
+.calendar-event:hover,
+.calendar-event:focus-visible {
+  border-color: var(--event-color, var(--color-primary));
+  background-color: color-mix(
+    in srgb,
+    var(--event-color, var(--color-primary)) 78%,
+    var(--color-text)
+  );
+  color: var(--color-on-bright) !important;
 }
 
 @media screen and (max-width: 59.99em) {
-
   .calendar-header {
     display: flex;
     align-items: center;
@@ -108,8 +135,8 @@
   #calendar-title {
     flex: 1;
     margin: 0;
-    text-align: center;
     font-size: 1.1rem;
+    text-align: center;
   }
 
   #calendar-prev,
@@ -123,9 +150,20 @@
     overflow-x: auto;
   }
 
+  .calendar-weekday {
+    padding: 0.6rem 0.35rem;
+    font-size: 0.7rem;
+    letter-spacing: 0.08rem;
+  }
+
   .calendar-day {
     min-height: 6rem;
     padding: 0.4rem;
+  }
+
+  .calendar-day-number {
+    color: var(--color-darktext);
+    font-size: 0.75rem;
   }
 
   .calendar-event {
@@ -133,7 +171,11 @@
     height: 0.8rem;
     margin-bottom: 0.35rem;
     padding: 0;
-    border: 0;
+    border: 1px solid color-mix(
+      in srgb,
+      var(--event-color, var(--color-primary)) 70%,
+      var(--color-text)
+    );
     border-radius: 999px;
     background: var(--event-color, var(--color-primary));
     overflow: hidden;
@@ -141,4 +183,13 @@
     white-space: nowrap;
   }
 
+  .calendar-event:hover,
+  .calendar-event:focus-visible {
+    border-color: var(--color-on-bright);
+    background: color-mix(
+      in srgb,
+      var(--event-color, var(--color-primary)) 78%,
+      var(--color-text)
+    );
+  }
 }
