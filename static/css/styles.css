@@ -232,11 +232,6 @@ h4 {
   display: none;
   min-width: 200px;
   padding: 1rem;
-  border: 1px solid color-mix(
-    in srgb,
-    var(--color-headertext) 18%,
-    transparent
-  );
   border-radius: var(--radius-sm);
   background: var(--color-header);
   text-align: left;
