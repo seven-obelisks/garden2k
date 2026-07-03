@@ -6,6 +6,17 @@
 <nav class="nav-shell" role="navigation">
   <div class="navbar">
 
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-label="Open menu"
+      aria-expanded="false"
+      aria-controls="site-menu">
+      <span class="menu-toggle-bar"></span>
+      <span class="menu-toggle-bar"></span>
+      <span class="menu-toggle-bar"></span>
+    </button>
+
     <a href="{{ .Site.Home.RelPermalink }}" class="site-logo">
       {{ with .Site.Params.site_logo }}
         <img src="{{ urls.RelURL . }}" class="site-logo-img" alt="{{ $.Site.Title }}" />
@@ -84,17 +95,6 @@
         {{ $navButtonText }}
       </a>
     {{ end }}
-
-    <button
-      class="menu-toggle"
-      type="button"
-      aria-label="Open menu"
-      aria-expanded="false"
-      aria-controls="site-menu">
-      <span class="menu-toggle-bar"></span>
-      <span class="menu-toggle-bar"></span>
-      <span class="menu-toggle-bar"></span>
-    </button>
 
   </div>
 </nav>
