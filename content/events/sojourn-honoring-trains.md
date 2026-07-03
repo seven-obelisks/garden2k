@@ -11,4 +11,4 @@ image: /uploads/train.png
 event_color: '#009dff'
 ---
 
-This is the descriptive text about the event. You can provide context about the event or important details for guests here.
+Suspendisse potenti. Vestibulum sagittis velit vitae molestie commodo. Donec dictum nisl ut justo feugiat pulvinar. Suspendisse augue sem, consectetur eget sodales at, tristique a quam.

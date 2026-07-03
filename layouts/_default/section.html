@@ -1,29 +1,29 @@
 {{ define "main" }}
-<main class="section-page site-container list-container">
+<main class="section-page section-card-page site-container list-container">
 
   <h1 class="page_title">{{ .Title }}</h1>
 
   {{ with .Content }}
-    <div class="section-intro">
+    <div class="section-intro section-card-intro">
       {{ . }}
     </div>
   {{ end }}
 
   {{ if .Pages }}
-    <ul class="content-list">
+    <ul class="section-card-grid">
       {{ range .Pages.ByWeight }}
-        <li class="content-card">
-          <a class="content-card-link" href="{{ .RelPermalink }}">
-            <span class="content-card-title">{{ .Title }}</span>
+        <li class="section-card">
+          <a class="section-card-link" href="{{ .RelPermalink }}">
+            <span class="section-card-title">{{ .Title }}</span>
 
             {{ if not .Date.IsZero }}
-              <span class="content-card-date">
+              <span class="section-card-date">
                 {{ .Date.Format "Jan 2, 2006" }}
               </span>
             {{ end }}
 
             {{ with .Summary }}
-              <span class="content-card-summary">
+              <span class="section-card-summary">
                 {{ . | plainify }}
               </span>
             {{ end }}

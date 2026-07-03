@@ -11,4 +11,4 @@ event_color: '#4527A0'
 image: /uploads/well.png
 ---
 
-This is the descriptive text about the event. You can provide context about the event or important details for guests here.
+Morbi vulputate mauris eget arcu malesuada porttitor. Cras ultrices mauris magna, vitae molestie dui hendrerit sit amet. 

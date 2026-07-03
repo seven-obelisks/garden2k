@@ -11,4 +11,4 @@ event_color: '#357EDD'
 image: /uploads/building.png
 ---
 
-This is the descriptive text about the event. You can provide context about the event or important details for guests here.
+Pellentesque convallis, ex id imperdiet accumsan, quam arcu feugiat arcu, et tincidunt risus nisl ac odio. Duis in metus hendrerit, elementum leo quis, lacinia elit. Ut interdum tortor eu maximus semper. Aliquam erat volutpat. Integer vel lacus arcu. Morbi sed ipsum mi. 

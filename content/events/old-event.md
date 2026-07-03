@@ -11,4 +11,4 @@ event_color: '#6EC6FF'
 image: /uploads/party.png
 ---
 
-This is the descriptive text about the event.
+Donec eget efficitur augue. Ut massa libero, sodales non elit at, consectetur consequat purus. Praesent nec lorem at est dapibus lobortis.
