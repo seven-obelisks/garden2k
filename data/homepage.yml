@@ -3,9 +3,9 @@ banners:
     text: Share your events with the world.
     button_text: View Events
     button_url: /events/
-    image: /uploads/banner-3.png
+    image: /uploads/banner-5.png
   - title: Calendar View and More
     text: Publicize local and online events for free.
     button_text: View Calendar
     button_url: /calendar/
-    image: /uploads/banner-2.jpg
+    image: /uploads/banner-4.png
