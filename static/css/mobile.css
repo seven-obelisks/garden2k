@@ -4,8 +4,8 @@
   .header-shell,
   .footer-shell,
   .site-container {
-    padding-right: 2.5rem;
-    padding-left: 2.5rem;
+    padding-right: 2rem;
+    padding-left: 2rem;
   }
 }
 
@@ -112,14 +112,13 @@
     width: min(22rem, 85vw);
     min-height: 100vh;
     margin-top: 0;
-    padding: 5rem 2rem 2rem;
+    padding: 4rem 2rem 2rem;
     border-left: 1px solid color-mix(
       in srgb,
       var(--color-headertext) 18%,
       transparent
     );
     background: var(--color-header);
-    box-shadow: -1rem 0 2rem rgba(0, 0, 0, 0.35);
     transform: translateX(100%);
     transition: transform 180ms ease;
   }

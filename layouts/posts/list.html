@@ -1,35 +1,93 @@
 {{ define "main" }}
-<main class="section-page site-container list-container">
+<main class="blog-list-page section-page site-container list-container">
 
   <h1 class="page_title">{{ .Title }}</h1>
 
   {{ with .Content }}
-    <div class="section-intro">
+    <div class="section-intro blog-list-intro">
       {{ . }}
     </div>
   {{ end }}
 
-  {{ if .Pages }}
-    <ul class="content-list">
-      {{ range .Pages.ByDate.Reverse }}
-        <li class="content-card">
-          <a class="content-card-link" href="{{ .RelPermalink }}">
-            <span class="content-card-title">{{ .Title }}</span>
+  {{ $posts := .Pages.ByDate.Reverse }}
+
+  {{ if $posts }}
+    <ul class="blog-post-list content-list">
+
+      {{ with index $posts 0 }}
+        {{ $image := or .Params.cover_image .Params.image .Params.featured_image .Params.thumbnail .Params.cover }}
+        {{ $imageAlt := or .Params.cover_image_alt .Params.image_alt .Title }}
+
+        <li class="blog-post-card blog-post-card-featured content-card">
+          <a class="blog-post-card-link blog-post-card-featured-link content-card-link" href="{{ .RelPermalink }}">
+
+            {{ with $image }}
+              <span class="blog-post-card-image-wrap blog-post-card-featured-image-wrap">
+                <img
+                  class="blog-post-card-image blog-post-card-featured-image"
+                  src="{{ . | relURL }}"
+                  alt="{{ $imageAlt }}"
+                  loading="lazy"
+                />
+              </span>
+            {{ end }}
+
+            <span class="blog-post-card-content blog-post-card-featured-content">
+              <span class="blog-post-card-title content-card-title">{{ .Title }}</span>
+
+              {{ if not .Date.IsZero }}
+                <span class="blog-post-card-date content-card-date">
+                  {{ .Date.Format "January 2, 2006" }}
+                </span>
+              {{ end }}
+
+              {{ with .Summary }}
+                <span class="blog-post-card-summary content-card-summary">
+                  {{ . | plainify }}
+                </span>
+              {{ end }}
+            </span>
+
+          </a>
+        </li>
+      {{ end }}
+
+      {{ range after 1 $posts }}
+        {{ $image := or .Params.cover_image .Params.image .Params.featured_image .Params.thumbnail .Params.cover }}
+        {{ $imageAlt := or .Params.cover_image_alt .Params.image_alt .Title }}
+
+        <li class="blog-post-card content-card">
+          <a class="blog-post-card-link content-card-link" href="{{ .RelPermalink }}">
+
+            {{ with $image }}
+              <span class="blog-post-card-image-wrap">
+                <img
+                  class="blog-post-card-image"
+                  src="{{ . | relURL }}"
+                  alt="{{ $imageAlt }}"
+                  loading="lazy"
+                />
+              </span>
+            {{ end }}
+
+            <span class="blog-post-card-title content-card-title">{{ .Title }}</span>
 
             {{ if not .Date.IsZero }}
-              <span class="content-card-date">
+              <span class="blog-post-card-date content-card-date">
                 {{ .Date.Format "January 2, 2006" }}
               </span>
             {{ end }}
 
             {{ with .Summary }}
-              <span class="content-card-summary">
+              <span class="blog-post-card-summary content-card-summary">
                 {{ . | plainify }}
               </span>
             {{ end }}
+
           </a>
         </li>
       {{ end }}
+
     </ul>
   {{ end }}
 

@@ -384,10 +384,6 @@ button,
   list-style: none;
 }
 
-.content-card {
-  margin-bottom: 0.75rem;
-}
-
 .content-card-link {
   display: block;
   width: 100%;
@@ -638,5 +634,109 @@ button,
 @media screen and (min-width: 70em) {
   .section-card-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* BLOG LIST */
+
+.blog-post-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.blog-post-card {
+  min-width: 0;
+}
+
+.blog-post-card-link {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.blog-post-card-content {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.blog-post-card-image-wrap {
+  display: block;
+  width: 100%;
+  margin-bottom: 0.85rem;
+  overflow: hidden;
+  border-radius: var(--radius-sm);
+}
+
+.blog-post-card-image {
+  display: block;
+  width: 100%;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.blog-post-card-title {
+  margin-bottom: 0.65rem;
+}
+
+.blog-post-card-date {
+  margin-bottom: 0.85rem;
+}
+
+.blog-post-card-summary {
+  margin-top: auto;
+}
+
+.blog-post-card-featured {
+  grid-column: 1 / -1;
+}
+
+.blog-post-card-featured-link {
+  text-align: left;
+}
+
+.blog-post-card-featured-image-wrap {
+  margin-bottom: 1rem;
+}
+
+.blog-post-card-featured-content {
+  text-align: left;
+}
+
+@media screen and (min-width: 60em) {
+  .blog-post-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .blog-post-card-featured-link {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+    gap: 1.5rem;
+    align-items: center;
+  }
+
+  .blog-post-card-featured-image-wrap {
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (max-width: 59.99em) {
+  .blog-post-list {
+    grid-template-columns: 1fr;
+  }
+
+  .blog-post-card-featured-link {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .blog-post-card-featured-image-wrap {
+    margin-bottom: 0.85rem;
   }
 }

@@ -1,7 +1,52 @@
-#swipebox-overlay{
-    background: var(--color-bg) !important;
+/* Swipebox previous / next arrows only */
+/* Leaves the close / exit bar alone */
+
+#swipebox-overlay #swipebox-prev,
+#swipebox-overlay #swipebox-next {
+  position: relative;
+  background-image: none !important;
+  background-color: var(--color-accent) !important;
+  border: 1px solid rgba(255, 255, 255, 0.35) !important;
+  border-radius: var(--radius-sm);
+  box-shadow: 0 0.35rem 1.25rem rgba(0, 0, 0, 0.35);
+  opacity: 1;
 }
 
-#swipebox-bottom-bar{
-    background: var(--color-surface) !important;
+#swipebox-overlay #swipebox-prev:hover,
+#swipebox-overlay #swipebox-next:hover{
+  border-color: var(--color-primary) !important;
+}
+
+#swipebox-overlay #swipebox-prev:hover,
+#swipebox-overlay #swipebox-next:hover,
+#swipebox-overlay #swipebox-prev:focus,
+#swipebox-overlay #swipebox-next:focus {
+  background-color: var(--color-accent) !important;
+  border-color: var(--color-accent) !important;
+}
+
+/* Draw replacement arrows */
+#swipebox-overlay #swipebox-prev::before,
+#swipebox-overlay #swipebox-next::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0.8rem;
+  height: 0.8rem;
+  border-top: 3px solid var(--color-surface);
+  border-right: 3px solid var(--color-surface);
+}
+
+#swipebox-overlay #swipebox-prev::before {
+  transform: translate(-35%, -50%) rotate(-135deg);
+}
+
+#swipebox-overlay #swipebox-next::before {
+  transform: translate(-65%, -50%) rotate(45deg);
+}
+
+#swipebox-overlay #swipebox-prev.disabled,
+#swipebox-overlay #swipebox-next.disabled {
+  opacity: 0.35;
 }
