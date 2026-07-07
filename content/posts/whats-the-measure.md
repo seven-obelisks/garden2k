@@ -1,7 +1,7 @@
 ---
 title: "What's the Measure, of Whether Life's a Treasure? Fulfilment or Just Pleasure?"
 date: 2026-06-29T01:20:00.000-05:00
-summary: Donec facilisis nisl libero, nec rhoncus odio viverra pharetra.
+summary: Suspendisse sollicitudin nulla iaculis metus faucibus interdum. Morbi vulputate, justo vel dapibus semper, risus mauris luctus nulla, a pretium eros nulla et tellus.
 cover_image: "/uploads/castle.jpg"
 cover_image_alt: "Ancient castle on a hill"
 ---
