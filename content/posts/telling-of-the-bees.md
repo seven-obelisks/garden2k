@@ -2,7 +2,7 @@
 title: "The Telling of the Bees and the Smelling of the Trees"
 date: 2026-06-19T01:20:00.000-05:00
 summary: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-cover_image: "/uploads/bees.png"
+cover_image: "/uploads/bees.jpg"
 cover_image_alt: "Tree with a beehive"
 ---
 

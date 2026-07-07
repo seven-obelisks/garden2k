@@ -8,7 +8,7 @@ location: The Greenest Garden
 event_url: https://garden.com
 event_organizer: Garden Club 2
 event_color: '#2E7D32' 
-image: /uploads/garden.png
+image: /uploads/garden.jpg
 ---
 
 Proin hendrerit nec dolor eget mollis. Etiam finibus ac ipsum in egestas. Pellentesque et augue vitae metus molestie maximus. Nullam finibus sodales pulvinar.

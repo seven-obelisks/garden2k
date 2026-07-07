@@ -2,7 +2,7 @@
 title: "A Tale as Old as Time, Where Every Word Will Rhyme - Isn't That Sublime?"
 date: 2026-07-01T01:20:00.000-05:00
 summary: Nulla sit amet commodo lectus, in suscipit leo. Duis ac massa elit. 
-cover_image: "/uploads/flowers.png"
+cover_image: "/uploads/flowers.jpg"
 cover_image_alt: "Flowers around a tombstone."
 featured: true
 ---

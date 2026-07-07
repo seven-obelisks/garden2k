@@ -8,7 +8,7 @@ location: A Very Deep Well
 event_url: https://well.com
 event_organizer: Well Divers Anonymous
 event_color: '#4527A0' 
-image: /uploads/well.png
+image: /uploads/well.jpg
 ---
 
 Morbi vulputate mauris eget arcu malesuada porttitor. Cras ultrices mauris magna, vitae molestie dui hendrerit sit amet. 

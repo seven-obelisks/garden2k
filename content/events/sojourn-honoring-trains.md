@@ -7,7 +7,7 @@ event_end: 2026-07-30T11:52:00-05:00
 location: Under the Bridge
 event_organizer: Train Lovers of America
 event_url: trains.com
-image: /uploads/train.png
+image: /uploads/train.jpg
 event_color: '#009dff'
 ---
 

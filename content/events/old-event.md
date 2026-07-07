@@ -8,7 +8,7 @@ location: The Past
 event_url: https://time.com
 event_organizer: Time Travelers Anonymous
 event_color: '#6EC6FF'
-image: /uploads/party.png
+image: /uploads/party.jpg
 ---
 
 Donec eget efficitur augue. Ut massa libero, sodales non elit at, consectetur consequat purus. Praesent nec lorem at est dapibus lobortis.
