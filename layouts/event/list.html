@@ -4,24 +4,51 @@
   <h1 class="page_title">{{ .Title }}</h1>
 
   {{ with .Content }}
-    <div class="section-intro prose">
+    <div class="section-intro">
       {{ . }}
     </div>
   {{ end }}
 
   {{ $now := now }}
 
+  {{ $upcoming := slice }}
+  {{ $allTags := slice }}
+  {{ range sort .Pages "Params.event_start" "asc" }}
+    {{ if ge (time .Params.event_end) $now }}
+      {{ $upcoming = $upcoming | append . }}
+      {{ range .Params.tags }}
+        {{ $allTags = $allTags | append . }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+  {{ $allTags = $allTags | uniq | sort }}
+
+  {{ if $allTags }}
+    <div class="event-filter-menu" role="group" aria-label="Filter events by tag">
+      {{ range $allTags }}
+        <button type="button" class="event-filter-tag" data-tag="{{ . | urlize }}" aria-pressed="false">
+          {{ . }}
+        </button>
+      {{ end }}
+      <button type="button" class="event-filter-clear" hidden>
+        CLEAR
+      </button>
+    </div>
+  {{ end }}
+
   <ul class="events-list events-list-grid">
-    {{ range sort .Pages "Params.event_start" "asc" }}
-      {{ if ge (time .Params.event_end) $now }}
+    {{ range $upcoming }}
         {{ $event := . }}
         {{ $eventColor := .Params.event_color | default "transparent" }}
         {{ $eventStart := .Params.event_start }}
         {{ $eventEnd := .Params.event_end }}
+        {{ $eventTags := slice }}
+        {{ range .Params.tags }}{{ $eventTags = $eventTags | append (. | urlize) }}{{ end }}
 
         <li
           class="event-list-card clickable-card"
           data-href="{{ .RelPermalink }}"
+          data-tags="{{ delimit $eventTags "," }}"
           role="link"
           tabindex="0"
           style="--event-color: {{ $eventColor }};"
@@ -89,7 +116,6 @@
             </div>
           </div>
         </li>
-      {{ end }}
     {{ end }}
   </ul>
 
@@ -179,5 +205,10 @@
 {{ $cardJS := resources.Get "js/card.js" }}
 {{ if $cardJS }}
   <script src="{{ $cardJS.RelPermalink }}"></script>
+{{ end }}
+
+{{ $filterJS := resources.Get "js/event-filter.js" }}
+{{ if $filterJS }}
+  <script src="{{ $filterJS.RelPermalink }}"></script>
 {{ end }}
 {{ end }}

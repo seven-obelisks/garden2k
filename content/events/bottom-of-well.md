@@ -9,6 +9,7 @@ event_url: https://well.com
 event_organizer: Well Divers Anonymous
 event_color: '#4527A0' 
 image: /uploads/well.jpg
+tags: ["underground", "spooky"]
 ---
 
 Morbi vulputate mauris eget arcu malesuada porttitor. Cras ultrices mauris magna, vitae molestie dui hendrerit sit amet. 

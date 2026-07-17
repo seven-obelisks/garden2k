@@ -6,7 +6,13 @@
   <article class="event-single event-single-card"
            style="--event-color: {{ $eventColor }};">
 
-    <p class="event-label">Event</p>
+    {{ with .Params.tags }}
+      <p class="event-label">
+        {{ range $i, $tag := . }}{{ if $i }}, {{ end }}<a href="/tags/{{ $tag | urlize }}/">{{ $tag }}</a>{{ end }}
+      </p>
+    {{ else }}
+      <p class="event-label">Event</p>
+    {{ end }}
 
     <h1 class="event-single-title">
       <span>{{ .Title }}</span>
@@ -51,7 +57,7 @@
 
     </div>
 
-    <div class="event-content prose">
+    <div class="event-content">
       {{ .Content }}
     </div>
 

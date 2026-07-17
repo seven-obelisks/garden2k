@@ -9,6 +9,7 @@ event_url: https://time.com
 event_organizer: Time Travelers Anonymous
 event_color: '#6EC6FF'
 image: /uploads/party.jpg
+tags: ["time travel", "party"]
 ---
 
 Donec eget efficitur augue. Ut massa libero, sodales non elit at, consectetur consequat purus. Praesent nec lorem at est dapibus lobortis.
