@@ -337,8 +337,13 @@ h4 {
 }
 
 .events_h2 {
+  margin-top:50px;
   margin-bottom: 1.25rem;
   font-size: clamp(1.75rem, 3.25vw, 2.6rem);
+}
+
+.recent_h2{
+  margin-top:48px !important;
 }
 
 .post-list-date {
@@ -746,7 +751,7 @@ button,
 /* SITE / SINGLE POST - added replacing Ananke/Tachyons defaults */
 
 .site-main {
-  padding-bottom: 4rem;
+  padding-bottom: 10rem;
 }
 
 .post-header {
