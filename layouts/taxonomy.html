@@ -1,5 +1,5 @@
 {{ define "main" }}
-  <main class="taxonomy-page site-container list-container">
+  <main class="taxonomy-page site-container list-container tag-container">
     <h1 class="page_title">{{ .Title }}</h1>
 
     {{ with .Content }}
@@ -8,10 +8,13 @@
       </div>
     {{ end }}
 
-    <ul class="content-list">
-      {{ range .Pages }}
-        <li class="content-card">
-          {{ .Render "summary" }}
+    <ul class="tag-index-list">
+      {{ range .Data.Terms.Alphabetical }}
+        <li class="tag-index-item">
+          <a href="{{ .Page.RelPermalink }}" class="tag-index-link">
+            {{ .Page.LinkTitle }}
+          </a>
+          <span class="tag-index-count">{{ .Count }}</span>
         </li>
       {{ end }}
     </ul>

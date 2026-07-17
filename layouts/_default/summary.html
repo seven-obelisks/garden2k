@@ -1,12 +1,25 @@
 <div class="content-card-inner">
   {{ with .CurrentSection.Title }}<span class="content-card-section">{{ . }}</span>{{ end }}
   <h3 class="content-card-title">
-    <a href="{{ .RelPermalink }}" class="content-card-link">
+    <a href="{{ .RelPermalink }}" class="content-card-title-link">
       {{ .Title }}
     </a>
   </h3>
+
+  {{ if or .Params.event_start .Params.location }}
+    <p class="content-card-meta">
+      {{- with .Params.event_start -}}
+        {{ time.Format "Monday, Jan 2, 2006, 3:04 PM" . }}
+      {{- end -}}
+      {{- if and .Params.event_start .Params.location }} | {{ end -}}
+      {{- with .Params.location -}}
+        {{ . }}
+      {{- end -}}
+    </p>
+  {{ end }}
+
   <div class="content-card-summary">
     {{ .Summary }}
   </div>
-  <a href="{{ .RelPermalink }}" class="content-card-readmore">{{ $.Param "read_more_copy" | compare.Default (lang.Translate "readMore") }}</a>
+  <a href="{{ .RelPermalink }}" class="content-card-readmore">{{ $.Param "read_more_copy" | compare.Default "Read more" }}</a>
 </div>
