@@ -1,6 +1,6 @@
 :root {
   --color-primary: #006b8f;
-  --color-accent: #006b8f;
+  --color-accent: #005470;
   --color-bg: #f7f7f2;
   --color-surface: #ffffff;
   --color-header: #111820;
@@ -83,15 +83,79 @@ h4 {
   font-size: clamp(1.1rem, 1.5vw, 1.25rem);
 }
 
-.post-content p {
+/* PROSE - CONTENT FORMATTING */
+
+.prose p {
   margin: 0 0 1.25rem;
   line-height: 1.65;
   text-align: justify;
   hyphens: none;
 }
 
-.post-content ul {
+.prose ul {
   line-height: 1.6;
+}
+
+.prose img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius-sm);
+}
+
+.prose ol {
+  margin: 0 0 1.25rem;
+  padding-left: 1.5rem;
+  line-height: 1.6;
+}
+
+.prose ol li {
+  margin-bottom: 0.4rem;
+}
+
+.prose blockquote {
+  margin: 0 0 1.25rem;
+  padding: 0.75rem 1.25rem;
+  border-left: 3px solid var(--color-primary);
+  background-color: var(--color-bg);
+  color: var(--color-darktext);
+  font-size: 1.05em;
+  font-style: italic;
+}
+
+.prose blockquote p {
+  margin-bottom: 0;
+}
+
+.prose table {
+  width: 100%;
+  margin: 0 0 1.25rem;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.prose td {
+  padding: 0.6rem 0.85rem;
+  border: 1px solid var(--color-border);
+  text-align: left;
+}
+
+.prose th {
+  padding: 0.6rem 0.85rem;
+  background-color: var(--color-primary);
+  border: 1px solid var(--color-accent);
+  color: var(--color-text);
+  font-weight: 700;
+  text-align: left;
+  color:var(--color-bg);
+}
+
+.prose tr:nth-child(even) td {
+  background-color: var(--color-surface);
+}
+
+.prose hr{
+  margin:2rem 0rem;
 }
 
 /* LAYOUT */
@@ -869,4 +933,14 @@ button,
 
 .terms-group-link {
   color: var(--color-primary) !important;
+}
+
+/* VIDEOS */
+
+iframe[src*="youtube.com"] {
+  border-radius: var(--radius-sm);
+}
+
+div:has(> iframe[src*="youtube.com"]) {
+  margin-bottom: 1.5rem;
 }

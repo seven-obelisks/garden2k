@@ -2,7 +2,9 @@
   <main class="terms-page site-container list-container">
     <article>
       <h1 class="page_title">{{ .Title }}</h1>
+      <div class="prose">
       {{ .Content }}
+    </div>
     </article>
 
     {{ range $term := .Data.Pages }}
