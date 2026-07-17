@@ -2,7 +2,7 @@
 
 <div class="recent-posts">
   <div class="recent-posts-list">
-    {{ range first 5 (where .Site.RegularPages.ByDate.Reverse "Section" "posts") }}
+    {{ range first 3 (where .Site.RegularPages.ByDate.Reverse "Section" "posts") }}
       <article class="recent-post">
         <a class="recent-post-link" href="{{ .RelPermalink }}">
           <span class="recent-post-title">
