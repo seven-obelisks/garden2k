@@ -505,14 +505,11 @@ button,
 
 .content-card-link:hover {
   border-color: var(--color-primary);
-  background-color: var(--color-primary);
-}
-
-.content-card-link:hover,
-.content-card-link:hover .content-card-title,
-.content-card-link:hover .content-card-date,
-.content-card-link:hover .content-card-summary {
-  color: var(--color-on-bright);
+  background-color: color-mix(
+    in srgb,
+    var(--color-primary) 8%,
+    var(--color-surface)
+  );
 }
 
 /* RECENT POSTS */
@@ -550,13 +547,11 @@ button,
 
 .recent-post-link:hover {
   border-color: var(--color-primary);
-  background-color: var(--color-primary);
-}
-
-.recent-post-link:hover,
-.recent-post-link:hover .recent-post-title,
-.recent-post-link:hover .recent-post-date {
-  color: var(--color-on-bright);
+  background-color: color-mix(
+    in srgb,
+    var(--color-primary) 8%,
+    var(--color-surface)
+  );
 }
 
 /* HOMEPAGE FEATURED ITEMS */
@@ -615,15 +610,13 @@ button,
 
 .featured-post-link:hover {
   border-color: var(--color-primary);
-  background-color: var(--color-primary);
+  background-color: color-mix(
+    in srgb,
+    var(--color-primary) 8%,
+    var(--color-surface)
+  );
 }
 
-.featured-post-link:hover,
-.featured-post-link:hover .featured-post-title,
-.featured-post-link:hover .featured-post-date,
-.featured-post-link:hover .featured-post-summary {
-  color: var(--color-on-bright);
-}
 
 /* POST COVER */
 
@@ -767,6 +760,7 @@ button,
 }
 
 .blog-post-card-title {
+  font-size: clamp(1.35rem, 2vw, 1.85rem);
   margin-bottom: 0.65rem;
 }
 
@@ -906,12 +900,16 @@ button,
 /* CONTENT CARD */
 
 .content-card-inner {
-  display: block;
-  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 1.25rem;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
-  background-color: var(--color-surface);
-  transition: border-color 180ms ease;
+  background: var(--color-surface);
+  color: var(--color-text);
+  text-decoration: none;
+  transition: background-color 180ms ease, border-color 180ms ease;
 }
 
 .content-card-inner:hover {

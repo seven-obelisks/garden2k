@@ -82,10 +82,6 @@
   font-weight: 700;
 }
 
-.event-card-title a:hover {
-  color: var(--color-primary);
-}
-
 .event-card-layout {
   display: grid;
   grid-template-columns: clamp(240px, 30%, 380px) minmax(0, 1fr);
@@ -312,10 +308,6 @@
   min-width: 0;
   color: var(--color-text);
   font-weight: 700;
-}
-
-.event-list-card-title a:hover {
-  color: var(--color-primary);
 }
 
 .event-list-card-layout {
