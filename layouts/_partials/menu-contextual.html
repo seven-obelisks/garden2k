@@ -1,0 +1,31 @@
+{{/*
+  Table of contents - set `toc: true` in a page's front matter to show this.
+  https://gohugo.io/content-management/toc/
+*/}}
+{{- if .Params.toc -}}
+  <div class="post-aside-box">
+    <p class="post-aside-title">{{ lang.Translate "whatsInThis" . }}</p>
+    {{ .TableOfContents }}
+  </div>
+{{- end -}}
+
+{{/*
+  Related content via Hugo's built-in relatedness feature.
+  https://gohugo.io/content-management/related/
+*/}}
+{{ $related := .Site.RegularPages.Related . | collections.First 15 }}
+
+{{ with $related }}
+  <div class="post-aside-box">
+    <p class="post-aside-title">{{ lang.Translate "related" }}</p>
+    <ul class="post-aside-list">
+      {{ range . }}
+        <li class="post-aside-item">
+          <a href="{{ .RelPermalink }}">
+            {{- .Title -}}
+          </a>
+        </li>
+      {{ end }}
+    </ul>
+  </div>
+{{ end }}

@@ -1,0 +1,17 @@
+{{ with .Site.Params.favicon }}
+  <link rel="shortcut icon" href="{{ urls.RelURL . }}" type="image/x-icon">
+{{ end }}
+
+{{/* These files already ship in static/ but weren't wired up under the Ananke favicon partial. */}}
+{{ if fileExists "static/favicon-32x32.png" }}
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ "favicon-32x32.png" | relURL }}">
+{{ end }}
+{{ if fileExists "static/favicon-16x16.png" }}
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ "favicon-16x16.png" | relURL }}">
+{{ end }}
+{{ if fileExists "static/apple-touch-icon.png" }}
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ "apple-touch-icon.png" | relURL }}">
+{{ end }}
+{{ if fileExists "static/site.webmanifest" }}
+  <link rel="manifest" href="{{ "site.webmanifest" | relURL }}">
+{{ end }}

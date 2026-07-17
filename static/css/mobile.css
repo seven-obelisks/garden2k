@@ -178,12 +178,12 @@
     display: block;
     width: 100%;
     padding: 1rem 0;
-    color: var(--color-headertext) !important;
+    color: var(--color-headertext);
   }
 
   .menu-link:hover,
   .menu-link:focus-visible {
-    color: var(--color-primary) !important;
+    color: var(--color-primary);
   }
 
   .submenu-list {
@@ -201,12 +201,12 @@
   .submenu-link {
     display: block;
     padding: 0.4rem 0;
-    color: var(--color-headermuted) !important;
+    color: var(--color-headermuted);
   }
 
   .submenu-link:hover,
   .submenu-link:focus-visible {
-    color: var(--color-primary) !important;
+    color: var(--color-primary);
   }
 
   /* EVENT LIST PAGE MOBILE */

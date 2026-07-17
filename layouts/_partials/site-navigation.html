@@ -34,8 +34,6 @@
         ×
       </button>
 
-      {{ partials.Include "i18nlist.html" . }}
-
       {{ if .Site.Menus.main }}
         <ul class="menu-list">
           {{ range .Site.Menus.main }}
@@ -85,8 +83,6 @@
           {{ $navButtonText }}
         </a>
       {{ end }}
-
-      {{ partials.IncludeCached "social/follow.html" . }}
 
     </div>
 

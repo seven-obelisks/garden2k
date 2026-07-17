@@ -1,5 +1,6 @@
 :root {
   --color-primary: #006b8f;
+  --color-accent: #006b8f;
   --color-bg: #f7f7f2;
   --color-surface: #ffffff;
   --color-header: #111820;
@@ -39,6 +40,7 @@ body {
   background: var(--color-bg) !important;
   font-size: 1rem;
   line-height: 1.6;
+  margin: 0;
 }
 
 main {
@@ -172,7 +174,7 @@ h4 {
 
 .site-logo {
   justify-self: start;
-  color: var(--color-headertext) !important;
+  color: var(--color-headertext);
   font-size: 1rem;
   font-weight: 600;
   letter-spacing: 0.08em;
@@ -180,7 +182,7 @@ h4 {
 }
 
 .site-logo:hover {
-  color: var(--color-primary) !important;
+  color: var(--color-primary);
 }
 
 .site-logo-img {
@@ -214,14 +216,14 @@ h4 {
 
 .menu-link,
 .submenu-link {
-  color: var(--color-headertext) !important;
+  color: var(--color-headertext);
   font-size: 1rem;
   text-decoration: none;
 }
 
 .menu-link:hover,
 .submenu-link:hover {
-  color: var(--color-primary) !important;
+  color: var(--color-primary);
 }
 
 .submenu-list {
@@ -250,7 +252,7 @@ h4 {
 .nav-menu .submenu-link.is-current,
 .nav-menu .menu-item.is-current > .menu-link,
 .nav-menu .submenu-item.is-current > .submenu-link {
-  color: var(--color-primary) !important;
+  color: var(--color-primary);
   text-decoration: underline;
   text-underline-offset: 0.5em;
 }
@@ -265,7 +267,7 @@ h4 {
   padding: 0.35rem 0.65rem;
   text-decoration: none;
   text-transform: uppercase;
-  color: var(--color-on-bright) !important;
+  color: var(--color-on-bright);
   font-size: 1rem !important;
 }
 
@@ -320,7 +322,7 @@ h4 {
 }
 
 .footer-link:hover {
-  color: var(--color-primary) !important;
+  color: var(--color-primary);
 }
 
 /* TEXT */
@@ -348,12 +350,12 @@ h4 {
 /* LINKS */
 
 a {
-  color: var(--color-text) !important;
+  color: var(--color-text);
   text-decoration: none;
 }
 
 a:hover {
-  color: var(--color-primary) !important;
+  color: var(--color-primary);
 }
 
 /* BUTTONS */
@@ -427,7 +429,7 @@ button,
 .content-card-link:hover .content-card-title,
 .content-card-link:hover .content-card-date,
 .content-card-link:hover .content-card-summary {
-  color: var(--color-on-bright) !important;
+  color: var(--color-on-bright);
 }
 
 /* RECENT POSTS */
@@ -471,7 +473,7 @@ button,
 .recent-post-link:hover,
 .recent-post-link:hover .recent-post-title,
 .recent-post-link:hover .recent-post-date {
-  color: var(--color-on-bright) !important;
+  color: var(--color-on-bright);
 }
 
 /* HOMEPAGE FEATURED ITEMS */
@@ -537,7 +539,7 @@ button,
 .featured-post-link:hover .featured-post-title,
 .featured-post-link:hover .featured-post-date,
 .featured-post-link:hover .featured-post-summary {
-  color: var(--color-on-bright) !important;
+  color: var(--color-on-bright);
 }
 
 /* POST COVER */
@@ -581,7 +583,7 @@ button,
   border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
   background: var(--color-surface);
-  color: var(--color-text) !important;
+  color: var(--color-text);
   text-decoration: none;
   transition:
     background-color 180ms ease,
@@ -739,4 +741,127 @@ button,
   .blog-post-card-featured-image-wrap {
     margin-bottom: 0.85rem;
   }
+}
+
+/* SITE / SINGLE POST - added replacing Ananke/Tachyons defaults */
+
+.site-main {
+  padding-bottom: 4rem;
+}
+
+.post-header {
+  margin-bottom: 1.5rem;
+}
+
+.post-author {
+  color: var(--color-darktext);
+  font-size: 0.875rem;
+  letter-spacing: 0.05em;
+}
+
+.post-date {
+  display: inline-block;
+  color: var(--color-darktext);
+  font-size: 0.875rem;
+  letter-spacing: 0.05em;
+}
+
+.post-aside {
+  margin-top: 2.5rem;
+}
+
+.post-aside-box {
+  padding: 1rem;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-bg);
+}
+
+.post-aside-title {
+  margin: 0 0 0.75rem;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.post-aside-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.post-aside-item {
+  margin-bottom: 0.4rem;
+}
+
+.post-tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.post-tag-item {
+  display: inline-block;
+}
+
+.post-tag-link {
+  display: inline-block;
+  padding: 0.35rem 0.85rem;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  color: var(--color-text) !important;
+  font-size: 0.8rem;
+  text-decoration: none;
+}
+
+.post-tag-link:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary) !important;
+}
+
+/* CONTENT CARD */
+
+.content-card-inner {
+  padding: 1rem;
+}
+
+.content-card-section {
+  display: block;
+  margin-bottom: 0.35rem;
+  color: var(--color-darktext);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.content-card-readmore {
+  display: inline-block;
+  margin-top: 0.75rem;
+  padding: 0.2rem 0.6rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+
+/* TAXONOMY / TERMS / 404 */
+
+.taxonomy-page,
+.terms-page,
+.not-found-page {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.terms-group {
+  margin-bottom: 2.5rem;
+}
+
+.terms-group-title {
+  margin-bottom: 1rem;
+}
+
+.terms-group-link {
+  color: var(--color-primary) !important;
 }

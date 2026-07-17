@@ -112,7 +112,7 @@
     var(--event-color, var(--color-primary)) 10%,
     var(--color-surface)
   );
-  color: var(--color-text) !important;
+  color: var(--color-text);
   font-size: 0.65rem;
   line-height: 1.25;
   text-decoration: none;
@@ -131,7 +131,7 @@
     var(--event-color, var(--color-primary)) 18%,
     var(--color-surface)
   );
-  color: var(--color-primary) !important;
+  color: var(--color-primary);
 }
 
 /* MOBILE CALENDAR */

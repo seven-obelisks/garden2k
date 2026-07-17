@@ -78,12 +78,12 @@
 .event-card-title a,
 .event-card-title a:visited {
   min-width: 0;
-  color: var(--color-text) !important;
+  color: var(--color-text);
   font-weight: 700;
 }
 
 .event-card-title a:hover {
-  color: var(--color-primary) !important;
+  color: var(--color-primary);
 }
 
 .event-card-layout {
@@ -204,26 +204,6 @@
   }
 }
 
-/* EVENT URLS */
-
-.event-details .event_url,
-.event-details .event_url:visited,
-.event_details .event_url,
-.event_details .event_url:visited,
-.event-card .event_url,
-.event-card .event_url:visited {
-  color: var(--color-primary) !important;
-  text-decoration: underline;
-  text-underline-offset: 0.2em;
-  word-break: break-word;
-}
-
-.event-details .event_url:hover,
-.event_details .event_url:hover,
-.event-card .event_url:hover {
-  color: var(--color-text) !important;
-}
-
 /* EVENT LIST PAGE */
 
 .events-list-grid {
@@ -279,12 +259,12 @@
 .event-list-card-title a,
 .event-list-card-title a:visited {
   min-width: 0;
-  color: var(--color-text) !important;
+  color: var(--color-text);
   font-weight: 700;
 }
 
 .event-list-card-title a:hover {
-  color: var(--color-primary) !important;
+  color: var(--color-primary);
 }
 
 .event-list-card-layout {
@@ -358,7 +338,7 @@
   border: 1px solid var(--color-primary);
   border-radius: var(--radius-sm);
   background-color: transparent;
-  color: var(--color-primary) !important;
+  color: var(--color-primary);
   font-size: 0.8rem !important;
   text-align: center;
   text-decoration: none;
@@ -371,7 +351,7 @@
 .event_button:focus-visible {
   border-color: var(--color-primary);
   background-color: var(--color-primary) !important;
-  color: var(--color-on-bright) !important;
+  color: var(--color-on-bright);
 }
 
 /* EVENT SINGLE */

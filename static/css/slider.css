@@ -129,13 +129,13 @@
   text-transform: uppercase;
   border: 1px solid var(--color-primary);
   background-color: var(--color-primary);
-  color: var(--color-on-bright) !important;
+  color: var(--color-on-bright);
   font-size: 1rem !important;
 }
 
 .slider_button:hover {
   background-color: transparent;
-  color: var(--color-primary) !important;
+  color: var(--color-primary);
 }
 
 @media screen and (max-width: 74.99em) {

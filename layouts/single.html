@@ -18,15 +18,14 @@
 
     <article class="{{ $post_class }}">
 
-      <header class="mb4">
-        {{- partials.Include "hook.html" (dict "hook" "article/section-link" "context" .) -}}
+      <header class="post-header">
 
         <h1 class="page_title">
           {{ .Title }}
         </h1>
 
         {{ with .Params.author | compare.Default .Site.Params.author }}
-          <p class="tracked">
+          <p class="post-author">
             {{- if compare.Eq $page.Language "de" "en" "es" "fr" "it" "no" "pt" -}}
               {{- lang.Translate "by" -}}
             {{ end }}
@@ -40,20 +39,8 @@
           </p>
         {{ end }}
 
-        {{ if and
-            (not .Date.IsZero)
-            (or
-              (and
-                (not (eq false site.Params.ananke.pages.show_date))
-                (not (eq false .Params.ananke.show_date))
-              )
-              (and
-                (eq false site.Params.ananke.pages.show_date)
-                (eq true .Params.ananke.show_date)
-              )
-            )
-        }}
-          <time class="f6 dib tracked"
+        {{ if and (not .Date.IsZero) (ne .Params.show_date false) }}
+          <time class="post-date"
             {{ printf `datetime="%s"` (.Date.Format "2006-01-02T15:04:05Z07:00") | safe.HTMLAttr }}>
             {{ .Date | time.Format (compare.Default "January 2, 2006" .Site.Params.date_format) }}
           </time>
@@ -77,21 +64,10 @@
 
         {{ partials.Include "tags.html" . }}
 
-        {{ if .Site.Config.Services.Disqus.Shortname }}
-          <div class="mt6 instapaper_ignoref">
-            {{ partials.Include "disqus.html" . }}
-          </div>
-        {{ end }}
-
-        {{ if .Site.Params.commentoEnable }}
-          <div class="mt6 instapaper_ignoref">
-            {{ partials.Include "commento.html" . }}
-          </div>
-        {{ end }}
       </div>
 
       {{ if $needs_aside }}
-        <aside class="mt5">
+        <aside class="post-aside">
           {{ partials.Include "menu-contextual.html" . }}
         </aside>
       {{ end }}

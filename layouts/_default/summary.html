@@ -1,0 +1,12 @@
+<div class="content-card-inner">
+  {{ with .CurrentSection.Title }}<span class="content-card-section">{{ . }}</span>{{ end }}
+  <h3 class="content-card-title">
+    <a href="{{ .RelPermalink }}" class="content-card-link">
+      {{ .Title }}
+    </a>
+  </h3>
+  <div class="content-card-summary">
+    {{ .Summary }}
+  </div>
+  <a href="{{ .RelPermalink }}" class="content-card-readmore">{{ $.Param "read_more_copy" | compare.Default (lang.Translate "readMore") }}</a>
+</div>

@@ -1,0 +1,4 @@
+{{/* Links each file listed in site.Params.custom_css directly from static/. */}}
+{{ range site.Params.custom_css }}
+  <link rel="stylesheet" href="{{ . | relURL }}">
+{{ end }}

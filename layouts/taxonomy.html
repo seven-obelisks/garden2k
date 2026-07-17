@@ -1,0 +1,19 @@
+{{ define "main" }}
+  <main class="taxonomy-page site-container list-container">
+    <h1 class="page_title">{{ .Title }}</h1>
+
+    {{ with .Content }}
+      <div class="section-intro">
+        {{ . }}
+      </div>
+    {{ end }}
+
+    <ul class="content-list">
+      {{ range .Pages }}
+        <li class="content-card">
+          {{ .Render "summary" }}
+        </li>
+      {{ end }}
+    </ul>
+  </main>
+{{ end }}

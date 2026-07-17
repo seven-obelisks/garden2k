@@ -1,19 +1,19 @@
 {{ define "main" }}
 <main>
-  {{ partial "home_slider.html" . }}
+  {{ partials.Include "home_slider.html" . }}
 
   <section class="site-container">
     <div class="home-content-grid">
       <div class="home-main-column">
-        {{ partial "home_next_event.html" . }}
+        {{ partials.Include "home_next_event.html" . }}
 
-        {{ partial "home_recent_posts.html" . }}
+        {{ partials.Include "home_recent_posts.html" . }}
       </div>
 
-      {{ partial "featured_posts.html" . }}
+      {{ partials.Include "featured_posts.html" . }}
     </div>
   </section>
 </main>
 
-{{ partial "home_scripts.html" . }}
+{{ partials.Include "home_scripts.html" . }}
 {{ end }}
