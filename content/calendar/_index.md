@@ -1,3 +1,3 @@
 ---
-title: Events Calendar
+title: Calendar
 ---

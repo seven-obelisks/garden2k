@@ -1,5 +1,5 @@
 ---
-title: "Events List"
+title: "Events"
 cascade:
   type: "event"
   outputs:

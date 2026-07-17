@@ -53,6 +53,14 @@
           tabindex="0"
           style="--event-color: {{ $eventColor }};"
         >
+          {{ with .Params.tags }}
+            <p class="event-label">
+              {{ range $i, $tag := . }}{{ if $i }}, {{ end }}<a href="/tags/{{ $tag | urlize }}/">{{ $tag }}</a>{{ end }}
+            </p>
+          {{ else }}
+            <p class="event-label">Event</p>
+          {{ end }}
+
           <h3 class="event-list-card-title">
             <a href="{{ .RelPermalink }}">{{ .Title }}</a>
             <span class="event-list-card-color-dot" aria-hidden="true"></span>
@@ -144,6 +152,14 @@
         tabindex="0"
         style="--event-color: {{ $eventColor }};"
       >
+        {{ with .Params.tags }}
+          <p class="event-label">
+            {{ range $i, $tag := . }}{{ if $i }}, {{ end }}<a href="/tags/{{ $tag | urlize }}/">{{ $tag }}</a>{{ end }}
+          </p>
+        {{ else }}
+          <p class="event-label">Event</p>
+        {{ end }}
+
         <h3 class="event-list-card-title">
           <a href="{{ .RelPermalink }}">{{ .Title }}</a>
           <span class="event-list-card-color-dot" aria-hidden="true"></span>
