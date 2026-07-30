@@ -64,7 +64,7 @@
     width: 1.5rem;
     height: 2px;
     margin: 0 auto;
-    background: var(--color-headertext);
+    background: var(--color-primary);
   }
 
   .menu-toggle:hover .menu-toggle-bar,
@@ -84,6 +84,7 @@
 
   .site-logo-img {
     display: block;
+    max-width: 150px;
   }
 
   .nav-cta-desktop {
@@ -201,7 +202,7 @@
   .submenu-link {
     display: block;
     padding: 0.4rem 0;
-    color: var(--color-headermuted);
+    color: var(--color-headertext);
   }
 
   .submenu-link:hover,
@@ -343,13 +344,13 @@
     margin-bottom: 0.9rem !important;
   }
 
+  .home-main-column h2:first-child {
+    margin-top: 0 !important;
+  }
+
   .home-featured-posts-column {
     margin-bottom: 0 !important;
     padding-top: 0 !important;
-  }
-
-  .home-featured-posts-column h2 {
-    margin-top: 2.5rem !important;
   }
 
   .recent-post,
@@ -390,10 +391,6 @@
 
   .home-main-column h2:first-child {
     margin-top: 0 !important;
-  }
-
-  .home-featured-posts-column h2 {
-    margin-top: 1.5rem !important;
   }
 
   .recent-post-link {
