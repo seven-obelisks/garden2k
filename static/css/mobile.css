@@ -26,6 +26,11 @@
     width: 100%;
   }
 
+  .site-shell {
+    padding-right: 2rem;
+    padding-left: 2rem;
+  }
+
   .navbar {
     position: relative;
     display: block;
@@ -212,7 +217,7 @@
 
   .home-slider {
     border-radius: var(--radius-sm);
-    margin-top:-4.75rem !important;
+    margin-top:-3rem !important;
   }
 
   /* EVENT LIST PAGE MOBILE */
