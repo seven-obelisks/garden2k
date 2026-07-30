@@ -344,10 +344,6 @@
     margin-bottom: 0.9rem !important;
   }
 
-  .home-main-column h2:first-child {
-    margin-top: 0 !important;
-  }
-
   .home-featured-posts-column {
     margin-bottom: 0 !important;
     padding-top: 0 !important;
@@ -387,10 +383,6 @@
   .home-featured-posts-column h2 {
     margin-top: 1.5rem !important;
     margin-bottom: 0.8rem !important;
-  }
-
-  .home-main-column h2:first-child {
-    margin-top: 0 !important;
   }
 
   .recent-post-link {
