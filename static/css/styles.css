@@ -333,7 +333,7 @@ h4 {
 
 .nav-menu .submenu-link.is-current,
 .nav-menu .submenu-item.is-current > .submenu-link {
-  color: var(--color-navtext);
+  color: var(--color-primary);
   text-decoration: underline;
   text-underline-offset: 0.5em;
 }

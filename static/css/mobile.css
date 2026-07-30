@@ -210,6 +210,10 @@
     color: var(--color-primary);
   }
 
+  .home-slider {
+    border-radius: var(--radius-sm);
+  }
+
   /* EVENT LIST PAGE MOBILE */
 
   .events-list-grid {

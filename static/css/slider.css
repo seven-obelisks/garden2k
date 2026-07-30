@@ -83,7 +83,7 @@
 
 .slider-control {
   position: absolute;
-  top: 50%;
+  top: 90%;
   z-index: 5;
   display: inline-flex;
   align-items: center;
