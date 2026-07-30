@@ -339,12 +339,8 @@
 
   .home-main-column h2,
   .home-featured-posts-column h2 {
-    margin-top: 1.75rem !important;
+    margin-top: 2.5rem !important;
     margin-bottom: 0.9rem !important;
-  }
-
-  .home-main-column h2:first-child {
-    margin-top: 0 !important;
   }
 
   .home-featured-posts-column {
@@ -353,7 +349,7 @@
   }
 
   .home-featured-posts-column h2 {
-    margin-top: 1.75rem !important;
+    margin-top: 2.5rem !important;
   }
 
   .recent-post,

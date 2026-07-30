@@ -1,29 +1,37 @@
 {{ with hugo.Data.homepage.banners }}
   <div class="site-shell">
-    <section class="home-slider" data-slider>
+<section class="home-slider" data-slider>
       {{ range $index, $banner := . }}
-        <div
-          class="slide{{ if eq $index 0 }} is-active{{ end }}"
-          {{ with $banner.image }}style="background-image: url('{{ . }}');"{{ end }}
-        >
-          <div class="slide-content">
-            <h1 class="slider-title">{{ $banner.title }}</h1>
+<div
+class="slide{{ if eq $index 0 }} is-active{{ end }}"
+{{ with $banner.image }}style="background-image: url('{{ . }}');"{{ end }}
+>
+<div class="slide-content">
+<h1 class="slider-title">{{ $banner.title }}</h1>
 
             {{ with $banner.text }}
-              <p class="banner-text">{{ . }}</p>
+<p class="banner-text">{{ . }}</p>
             {{ end }}
 
             {{ if and $banner.button_text $banner.button_url }}
-              <a href="{{ $banner.button_url }}" class="slider_button">
+<a href="{{ $banner.button_url }}" class="slider_button">
                 {{ $banner.button_text }}
-              </a>
+</a>
             {{ end }}
-          </div>
-        </div>
+</div>
+</div>
       {{ end }}
 
-      <button class="slider-control slider-prev" type="button" data-prev aria-label="Previous slide"><</button>
-      <button class="slider-control slider-next" type="button" data-next aria-label="Next slide">></button>
-    </section>
-  </div>
+<button class="slider-control slider-prev" type="button" data-prev aria-label="Previous slide">
+  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M15 18l-6-6 6-6"/>
+  </svg>
+</button>
+<button class="slider-control slider-next" type="button" data-next aria-label="Next slide">
+  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M9 18l6-6-6-6"/>
+  </svg>
+</button>
+</section>
+</div>
 {{ end }}

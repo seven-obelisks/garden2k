@@ -3,11 +3,14 @@
   --color-accent: #005470;
   --color-bg: #f7f7f2;
   --color-surface: #ffffff;
-  --color-header: #111820;
+  --color-shadow: #1720261a;
+  --color-header: #f7f7f2;
+  --color-nav: #006b8f;
   --color-footer: #f7f7f2;
   --color-text: #172026;
   --color-darktext: #58636d;
-  --color-headertext: #f4f7f8;
+  --color-headertext: #172026;
+  --color-navtext: #f7f7f2;
   --color-headermuted: #c5d0d8;
   --color-border: #cfd8dc;
   --color-overlay: rgba(17, 24, 32, 0.78);
@@ -151,7 +154,7 @@ h4 {
 }
 
 .prose tr:nth-child(even) td {
-  background-color: var(--color-surface);
+  background-color: #fff;
 }
 
 .prose hr{
@@ -175,7 +178,6 @@ h4 {
   margin: 0 auto;
 }
 
-.site-shell,
 .site-container {
   padding-bottom: 2rem;
 }
@@ -203,11 +205,12 @@ h4 {
   z-index: 9999;
   margin-bottom: 5rem;
   background: var(--color-header);
-  border-bottom: 1px solid color-mix(
+  border-bottom: 0px solid color-mix(
     in srgb,
     var(--color-headertext) 18%,
     transparent
   );
+  box-shadow: var(--color-shadow) 0 10px 10px -10px;
 }
 
 .site-header,
@@ -251,7 +254,7 @@ h4 {
 }
 
 .site-logo-img {
-  max-width: 150px;
+  max-width: 200px;
   height: auto;
 }
 
@@ -279,16 +282,24 @@ h4 {
   position: relative;
 }
 
-.menu-link,
-.submenu-link {
+.menu-link{
   color: var(--color-headertext);
   font-size: 1rem;
   text-decoration: none;
 }
 
-.menu-link:hover,
-.submenu-link:hover {
+.submenu-link {
+  color: var(--color-navtext);
+  font-size: 1rem;
+  text-decoration: none;
+}
+
+.menu-link:hover{
   color: var(--color-primary);
+}
+
+.submenu-link:hover {
+  color: var(--color-text);
 }
 
 .submenu-list {
@@ -300,7 +311,7 @@ h4 {
   min-width: 200px;
   padding: 1rem;
   border-radius: var(--radius-sm);
-  background: var(--color-header);
+  background: var(--color-nav);
   text-align: left;
 }
 
@@ -314,10 +325,15 @@ h4 {
 }
 
 .nav-menu .menu-link.is-current,
-.nav-menu .submenu-link.is-current,
-.nav-menu .menu-item.is-current > .menu-link,
-.nav-menu .submenu-item.is-current > .submenu-link {
+.nav-menu .menu-item.is-current > .menu-link{
   color: var(--color-primary);
+  text-decoration: underline;
+  text-underline-offset: 0.5em;
+}
+
+.nav-menu .submenu-link.is-current,
+.nav-menu .submenu-item.is-current > .submenu-link {
+  color: var(--color-navtext);
   text-decoration: underline;
   text-underline-offset: 0.5em;
 }
