@@ -1,6 +1,5 @@
 ---
 title: "Photo Content Page"
-date: 2026-06-20
 summary: "Example of a page with just photo content with lightbox enabled."
 featured: true
 ---

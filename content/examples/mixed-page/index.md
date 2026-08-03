@@ -1,6 +1,5 @@
 ---
 title: "Mixed Content Page"
-date: 2026-06-20
 summary: "Example of page with a mix of content: text, images, videos, downloads, and more."
 featured: true
 ---

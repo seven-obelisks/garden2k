@@ -89,7 +89,6 @@ h4 {
 /* PROSE - CONTENT FORMATTING */
 
 .prose p {
-  margin: 0 0 1.25rem;
   line-height: 1.65;
   text-align: justify;
   hyphens: none;
@@ -184,7 +183,7 @@ h4 {
 
 .post-container,
 .tag-container{
-  max-width: 75rem;
+  max-width: 65rem;
 }
 
 .header-shell {
@@ -290,7 +289,7 @@ h4 {
 
 .submenu-link {
   color: var(--color-navtext);
-  font-size: 1rem;
+  font-size: .85rem;
   text-decoration: none;
 }
 
@@ -838,7 +837,7 @@ button,
   }
 }
 
-/* SITE / SINGLE POST - added replacing Ananke/Tachyons defaults */
+/* SITE */
 
 .site-main {
   padding-bottom: 10rem;
@@ -978,11 +977,9 @@ div:has(> iframe[src*="youtube.com"]) {
 .page-banner {
   position: relative;
   display: flex;
-  align-items: center;
-  min-height: 320px;
-  margin: 2.5rem 0;
+  min-height: 325px;
+  margin: 1.5rem 0 1.5rem 0;
   overflow: hidden;
-  border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   background-color: var(--color-header);
   background-position: center;
@@ -993,7 +990,11 @@ div:has(> iframe[src*="youtube.com"]) {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(17, 24, 32, 0.45);
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.7) 0%,
+    rgba(255, 255, 255, 0.25) 75%
+  );
 }
 
 .page-banner-no-image::before {
@@ -1003,9 +1004,21 @@ div:has(> iframe[src*="youtube.com"]) {
 .page-banner-content {
   position: relative;
   z-index: 1;
-  max-width: 30rem;
-  padding: 2.5rem;
-  color: var(--color-on-bright);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 50%;
+  max-width: none;
+  min-height: 100%;
+  padding: 2rem 2rem;
+  border: 0;
+  background-color: color-mix(
+    in srgb,
+    var(--color-surface) 75%,
+    transparent
+  );
+  box-shadow: -1rem 0 3rem rgba(17, 24, 32, 0.22);
 }
 
 .page-banner-no-image .page-banner-content {
@@ -1014,7 +1027,7 @@ div:has(> iframe[src*="youtube.com"]) {
 
 .page-banner-title {
   margin: 0 0 0.75rem;
-  color: inherit;
+  color: var(--color-primary);
   font-size: clamp(1.75rem, 3vw, 2.5rem);
   font-weight: 700;
   line-height: 1.1;
@@ -1023,7 +1036,7 @@ div:has(> iframe[src*="youtube.com"]) {
 
 .page-banner-text {
   margin: 0 0 1.25rem;
-  color: inherit;
+  color: var(--color-primary);
   font-size: 1rem;
   line-height: 1.5;
 }
@@ -1050,8 +1063,40 @@ div:has(> iframe[src*="youtube.com"]) {
     min-height: 260px;
   }
 
-  .page-banner-content {
-    max-width: 100%;
-    padding: 1.75rem;
+  .page-banner::before {
+    background: rgba(255, 255, 255, 0.7);
   }
+
+  .page-banner-content {
+    width: 100%;
+    padding: 1.75rem;
+    border-left: 0;
+    background-color: transparent;
+    box-shadow: none;
+  }
+}
+
+.callout {
+  margin: 2rem 0;
+  padding: 0rem;
+  border-top: 1px dashed var(--color-border);
+  border-bottom: 1px dashed var(--color-border);
+}
+
+.callout_h2 {
+  margin-top:25px;
+  margin-bottom: 1.25rem;
+  font-size: clamp(1.75rem, 3.25vw, 2.6rem);
+}
+
+.callout-label {
+  display: inline-block;
+  margin-bottom: 0.35rem;
+  padding: 0.15rem 0.5rem;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  color: var(--color-darktext);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
 }

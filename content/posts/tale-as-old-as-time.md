@@ -13,6 +13,8 @@ Proin iaculis elit felis, eu pulvinar risus rhoncus ac. Sed non est non lectus c
 
 Phasellus ac felis ac ligula condimentum viverra et et erat. Aliquam eleifend tincidunt ligula, et eleifend nisl viverra sit amet. Nunc eget tempor dolor. Integer ac mattis nunc, id accumsan ligula. Nullam tempus enim arcu, in tincidunt arcu malesuada quis. Suspendisse fringilla est vel posuere rhoncus. Cras id tortor vitae eros pharetra varius pulvinar quis purus. Aenean interdum metus ipsum, a mollis ex consequat sit amet. Nullam scelerisque justo vel faucibus bibendum. Nulla accumsan, orci at vehicula porta, dolor nulla pulvinar orci, ac rutrum metus mauris ac libero.
 
+{{< event-call tag="outdoors" >}}
+
 Mauris bibendum ante eget ligula gravida, at bibendum mi consectetur. Proin vitae arcu erat. Duis nisl tortor, pretium quis eros ac, faucibus ornare massa. Mauris eget accumsan dui. Praesent mattis ligula ac lacinia gravida. Proin non libero tempus felis semper finibus. Donec nec tellus blandit, scelerisque leo ut, feugiat risus. Praesent vitae venenatis libero. 
 
 Vivamus pretium enim mi, vitae posuere elit lacinia ornare. Pellentesque ac porttitor erat. Praesent scelerisque nisi quis libero tempus placerat. Maecenas purus leo, fermentum vitae porta vel, condimentum ac odio. Mauris sit amet magna id nunc fermentum sollicitudin eget scelerisque nulla. Curabitur tempus, ligula ut dapibus vehicula, ipsum nisi accumsan ipsum, eu aliquam ante metus in eros. Proin ornare urna ut tempor vestibulum. Curabitur vel eros malesuada, malesuada mauris eleifend, ultricies turpis. 
