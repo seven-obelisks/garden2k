@@ -14,7 +14,7 @@
     {{- $post_class = printf "page-%s" .ContentBaseName -}}
   {{- end -}}
 
-  <main class="site-container post-container">
+  <main class="site-container{{ if eq .Section "posts" }} blog-post-page{{ end }}">
 
     <article class="{{ $post_class }}">
 

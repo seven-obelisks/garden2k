@@ -13,7 +13,7 @@ title = 'Garden2k'
   favicon = "/favicon.ico"
   nav_button_text = "Download"
   nav_button_url = "https://github.com/seven-obelisks/garden2k"
-  custom_css = ["css/styles.css", "css/mobile.css", "css/overrides.css", "css/calendar.css", "css/slider.css", "css/events.css"]
+  custom_css = ["css/styles.css", "css/mobile.css", "css/overrides.css", "css/calendar.css", "css/slider.css"]
 
 [mediaTypes]
   [mediaTypes."text/calendar"]

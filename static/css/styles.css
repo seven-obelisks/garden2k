@@ -57,6 +57,10 @@ body * {
   font-optical-sizing: auto;
 }
 
+main.blog-post-page {
+  max-width: 60rem;
+}
+
 h1,
 h2,
 h3,
@@ -157,7 +161,11 @@ h4 {
 }
 
 .prose hr{
+  background-color: var(--color-primary);
+  color: var(--color-primary);
   margin:2rem 0rem;
+  border: none;
+  height:1px;
 }
 
 /* LAYOUT */
@@ -183,7 +191,7 @@ h4 {
 
 .post-container,
 .tag-container{
-  max-width: 70rem;
+  max-width: 60rem;
 }
 
 .header-shell {
@@ -711,7 +719,6 @@ button,
 }
 
 .section-card-summary {
-  margin-top: auto;
   color: var(--color-text);
   font-size: 0.95rem;
   line-height: 1.45;
@@ -961,7 +968,7 @@ div:has(> iframe[src*="youtube.com"]) {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  width: 50%;
+  width: 40%;
   max-width: none;
   min-height: 100%;
   padding: 2rem 2rem;
@@ -1013,7 +1020,7 @@ div:has(> iframe[src*="youtube.com"]) {
 
 .callout {
   margin: 2rem 0;
-  padding: 0rem;
+  padding: 0 0 2rem;
   border-top: 1px dashed var(--color-border);
   border-bottom: 1px dashed var(--color-border);
 }
