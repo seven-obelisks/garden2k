@@ -1496,3 +1496,112 @@ div:has(> iframe[src*="youtube.com"]) {
 .clickable-card label {
   cursor: auto;
 }
+
+/* HOMEPAGE SEARCH */
+
+.search-container {
+  margin-top: 3rem;
+  width: 100%;
+  background-color: var(--color-primary);
+  padding: 1rem;
+  border-radius: var(--radius-sm);
+}
+
+.home-search {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.home-search-form {
+  display: flex;
+  width: 70%;
+  gap: 0.5rem;
+}
+
+.home-search-input {
+  flex: 1;
+  padding: 0.6rem 0.85rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.home-search-input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+.home-search-button {
+  padding: 0.6rem 1.1rem;
+  border: 1px solid var(--color-bg);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-primary);
+  color: var(--color-bg);
+  font-family: inherit;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.home-search-button:hover {
+  background-color:var(--color-primary);
+  color: var(--color-bg);
+}
+
+.home-search-results {
+  display: none;
+  margin-top: 1.25rem;
+}
+
+.home-search-results.is-open {
+  display: block;
+}
+
+.home-search-result {
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.home-search-result:last-child {
+  border-bottom: 0;
+}
+
+.home-search-result-title {
+  display: block;
+  margin-bottom: 0.4rem;
+  color: var(--color-text);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.home-search-result-title:hover {
+  color: var(--color-primary);
+}
+
+.home-search-result-snippet {
+  margin: 0;
+  color: var(--color-darktext);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.home-search-empty {
+  color: var(--color-darktext);
+}
+
+.home-search mark {
+  background-color: color-mix(in srgb, var(--color-primary) 25%, transparent);
+  color: inherit;
+  padding: 0 0.1em;
+  border-radius: 2px;
+}
+
+.search-h2 {
+  color: var(--color-bg);
+  margin: 0 !important;
+}

@@ -28,6 +28,7 @@ title = 'Garden2k'
 
 [outputs]
   page = ["HTML"]
+  home = ["HTML", "JSON"]
 
 [[menu.main]]
   name = "Events"
