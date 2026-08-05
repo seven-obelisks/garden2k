@@ -4,14 +4,21 @@
 
   <section class="site-container">
     <div class="home-content-grid">
-      <div class="home-main-column">
+
         {{ partials.Include "home_next_event.html" . }}
 
         {{ partials.Include "home_recent_posts.html" . }}
-      </div>
+        
+        {{ partials.Include "featured_posts.html" . }}
 
-      {{ partials.Include "featured_posts.html" . }}
+      <h2 class="events_h2">Homepage Photo Gallery</h2>
+      
+        <div class="home-gallery-shell">
+          {{ partial "home_gallery.html" . }}
+        </div>
+
     </div>
+
   </section>
 </main>
 

@@ -45,7 +45,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 40%;
+  width: 50%;
   max-width: none;
   min-height: 100%;
   padding: 2rem 4rem;
@@ -69,7 +69,7 @@
 }
 
 .home-slider p {
-  margin: 0 0 1.25rem;
+  margin: 0 0 1.5rem;
   color: var(--color-primary);
   font-size: 1.5rem;
   line-height: 1.5;
@@ -77,6 +77,7 @@
 
 .banner-text {
   color: var(--color-text);
+  line-height: 1 !important;
 }
 
 /* SLIDER CONTROLS */
@@ -149,8 +150,8 @@
 
 @media screen and (max-width: 74.99em) {
   .home-slider .slide-content {
-    flex-basis: 36%;
-    width: 36%;
+    flex-basis: 50%;
+    width: 50%;
     min-width: 21rem;
     padding: 2.5rem;
   }
