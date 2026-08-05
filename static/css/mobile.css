@@ -431,14 +431,6 @@
     flex-direction: column;
     align-items: flex-start;
   }
-
-  .home-content-grid h2 {
-    margin-top: 2.5rem;
-    margin-bottom: 0.9rem;
-  }
-  .search-h2 {
-    margin-top: 0rem;
-  }
 }
 
 @media screen and (max-width: 29.99em) {
@@ -452,11 +444,6 @@
 
   .site-header {
     margin-bottom: 2rem;
-  }
-
-  .home-content-grid h2 {
-    margin-top: 1.5rem;
-    margin-bottom: 0.8rem;
   }
 
   .recent-post-link {
