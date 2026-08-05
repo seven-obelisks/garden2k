@@ -144,8 +144,8 @@
 }
 
 .slider_button:hover {
-  background-color: transparent;
-  color: var(--color-primary);
+  background-color: var(--color-accent);
+  color: var(--color-on-bright) !important;
 }
 
 @media screen and (max-width: 74.99em) {

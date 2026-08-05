@@ -357,13 +357,13 @@ h4 {
   padding: 0.35rem 0.65rem;
   text-decoration: none;
   text-transform: uppercase;
-  color: var(--color-on-bright);
+  color: var(--color-bg);
   font-size: 1rem !important;
 }
 
 .nav-cta:hover {
-  background-color: transparent;
-  color: var(--color-primary) !important;
+  background-color: var(--color-accent);
+  color: var(--color-bg) !important;
 }
 
 .nav-cta-desktop {
@@ -542,8 +542,13 @@ button,
 
 /* RECENT POSTS */
 
-.recent-post {
-  margin-bottom: 0.75rem;
+.recent-posts-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .recent-post-link {
@@ -888,7 +893,7 @@ button,
 /* TAXONOMY / TERM / 404 */
 
 .error-container{
-  max-width:30rem;
+  max-width:60rem;
   text-align:center;
 }
 
@@ -1003,7 +1008,6 @@ div:has(> iframe[src*="youtube.com"]) {
 
 .page-banner-button {
   display: inline-block;
-  padding: 0.35rem 0.65rem;
   border: 1px solid var(--color-primary);
   border-radius: var(--radius-sm);
   background-color: var(--color-primary);
@@ -1011,11 +1015,12 @@ div:has(> iframe[src*="youtube.com"]) {
   text-decoration: none;
   text-transform: uppercase;
   font-size: 1rem;
+  padding: 0.35rem 0.65rem;
 }
 
 .page-banner-button:hover {
-  background-color: var(--color-bg);
-  color: var(--color-primary);
+  background-color: var(--color-accent);
+  color: var(--color-on-bright);
 }
 
 .callout {
@@ -1400,8 +1405,8 @@ div:has(> iframe[src*="youtube.com"]) {
   padding: 0.35rem 0.65rem;
   border: 1px solid var(--color-primary);
   border-radius: var(--radius-sm);
-  background-color: transparent;
-  color: var(--color-primary);
+  background-color: var(--color-primary);
+  color: var(--color-on-bright);
   font-size: 0.8rem !important;
   text-align: center;
   text-decoration: none;
@@ -1413,7 +1418,7 @@ div:has(> iframe[src*="youtube.com"]) {
 .event_button:hover,
 .event_button:focus-visible {
   border-color: var(--color-primary);
-  background-color: var(--color-primary) !important;
+  background-color: var(--color-accent) !important;
   color: var(--color-on-bright);
 }
 
@@ -1505,18 +1510,20 @@ div:has(> iframe[src*="youtube.com"]) {
   background-color: var(--color-primary);
   padding: 1rem;
   border-radius: var(--radius-sm);
+  margin-top:50px;
+  border:1px solid var(--color-accent);
 }
 
 .home-search {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1.5rem;
+  gap: 1rem;
 }
 
 .home-search-form {
   display: flex;
-  width: 70%;
+  width: 85%;
   gap: 0.5rem;
 }
 
@@ -1537,8 +1544,7 @@ div:has(> iframe[src*="youtube.com"]) {
 }
 
 .home-search-button {
-  padding: 0.6rem 1.1rem;
-  border: 1px solid var(--color-bg);
+  border: 1px solid var(--color-accent);
   border-radius: var(--radius-sm);
   background-color: var(--color-primary);
   color: var(--color-bg);
@@ -1549,7 +1555,7 @@ div:has(> iframe[src*="youtube.com"]) {
 }
 
 .home-search-button:hover {
-  background-color:var(--color-primary);
+  background-color:var(--color-accent);
   color: var(--color-bg);
 }
 
