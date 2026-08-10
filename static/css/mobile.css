@@ -301,7 +301,7 @@
 
   .home-slider {
     border-radius: var(--radius-sm);
-    margin-top:-3rem !important;
+    margin-top:-1rem !important;
   }
 
   .featured-posts-list {

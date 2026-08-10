@@ -208,7 +208,7 @@ h4 {
   position: sticky;
   top: 0;
   z-index: 9999;
-  margin-bottom: 5rem;
+  margin-bottom: 3rem;
   background: var(--color-header);
   border-bottom: 0px solid color-mix(
     in srgb,
