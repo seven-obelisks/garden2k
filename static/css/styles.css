@@ -1399,6 +1399,13 @@ div:has(> iframe[src*="youtube.com"]) {
   align-items: baseline;
   gap: 0.6rem;
   color: var(--color-text);
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom:.5rem;
+}
+
+.event-detail-item:last-child {
+  border-bottom: none;
+  padding-bottom:0;
 }
 
 .event-detail-icon {
