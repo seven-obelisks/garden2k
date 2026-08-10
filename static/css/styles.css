@@ -6,15 +6,13 @@
   --color-shadow: #1720261a;
   --color-header: #f7f7f2;
   --color-nav: #006b8f;
-  --color-footer: #f7f7f2;
+  --color-footer: #172026;
   --color-text: #172026;
   --color-darktext: #58636d;
   --color-headertext: #172026;
   --color-navtext: #172026;
-  --color-headermuted: #c5d0d8;
   --color-border: #cfd8dc;
   --color-overlay: rgba(17, 24, 32, 0.78);
-  --color-overlayborder: rgba(244, 247, 248, 0.28);
 
   --color-on-bright: #ffffff;
   --color-card-primary: #ffffff;
@@ -384,7 +382,7 @@ h4 {
 
 .site-footer,
 .site-footer * {
-  color: var(--color-text);
+  color: var(--color-bg);
 }
 
 .footer-inner {
@@ -409,14 +407,6 @@ h4 {
 .footer-link,
 .copyright {
   text-decoration: none;
-}
-
-.copyright{
-  color: var(--color-primary); 
-}
-
-.copyright:hover{
-  color: var(--color-text)
 }
 
 .footer-link:hover {
@@ -945,21 +935,10 @@ div:has(> iframe[src*="youtube.com"]) {
   min-height: 325px;
   margin: 1.5rem 0 1.5rem 0;
   overflow: hidden;
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-sm);
   background-color: var(--color-header);
   background-position: center;
   background-size: cover;
-}
-
-.page-banner::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to right,
-    rgba(255, 255, 255, 0.7) 0%,
-    rgba(255, 255, 255, 0.25) 75%
-  );
 }
 
 .page-banner-no-image::before {
@@ -976,13 +955,12 @@ div:has(> iframe[src*="youtube.com"]) {
   width: 40%;
   max-width: none;
   min-height: 100%;
+  margin:3rem;
+  margin-left: auto;
   padding: 2rem 2rem;
-  border: 0;
-  background-color: color-mix(
-    in srgb,
-    var(--color-surface) 75%,
-    transparent
-  );
+  border: 1px solid var(--color-border);
+  border-radius:var(--radius-sm);
+  background-color: color-mix(in srgb, var(--color-surface) 90%, transparent);
   box-shadow: -1rem 0 3rem rgba(17, 24, 32, 0.22);
 }
 
@@ -1201,7 +1179,7 @@ div:has(> iframe[src*="youtube.com"]) {
 
 .event-card-info p:last-child {
   margin-bottom: 0 !important;
-  padding-bottom:0px;
+  padding-bottom:10px;
   border-bottom: none;
 }
 
@@ -1244,7 +1222,6 @@ div:has(> iframe[src*="youtube.com"]) {
   flex-wrap: wrap;
   align-items: center;
   gap: 0.65rem;
-  margin-top: 1rem;
 }
 
 .event-card--compact .event-card-info {
@@ -1276,7 +1253,7 @@ div:has(> iframe[src*="youtube.com"]) {
 .event-card-image {
   height: auto;
   max-height: none;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 2 / 1;
 }
 
 .event-card:hover .event-card-image {

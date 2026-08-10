@@ -4,7 +4,7 @@ summary: "Example of page with a banner that can be added to any page via shortc
 featured: true
 ---
 
-{{< banner title="Content Looks Better in a Banner" text="This banner is linked to parameters set by the user in the markdown's shortcode." button_text="Learn More" button_url="https://garden2k.com" image="/uploads/peaceful.jpg" >}}
+{{< banner title="Content Looks Better in a Banner" text="This banner is linked to parameters set by the user in the markdown's shortcode." button_text="Learn More" button_url="https://garden2k.com" image="/uploads/calm.jpg" >}}
 
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eleifend vel sem vel consequat. Pellentesque tincidunt blandit justo et suscipit. Fusce id sollicitudin massa, convallis dictum neque. Nunc fringilla justo fermentum nisl rutrum, ac tincidunt ante auctor. Curabitur vitae lacus id magna semper sollicitudin. Curabitur luctus mollis orci sit amet rutrum. Nullam dictum a dolor sit amet congue. Integer eget pellentesque mauris, in gravida sapien. Fusce ante ipsum, dictum non imperdiet vitae, finibus non justo. Nunc dignissim imperdiet finibus. Pellentesque eu commodo massa. Integer sed vulputate quam.

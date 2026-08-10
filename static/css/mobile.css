@@ -354,7 +354,9 @@
 
 @media screen and (max-width: 59.99em) {
   .page-banner {
+    padding-bottom: 10rem;
     min-height: 260px;
+    background-position:center left;
   }
 
   .page-banner::before {
@@ -362,11 +364,9 @@
   }
 
   .page-banner-content {
-    width: 100%;
+    width: calc(100% - 2rem);
+    margin: 1rem;
     padding: 1.75rem;
-    border-left: 0;
-    background-color: transparent;
-    box-shadow: none;
   }
 }
 
