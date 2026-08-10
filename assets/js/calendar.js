@@ -54,6 +54,14 @@ function urlize(value) {
     .replace(/(^-|-$)/g, "");
 }
 
+function makeIcon(emoji) {
+  const icon = document.createElement("span");
+  icon.className = "event-icon";
+  icon.setAttribute("aria-hidden", "true");
+  icon.textContent = emoji;
+  return icon;
+}
+
 function renderCalendar() {
   const year = current.getFullYear();
   const month = current.getMonth();
@@ -171,6 +179,7 @@ function renderMonthEvents() {
 
     const label = document.createElement("p");
     label.className = "event-label";
+    label.appendChild(makeIcon("🏷️"));
     if (event.tags.length) {
       event.tags.forEach((tag, i) => {
         if (i) label.append(", ");
@@ -180,7 +189,7 @@ function renderMonthEvents() {
         label.appendChild(tagLink);
       });
     } else {
-      label.textContent = "Event";
+      label.append("Event");
     }
     li.appendChild(label);
 
@@ -205,23 +214,26 @@ function renderMonthEvents() {
     if (event.organizer) {
       const organizer = document.createElement("p");
       organizer.className = "event-organizer";
-      organizer.textContent = `Hosted by ${event.organizer}`;
+      organizer.appendChild(makeIcon("👥"));
+      organizer.append(`Hosted by ${event.organizer}`);
       info.appendChild(organizer);
     }
 
     if (event.startFull || event.endFull) {
       const meta = document.createElement("p");
       meta.className = "event-meta-line";
+      meta.appendChild(makeIcon("🗓️"));
       const startText = formatDateTime(event.startFull);
       const endText = formatDateTime(event.endFull);
-      meta.textContent = [startText, endText].filter(Boolean).join(" - ");
+      meta.append([startText, endText].filter(Boolean).join(" - "));
       info.appendChild(meta);
     }
 
     if (event.location) {
       const location = document.createElement("p");
       location.className = "event-location-line";
-      location.textContent = event.location;
+      location.appendChild(makeIcon("📍"));
+      location.append(event.location);
       info.appendChild(location);
     }
 
@@ -236,21 +248,17 @@ function renderMonthEvents() {
       websiteLink.href = event.eventUrl;
       websiteLink.target = "_blank";
       websiteLink.rel = "noopener";
-      websiteLink.textContent = "Event Website";
+      websiteLink.appendChild(makeIcon("🎟️"));
+      websiteLink.append("Event Website");
       actions.appendChild(websiteLink);
     }
 
     const icsLink = document.createElement("a");
     icsLink.className = "event_button";
     icsLink.href = `${event.url}event.ics`;
-    icsLink.textContent = "Add to Calendar";
+    icsLink.appendChild(makeIcon("🗓️"));
+    icsLink.append("Add to Calendar");
     actions.appendChild(icsLink);
-
-    const detailsLink = document.createElement("a");
-    detailsLink.className = "event_button";
-    detailsLink.href = event.url;
-    detailsLink.textContent = "View Details";
-    actions.appendChild(detailsLink);
 
     layout.appendChild(actions);
     li.appendChild(layout);

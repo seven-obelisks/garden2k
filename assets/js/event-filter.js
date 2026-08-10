@@ -14,7 +14,8 @@ if (filterButtons.length && eventCards.length) {
           return activeTags.has(tag);
         });
 
-      card.classList.toggle("is-hidden", !matches);
+      const target = card.closest("li") || card;
+      target.classList.toggle("is-hidden", !matches);
     });
 
     if (clearButton) {

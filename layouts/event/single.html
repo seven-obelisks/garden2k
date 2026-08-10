@@ -8,7 +8,7 @@
 
     {{ with .Params.tags }}
       <p class="event-label">
-        {{ range $i, $tag := . }}{{ if $i }}, {{ end }}<a href="/tags/{{ $tag | urlize }}/">{{ $tag }}</a>{{ end }}
+        🏷️ {{ range $i, $tag := . }}{{ if $i }}, {{ end }}<a href="/tags/{{ $tag | urlize }}/">{{ $tag }}</a>{{ end }}
       </p>
     {{ else }}
       <p class="event-label">Event</p>
@@ -26,36 +26,35 @@
         alt="">
     {{ end }}
 
-    <div class="event-details">
-
+    <ul class="event-detail-list">
       {{ with .Params.event_organizer }}
-        <p class="event-organizer">
-          Hosted by {{ . }}
-        </p>
+        <li class="event-detail-item">
+          <span class="event-icon" aria-hidden="true">👥</span>
+          <span>Hosted by <strong>{{ . }}</strong></span>
+        </li>
       {{ end }}
 
       {{ with .Params.event_start }}
-        <p>
-          <span class="event-data"><strong>Starts:</strong></span>
-          {{ time.Format "Monday, Jan 2, 2006, 3:04 PM" . }}
-        </p>
+        <li class="event-detail-item">
+          <span class="event-icon" aria-hidden="true">🗓️</span>
+          <span><strong>Starts:</strong> {{ time.Format "Monday, Jan 2, 2006, 3:04 PM" . }}</span>
+        </li>
       {{ end }}
 
       {{ with .Params.event_end }}
-        <p>
-          <span class="event-data"><strong>Ends:</strong></span>
-          {{ time.Format "Monday, Jan 2, 2006, 3:04 PM" . }}
-        </p>
+        <li class="event-detail-item">
+          <span class="event-icon" aria-hidden="true">🏁</span>
+          <span><strong>Ends:</strong> {{ time.Format "Monday, Jan 2, 2006, 3:04 PM" . }}</span>
+        </li>
       {{ end }}
 
       {{ with .Params.location }}
-        <p>
-          <span class="event-data"><strong>Location:</strong></span>
-          {{ . }}
-        </p>
+        <li class="event-detail-item">
+          <span class="event-icon" aria-hidden="true">📍</span>
+          <span>{{ . }}</span>
+        </li>
       {{ end }}
-
-    </div>
+    </ul>
 
     <div class="event-content">
       {{ .Content }}
@@ -68,13 +67,13 @@
            href="{{ . }}"
            target="_blank"
            rel="noopener">
-          Register Now
+          🎟️ Register Now
         </a>
       {{ end }}
 
       <a class="event_button"
          href="{{ .RelPermalink }}event.ics">
-        Add to Calendar
+        🗓️ Add to Calendar
       </a>
 
     </div>
