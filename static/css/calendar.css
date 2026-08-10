@@ -134,6 +134,10 @@
   color: var(--color-primary);
 }
 
+#calendar-month-events-title {
+  margin-top: 2.5rem;
+}
+
 /* MOBILE CALENDAR */
 
 @media screen and (max-width: 59.99em) {

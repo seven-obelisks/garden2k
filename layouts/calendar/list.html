@@ -14,6 +14,10 @@
 
   <section id="calendar-grid" class="calendar-grid"></section>
 
+  <h2 class="events_h2" id="calendar-month-events-title"></h2>
+
+  <ul id="calendar-month-events" class="events-list events-list-grid"></ul>
+
 </main>
 
 <script id="calendar-events" type="application/json">
@@ -25,7 +29,15 @@
       "url": {{ $event.RelPermalink }},
       "start": {{ (time $event.Params.event_start).Format "2006-01-02" }},
       "end": {{ (time ($event.Params.event_end | default $event.Params.event_start)).Format "2006-01-02" }},
-      "color": {{ $event.Params.event_color | default "var(--color-primary)" }}
+      "color": {{ $event.Params.event_color | default "var(--color-primary)" }},
+      "startFull": {{ $event.Params.event_start }},
+      "endFull": {{ $event.Params.event_end | default $event.Params.event_start }},
+      "image": {{ $event.Params.image | default "" }},
+      "organizer": {{ $event.Params.event_organizer | default "" }},
+      "location": {{ $event.Params.location | default "" }},
+      "summary": {{ $event.Summary | plainify }},
+      "eventUrl": {{ $event.Params.event_url | default "" }},
+      "tags": [{{ range $i, $tag := $event.Params.tags }}{{ if $i }},{{ end }}{{ $tag }}{{ end }}]
     }
   {{- end -}}
 ]

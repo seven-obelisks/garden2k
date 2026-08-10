@@ -13,6 +13,14 @@ const events = rawEvents
     start: event.start || "",
     end: event.end || event.start || "",
     color: event.color || "#357edd",
+    startFull: event.startFull || "",
+    endFull: event.endFull || "",
+    image: event.image || "",
+    organizer: event.organizer || "",
+    location: event.location || "",
+    summary: event.summary || "",
+    eventUrl: event.eventUrl || "",
+    tags: Array.isArray(event.tags) ? event.tags : [],
   }))
   .filter((event) => isValidDate(event.start) && isValidDate(event.end))
   .sort((a, b) => toNum(a.start) - toNum(b.start));
@@ -21,8 +29,32 @@ const title = document.getElementById("calendar-title");
 const grid = document.getElementById("calendar-grid");
 const prev = document.getElementById("calendar-prev");
 const next = document.getElementById("calendar-next");
+const monthEventsTitle = document.getElementById("calendar-month-events-title");
+const monthEventsList = document.getElementById("calendar-month-events");
 
 let current = new Date();
+
+function formatDateTime(value) {
+  if (!value) return "";
+  const date = new Date(value);
+  if (isNaN(date)) return "";
+  return date.toLocaleString(undefined, {
+    weekday: "long",
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+    hour: "numeric",
+    minute: "2-digit",
+  });
+}
+
+function urlize(value) {
+  return value
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
+}
 
 function renderCalendar() {
   const year = current.getFullYear();
@@ -84,14 +116,162 @@ function renderCalendar() {
   }
 }
 
+function renderMonthEvents() {
+  const year = current.getFullYear();
+  const month = current.getMonth();
+  const first = new Date(year, month, 1);
+  const last = new Date(year, month + 1, 0);
+  const firstNum = toNum(
+    `${year}-${String(month + 1).padStart(2, "0")}-01`
+  );
+  const lastNum = toNum(
+    `${year}-${String(month + 1).padStart(2, "0")}-${String(
+      last.getDate()
+    ).padStart(2, "0")}`
+  );
+
+  monthEventsTitle.textContent = `Events in ${first.toLocaleDateString(
+    undefined,
+    { month: "long", year: "numeric" }
+  )}`;
+
+  const monthEvents = events.filter((event) => {
+    const startNum = toNum(event.start);
+    const endNum = toNum(event.end);
+    return startNum <= lastNum && endNum >= firstNum;
+  });
+
+  monthEventsList.innerHTML = "";
+
+  if (!monthEvents.length) {
+    const empty = document.createElement("p");
+    empty.className = "next-event-empty";
+    empty.textContent = "No events this month.";
+    monthEventsList.appendChild(empty);
+    return;
+  }
+
+  for (const event of monthEvents) {
+    const li = document.createElement("li");
+    li.className = "event-list-card clickable-card";
+    li.dataset.href = event.url;
+    li.dataset.tags = event.tags.map(urlize).join(",");
+    li.setAttribute("role", "link");
+    li.setAttribute("tabindex", "0");
+    li.style.setProperty("--event-color", event.color);
+
+    li.addEventListener("click", (evt) => {
+      if (evt.target.closest("a, button")) return;
+      window.location.href = event.url;
+    });
+
+    li.addEventListener("keydown", (evt) => {
+      if (evt.key !== "Enter") return;
+      if (evt.target.closest("a, button")) return;
+      window.location.href = event.url;
+    });
+
+    const label = document.createElement("p");
+    label.className = "event-label";
+    if (event.tags.length) {
+      event.tags.forEach((tag, i) => {
+        if (i) label.append(", ");
+        const tagLink = document.createElement("a");
+        tagLink.href = `/tags/${urlize(tag)}/`;
+        tagLink.textContent = tag;
+        label.appendChild(tagLink);
+      });
+    } else {
+      label.textContent = "Event";
+    }
+    li.appendChild(label);
+
+    const heading = document.createElement("h3");
+    heading.className = "event-list-card-title";
+    const headingLink = document.createElement("a");
+    headingLink.href = event.url;
+    headingLink.textContent = event.title;
+    const dot = document.createElement("span");
+    dot.className = "event-list-card-color-dot";
+    dot.setAttribute("aria-hidden", "true");
+    heading.appendChild(headingLink);
+    heading.appendChild(dot);
+    li.appendChild(heading);
+
+    const layout = document.createElement("div");
+    layout.className = "event-list-card-layout";
+
+    const info = document.createElement("div");
+    info.className = "event-list-card-info";
+
+    if (event.organizer) {
+      const organizer = document.createElement("p");
+      organizer.className = "event-list-organizer";
+      organizer.textContent = `Hosted by ${event.organizer}`;
+      info.appendChild(organizer);
+    }
+
+    if (event.startFull || event.endFull) {
+      const meta = document.createElement("p");
+      meta.className = "event-list-meta-line";
+      const startText = formatDateTime(event.startFull);
+      const endText = formatDateTime(event.endFull);
+      meta.textContent = [startText, endText].filter(Boolean).join(" - ");
+      info.appendChild(meta);
+    }
+
+    if (event.location) {
+      const location = document.createElement("p");
+      location.className = "event-list-location-line";
+      location.textContent = event.location;
+      info.appendChild(location);
+    }
+
+    layout.appendChild(info);
+
+    const actions = document.createElement("div");
+    actions.className = "event-list-actions";
+
+    if (event.eventUrl) {
+      const websiteLink = document.createElement("a");
+      websiteLink.className = "event-list-button";
+      websiteLink.href = event.eventUrl;
+      websiteLink.target = "_blank";
+      websiteLink.rel = "noopener";
+      websiteLink.textContent = "Register Now";
+      actions.appendChild(websiteLink);
+    }
+
+    const icsLink = document.createElement("a");
+    icsLink.className = "event-list-button";
+    icsLink.href = `${event.url}event.ics`;
+    icsLink.textContent = "Add to Calendar";
+    actions.appendChild(icsLink);
+
+    const detailsLink = document.createElement("a");
+    detailsLink.className = "event-list-button";
+    detailsLink.href = event.url;
+    detailsLink.textContent = "View Details";
+    actions.appendChild(detailsLink);
+
+    layout.appendChild(actions);
+    li.appendChild(layout);
+
+    monthEventsList.appendChild(li);
+  }
+}
+
 prev.addEventListener("click", () => {
   current = new Date(current.getFullYear(), current.getMonth() - 1, 1);
   renderCalendar();
+  renderMonthEvents();
 });
 
 next.addEventListener("click", () => {
   current = new Date(current.getFullYear(), current.getMonth() + 1, 1);
   renderCalendar();
+  renderMonthEvents();
 });
 
 renderCalendar();
+renderMonthEvents();
