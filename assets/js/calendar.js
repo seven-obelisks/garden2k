@@ -15,10 +15,8 @@ const events = rawEvents
     color: event.color || "#357edd",
     startFull: event.startFull || "",
     endFull: event.endFull || "",
-    image: event.image || "",
     organizer: event.organizer || "",
     location: event.location || "",
-    summary: event.summary || "",
     eventUrl: event.eventUrl || "",
     tags: Array.isArray(event.tags) ? event.tags : [],
   }))
@@ -153,7 +151,7 @@ function renderMonthEvents() {
 
   for (const event of monthEvents) {
     const li = document.createElement("li");
-    li.className = "event-list-card clickable-card";
+    li.className = "event-card event-card--compact clickable-card";
     li.dataset.href = event.url;
     li.dataset.tags = event.tags.map(urlize).join(",");
     li.setAttribute("role", "link");
@@ -187,33 +185,33 @@ function renderMonthEvents() {
     li.appendChild(label);
 
     const heading = document.createElement("h3");
-    heading.className = "event-list-card-title";
+    heading.className = "event-card-title";
     const headingLink = document.createElement("a");
     headingLink.href = event.url;
     headingLink.textContent = event.title;
     const dot = document.createElement("span");
-    dot.className = "event-list-card-color-dot";
+    dot.className = "event-card-color-dot";
     dot.setAttribute("aria-hidden", "true");
     heading.appendChild(headingLink);
     heading.appendChild(dot);
     li.appendChild(heading);
 
     const layout = document.createElement("div");
-    layout.className = "event-list-card-layout";
+    layout.className = "event-card-layout";
 
     const info = document.createElement("div");
-    info.className = "event-list-card-info";
+    info.className = "event-card-info";
 
     if (event.organizer) {
       const organizer = document.createElement("p");
-      organizer.className = "event-list-organizer";
+      organizer.className = "event-organizer";
       organizer.textContent = `Hosted by ${event.organizer}`;
       info.appendChild(organizer);
     }
 
     if (event.startFull || event.endFull) {
       const meta = document.createElement("p");
-      meta.className = "event-list-meta-line";
+      meta.className = "event-meta-line";
       const startText = formatDateTime(event.startFull);
       const endText = formatDateTime(event.endFull);
       meta.textContent = [startText, endText].filter(Boolean).join(" - ");
@@ -222,7 +220,7 @@ function renderMonthEvents() {
 
     if (event.location) {
       const location = document.createElement("p");
-      location.className = "event-list-location-line";
+      location.className = "event-location-line";
       location.textContent = event.location;
       info.appendChild(location);
     }
@@ -230,26 +228,26 @@ function renderMonthEvents() {
     layout.appendChild(info);
 
     const actions = document.createElement("div");
-    actions.className = "event-list-actions";
+    actions.className = "event-actions";
 
     if (event.eventUrl) {
       const websiteLink = document.createElement("a");
-      websiteLink.className = "event-list-button";
+      websiteLink.className = "event_button";
       websiteLink.href = event.eventUrl;
       websiteLink.target = "_blank";
       websiteLink.rel = "noopener";
-      websiteLink.textContent = "Register Now";
+      websiteLink.textContent = "Event Website";
       actions.appendChild(websiteLink);
     }
 
     const icsLink = document.createElement("a");
-    icsLink.className = "event-list-button";
+    icsLink.className = "event_button";
     icsLink.href = `${event.url}event.ics`;
     icsLink.textContent = "Add to Calendar";
     actions.appendChild(icsLink);
 
     const detailsLink = document.createElement("a");
-    detailsLink.className = "event-list-button";
+    detailsLink.className = "event_button";
     detailsLink.href = event.url;
     detailsLink.textContent = "View Details";
     actions.appendChild(detailsLink);

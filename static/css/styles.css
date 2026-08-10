@@ -1030,8 +1030,9 @@ div:has(> iframe[src*="youtube.com"]) {
   border-bottom: 1px dashed var(--color-border);
 }
 
-.callout_h2 {
-  margin-top:25px;
+.callout_h2,
+.callout .events_h2 {
+  margin-top: 25px;
   margin-bottom: 1.25rem;
   font-size: clamp(1.75rem, 3.25vw, 2.6rem);
 }
@@ -1084,34 +1085,29 @@ div:has(> iframe[src*="youtube.com"]) {
   list-style: none;
 }
 
+.events-list-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
 .event-card,
-.event-list-card,
 .event-single-card {
   border: 1px solid var(--color-border);
   border-left: 4px solid var(--event-color, var(--color-primary));
   border-radius: var(--radius-sm);
   background-color: var(--color-surface);
-}
-
-.event-card-color-dot,
-.event-list-card-color-dot {
-  flex: 0 0 auto;
-  width: 0.75rem;
-  height: 0.75rem;
-  border: 1px solid color-mix(
-    in srgb,
-    var(--event-color, var(--color-primary)) 70%,
-    var(--color-text)
-  );
-  border-radius: 50%;
-  background: var(--event-color, var(--color-primary));
-}
-
-.event-card {
   padding: 1.25rem;
   transition:
     background-color 180ms ease,
     border-color 180ms ease;
+}
+
+.event-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  height: 100%;
 }
 
 .event-card:hover {
@@ -1124,12 +1120,29 @@ div:has(> iframe[src*="youtube.com"]) {
   );
 }
 
-.event-card-past {
+.event-card--past {
   opacity: 0.78;
 }
 
-.event-card-past:hover {
+.event-card--past:hover {
   opacity: 1;
+}
+
+.event-card.is-hidden {
+  display: none;
+}
+
+.event-card-color-dot {
+  flex: 0 0 auto;
+  width: 0.75rem;
+  height: 0.75rem;
+  border: 1px solid color-mix(
+    in srgb,
+    var(--event-color, var(--color-primary)) 70%,
+    var(--color-text)
+  );
+  border-radius: 50%;
+  background: var(--event-color, var(--color-primary));
 }
 
 .event-card-title,
@@ -1161,24 +1174,41 @@ div:has(> iframe[src*="youtube.com"]) {
   padding-top: 0.25rem;
 }
 
+.event-card--compact .event-card-layout {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 1rem;
+  padding-top: 0;
+}
+
 .event-card-info {
   min-width: 0;
 }
 
 .event-card-info p {
-  margin: 0 0 0.65rem 0 !important;
-}
-
-.event-meta-line,
-.event-location-line {
-  color: var(--color-darktext);
-  font-size: 1rem !important;
+  margin: 0 0 0.5rem 0 !important;
+  line-height: 1.2 !important;
 }
 
 .event-organizer {
   color: var(--color-text);
-  font-style: italic;
   font-weight: 700;
+}
+
+.event-meta-line{
+  font-size: 1rem !important;
+}
+
+.event-location-line {
+  color: var(--color-darktext);
+  font-style: italic;
+  font-size: 1rem !important;
+}
+
+.event-card--compact .event-meta-line,
+.event-card--compact .event-location-line {
+  font-size: 0.95rem !important;
 }
 
 .event-data,
@@ -1190,7 +1220,10 @@ div:has(> iframe[src*="youtube.com"]) {
 .event-summary {
   color: var(--color-text);
   font-size: 0.9rem !important;
-  line-height: 1.35;
+}
+
+.event-card-info .event-summary {
+  line-height: 1.2;
 }
 
 .event-actions {
@@ -1199,6 +1232,16 @@ div:has(> iframe[src*="youtube.com"]) {
   align-items: center;
   gap: 0.65rem;
   margin-top: 1rem;
+}
+
+.event-card--compact .event-card-info {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.event-card--compact .event-actions {
+  margin-top: auto;
 }
 
 .event-card-image-link {
@@ -1280,132 +1323,14 @@ div:has(> iframe[src*="youtube.com"]) {
   color: var(--color-primary);
 }
 
-.event-list-card.is-hidden {
-  display: none;
-}
-
-.events-list-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.25rem;
-}
-
-.event-list-card {
-  display: flex;
-  flex-direction: column;
-  min-width: 0;
-  padding: 1.25rem;
-  transition:
-    background-color 180ms ease,
-    border-color 180ms ease;
-}
-
-.event-list-card:hover {
-  border-color: var(--event-color, var(--color-primary));
-  border-left-color: var(--event-color, var(--color-primary));
-  background-color: color-mix(
-    in srgb,
-    var(--event-color, var(--color-primary)) 12%,
-    var(--color-surface)
-  );
-}
-
-.event-list-card-past {
-  opacity: 0.78;
-}
-
-.event-list-card-past:hover {
-  opacity: 1;
-}
-
-.event-list-card-title {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  margin-top: 0;
-  margin-bottom: 0.85rem;
-  font-size: 1.75rem !important;
-}
-
-.event-list-card-title a,
-.event-list-card-title a:visited {
-  min-width: 0;
-  color: var(--color-text);
-  font-weight: 700;
-}
-
-.event-list-card-layout {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.event-list-card-image-link {
-  display: block;
-  width: 100%;
-}
-
-.event-list-card-image {
-  display: block;
-  width: 100%;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-sm);
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-}
-
-.event-list-card:hover .event-list-card-image {
-  border-color: color-mix(
-    in srgb,
-    var(--event-color, var(--color-primary)) 45%,
-    var(--color-border)
-  );
-}
-
-.event-list-card-info {
-  min-width: 0;
-}
-
-.event-list-card-info p {
-  margin: 0.5rem 0 !important;
-}
-
-.event-list-organizer {
-  color: var(--color-text);
-  font-style: italic;
-  font-weight: 700;
-}
-
-.event-list-meta-line,
-.event-list-location-line {
-  color: var(--color-darktext);
-  font-size: 0.95rem;
-}
-
-.event-list-summary p {
-  margin-bottom: 0;
-  color: var(--color-text);
-  line-height: 1.4;
-}
-
-.event-list-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.65rem;
-  margin-top: auto;
-}
-
 /* EVENT BUTTONS */
 
-.event-list-button,
 .event_button {
   display: inline-block;
   padding: 0.35rem 0.65rem;
-  border: 1px solid var(--color-primary);
+  border: 1px solid var(--event-color, var(--color-primary));;
   border-radius: var(--radius-sm);
-  background-color: var(--color-primary);
+  background-color: var(--event-color, var(--color-primary));;
   color: var(--color-on-bright);
   font-size: 0.8rem !important;
   text-align: center;
@@ -1413,12 +1338,10 @@ div:has(> iframe[src*="youtube.com"]) {
   text-transform: uppercase;
 }
 
-.event-list-button:hover,
-.event-list-button:focus-visible,
 .event_button:hover,
 .event_button:focus-visible {
-  border-color: var(--color-primary);
-  background-color: var(--color-accent) !important;
+  border-color: color-mix(in srgb, var(--event-color, var(--color-primary)) 80%, black);
+  background-color: color-mix(in srgb, var(--event-color, var(--color-primary)) 80%, black);
   color: var(--color-on-bright);
 }
 
@@ -1467,10 +1390,6 @@ div:has(> iframe[src*="youtube.com"]) {
 
 .event-details {
   margin-bottom: 1.5rem;
-}
-
-.event-details p {
-  margin: 0 0 0.65rem 0 !important;
 }
 
 .event-content {
