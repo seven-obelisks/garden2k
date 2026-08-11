@@ -1,0 +1,12 @@
+{{ with .Params.thumbnail }}
+  {{ $style := printf "background-image: url('%s');" (. | relURL) }}
+  {{ with $.Params.thumbnail_position }}
+    {{ $style = printf "%s background-position: %s;" $style . }}
+  {{ end }}
+
+  <header class="post-header site-header-featured site-header-overlay" style="{{ $style | safe.CSS }}">
+    <div class="post-header-inner">
+      {{ partials.Include "post-header-meta.html" $ }}
+    </div>
+  </header>
+{{ end }}

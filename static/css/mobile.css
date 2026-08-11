@@ -64,6 +64,17 @@
   .home-search-form {
     width: 100%;
   }
+
+  .post-header.site-header-featured {
+    min-height: 220px;
+    background-position: 70% center;
+  }
+
+  .post-header-inner {
+    min-height: 220px;
+    max-width: 100%;
+    margin-top:2rem !important;
+  }
 }
 
 /* EVENT LIST GRID */
@@ -153,7 +164,7 @@
     width: 1.5rem;
     height: 2px;
     margin: 0 auto;
-    background: var(--color-primary);
+    background: var(--color-surface);
   }
 
   .menu-toggle:hover .menu-toggle-bar,
@@ -208,7 +219,7 @@
       var(--color-headertext) 18%,
       transparent
     );
-    background: var(--color-header);
+    background: var(--color-bg);
     transform: translateX(100%);
     transition: transform 180ms ease;
   }
@@ -234,7 +245,7 @@
     border: 0;
     border-radius: var(--radius-sm);
     background: transparent;
-    color: var(--color-headertext);
+    color: var(--color-primary);
     font-size: 2rem;
     line-height: 1;
     cursor: pointer;
@@ -268,12 +279,12 @@
     display: block;
     width: 100%;
     padding: 1rem 0;
-    color: var(--color-headertext);
+    color: var(--color-primary);
   }
 
   .menu-link:hover,
   .menu-link:focus-visible {
-    color: var(--color-primary);
+    color: var(--color-accent);
   }
 
   .submenu-list {
@@ -291,12 +302,12 @@
   .submenu-link {
     display: block;
     padding: 0.4rem 0;
-    color: var(--color-headertext);
+    color: var(--color-primary);
   }
 
   .submenu-link:hover,
   .submenu-link:focus-visible {
-    color: var(--color-primary);
+    color: var(--color-accent);
   }
 
   .home-slider {

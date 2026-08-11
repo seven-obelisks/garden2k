@@ -95,22 +95,21 @@
   border-radius: var(--radius-sm);
   background: var(--color-header);
   font: inherit;
-  color: var(--color-primary) !important;
+  color: var(--color-surface) !important;
   cursor: pointer;
-  opacity: 0.92;
   transform: translateY(-50%);
 }
 
 .slider-control svg {
   width: 1.1rem;
   height: 1.1rem;
-  stroke: var(--color-primary) !important;
+  stroke: var(--color-surface) !important;
 }
 
 .slider-control:hover,
 .slider-control:focus-visible {
-  border-color: var(--color-primary);
-  background: var(--color-primary);
+  border-color: var(--color-accent);
+  background: var(--color-accent);
   color: #fff !important;
   opacity: 1;
 }
@@ -139,7 +138,7 @@
   text-transform: uppercase;
   border: 1px solid var(--color-primary);
   background-color: var(--color-primary);
-  color: var(--color-on-bright);
+  color: var(--color-surface);
   font-size: 1rem !important;
 }
 

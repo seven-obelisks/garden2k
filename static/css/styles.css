@@ -1,24 +1,24 @@
 :root {
-  --color-primary: #006b8f;
-  --color-accent: #005470;
-  --color-bg: #f7f7f2;
-  --color-surface: #ffffff;
-  --color-shadow: #1720261a;
-  --color-header: #f7f7f2;
-  --color-nav: #006b8f;
-  --color-footer: #172026;
-  --color-text: #172026;
-  --color-darktext: #58636d;
-  --color-headertext: #172026;
-  --color-navtext: #172026;
-  --color-border: #cfd8dc;
-  --color-overlay: rgba(17, 24, 32, 0.78);
+--color-primary: #0066ff;
+--color-accent: #0047cc;
+--color-bg: #f4f7fb;
+--color-surface: #ffffff;
+--color-shadow: #0a16281a;
+--color-header: #0066ff;
+--color-nav: #0066ff;
+--color-footer: #0a1628;
+--color-text: #0a1628;
+--color-darktext: #4a5a75;
+--color-headertext: #0a1628;
+--color-navtext: #0a1628;
+--color-border: #cdd9ea;
+--color-overlay: rgba(10, 22, 40, 0.25);
 
-  --color-on-bright: #ffffff;
-  --color-card-primary: #ffffff;
+--color-on-bright: #ffffff;
+--color-card-primary: #ffffff;
 
-  --radius-sm: 0.25rem;
-  --radius-md: 0.5rem;
+--radius-sm: 0.25rem;
+--radius-md: 0.5rem;
 }
 
 /* GLOBAL */
@@ -53,10 +53,6 @@ body * {
   color: var(--color-text);
   font-family: "Space Grotesk", sans-serif;
   font-optical-sizing: auto;
-}
-
-main.blog-post-page {
-  max-width: 60rem;
 }
 
 h1,
@@ -133,9 +129,10 @@ h4 {
 
 .prose table {
   width: 100%;
-  margin: 0 0 1.25rem;
+  margin: 2rem 0rem;
   border-collapse: collapse;
   font-size: 0.95rem;
+  border: 1px solid var(--color-border);
 }
 
 .prose td {
@@ -154,13 +151,9 @@ h4 {
   color:var(--color-bg);
 }
 
-.prose tr:nth-child(even) td {
-  background-color: #fff;
-}
-
 .prose hr{
-  background-color: var(--color-primary);
-  color: var(--color-primary);
+  background-color: var(--color-border);
+  color: var(--color-border);
   margin:2rem 0rem;
   border: none;
   height:1px;
@@ -172,10 +165,10 @@ h4 {
 .footer-shell,
 .site-container {
   width: 100%;
-  max-width: 90rem;
   margin: 0 auto;
   padding-right: 1.5rem;
   padding-left: 1.5rem;
+  max-width:85rem;
 }
 
 .site-shell {
@@ -187,9 +180,8 @@ h4 {
   padding-bottom: 2rem;
 }
 
-.post-container,
-.tag-container{
-  max-width: 60rem;
+.blog-container{
+  max-width:60rem;
 }
 
 .header-shell {
@@ -223,14 +215,40 @@ h4 {
   color: var(--color-headertext);
 }
 
-.site-header-featured {
+.post-header.site-header-featured {
+  position: relative;
+  min-height: 500px;
+  margin-bottom: 2.5rem;
+  overflow: hidden;
   background-position: center;
   background-size: cover;
-  background-repeat: no-repeat;
+  margin-top: -3rem;
 }
 
-.site-header-overlay {
+.post-header.site-header-overlay::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
   background: var(--color-overlay);
+}
+
+.post-header-inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 500px;
+  max-width: 85rem;
+  padding:0 2rem;
+  margin: 0 auto;
+}
+
+.post-header-inner .page_title,
+.post-header-inner .post-author,
+.post-header-inner .post-date {
+  color: var(--color-on-bright);
 }
 
 /* NAVIGATION */
@@ -259,7 +277,7 @@ h4 {
 }
 
 .site-logo-img {
-  max-width: 200px;
+  max-width: 150px;
   height: auto;
 }
 
@@ -288,7 +306,7 @@ h4 {
 }
 
 .menu-link{
-  color: var(--color-headertext);
+  color: var(--color-surface);
   font-size: 1rem;
   text-decoration: none;
 }
@@ -300,11 +318,15 @@ h4 {
 }
 
 .menu-link:hover{
-  color: var(--color-primary);
+  color: var(--color-bg);
+  text-decoration: underline;
+  text-underline-offset: 0.5em;
 }
 
 .submenu-link:hover {
   color: var(--color-primary);
+  text-decoration: underline;
+  text-underline-offset: 0.5em;
 }
 
 .submenu-list {
@@ -333,14 +355,12 @@ h4 {
 
 .nav-menu .menu-link.is-current,
 .nav-menu .menu-item.is-current > .menu-link{
-  color: var(--color-primary);
   text-decoration: underline;
   text-underline-offset: 0.5em;
 }
 
 .nav-menu .submenu-link.is-current,
 .nav-menu .submenu-item.is-current > .submenu-link {
-  color: var(--color-primary);
   text-decoration: underline;
   text-underline-offset: 0.5em;
 }
@@ -349,19 +369,19 @@ h4 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid var(--color-primary);
+  border: 1px solid var(--color-surface);
   border-radius: var(--radius-sm);
   background-color: var(--color-primary);
   padding: 0.35rem 0.65rem;
   text-decoration: none;
   text-transform: uppercase;
-  color: var(--color-bg);
+  color: var(--color-surface);
   font-size: 1rem !important;
 }
 
 .nav-cta:hover {
-  background-color: var(--color-accent);
-  color: var(--color-bg) !important;
+  background-color: var(--color-surface);
+  color: var(--color-primary) !important;
 }
 
 .nav-cta-desktop {
@@ -382,7 +402,7 @@ h4 {
 
 .site-footer,
 .site-footer * {
-  color: var(--color-bg);
+  color: var(--color-surface);
 }
 
 .footer-inner {
@@ -464,10 +484,6 @@ button,
   margin-bottom: 2.5rem;
 }
 
-.section-page {
-  max-width: 90rem;
-}
-
 .content-list {
   display: flex;
   flex-direction: column;
@@ -489,7 +505,7 @@ button,
 
 .content-card-title {
   display: block;
-  color: var(--color-text);
+  color: var(--color-primary);
   font-weight: 700;
   line-height: 1.15;
   margin:.5rem 0rem;
@@ -695,7 +711,7 @@ button,
 
 .section-card-title {
   margin-bottom: 0.65rem;
-  color: var(--color-text);
+  color: var(--color-primary);
   font-size: clamp(1.35rem, 2vw, 1.85rem);
   font-weight: 700;
   line-height: 1.1;
@@ -717,6 +733,21 @@ button,
   color: var(--color-text);
   font-size: 0.95rem;
   line-height: 1.45;
+}
+
+.section-card-thumbnail-wrap {
+  display: block;
+  margin-bottom: 0.85rem;
+  overflow: hidden;
+  border-radius: var(--radius-sm);
+}
+
+.section-card-thumbnail {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border: 1px solid var(--color-border);
 }
 
 /* BLOG LIST */
@@ -932,7 +963,7 @@ div:has(> iframe[src*="youtube.com"]) {
 .page-banner {
   position: relative;
   display: flex;
-  min-height: 325px;
+  min-height: 300px;
   margin: 1.5rem 0 1.5rem 0;
   overflow: hidden;
   border-radius: var(--radius-sm);
@@ -960,8 +991,7 @@ div:has(> iframe[src*="youtube.com"]) {
   padding: 2rem 2rem;
   border: 1px solid var(--color-border);
   border-radius:var(--radius-sm);
-  background-color: color-mix(in srgb, var(--color-surface) 90%, transparent);
-  box-shadow: -1rem 0 3rem rgba(17, 24, 32, 0.22);
+  background-color: color-mix(in srgb, var(--color-surface) 85%, transparent);
 }
 
 .page-banner-no-image .page-banner-content {
@@ -1142,6 +1172,7 @@ div:has(> iframe[src*="youtube.com"]) {
   min-width: 0;
   color: var(--color-text);
   font-weight: 700;
+  color: var(--event-color, var(--color-primary));
 }
 
 .event-card-layout {
@@ -1347,7 +1378,6 @@ div:has(> iframe[src*="youtube.com"]) {
 
 .event-label {
   margin-top: 0;
-  color: var(--event-color, var(--color-primary));
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.08em;

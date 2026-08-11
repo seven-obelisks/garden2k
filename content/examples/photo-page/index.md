@@ -2,6 +2,7 @@
 title: "Photo Content Page"
 summary: "Example of a page with just photo content with lightbox enabled."
 featured: true
+thumbnail: "/uploads/thumbnails/thumb-gallery.png"
 ---
 
 *Photo grid powered by mfg92's [hugo-shortcode-gallery](https://github.com/mfg92/hugo-shortcode-gallery)*
