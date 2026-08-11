@@ -445,7 +445,8 @@
   .header-shell,
   .footer-shell,
   .site-shell,
-  .site-container {
+  .site-container,
+  .post-header-inner {
     padding-right: 1.25rem;
     padding-left: 1.25rem;
   }
