@@ -1,0 +1,54 @@
+{{ define "header" }}
+  {{ partials.Include "page-header.html" . }}
+{{ end }}
+
+{{ define "main" }}
+  {{- $related_content := .RegularPages.Related . -}}
+  {{- $needs_aside := or .Params.toc $related_content -}}
+  {{ $page := . }}
+
+  {{- $post_class := "" -}}
+  {{- with .File -}}
+    {{- $post_class = printf "page-%s" .ContentBaseName -}}
+  {{- end -}}
+
+  {{ partials.Include "post-header-featured.html" . }}
+
+  <main class="site-container blog-container">
+
+    <article class="{{ $post_class }}">
+
+      {{ if not .Params.thumbnail }}
+        <header class="post-header">
+          {{ partials.Include "post-header-meta.html" $page }}
+        </header>
+      {{ end }}
+
+      <div class="post-content prose">
+
+        {{ if and (not .Params.thumbnail) .Params.cover_image }}
+          <figure class="post-cover">
+            <img
+              src="{{ .Params.cover_image | relURL }}"
+              alt="{{ with .Params.cover_image_alt }}{{ . }}{{ else }}{{ .Title }}{{ end }}"
+              loading="eager"
+            >
+          </figure>
+        {{ end }}
+
+        {{ .Content }}
+
+        {{ partials.Include "tags.html" . }}
+
+      </div>
+
+      {{ if $needs_aside }}
+        <aside class="post-aside">
+          {{ partials.Include "menu-contextual.html" . }}
+        </aside>
+      {{ end }}
+
+    </article>
+
+  </main>
+{{ end }}

@@ -14,6 +14,12 @@
       {{ range .Pages.ByWeight }}
         <li class="section-card">
           <a class="section-card-link" href="{{ .RelPermalink }}">
+            {{ with .Params.thumbnail }}
+              <span class="section-card-thumbnail-wrap">
+                <img class="section-card-thumbnail" src="{{ . | relURL }}" alt="">
+              </span>
+            {{ end }}
+
             <span class="section-card-title">{{ .Title }}</span>
 
             {{ if not .Date.IsZero }}
