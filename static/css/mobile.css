@@ -65,6 +65,13 @@
     width: 100%;
   }
 
+  .page-hero{
+    margin-right:2rem;
+    margin-left:2rem;
+    margin-top:-1rem !important;
+    border-radius: var(--radius-sm);
+  }
+
   .post-header.site-header-featured {
     min-height: 220px;
     background-position: 70% center;
