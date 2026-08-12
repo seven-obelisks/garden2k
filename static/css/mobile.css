@@ -73,8 +73,11 @@
   }
 
   .post-header.site-header-featured {
-    min-height: 220px;
     background-position: 70% center;
+  }
+
+  .post-header.has-hero-image {
+    min-height: 560px;
   }
 
   .post-header-inner {
