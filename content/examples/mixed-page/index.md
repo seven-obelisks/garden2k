@@ -1,6 +1,6 @@
 ---
 title: "Mixed Content Page"
-summary: "Example of page with a mix of content: text, images, videos, downloads, and more."
+summary: "Example of page with a mix of text-based content: dividers, tables, pull quotes, and more."
 featured: true
 thumbnail: "/uploads/thumbnails/thumb-mixed.png"
 ---

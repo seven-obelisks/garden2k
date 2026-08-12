@@ -4,10 +4,6 @@
   {{ .Title }}
 </h1>
 
-<h2 class="page_summary">
-  {{ .Summary }}
-</h2>
-
 {{ with .Params.author | compare.Default .Site.Params.author }}
   <p class="post-author">
     {{- if compare.Eq $page.Language "de" "en" "es" "fr" "it" "no" "pt" -}}

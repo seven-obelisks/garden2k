@@ -63,7 +63,7 @@ h2,
 h3,
 h4,
 h5 {
-  font-weight: 700 !important;
+  font-weight: 700;
   line-height: 1.1;
   letter-spacing: -0.025em;
 }
@@ -75,12 +75,12 @@ h1 {
 h2 {
   color: var(--color-primary);
   font-size: clamp(1.65rem, 3vw, 2.5rem);
-  font-weight: 700 !important;
+  font-weight: 700;
 }
 
 h3 {
   margin-top: 1.5rem;
-  font-size: clamp(1.3rem, 2vw, 1.6rem) !important;
+  font-size: clamp(1.3rem, 2vw, 1.6rem);
 }
 
 h4 {
@@ -216,42 +216,6 @@ h4 {
 .site-header,
 .site-header * {
   color: var(--color-headertext);
-}
-
-.post-header.site-header-featured {
-  position: relative;
-  min-height: 500px;
-  margin-bottom: 2.5rem;
-  overflow: hidden;
-  background-position: center;
-  background-size: cover;
-  margin-top: -3rem;
-}
-
-.post-header.site-header-overlay::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  background: var(--color-overlay);
-}
-
-.post-header-inner {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  min-height: 500px;
-  max-width: 85rem;
-  padding:0 2rem;
-  margin: 0 auto;
-}
-
-.post-header-inner .page_title,
-.post-header-inner .post-author,
-.post-header-inner .post-date {
-  color: var(--color-on-bright);
 }
 
 /* NAVIGATION */
@@ -441,10 +405,17 @@ h4 {
 .page_title {
   color: var(--color-primary);
   margin-top: 0 !important;
-  margin-bottom: 1.75rem;
+  margin-bottom: 1.5rem;
   font-size: clamp(2.5rem, 5.5vw, 4.75rem);
   line-height: 1;
   letter-spacing: -0.045em;
+}
+
+.page_summary{
+  color: var(--color-surface);
+  font-size: clamp(1.5rem, 2.5vw, 1.75rem);
+  font-weight:200;
+  margin-top:0px;
 }
 
 .events_h2 {
@@ -480,6 +451,52 @@ button,
   text-decoration: none;
   text-transform: uppercase;
 }
+
+/* POST HEADER */
+
+.post-header.has-hero-image {
+  position: relative;
+  min-height: 500px;
+  margin-bottom: 2.5rem;
+  margin-top: -3rem;
+  overflow: hidden;
+  background-position: center;
+  background-size: cover;
+}
+
+.post-header.has-hero-image::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: var(--color-overlay);
+}
+
+.post-header-inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 500px;
+  max-width: 85rem;
+  padding:0 2rem;
+  margin: 0 auto;
+}
+
+.post-header-content{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  max-width:55rem;
+}
+
+.post-header-inner .page_title,
+.post-header-inner .post-author,
+.post-header-inner .post-date {
+  color: var(--color-on-bright);
+}
+
 
 /* SECTION LISTS */
 

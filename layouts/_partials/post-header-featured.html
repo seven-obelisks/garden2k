@@ -4,9 +4,15 @@
     {{ $style = printf "%s background-position: %s;" $style . }}
   {{ end }}
 
-  <header class="post-header site-header-featured site-header-overlay" style="{{ $style | safe.CSS }}">
+  <header class="post-header has-hero-image" style="{{ $style | safe.CSS }}">
     <div class="post-header-inner">
-      {{ partials.Include "post-header-meta.html" $ }}
+        <div class="post-header-content">
+            {{ if eq $.Section "posts" }}
+                {{ partials.Include "blog-header-meta.html" $ }}
+            {{ else }}
+                {{ partials.Include "post-header-meta.html" $ }}
+            {{ end }}
+        </div>
     </div>
   </header>
 {{ end }}
