@@ -48,7 +48,7 @@ main {
   flex: 1;
 }
 
-p, span{
+p{
   color: var(--color-text)
 }
 
@@ -1033,7 +1033,7 @@ div:has(> iframe[src*="youtube.com"]) {
   margin: 0 0 1.25rem;
   color: var(--color-primary);
   font-size: 1rem;
-  line-height: 1.5;
+  line-height: 1.1 !important;
 }
 
 .page-banner-button {
