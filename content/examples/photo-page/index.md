@@ -1,6 +1,6 @@
 ---
 title: "Photo Content Page"
-summary: "Example of a page with just photo content with lightbox enabled."
+summary: "Example of a page with photographs displayed in a grid gallery, with lightbox enabled."
 featured: true
 thumbnail: "/uploads/thumbnails/thumb-gallery.png"
 ---
