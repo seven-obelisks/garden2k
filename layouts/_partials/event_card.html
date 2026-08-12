@@ -43,7 +43,7 @@
 >
   {{ with $event.Params.tags }}
     <p class="event-label">
-    🏷️ {{ range $i, $tag := . }}{{ if $i }}, {{ end }}<a href="/tags/{{ $tag | urlize }}/">{{ $tag }}</a>{{ end }}
+      🏷️ {{ range $i, $tag := . }}{{ if $i }}, {{ end }}<a href="/tags/{{ $tag | urlize }}/">{{ $tag }}</a>{{ end }}
     </p>
   {{ else }}
     <p class="event-label">Event</p>
@@ -51,8 +51,11 @@
 
   <h3 class="event-card-title">
     <a href="{{ $event.RelPermalink }}">{{ $event.Title }}</a>
-    <span class="event-card-color-dot" aria-hidden="true"></span>
   </h3>
+
+{{ with $event.Params.event_icon }}
+  <img class="event-card-icon" src="{{ . | relURL }}" alt="">
+{{ end }}
 
   <div class="event-card-layout">
     {{ with $event.Params.image }}
@@ -89,7 +92,7 @@
         {{ if not .past }}
           {{ with $event.Params.event_url }}
             <a class="event_button" href="{{ . }}" target="_blank" rel="noopener">
-            <span class="event-icon">🎟️</span>Register Now
+              <span class="event-icon">🎟️</span>Register Now
             </a>
           {{ end }}
 
@@ -97,7 +100,6 @@
             <span class="event-icon">🗓️</span>Add to Calendar
           </a>
         {{ end }}
-
       </div>
     </div>
   </div>

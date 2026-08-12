@@ -1128,6 +1128,7 @@ div:has(> iframe[src*="youtube.com"]) {
   border-radius: var(--radius-sm);
   background-color: var(--color-surface);
   padding: 1.25rem;
+  position: relative;
   transition:
     background-color 180ms ease,
     border-color 180ms ease;
@@ -1138,6 +1139,17 @@ div:has(> iframe[src*="youtube.com"]) {
   flex-direction: column;
   min-width: 0;
   height: 100%;
+  position: relative;
+}
+
+.event-card .event-card-icon, 
+.event-single-card .event-card-icon {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  object-fit: cover;
 }
 
 .event-card:hover {
@@ -1160,19 +1172,6 @@ div:has(> iframe[src*="youtube.com"]) {
 
 .is-hidden {
   display: none;
-}
-
-.event-card-color-dot {
-  flex: 0 0 auto;
-  width: 0.75rem;
-  height: 0.75rem;
-  border: 1px solid color-mix(
-    in srgb,
-    var(--event-color, var(--color-primary)) 70%,
-    var(--color-text)
-  );
-  border-radius: 50%;
-  background: var(--event-color, var(--color-primary));
 }
 
 .event-card-title,
