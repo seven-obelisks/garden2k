@@ -48,9 +48,12 @@ main {
   flex: 1;
 }
 
+p, span{
+  color: var(--color-text)
+}
+
 body,
 body * {
-  color: var(--color-text);
   font-family: "Space Grotesk", sans-serif;
   font-optical-sizing: auto;
 }
@@ -1398,7 +1401,7 @@ div:has(> iframe[src*="youtube.com"]) {
 .event-single-title {
   margin-top: 0;
   margin-bottom: 1.25rem;
-  color: var(--color-text);
+  color: var(--event-color, var(--color-primary));
 }
 
 .event-single-title span:first-child {
