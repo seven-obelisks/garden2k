@@ -249,7 +249,7 @@ function renderMonthEvents() {
       websiteLink.target = "_blank";
       websiteLink.rel = "noopener";
       websiteLink.appendChild(makeIcon("🎟️"));
-      websiteLink.append("Event Website");
+      websiteLink.append("Register Now");
       actions.appendChild(websiteLink);
     }
 

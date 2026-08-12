@@ -16,8 +16,11 @@
 
     <h1 class="event-single-title">
       <span>{{ .Title }}</span>
-      <span class="event-card-color-dot" aria-hidden="true"></span>
     </h1>
+
+    {{ with .Params.event_icon }}
+      <img class="event-card-icon" src="{{ . | relURL }}" alt="">
+    {{ end }}
 
     {{ with .Params.image }}
       <img

@@ -4,7 +4,7 @@
     {{ $style = printf "%s background-position: %s;" $style . }}
   {{ end }}
 
-  <header class="post-header has-hero-image blog-hero" style="{{ $style | safe.CSS }}">
+  <header class="post-header has-hero-image blog-hero">
     <div class="post-header-inner">
       <div class="post-header-content">
         {{ partials.Include "blog-header-meta.html" $ }}

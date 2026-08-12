@@ -4,6 +4,7 @@ title: A Sojourn Honoring America's Trains
 date: 2026-06-22T11:52:00-05:00
 event_start: 2026-08-01T11:52:00-05:00
 event_end: 2026-09-30T11:52:00-05:00
+event_icon: "/uploads/icon-3.png"
 location: Under the Bridge
 event_organizer: Train Lovers of America
 event_url: https://trains.com
