@@ -457,6 +457,11 @@
     padding-left: 1.25rem;
   }
 
+  .page-hero{
+    margin-right:1.25rem;
+    margin-left:1.25rem;
+  }
+
   .site-header {
     margin-bottom: 2rem;
   }
