@@ -14,6 +14,13 @@
                  (always-stacked layout, used on the events list page and
                  calendar page where many cards appear at once). Omit for the
                  wider side-by-side layout used on the homepage / event-call.
+    hideSummary - optional bool. If true: skips the event summary text.
+                 Used on the calendar page, where every event across every
+                 month renders into the page up front - trims per-card payload
+                 since date/location/organizer already convey the essentials.
+    hideImage  - optional bool. If true: skips the event photo. Same
+                 calendar-page rationale as hideSummary - trims payload
+                 since every month's cards render up front.
 */}}
 
 {{ $event := .event }}
@@ -53,15 +60,17 @@
     <a href="{{ $event.RelPermalink }}">{{ $event.Title }}</a>
   </h3>
 
-{{ with $event.Params.event_icon }}
-  <img class="event-card-icon" src="{{ . | relURL }}" alt="">
-{{ end }}
+  {{ with $event.Params.event_icon }}
+    <img class="event-card-icon" src="{{ . | relURL }}" alt="">
+  {{ end }}
 
   <div class="event-card-layout">
-    {{ with $event.Params.image }}
-      <a class="event-card-image-link" href="{{ $event.RelPermalink }}">
-        <img class="event-card-image" src="{{ . | relURL }}" alt="">
-      </a>
+    {{ if not .hideImage }}
+      {{ with $event.Params.image }}
+        <a class="event-card-image-link" href="{{ $event.RelPermalink }}">
+          <img class="event-card-image" src="{{ . | relURL }}" alt="" loading="lazy">
+        </a>
+      {{ end }}
     {{ end }}
 
     <div class="event-card-info">
@@ -84,8 +93,10 @@
         <p class="event-location-line"><span class="event-icon">📍</span>{{ . }}</p>
       {{ end }}
 
-      {{ with $event.Summary }}
-        <div class="event-summary">{{ . }}</div>
+      {{ if not .hideSummary }}
+        {{ with $event.Summary }}
+          <div class="event-summary">{{ . }}</div>
+        {{ end }}
       {{ end }}
 
       <div class="event-actions">

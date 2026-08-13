@@ -4,19 +4,37 @@
 
 <main class="calendar-page site-container list-container">
 
-  <h1 class="page_title">{{ .Title }}</h1>
+<h1 class="page_title">{{ .Title }}</h1>
 
-  <div class="calendar-header">
-    <button id="calendar-prev" type="button">← Prev</button>
-    <h2 id="calendar-title"></h2>
-    <button id="calendar-next" type="button">Next →</button>
-  </div>
+<div class="calendar-header">
+<button id="calendar-prev" type="button">← Prev</button>
+<h2 id="calendar-title"></h2>
+<button id="calendar-next" type="button">Next →</button>
+</div>
 
-  <section id="calendar-grid" class="calendar-grid"></section>
+<section id="calendar-grid" class="calendar-grid"></section>
 
-  <h2 class="events_h2" id="calendar-month-events-title"></h2>
+<h2 class="events_h2" id="calendar-month-events-title"></h2>
 
-  <ul id="calendar-month-events" class="events-list events-list-grid"></ul>
+<p id="calendar-month-events-empty" class="next-event-empty" hidden>No events this month.</p>
+
+<ul id="calendar-month-events" class="events-list events-list-grid">
+    {{ range $events }}
+      {{ $start := time .Params.event_start }}
+      {{ $end := time (.Params.event_end | default .Params.event_start) }}
+      {{ $months := slice }}
+      {{ $cursor := $start }}
+      {{ range seq 0 120 }}
+        {{ if le $cursor $end }}
+          {{ $months = $months | append ($cursor.Format "2006-01") }}
+          {{ $cursor = $cursor.AddDate 0 1 0 }}
+        {{ end }}
+      {{ end }}
+<li data-months="{{ delimit $months "," }}">
+        {{ partials.Include "event_card.html" (dict "event" . "compact" true "hideSummary" true "hideImage" true) }}
+</li>
+    {{ end }}
+</ul>
 
 </main>
 
@@ -29,15 +47,7 @@
       "url": {{ $event.RelPermalink }},
       "start": {{ (time $event.Params.event_start).Format "2006-01-02" }},
       "end": {{ (time ($event.Params.event_end | default $event.Params.event_start)).Format "2006-01-02" }},
-      "color": {{ $event.Params.event_color | default "var(--color-primary)" }},
-      "startFull": {{ $event.Params.event_start }},
-      "endFull": {{ $event.Params.event_end | default $event.Params.event_start }},
-      "image": {{ $event.Params.image | default "" }},
-      "organizer": {{ $event.Params.event_organizer | default "" }},
-      "location": {{ $event.Params.location | default "" }},
-      "summary": {{ $event.Summary | plainify }},
-      "eventUrl": {{ $event.Params.event_url | default "" }},
-      "tags": [{{ range $i, $tag := $event.Params.tags }}{{ if $i }},{{ end }}{{ $tag }}{{ end }}]
+      "color": {{ $event.Params.event_color | default "var(--color-primary)" }}
     }
   {{- end -}}
 ]
@@ -45,5 +55,10 @@
 
 {{ $calendarJS := resources.Get "js/calendar.js" }}
 <script src="{{ $calendarJS.RelPermalink }}"></script>
+
+{{ $cardJS := resources.Get "js/card.js" }}
+{{ if $cardJS }}
+  <script src="{{ $cardJS.RelPermalink }}"></script>
+{{ end }}
 
 {{ end }}
