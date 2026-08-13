@@ -1,0 +1,45 @@
+{{ $tag := .Get "tag" }}
+{{ $tagsParam := .Get "tags" }}
+
+{{ $events := where site.RegularPages "Section" "events" }}
+
+{{ $wantedTags := slice }}
+{{ with $tag }}
+  {{ $wantedTags = $wantedTags | append . }}
+{{ end }}
+{{ with $tagsParam }}
+  {{ range split . "," }}
+    {{ $wantedTags = $wantedTags | append (trim . " ") }}
+  {{ end }}
+{{ end }}
+
+{{ with $wantedTags }}
+  {{ $filtered := slice }}
+  {{ range $events }}
+    {{ $eventTags := .Params.tags }}
+    {{ $matches := false }}
+    {{ range $wantedTags }}
+      {{ if in $eventTags . }}
+        {{ $matches = true }}
+      {{ end }}
+    {{ end }}
+    {{ if $matches }}
+      {{ $filtered = $filtered | append . }}
+    {{ end }}
+  {{ end }}
+  {{ $events = $filtered }}
+{{ end }}
+
+<ul class="event-listview-list">
+  {{ range $events }}
+    {{ $eventColor := .Params.event_color | default "var(--color-primary)" }}
+    {{ $eventStart := .Params.event_start }}
+    {{ $eventEnd := .Params.event_end }}
+
+    <li class="event-listview-item">
+      <a class="event-listview-link" href="{{ .RelPermalink }}" style="--event-color: {{ $eventColor }};">
+        <span class="event-listview-dot" aria-hidden="true"></span><span class="event-listview-title">{{ .Title }}</span>{{ if or $eventStart $eventEnd .Params.location }}<span class="event-listview-meta"> — {{ if or $eventStart $eventEnd }}{{- with $eventStart -}}{{ time.Format "Jan 2, 2006" . }}{{- end -}}{{- if and $eventStart $eventEnd }} - {{ end -}}{{- with $eventEnd -}}{{ time.Format "Jan 2, 2006" . }}{{- end -}}{{ end }}{{ with .Params.location }}{{ if or $eventStart $eventEnd }} · {{ end }}{{ . }}{{ end }}</span>{{ end }}
+      </a>
+    </li>
+  {{ end }}
+</ul>

@@ -76,6 +76,7 @@ h2 {
   color: var(--color-primary);
   font-size: clamp(1.65rem, 3vw, 2.5rem);
   font-weight: 700;
+  margin-bottom:.5rem;
 }
 
 h3 {
@@ -482,7 +483,7 @@ button,
   max-width: 85rem;
   padding-left: 2rem;
   padding-right: 2rem;
-  padding-bottom: 2rem;
+  padding-bottom: 3rem;
   margin: 0 auto;
 }
 
@@ -1611,4 +1612,53 @@ div:has(> iframe[src*="youtube.com"]) {
 .search-h2 {
   color: var(--color-bg);
   margin: 0 !important;
+}
+
+/* EVENT LISTVIEW */
+
+.event-listview-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.event-listview-item {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.event-listview-item:last-child {
+  border-bottom: none;
+}
+
+.event-listview-link {
+  display: block;
+  padding: 0.75rem 0.5rem;
+  color: var(--color-text);
+  text-decoration: none;
+  line-height: 1.5;
+  border-radius: var(--radius-sm);
+  transition: background-color 180ms ease;
+}
+
+.event-listview-link:hover {
+  background-color: color-mix(in srgb, var(--color-primary) 8%, var(--color-surface));
+}
+
+.event-listview-dot {
+  display: inline-block;
+  width: 0.55rem;
+  height: 0.55rem;
+  margin-right: 0.6rem;
+  border-radius: 50%;
+  vertical-align: middle;
+  background: var(--event-color, var(--color-primary));
+}
+
+.event-listview-title {
+  font-weight: 700;
+}
+
+.event-listview-meta {
+  color: var(--color-darktext);
+  font-size: 0.9rem;
 }
