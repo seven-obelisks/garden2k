@@ -30,6 +30,7 @@ collections:
       - { label: "Event URL", name: "event_url", widget: "string", required: false }
       - { label: "Event Image", name: "image", widget: "image", required: false }
       - { label: "Event Icon", name: "event_icon", widget: "image", required: false }
+      - { label: "Summary", name: "summary", widget: "text", required: false }
       - label: "Event Color"
         name: "event_color"
         widget: "string"

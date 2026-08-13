@@ -94,7 +94,7 @@
       {{ end }}
 
       {{ if not .hideSummary }}
-        {{ with $event.Summary }}
+        {{ with $event.Params.summary | default $event.Summary }}
           <div class="event-summary">{{ . }}</div>
         {{ end }}
       {{ end }}
