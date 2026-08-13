@@ -2,7 +2,7 @@
 
 .home-slider {
   position: relative;
-  min-height: 800px;
+  min-height: 650px;
   overflow: hidden;
   background: var(--color-surface);
   margin-top: -3rem;
