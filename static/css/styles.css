@@ -1282,6 +1282,7 @@ div:has(> iframe[src*="youtube.com"]) {
   flex-wrap: wrap;
   align-items: center;
   gap: 0.65rem;
+  padding-top: 10px;
 }
 
 .event-card--compact .event-card-info {
