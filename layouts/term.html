@@ -1,21 +1,21 @@
 {{ define "main" }}
   <main class="term-page site-container list-container tag-container">
-    <a href="/tags/" class="event_button term-page-back">Tag</a>
+<a href="/tags/" class="event-button event-button--back">Tag</a>
 
-    <h1 class="page_title">{{ .Title }}</h1>
+<h1 class="page-title">{{ .Title }}</h1>
 
     {{ with .Content }}
-      <div class="section-intro prose">
+<div class="section-intro prose">
         {{ . }}
-      </div>
+</div>
     {{ end }}
 
-    <ul class="content-list">
+<ul class="content-list">
       {{ range .Pages }}
-        <li class="content-card">
+<li class="content-card">
           {{ .Render "summary" }}
-        </li>
+</li>
       {{ end }}
-    </ul>
-  </main>
+</ul>
+</main>
 {{ end }}

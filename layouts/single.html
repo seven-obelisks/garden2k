@@ -24,7 +24,7 @@
         </header>
       {{ end }}
 
-      <div class="post-content prose">
+      <div class="post__content prose">
 
         {{ .Content }}
 
@@ -33,7 +33,7 @@
       </div>
 
       {{ if $needs_aside }}
-        <aside class="post-aside">
+        <aside class="post__aside">
           {{ partials.Include "menu-contextual.html" . }}
         </aside>
       {{ end }}

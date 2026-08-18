@@ -1,15 +1,15 @@
 {{ $image := .Get "image" }}
 
-<div class="page-banner{{ if not $image }} page-banner-no-image{{ end }}" {{ with $image }}style="background-image: url('{{ . }}');"{{ end }}>
-  <div class="page-banner-content">
-    <h2 class="page-banner-title">{{ .Get "title" }}</h2>
+<div class="banner{{ if not $image }} banner--no-image{{ end }}" {{ with $image }}style="background-image: url('{{ . }}');"{{ end }}>
+  <div class="banner__content">
+    <h2 class="banner__title">{{ .Get "title" }}</h2>
 
     {{ with .Get "text" }}
-      <p class="page-banner-text">{{ . }}</p>
+      <p class="banner__text">{{ . }}</p>
     {{ end }}
 
     {{ if and (.Get "button_text") (.Get "button_url") }}
-      <a href="{{ .Get "button_url" }}" class="page-banner-button">
+      <a href="{{ .Get "button_url" }}" class="banner__button">
         {{ .Get "button_text" }}
       </a>
     {{ end }}

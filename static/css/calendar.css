@@ -1,14 +1,10 @@
 /* CALENDAR */
 
-.calendar-container {
-  max-width: 80rem !important;
-}
-
 .calendar-page {
   padding-bottom: 2rem;
 }
 
-.calendar-header {
+.calendar__header {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -16,7 +12,7 @@
   padding-bottom: 1.25rem;
 }
 
-.calendar-header h2 {
+.calendar__header h2 {
   margin: 0;
   color: var(--color-primary);
   text-align: center;
@@ -46,7 +42,7 @@
 
 /* CALENDAR GRID */
 
-.calendar-grid {
+.calendar__grid {
   display: grid;
   grid-template-columns: repeat(7, minmax(0, 1fr));
   gap: 0;
@@ -57,7 +53,7 @@
   background: var(--color-surface);
 }
 
-.calendar-weekday {
+.calendar__weekday {
   padding: 0.9rem 0.5rem;
   border-right: 1px solid var(--color-border);
   border-bottom: 1px solid var(--color-border);
@@ -70,7 +66,7 @@
   text-transform: uppercase;
 }
 
-.calendar-day {
+.calendar__day {
   min-height: 8rem;
   padding: 0.65rem;
   border-right: 1px solid var(--color-border);
@@ -79,7 +75,7 @@
   overflow-wrap: break-word;
 }
 
-.calendar-day.empty {
+.calendar__day.is-empty {
   background: color-mix(
     in srgb,
     var(--color-bg) 82%,
@@ -87,7 +83,7 @@
   );
 }
 
-.calendar-day-number {
+.calendar__day-number {
   margin-bottom: 0.65rem;
   color: var(--color-darktext);
   font-size: 0.85rem;
@@ -96,7 +92,7 @@
 
 /* CALENDAR EVENTS */
 
-.calendar-event {
+.calendar__event {
   display: block;
   margin-bottom: 0.4rem;
   padding: 0.3rem 0.4rem;
@@ -122,8 +118,8 @@
     color 180ms ease;
 }
 
-.calendar-event:hover,
-.calendar-event:focus-visible {
+.calendar__event:hover,
+.calendar__event:focus-visible {
   border-color: var(--event-color, var(--color-primary));
   border-left-color: var(--event-color, var(--color-primary));
   background-color: color-mix(
@@ -141,7 +137,7 @@
 /* MOBILE CALENDAR */
 
 @media screen and (max-width: 59.99em) {
-  .calendar-header {
+  .calendar__header {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -162,29 +158,29 @@
     white-space: nowrap;
   }
 
-  .calendar-grid {
+  .calendar__grid {
     font-size: 0.75rem;
     overflow-x: auto;
   }
 
-  .calendar-weekday {
+  .calendar__weekday {
     padding: 0.65rem 0.35rem;
     font-size: 0.7rem;
     letter-spacing: 0.08rem;
   }
 
-  .calendar-day {
+  .calendar__day {
     min-height: 6rem;
     padding: 0.45rem;
   }
 
-  .calendar-day-number {
+  .calendar__day-number {
     margin-bottom: 0.45rem;
     color: var(--color-darktext);
     font-size: 0.75rem;
   }
 
-  .calendar-event {
+  .calendar__event {
     width: 0.85rem;
     height: 0.85rem;
     margin-bottom: 0.4rem;
@@ -206,8 +202,8 @@
     white-space: nowrap;
   }
 
-  .calendar-event:hover,
-  .calendar-event:focus-visible {
+  .calendar__event:hover,
+  .calendar__event:focus-visible {
     border-color: var(--color-primary);
     background: var(--color-primary);
   }

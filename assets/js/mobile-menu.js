@@ -1,6 +1,6 @@
 function initMobileMenu() {
-  const toggle = document.querySelector(".menu-toggle");
-  const close = document.querySelector(".menu-close");
+  const toggle = document.querySelector(".site-nav__toggle");
+  const close = document.querySelector(".site-nav__close");
   const menu = document.querySelector("#site-menu");
 
   if (!toggle || !close || !menu) return;
@@ -10,7 +10,7 @@ function initMobileMenu() {
     menu.setAttribute("aria-hidden", "false");
     toggle.setAttribute("aria-expanded", "true");
     toggle.setAttribute("aria-label", "Close menu");
-    document.body.classList.add("menu-open");
+    document.body.classList.add("is-menu-open");
   }
 
   function closeMenu() {
@@ -18,7 +18,7 @@ function initMobileMenu() {
     menu.setAttribute("aria-hidden", "true");
     toggle.setAttribute("aria-expanded", "false");
     toggle.setAttribute("aria-label", "Open menu");
-    document.body.classList.remove("menu-open");
+    document.body.classList.remove("is-menu-open");
   }
 
   toggle.addEventListener("click", function () {

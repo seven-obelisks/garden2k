@@ -33,7 +33,7 @@
 {{ if .compact }}{{ $classes = $classes | append "event-card--compact" }}{{ end }}
 
 {{ with .heading }}
-  <h2 class="events_h2">{{ . }}</h2>
+  <h2 class="events-heading">{{ . }}</h2>
 {{ end }}
 
 <div
@@ -56,7 +56,7 @@
     <p class="event-label">Event</p>
   {{ end }}
 
-  <h3 class="event-card-title">
+  <h3 class="event-card__title">
     <a href="{{ $event.RelPermalink }}">{{ $event.Title }}</a>
   </h3>
 
@@ -64,22 +64,22 @@
     <img class="event-card-icon" src="{{ . | relURL }}" alt="">
   {{ end }}
 
-  <div class="event-card-layout">
+  <div class="event-card__layout">
     {{ if not .hideImage }}
       {{ with $event.Params.image }}
-        <a class="event-card-image-link" href="{{ $event.RelPermalink }}">
-          <img class="event-card-image" src="{{ . | relURL }}" alt="" loading="lazy">
+        <a class="event-card__image-link" href="{{ $event.RelPermalink }}">
+          <img class="event-card__image" src="{{ . | relURL }}" alt="" loading="lazy">
         </a>
       {{ end }}
     {{ end }}
 
-    <div class="event-card-info">
+    <div class="event-card__info">
       {{ with $event.Params.event_organizer }}
-        <p class="event-organizer"><span class="event-icon">👥</span>Hosted by {{ . }}</p>
+        <p class="event-card__organizer"><span class="event-icon">👥</span>Hosted by {{ . }}</p>
       {{ end }}
 
       {{ if or $eventStart $eventEnd }}
-        <p class="event-meta-line"><span class="event-icon">🗓️</span>{{- with $eventStart -}}
+        <p class="event-card__meta-line"><span class="event-icon">🗓️</span>{{- with $eventStart -}}
             {{ time.Format "Jan 2, 2006, 3:04 PM" . }}
           {{- end -}}
           {{- if and $eventStart $eventEnd }} - {{ end -}}
@@ -90,24 +90,24 @@
       {{ end }}
 
       {{ with $event.Params.location }}
-        <p class="event-location-line"><span class="event-icon">📍</span>{{ . }}</p>
+        <p class="event-card__location-line"><span class="event-icon">📍</span>{{ . }}</p>
       {{ end }}
 
       {{ if not .hideSummary }}
         {{ with $event.Params.summary | default $event.Summary }}
-          <div class="event-summary">{{ . }}</div>
+          <div class="event-card__summary">{{ . }}</div>
         {{ end }}
       {{ end }}
 
-      <div class="event-actions">
+      <div class="event-card__actions">
         {{ if not .past }}
           {{ with $event.Params.event_url }}
-            <a class="event_button" href="{{ . }}" target="_blank" rel="noopener">
+            <a class="event-button" href="{{ . }}" target="_blank" rel="noopener">
               <span class="event-icon">🎟️</span>Register Now
             </a>
           {{ end }}
 
-          <a class="event_button" href="{{ $event.RelPermalink }}event.ics">
+          <a class="event-button" href="{{ $event.RelPermalink }}event.ics">
             <span class="event-icon">🗓️</span>Add to Calendar
           </a>
         {{ end }}

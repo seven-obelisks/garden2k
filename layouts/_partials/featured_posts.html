@@ -1,37 +1,37 @@
 {{ $featuredItems := where (where site.RegularPages.ByDate.Reverse "Section" "!=" "events") "Params.featured" true }}
 
 {{ if gt (len $featuredItems) 0 }}
-  <aside class="home-featured-posts-column">
-    <h2 class="events_h2">Featured Content</h2>
+<aside class="featured-posts__column">
+<h2 class="events-heading">Featured Content</h2>
 
-    <div class="featured-posts-list">
+<div class="featured-posts__list">
       {{ range first 4 $featuredItems }}
-        <article class="featured-post">
-          <a class="featured-post-link" href="{{ .RelPermalink }}">
-            <span class="featured-post-title">
+<article class="featured-posts__item">
+<a class="featured-posts__link" href="{{ .RelPermalink }}">
+<span class="featured-posts__title">
               {{ .Title }} →
-            </span>
+</span>
 
             {{ if not .Date.IsZero }}
-              <time class="featured-post-date" datetime="{{ .Date.Format "2006-01-02" }}">
+<time class="featured-posts__date" datetime="{{ .Date.Format "2006-01-02" }}">
                 {{ .Date.Format "Jan 2, 2006" }}
-              </time>
+</time>
             {{ end }}
 
             {{ with .Params.summary }}
-              <span class="featured-post-summary">
+<span class="featured-posts__summary">
                 {{ . | plainify | truncate 110 }}
-              </span>
+</span>
             {{ else }}
               {{ with .Summary }}
-                <span class="featured-post-summary">
+<span class="featured-posts__summary">
                   {{ . | plainify | truncate 110 }}
-                </span>
+</span>
               {{ end }}
             {{ end }}
-          </a>
-        </article>
+</a>
+</article>
       {{ end }}
-    </div>
-  </aside>
+</div>
+</aside>
 {{ end }}

@@ -1,15 +1,15 @@
-<h2 class="events_h2 recent_h2">Recent Blog Posts</h2>
+<h2 class="events-heading">Recent Blog Posts</h2>
 
 <div class="recent-posts">
-  <div class="recent-posts-list">
+  <div class="recent-posts__list">
     {{ range first 2 (where .Site.RegularPages.ByDate.Reverse "Section" "posts") }}
-      <article class="recent-post">
-        <a class="recent-post-link" href="{{ .RelPermalink }}">
-          <span class="recent-post-title">
+      <article class="recent-posts__item">
+        <a class="recent-posts__link" href="{{ .RelPermalink }}">
+          <span class="recent-posts__title">
             {{ .Title }} →
           </span>
 
-          <time class="recent-post-date" datetime="{{ .Date.Format "2006-01-02" }}">
+          <time class="recent-posts__date" datetime="{{ .Date.Format "2006-01-02" }}">
             {{ .Date.Format "Jan 2, 2006" }}
           </time>
         </a>

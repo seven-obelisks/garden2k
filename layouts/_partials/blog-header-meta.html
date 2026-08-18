@@ -1,27 +1,27 @@
 {{ $page := . }}
 
-<h1 class="page_title">
+<h1 class="page-title">
   {{ .Title }}
 </h1>
 
 {{ with .Params.author | compare.Default .Site.Params.author }}
-  <p class="post-author">
+<p class="post-header__author">
     {{- if compare.Eq $page.Language "de" "en" "es" "fr" "it" "no" "pt" -}}
       {{- lang.Translate "by" -}}
     {{ end }}
-    <strong>
+<strong>
       {{- if reflect.IsSlice . -}}
         {{ collections.Delimit . ", " | transform.Markdownify }}
       {{- else -}}
         {{ . | transform.Markdownify }}
       {{- end -}}
-    </strong>
-  </p>
+</strong>
+</p>
 {{ end }}
 
 {{ if and (not .Date.IsZero) (ne .Params.show_date false) }}
-  <time class="post-date"
-    {{ printf `datetime="%s"` (.Date.Format "2006-01-02T15:04:05Z07:00") | safe.HTMLAttr }}>
+<time class="post-header__date"
+{{ printf `datetime="%s"` (.Date.Format "2006-01-02T15:04:05Z07:00") | safe.HTMLAttr }}>
     {{ .Date | time.Format (compare.Default "January 2, 2006" .Site.Params.date_format) }}
-  </time>
+</time>
 {{ end }}

@@ -56,7 +56,7 @@
 
     if (!matches.length) {
       const empty = document.createElement('p');
-      empty.className = 'home-search-empty';
+      empty.className = 'home-search__empty';
       empty.textContent = 'No results found for "' + query + '".';
       results.appendChild(empty);
       results.classList.add('is-open');
@@ -65,15 +65,15 @@
 
     matches.forEach((page) => {
       const item = document.createElement('article');
-      item.className = 'home-search-result';
+      item.className = 'home-search__result';
 
       const titleLink = document.createElement('a');
-      titleLink.className = 'home-search-result-title';
+      titleLink.className = 'home-search__result-title';
       titleLink.href = page.url;
       titleLink.innerHTML = highlight(page.title, query);
 
       const snippetEl = document.createElement('p');
-      snippetEl.className = 'home-search-result-snippet';
+      snippetEl.className = 'home-search__result-snippet';
       snippetEl.innerHTML = buildSnippet(page.content, query);
 
       item.appendChild(titleLink);
