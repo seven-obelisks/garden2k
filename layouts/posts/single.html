@@ -14,7 +14,7 @@
 
   {{ partials.Include "blog-header-hero.html" . }}
 
-  <main class="site-container blog-container">
+  <main class="site-container post-page">
 
     <article class="{{ $post_class }}">
 
@@ -24,10 +24,10 @@
         </header>
       {{ end }}
 
-      <div class="post-content prose">
+      <div class="post__content prose">
 
         {{ if and (not .Params.thumbnail) .Params.cover_image }}
-          <figure class="post-cover">
+          <figure class="post__cover">
             <img
               src="{{ .Params.cover_image | relURL }}"
               alt="{{ with .Params.cover_image_alt }}{{ . }}{{ else }}{{ .Title }}{{ end }}"
@@ -43,7 +43,7 @@
       </div>
 
       {{ if $needs_aside }}
-        <aside class="post-aside">
+        <aside class="post__aside">
           {{ partials.Include "menu-contextual.html" . }}
         </aside>
       {{ end }}

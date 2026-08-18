@@ -3,8 +3,8 @@
   https://gohugo.io/content-management/toc/
 */}}
 {{- if .Params.toc -}}
-  <div class="post-aside-box">
-    <p class="post-aside-title">{{ lang.Translate "whatsInThis" . }}</p>
+  <div class="post__aside-box">
+    <p class="post__aside-title">{{ lang.Translate "whatsInThis" . }}</p>
     {{ .TableOfContents }}
   </div>
 {{- end -}}
@@ -16,11 +16,11 @@
 {{ $related := .Site.RegularPages.Related . | collections.First 15 }}
 
 {{ with $related }}
-  <div class="post-aside-box">
-    <p class="post-aside-title">{{ lang.Translate "related" }}</p>
-    <ul class="post-aside-list">
+  <div class="post__aside-box">
+    <p class="post__aside-title">{{ lang.Translate "related" }}</p>
+    <ul class="post__aside-list">
       {{ range . }}
-        <li class="post-aside-item">
+        <li class="post__aside-item">
           <a href="{{ .RelPermalink }}">
             {{- .Title -}}
           </a>

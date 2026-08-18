@@ -1,9 +1,9 @@
-<a class="content-card-link" href="{{ .RelPermalink }}">
-  {{ with .CurrentSection.Title }}<span class="content-card-section">{{ . }}</span>{{ end }}
-  <h3 class="content-card-title">{{ .Title }}</h3>
+<a class="content-card__link" href="{{ .RelPermalink }}">
+  {{ with .CurrentSection.Title }}<span class="content-card__section">{{ . }}</span>{{ end }}
+<h3 class="content-card__title">{{ .Title }}</h3>
 
   {{ if or .Params.event_start .Params.location }}
-    <span class="content-card-meta">
+<span class="content-card__meta">
       {{- with .Params.event_start -}}
         {{ time.Format "Monday, Jan 2, 2006, 3:04 PM" . }}
       {{- end -}}
@@ -11,10 +11,10 @@
       {{- with .Params.location -}}
         {{ . }}
       {{- end -}}
-    </span>
+</span>
   {{ end }}
 
-  <span class="content-card-summary">
+<span class="content-card__summary">
     {{ .Summary | plainify }}
-  </span>
+</span>
 </a>

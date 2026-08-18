@@ -1,20 +1,20 @@
 {{ define "main" }}
 <main class="search-page site-container list-container">
 
-  <h1 class="page_title">{{ .Title }}</h1>
+  <h1 class="page-title">{{ .Title }}</h1>
 
-  <form id="site-search-form" class="home-search-form">
+  <form id="site-search-form" class="home-search__form">
     <input
       type="text"
       id="site-search-input"
-      class="home-search-input"
+      class="home-search__input"
       placeholder="Search the site..."
       autocomplete="off"
     >
-    <button type="submit" class="home-search-button">Search</button>
+    <button type="submit" class="home-search__button">Search</button>
   </form>
 
-  <div id="site-search-results" class="home-search-results"></div>
+  <div id="site-search-results" class="home-search__results"></div>
 
 </main>
 

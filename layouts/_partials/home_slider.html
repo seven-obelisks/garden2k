@@ -3,18 +3,18 @@
 <section class="home-slider" data-slider>
       {{ range $index, $banner := . }}
 <div
-class="slide{{ if eq $index 0 }} is-active{{ end }}"
+class="home-slider__slide{{ if eq $index 0 }} is-active{{ end }}"
 {{ with $banner.image }}style="background-image: url('{{ . }}');"{{ end }}
 >
-<div class="slide-content">
-<h1 class="slider-title">{{ $banner.title }}</h1>
+<div class="home-slider__slide-content">
+<h1 class="home-slider__title">{{ $banner.title }}</h1>
 
             {{ with $banner.text }}
-<p class="banner-text">{{ . }}</p>
+<p class="home-slider__text">{{ . }}</p>
             {{ end }}
 
             {{ if and $banner.button_text $banner.button_url }}
-<a href="{{ $banner.button_url }}" class="slider_button">
+<a href="{{ $banner.button_url }}" class="home-slider__button">
                 {{ $banner.button_text }}
 </a>
             {{ end }}
@@ -22,7 +22,7 @@ class="slide{{ if eq $index 0 }} is-active{{ end }}"
 </div>
       {{ end }}
 
-<button class="slider-control slider-next" type="button" data-next aria-label="Next slide">
+<button class="home-slider__control home-slider__control--next" type="button" data-next aria-label="Next slide">
   <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
     <path d="M9 18l6-6-6-6"/>
   </svg>

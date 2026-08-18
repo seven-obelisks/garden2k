@@ -1,12 +1,12 @@
 {{ define "main" }}
 <main class="events-page site-container list-container">
 
-  <h1 class="page_title">{{ .Title }}</h1>
+<h1 class="page-title">{{ .Title }}</h1>
 
   {{ with .Content }}
-    <div class="section-intro">
+<div class="section-intro">
       {{ . }}
-    </div>
+</div>
   {{ end }}
 
   {{ $now := now }}
@@ -24,29 +24,29 @@
   {{ $allTags = $allTags | uniq | sort }}
 
   {{ if $allTags }}
-    <div class="event-filter-menu" role="group" aria-label="Filter events by tag">
+<div class="event-filter__menu" role="group" aria-label="Filter events by tag">
       {{ range $allTags }}
-        <button type="button" class="event-filter-tag" data-tag="{{ . | urlize }}" aria-pressed="false">
+<button type="button" class="event-filter__tag" data-tag="{{ . | urlize }}" aria-pressed="false">
           {{ . }}
-        </button>
+</button>
       {{ end }}
-      <button type="button" class="event-filter-clear" hidden>
+<button type="button" class="event-filter__clear" hidden>
         CLEAR
-      </button>
-    </div>
+</button>
+</div>
   {{ end }}
 
-  <ul class="events-list events-list-grid">
+<ul class="events-list events-list--grid">
     {{ range $upcoming }}
-      <li>
+<li>
         {{ partials.Include "event_card.html" (dict "event" . "compact" true "filterTags" true) }}
-      </li>
+</li>
     {{ end }}
-  </ul>
+</ul>
 
-  <br>
+<br>
 
-  <h2 class="events_h2">Recent Past Events</h2>
+<h2 class="events-heading">Recent Past Events</h2>
 
   {{ $past := slice }}
   {{ range .Pages }}
@@ -55,23 +55,23 @@
     {{ end }}
   {{ end }}
 
-  <ul class="events-list events-list-grid events-list-past">
+<ul class="events-list events-list--grid events-list--past">
     {{ range first 3 (sort $past "Params.event_start" "desc") }}
-      <li>
+<li>
         {{ partials.Include "event_card.html" (dict "event" . "compact" true "past" true) }}
-      </li>
+</li>
     {{ end }}
-  </ul>
+</ul>
 
 </main>
 
 {{ $cardJS := resources.Get "js/card.js" }}
 {{ if $cardJS }}
-  <script src="{{ $cardJS.RelPermalink }}"></script>
+<script src="{{ $cardJS.RelPermalink }}"></script>
 {{ end }}
 
 {{ $filterJS := resources.Get "js/event-filter.js" }}
 {{ if $filterJS }}
-  <script src="{{ $filterJS.RelPermalink }}"></script>
+<script src="{{ $filterJS.RelPermalink }}"></script>
 {{ end }}
 {{ end }}

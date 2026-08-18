@@ -1,9 +1,9 @@
 <footer class="site-footer" role="contentinfo">
-  <div class="footer-shell">
+  <div class="site-footer__shell">
 
-    <div class="footer-inner">
+    <div class="site-footer__inner">
 
-      <a class="copyright" href="{{ .Site.Home.Permalink }}">
+      <a class="site-footer__copyright" href="{{ .Site.Home.Permalink }}">
         &copy;
         {{ with .Site.Copyright | compare.Default .Site.Title }}
           {{ . | safe.HTML }} {{ now.Format "2006" }}
@@ -11,11 +11,11 @@
       </a>
 
       {{ if .Site.Menus.footer }}
-        <nav class="footer-menu">
-          <ul class="footer-menu-list">
+        <nav class="site-footer__menu">
+          <ul class="site-footer__menu-list">
             {{ range .Site.Menus.footer }}
               <li>
-                <a class="footer-link" href="{{ .URL }}">
+                <a class="site-footer__link" href="{{ .URL }}">
                  {{ .Name }}
                 </a>
               </li>

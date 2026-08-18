@@ -1,22 +1,22 @@
 {{ define "main" }}
   <main class="taxonomy-page site-container list-container tag-container">
-    <h1 class="page_title">{{ .Title }}</h1>
+<h1 class="page-title">{{ .Title }}</h1>
 
     {{ with .Content }}
-      <div class="section-intro prose">
+<div class="section-intro prose">
         {{ . }}
-      </div>
+</div>
     {{ end }}
 
-    <ul class="tag-index-list">
+<ul class="tag-index__list">
       {{ range .Data.Terms.Alphabetical }}
-        <li class="tag-index-item">
-          <a href="{{ .Page.RelPermalink }}" class="tag-index-link">
+<li class="tag-index__item">
+<a href="{{ .Page.RelPermalink }}" class="tag-index__link">
             {{ .Page.LinkTitle }}
-          </a>
-          <span class="tag-index-count">{{ .Count }}</span>
-        </li>
+</a>
+<span class="tag-index__count">{{ .Count }}</span>
+</li>
       {{ end }}
-    </ul>
-  </main>
+</ul>
+</main>
 {{ end }}
