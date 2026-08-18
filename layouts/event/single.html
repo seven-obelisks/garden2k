@@ -32,29 +32,29 @@ alt="">
 <ul class="event-single__detail-list">
       {{ with .Params.event_organizer }}
 <li class="event-single__detail-item">
-<span class="event-icon" aria-hidden="true">👥</span>
-<span>Hosted by <strong>{{ . }}</strong></span>
+<span class="event-single__detail-label"><span class="event-emoji" aria-hidden="true">👥</span>Organizer</span>
+<span class="event-single__detail-value">{{ . }}</span>
 </li>
       {{ end }}
 
       {{ with .Params.event_start }}
 <li class="event-single__detail-item">
-<span class="event-icon" aria-hidden="true">🗓️</span>
-<span><strong>Starts:</strong> {{ time.Format "Monday, Jan 2, 2006, 3:04 PM" . }}</span>
+<span class="event-single__detail-label"><span class="event-emoji" aria-hidden="true">🗓️</span>Starts</span>
+<span class="event-single__detail-value">{{ time.Format "Monday, Jan 2, 2006, 3:04 PM" . }}</span>
 </li>
       {{ end }}
 
       {{ with .Params.event_end }}
 <li class="event-single__detail-item">
-<span class="event-icon" aria-hidden="true">🏁</span>
-<span><strong>Ends:</strong> {{ time.Format "Monday, Jan 2, 2006, 3:04 PM" . }}</span>
+<span class="event-single__detail-label"><span class="event-emoji" aria-hidden="true">🏁</span>Ends</span>
+<span class="event-single__detail-value">{{ time.Format "Monday, Jan 2, 2006, 3:04 PM" . }}</span>
 </li>
       {{ end }}
 
       {{ with .Params.location }}
 <li class="event-single__detail-item">
-<span class="event-icon" aria-hidden="true">📍</span>
-<span>{{ . }}</span>
+<span class="event-single__detail-label"><span class="event-emoji" aria-hidden="true">📍</span>Location</span>
+<span class="event-single__detail-value">{{ . }}</span>
 </li>
       {{ end }}
 </ul>
