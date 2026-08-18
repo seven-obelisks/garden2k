@@ -27,6 +27,13 @@ const monthEventCards = document.querySelectorAll("#calendar-month-events > li[d
 
 let current = new Date();
 
+const params = new URLSearchParams(window.location.search);
+const monthParam = params.get("month");
+if (monthParam && /^\d{4}-\d{2}$/.test(monthParam)) {
+  const [y, m] = monthParam.split("-").map(Number);
+  current = new Date(y, m - 1, 1);
+}
+
 function renderCalendar() {
   const year = current.getFullYear();
   const month = current.getMonth();
