@@ -326,6 +326,10 @@
     flex-direction: column;
   }
 
+  .event-single__detail-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   /* EVENT LIST PAGE MOBILE */
 
   .events-list--grid {
