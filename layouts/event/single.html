@@ -3,6 +3,16 @@
 
   {{ $eventColor := .Params.event_color | default "transparent" }}
 
+<div class="event-single__ribbon">
+<span class="event-single__ribbon-label"><span class="event-emoji" aria-hidden="true">📅</span>EVENT</span>
+<nav class="event-single__ribbon-nav">
+<a href="/events/" class="event-single__ribbon-link">← Back to Events</a>
+    {{ with .Params.event_start }}
+<a href="/calendar/?month={{ (time .).Format "2006-01" }}" class="event-single__ribbon-link">View on Calendar →</a>
+    {{ end }}
+</nav>
+</div>
+
 <article class="event-single"
 style="--event-color: {{ $eventColor }};">
 
@@ -40,14 +50,14 @@ alt="">
       {{ with .Params.event_start }}
 <li class="event-single__detail-item">
 <span class="event-single__detail-label"><span class="event-emoji" aria-hidden="true">🗓️</span>Starts</span>
-<span class="event-single__detail-value">{{ time.Format "January 2, 2006, 3:04 PM" . }}</span>
+<span class="event-single__detail-value">{{ time.Format "Monday, Jan 2, 2006, 3:04 PM" . }}</span>
 </li>
       {{ end }}
 
       {{ with .Params.event_end }}
 <li class="event-single__detail-item">
 <span class="event-single__detail-label"><span class="event-emoji" aria-hidden="true">🏁</span>Ends</span>
-<span class="event-single__detail-value">{{ time.Format "January 2, 2006, 3:04 PM" . }}</span>
+<span class="event-single__detail-value">{{ time.Format "Monday, Jan 2, 2006, 3:04 PM" . }}</span>
 </li>
       {{ end }}
 

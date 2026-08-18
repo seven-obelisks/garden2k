@@ -22,22 +22,30 @@
 
 #calendar-prev,
 #calendar-next {
-  padding: 0.35rem 0.65rem;
-  border: 1px solid var(--color-primary);
-  border-radius: var(--radius-sm);
-  background-color: var(--color-primary);
-  color: var(--color-on-bright) !important;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.35rem 0.85rem;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  background-color: var(--color-surface);
+  color: var(--color-text);
   cursor: pointer;
   font-size: 0.85rem;
+  font-weight: 700;
   text-transform: uppercase;
+  transition:
+    border-color 180ms ease,
+    color 180ms ease,
+    background-color 180ms ease;
 }
 
 #calendar-prev:hover,
 #calendar-next:hover,
 #calendar-prev:focus-visible,
 #calendar-next:focus-visible {
-  background-color: transparent;
+  border-color: var(--color-primary);
   color: var(--color-primary) !important;
+  background-color: color-mix(in srgb, var(--color-primary) 10%, var(--color-surface));
 }
 
 /* CALENDAR GRID */

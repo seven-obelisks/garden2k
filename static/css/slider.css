@@ -129,20 +129,27 @@
 
 .home-slider__button {
   align-self: flex-start;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   width: auto;
   max-width: 100%;
-  padding: 0.35rem 0.65rem;
-  border-radius: var(--radius-sm);
+  padding: 0.35rem 0.85rem;
+  border: 1px solid var(--color-primary);
+  border-radius: 999px;
+  background-color: var(--color-surface);
+  color: var(--color-primary);
   text-decoration: none;
   text-transform: uppercase;
-  border: 1px solid var(--color-primary);
-  background-color: var(--color-primary);
-  color: var(--color-surface);
   font-size: 1rem !important;
+  font-weight: 700;
+  transition:
+    border-color 180ms ease,
+    color 180ms ease,
+    background-color 180ms ease;
 }
 
 .home-slider__button:hover {
+  border-color: var(--color-accent);
   background-color: var(--color-accent);
   color: var(--color-on-bright) !important;
 }
