@@ -1,94 +1,94 @@
 {{ define "main" }}
 <main class="blog-list-page section-page site-container list-container">
 
-  <h1 class="page_title">{{ .Title }}</h1>
+<h1 class="page-title">{{ .Title }}</h1>
 
   {{ with .Content }}
-    <div class="section-intro blog-list-intro prose">
+<div class="section-intro blog-list-intro prose">
       {{ . }}
-    </div>
+</div>
   {{ end }}
 
   {{ $posts := .Pages.ByDate.Reverse }}
 
   {{ if $posts }}
-    <ul class="blog-post-list content-list">
+<ul class="blog-post-list content-list">
 
       {{ with index $posts 0 }}
         {{ $image := or .Params.cover_image .Params.image .Params.featured_image .Params.thumbnail .Params.cover }}
         {{ $imageAlt := or .Params.cover_image_alt .Params.image_alt .Title }}
 
-        <li class="blog-post-card blog-post-card-featured content-card">
-          <a class="blog-post-card-link blog-post-card-featured-link content-card-link" href="{{ .RelPermalink }}">
+<li class="blog-post-card blog-post-card--featured content-card">
+<a class="blog-post-card__link content-card__link" href="{{ .RelPermalink }}">
 
             {{ with $image }}
-              <span class="blog-post-card-image-wrap blog-post-card-featured-image-wrap">
-                <img
-                  class="blog-post-card-image blog-post-card-featured-image"
-                  src="{{ . | relURL }}"
-                  alt="{{ $imageAlt }}"
-                  loading="lazy"
-                />
-              </span>
+<span class="blog-post-card__image-wrap">
+<img
+class="blog-post-card__image"
+src="{{ . | relURL }}"
+alt="{{ $imageAlt }}"
+loading="lazy"
+/>
+</span>
             {{ end }}
 
-            <span class="blog-post-card-content blog-post-card-featured-content">
-              <span class="blog-post-card-title content-card-title">{{ .Title }}</span>
+<span class="blog-post-card__content">
+<span class="blog-post-card__title content-card__title">{{ .Title }}</span>
 
               {{ if not .Date.IsZero }}
-                <span class="blog-post-card-date content-card-date">
+<span class="blog-post-card__date content-card__date">
                   {{ .Date.Format "January 2, 2006" }}
-                </span>
+</span>
               {{ end }}
 
               {{ with .Summary }}
-                <span class="blog-post-card-summary content-card-summary">
+<span class="blog-post-card__summary content-card__summary">
                   {{ . | plainify }}
-                </span>
+</span>
               {{ end }}
-            </span>
+</span>
 
-          </a>
-        </li>
+</a>
+</li>
       {{ end }}
 
       {{ range after 1 $posts }}
         {{ $image := or .Params.cover_image .Params.image .Params.featured_image .Params.thumbnail .Params.cover }}
         {{ $imageAlt := or .Params.cover_image_alt .Params.image_alt .Title }}
 
-        <li class="blog-post-card content-card">
-          <a class="blog-post-card-link content-card-link" href="{{ .RelPermalink }}">
+<li class="blog-post-card content-card">
+<a class="blog-post-card__link content-card__link" href="{{ .RelPermalink }}">
 
             {{ with $image }}
-              <span class="blog-post-card-image-wrap">
-                <img
-                  class="blog-post-card-image"
-                  src="{{ . | relURL }}"
-                  alt="{{ $imageAlt }}"
-                  loading="lazy"
-                />
-              </span>
+<span class="blog-post-card__image-wrap">
+<img
+class="blog-post-card__image"
+src="{{ . | relURL }}"
+alt="{{ $imageAlt }}"
+loading="lazy"
+/>
+</span>
             {{ end }}
 
-            <span class="blog-post-card-title content-card-title">{{ .Title }}</span>
+<span class="blog-post-card__title content-card__title">{{ .Title }}</span>
 
             {{ if not .Date.IsZero }}
-              <span class="blog-post-card-date content-card-date">
+<span class="blog-post-card__date content-card__date">
                 {{ .Date.Format "January 2, 2006" }}
-              </span>
+</span>
             {{ end }}
 
             {{ with .Summary }}
-              <span class="blog-post-card-summary content-card-summary">
+<span class="blog-post-card__summary content-card__summary">
                 {{ . | plainify }}
-              </span>
+</span>
             {{ end }}
 
-          </a>
-        </li>
+</a>
+</li>
       {{ end }}
 
-    </ul>
+</ul>
   {{ end }}
 
 </main>

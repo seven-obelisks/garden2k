@@ -1,6 +1,6 @@
-const filterButtons = document.querySelectorAll(".event-filter-tag");
+const filterButtons = document.querySelectorAll(".event-filter__tag");
 const eventCards = document.querySelectorAll(".event-card[data-tags]");
-const clearButton = document.querySelector(".event-filter-clear");
+const clearButton = document.querySelector(".event-filter__clear");
 
 if (filterButtons.length && eventCards.length) {
   const activeTags = new Set();

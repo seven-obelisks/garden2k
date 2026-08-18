@@ -42,14 +42,14 @@ function renderCalendar() {
 
   ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].forEach((day) => {
     const weekday = document.createElement("div");
-    weekday.className = "calendar-weekday";
+    weekday.className = "calendar__weekday";
     weekday.textContent = day;
     grid.appendChild(weekday);
   });
 
   for (let i = 0; i < first.getDay(); i++) {
     const empty = document.createElement("div");
-    empty.className = "calendar-day empty";
+    empty.className = "calendar__day is-empty";
     grid.appendChild(empty);
   }
 
@@ -61,10 +61,10 @@ function renderCalendar() {
     const dateNum = toNum(dateString);
 
     const cell = document.createElement("div");
-    cell.className = "calendar-day";
+    cell.className = "calendar__day";
 
     const number = document.createElement("div");
-    number.className = "calendar-day-number";
+    number.className = "calendar__day-number";
     number.textContent = dayNumber;
     cell.appendChild(number);
 
@@ -75,7 +75,7 @@ function renderCalendar() {
 
       if (toNum(event.end) >= dateNum) {
         const link = document.createElement("a");
-        link.className = "calendar-event";
+        link.className = "calendar__event";
         link.href = event.url;
         link.textContent = event.title;
         link.style.setProperty("--event-color", event.color);

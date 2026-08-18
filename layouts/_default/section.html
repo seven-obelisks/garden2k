@@ -1,42 +1,42 @@
 {{ define "main" }}
-<main class="section-page section-card-page site-container list-container">
+<main class="section-page section-page--card site-container list-container">
 
-  <h1 class="page_title">{{ .Title }}</h1>
+<h1 class="page-title">{{ .Title }}</h1>
 
   {{ with .Content }}
-    <div class="section-intro section-card-intro prose">
+<div class="section-intro section-intro--section-card prose">
       {{ . }}
-    </div>
+</div>
   {{ end }}
 
   {{ if .Pages }}
-    <ul class="section-card-grid">
+<ul class="section-card-grid">
       {{ range .Pages.ByWeight }}
-        <li class="section-card">
-          <a class="section-card-link" href="{{ .RelPermalink }}">
+<li class="section-card">
+<a class="section-card__link" href="{{ .RelPermalink }}">
             {{ with .Params.thumbnail }}
-              <span class="section-card-thumbnail-wrap">
-                <img class="section-card-thumbnail" src="{{ . | relURL }}" alt="">
-              </span>
+<span class="section-card__thumbnail-wrap">
+<img class="section-card__thumbnail" src="{{ . | relURL }}" alt="">
+</span>
             {{ end }}
 
-            <span class="section-card-title">{{ .Title }}</span>
+<span class="section-card__title">{{ .Title }}</span>
 
             {{ if not .Date.IsZero }}
-              <span class="section-card-date">
+<span class="section-card__date">
                 {{ .Date.Format "Jan 2, 2006" }}
-              </span>
+</span>
             {{ end }}
 
             {{ with .Summary }}
-              <span class="section-card-summary">
+<span class="section-card__summary">
                 {{ . | plainify }}
-              </span>
+</span>
             {{ end }}
-          </a>
-        </li>
+</a>
+</li>
       {{ end }}
-    </ul>
+</ul>
   {{ end }}
 
 </main>

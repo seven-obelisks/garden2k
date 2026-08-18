@@ -30,15 +30,15 @@
   {{ $events = $filtered }}
 {{ end }}
 
-<ul class="event-listview-list">
+<ul class="event-listview__list">
   {{ range $events }}
     {{ $eventColor := .Params.event_color | default "var(--color-primary)" }}
     {{ $eventStart := .Params.event_start }}
     {{ $eventEnd := .Params.event_end }}
 
-    <li class="event-listview-item">
-      <a class="event-listview-link" href="{{ .RelPermalink }}" style="--event-color: {{ $eventColor }};">
-        <span class="event-listview-dot" aria-hidden="true"></span><span class="event-listview-title">{{ .Title }}</span>{{ if or $eventStart $eventEnd .Params.location }}<span class="event-listview-meta"> — {{ if or $eventStart $eventEnd }}{{- with $eventStart -}}{{ time.Format "Jan 2, 2006" . }}{{- end -}}{{- if and $eventStart $eventEnd }} - {{ end -}}{{- with $eventEnd -}}{{ time.Format "Jan 2, 2006" . }}{{- end -}}{{ end }}{{ with .Params.location }}{{ if or $eventStart $eventEnd }} · {{ end }}{{ . }}{{ end }}</span>{{ end }}
+    <li class="event-listview__item">
+      <a class="event-listview__link" href="{{ .RelPermalink }}" style="--event-color: {{ $eventColor }};">
+        <span class="event-listview__dot" aria-hidden="true"></span><span class="event-listview__title">{{ .Title }}</span>{{ if or $eventStart $eventEnd .Params.location }}<span class="event-listview__meta"> — {{ if or $eventStart $eventEnd }}{{- with $eventStart -}}{{ time.Format "Jan 2, 2006" . }}{{- end -}}{{- if and $eventStart $eventEnd }} - {{ end -}}{{- with $eventEnd -}}{{ time.Format "Jan 2, 2006" . }}{{- end -}}{{ end }}{{ with .Params.location }}{{ if or $eventStart $eventEnd }} · {{ end }}{{ . }}{{ end }}</span>{{ end }}
       </a>
     </li>
   {{ end }}

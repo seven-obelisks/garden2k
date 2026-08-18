@@ -4,21 +4,21 @@
 
 <main class="calendar-page site-container list-container">
 
-<h1 class="page_title">{{ .Title }}</h1>
+<h1 class="page-title">{{ .Title }}</h1>
 
-<div class="calendar-header">
+<div class="calendar__header">
 <button id="calendar-prev" type="button">← Prev</button>
 <h2 id="calendar-title"></h2>
 <button id="calendar-next" type="button">Next →</button>
 </div>
 
-<section id="calendar-grid" class="calendar-grid"></section>
+<section id="calendar-grid" class="calendar__grid"></section>
 
-<h2 class="events_h2" id="calendar-month-events-title"></h2>
+<h2 class="events-heading" id="calendar-month-events-title"></h2>
 
 <p id="calendar-month-events-empty" class="next-event-empty" hidden>No events this month.</p>
 
-<ul id="calendar-month-events" class="events-list events-list-grid">
+<ul id="calendar-month-events" class="events-list events-list--grid">
     {{ range $events }}
       {{ $start := time .Params.event_start }}
       {{ $end := time (.Params.event_end | default .Params.event_start) }}
@@ -58,7 +58,7 @@
 
 {{ $cardJS := resources.Get "js/card.js" }}
 {{ if $cardJS }}
-  <script src="{{ $cardJS.RelPermalink }}"></script>
+<script src="{{ $cardJS.RelPermalink }}"></script>
 {{ end }}
 
 {{ end }}

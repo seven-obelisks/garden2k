@@ -2,28 +2,27 @@
 <main>
   {{ partials.Include "home_slider.html" . }}
 
-  <section class="site-container">
-    <div class="home-content-grid">
+<section class="site-container">
+<div class="home__content-grid">
 
         {{ partials.Include "home_next_event.html" . }}
 
-        <div class="search-container">
+<div class="search-container">
         {{ partials.Include "home_search.html" . }}
-        </div>
+</div>
 
         {{ partials.Include "home_recent_posts.html" . }}
-        
         {{ partials.Include "featured_posts.html" . }}
 
-      <h2 class="events_h2">Homepage Photo Gallery</h2>
+<h2 class="events-heading">Homepage Photo Gallery</h2>
 
-        <div class="home-gallery-shell">
+<div class="home-gallery__shell">
           {{ partial "home_gallery.html" . }}
-        </div>
+</div>
 
-    </div>
+</div>
 
-  </section>
+</section>
 </main>
 
 {{ partials.Include "home_scripts.html" . }}

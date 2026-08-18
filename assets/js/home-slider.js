@@ -2,7 +2,7 @@
   const slider = document.querySelector("[data-slider]");
   if (!slider) return;
 
-  const slides = Array.from(slider.querySelectorAll(".slide"));
+  const slides = Array.from(slider.querySelectorAll(".home-slider__slide"));
   const prev = slider.querySelector("[data-prev]");
   const next = slider.querySelector("[data-next]");
   let current = 0;

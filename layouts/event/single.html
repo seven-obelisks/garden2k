@@ -3,85 +3,85 @@
 
   {{ $eventColor := .Params.event_color | default "transparent" }}
 
-  <article class="event-single event-single-card"
-           style="--event-color: {{ $eventColor }};">
+<article class="event-single"
+style="--event-color: {{ $eventColor }};">
 
     {{ with .Params.tags }}
-      <p class="event-label">
+<p class="event-label">
         🏷️ {{ range $i, $tag := . }}{{ if $i }}, {{ end }}<a href="/tags/{{ $tag | urlize }}/">{{ $tag }}</a>{{ end }}
-      </p>
+</p>
     {{ else }}
-      <p class="event-label">Event</p>
+<p class="event-label">Event</p>
     {{ end }}
 
-    <h1 class="event-single-title">
-      <span>{{ .Title }}</span>
-    </h1>
+<h1 class="event-single__title">
+<span>{{ .Title }}</span>
+</h1>
 
     {{ with .Params.event_icon }}
-      <img class="event-card-icon" src="{{ . | relURL }}" alt="">
+<img class="event-card-icon" src="{{ . | relURL }}" alt="">
     {{ end }}
 
     {{ with .Params.image }}
-      <img
-        class="event-single-image"
-        src="{{ . | relURL }}"
-        alt="">
+<img
+class="event-single__image"
+src="{{ . | relURL }}"
+alt="">
     {{ end }}
 
-    <ul class="event-detail-list">
+<ul class="event-single__detail-list">
       {{ with .Params.event_organizer }}
-        <li class="event-detail-item">
-          <span class="event-icon" aria-hidden="true">👥</span>
-          <span>Hosted by <strong>{{ . }}</strong></span>
-        </li>
+<li class="event-single__detail-item">
+<span class="event-icon" aria-hidden="true">👥</span>
+<span>Hosted by <strong>{{ . }}</strong></span>
+</li>
       {{ end }}
 
       {{ with .Params.event_start }}
-        <li class="event-detail-item">
-          <span class="event-icon" aria-hidden="true">🗓️</span>
-          <span><strong>Starts:</strong> {{ time.Format "Monday, Jan 2, 2006, 3:04 PM" . }}</span>
-        </li>
+<li class="event-single__detail-item">
+<span class="event-icon" aria-hidden="true">🗓️</span>
+<span><strong>Starts:</strong> {{ time.Format "Monday, Jan 2, 2006, 3:04 PM" . }}</span>
+</li>
       {{ end }}
 
       {{ with .Params.event_end }}
-        <li class="event-detail-item">
-          <span class="event-icon" aria-hidden="true">🏁</span>
-          <span><strong>Ends:</strong> {{ time.Format "Monday, Jan 2, 2006, 3:04 PM" . }}</span>
-        </li>
+<li class="event-single__detail-item">
+<span class="event-icon" aria-hidden="true">🏁</span>
+<span><strong>Ends:</strong> {{ time.Format "Monday, Jan 2, 2006, 3:04 PM" . }}</span>
+</li>
       {{ end }}
 
       {{ with .Params.location }}
-        <li class="event-detail-item">
-          <span class="event-icon" aria-hidden="true">📍</span>
-          <span>{{ . }}</span>
-        </li>
+<li class="event-single__detail-item">
+<span class="event-icon" aria-hidden="true">📍</span>
+<span>{{ . }}</span>
+</li>
       {{ end }}
-    </ul>
+</ul>
 
-    <div class="event-content">
+<div class="event-single__content">
       {{ .Content }}
-    </div>
+</div>
 
-    <div class="event-single-actions">
+<div class="event-single__actions">
 
       {{ with .Params.event_url }}
-        <a class="event_button"
-           href="{{ . }}"
-           target="_blank"
-           rel="noopener">
+<a class="event-button"
+href="{{ . }}"
+target="_blank"
+rel="noopener">
           🎟️ Register Now
-        </a>
+</a>
       {{ end }}
 
-      <a class="event_button"
-         href="{{ .RelPermalink }}event.ics">
+<a class="event-button"
+href="{{ .RelPermalink }}event.ics">
         🗓️ Add to Calendar
-      </a>
+</a>
 
-    </div>
+</div>
 
-  </article>
+</article>
 
 </main>
 {{ end }}
