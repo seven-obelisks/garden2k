@@ -339,7 +339,7 @@ h4 {
   justify-content: center;
   padding: 0.25rem 0.75rem;
   border: 1px solid var(--color-surface);
-  border-radius: 999px;
+  border-radius: 9999px;
   background-color: transparent;
   color: var(--color-surface);
   text-decoration: none;
@@ -920,7 +920,7 @@ button,
   align-items: center;
   padding: 0.35rem 0.85rem;
   border: 1px solid var(--color-border);
-  border-radius: 999px;
+  border-radius: 9999px;
   background-color: var(--color-surface);
   color: var(--color-text) !important;
   font-size: 0.8rem;
@@ -1057,7 +1057,7 @@ div:has(> iframe[src*="youtube.com"]) {
   align-items: center;
   padding: 0.35rem 0.85rem;
   border: 1px solid var(--color-border);
-  border-radius: 999px;
+  border-radius: 9999px;
   background-color: var(--color-surface);
   color: var(--color-text);
   font-size: 1rem;
@@ -1319,7 +1319,7 @@ div:has(> iframe[src*="youtube.com"]) {
   align-items: center;
   padding: 0.35rem 0.85rem;
   border: 1px solid var(--color-border);
-  border-radius: 999px;
+  border-radius: 9999px;
   background-color: var(--color-surface);
   color: var(--color-text);
   font-size: 0.8rem;
@@ -1349,7 +1349,7 @@ div:has(> iframe[src*="youtube.com"]) {
   align-items: center;
   padding: 0.35rem 0.85rem;
   border: 1px solid var(--color-border);
-  border-radius: 999px;
+  border-radius: 9999px;
   background-color: transparent;
   color: var(--color-darktext);
   font-size: 0.8rem;
@@ -1376,7 +1376,7 @@ div:has(> iframe[src*="youtube.com"]) {
   align-items: center;
   padding: 0.35rem 0.85rem;
   border: 1px solid var(--color-border);
-  border-radius: 999px;
+  border-radius: 9999px;
   background-color: var(--color-surface);
   color: var(--color-text);
   font-size: 0.8rem !important;
@@ -1446,7 +1446,7 @@ div:has(> iframe[src*="youtube.com"]) {
   align-items: center;
   padding: 0.35rem 0.85rem;
   border: 1px solid var(--color-border);
-  border-radius: 999px;
+  border-radius: 9999px;
   background-color: var(--color-surface);
   font-size: 0.8rem;
   font-weight: 700;
@@ -1601,7 +1601,7 @@ div:has(> iframe[src*="youtube.com"]) {
   flex: 1;
   padding: 0.6rem 0.85rem;
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-sm);
+  border-radius: 9999px;
   background-color: var(--color-surface);
   color: var(--color-text);
   font-family: inherit;
@@ -1618,7 +1618,7 @@ div:has(> iframe[src*="youtube.com"]) {
   align-items: center;
   padding: 0.6rem 1rem;
   border: 1px solid var(--color-surface);
-  border-radius: 999px;
+  border-radius: 9999px;
   background-color: transparent;
   color: var(--color-surface);
   font-family: inherit;
