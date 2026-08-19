@@ -74,6 +74,7 @@
 
   .post-header.post-header--has-hero {
     min-height: 560px;
+    box-shadow: var(--color-shadow) 0 4px 10px -4px;
   }
 
   .post-header__inner {
@@ -317,6 +318,7 @@
   .home-slider {
     border-radius: var(--radius-sm);
     margin-top:-1rem !important;
+    box-shadow: var(--color-shadow) 0 4px 10px -4px;
   }
 
   .featured-posts__list {
