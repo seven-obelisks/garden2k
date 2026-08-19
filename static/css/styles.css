@@ -1012,6 +1012,7 @@ div:has(> iframe[src*="youtube.com"]) {
   background-color: var(--color-header);
   background-position: center;
   background-size: cover;
+  box-shadow: var(--color-overlay) 0 6px 16px -2px;
 }
 
 .banner--no-image::before {
@@ -1063,7 +1064,7 @@ div:has(> iframe[src*="youtube.com"]) {
   border: 1px solid var(--color-border);
   border-radius: 9999px;
   background-color: var(--color-surface);
-  color: var(--color-text);
+  color: var(--color-primary);
   font-size: 1rem;
   font-weight: 700;
   text-decoration: none;
