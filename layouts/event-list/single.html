@@ -1,0 +1,60 @@
+{{ define "main" }}
+<main class="events-page site-container list-container">
+
+<h1 class="page-title">{{ .Title }}</h1>
+
+  {{ with .Content }}
+<div class="section-intro">
+      {{ . }}
+</div>
+  {{ end }}
+
+  {{ $now := now }}
+  {{ $tag := .Params.internal_tag }}
+  {{ $eventPool := where (where site.RegularPages "Section" "events") "Params.internal_tag" $tag }}
+
+  {{ $upcoming := slice }}
+  {{ $allTags := slice }}
+  {{ range sort $eventPool "Params.event_start" "asc" }}
+    {{ if ge (time .Params.event_end) $now }}
+      {{ $upcoming = $upcoming | append . }}
+      {{ range .Params.tags }}
+        {{ $allTags = $allTags | append . }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+  {{ $allTags = $allTags | uniq | sort }}
+
+  {{ if $allTags }}
+<div class="event-filter__menu" role="group" aria-label="Filter events by tag">
+      {{ range $allTags }}
+<button type="button" class="event-filter__tag" data-tag="{{ . | urlize }}" aria-pressed="false">
+          {{ . }}
+</button>
+      {{ end }}
+<button type="button" class="event-filter__clear" hidden>
+        CLEAR
+</button>
+</div>
+  {{ end }}
+
+<ul class="events-list events-list--grid">
+    {{ range $upcoming }}
+<li>
+        {{ partials.Include "event_card.html" (dict "event" . "compact" true "filterTags" true) }}
+</li>
+    {{ end }}
+</ul>
+
+</main>
+
+{{ $cardJS := resources.Get "js/card.js" }}
+{{ if $cardJS }}
+<script src="{{ $cardJS.RelPermalink }}"></script>
+{{ end }}
+
+{{ $filterJS := resources.Get "js/event-filter.js" }}
+{{ if $filterJS }}
+<script src="{{ $filterJS.RelPermalink }}"></script>
+{{ end }}
+{{ end }}

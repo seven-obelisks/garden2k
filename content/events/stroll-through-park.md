@@ -11,6 +11,7 @@ event_organizer: Park Walkers United
 event_color: '#9700ce'
 image: /uploads/park.jpg
 tags: ["outdoors", "hiking"]
+internal_tag: "filtered"
 summary: Vestibulum nec diam finibus, euismod nulla ut, pharetra odio. Aliquam volutpat ut tortor in mattis. Maecenas faucibus, justo non faucibus tristique, enim lacus tincidunt diam, et suscipit purus lorem vitae orci.
 ---
 
