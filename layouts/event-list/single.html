@@ -11,7 +11,7 @@
 
   {{ $now := now }}
   {{ $tag := .Params.internal_tag }}
-  {{ $eventPool := where (where site.RegularPages "Section" "events") "Params.internal_tag" $tag }}
+  {{ $eventPool := where (where site.RegularPages "Type" "event") "Params.internal_tag" $tag }}
 
   {{ $upcoming := slice }}
   {{ $allTags := slice }}

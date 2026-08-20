@@ -10,10 +10,11 @@
   {{ end }}
 
   {{ $now := now }}
+  {{ $eventPages := where .Pages "Type" "event" }}
 
   {{ $upcoming := slice }}
   {{ $allTags := slice }}
-  {{ range sort .Pages "Params.event_start" "asc" }}
+  {{ range sort $eventPages "Params.event_start" "asc" }}
     {{ if ge (time .Params.event_end) $now }}
       {{ $upcoming = $upcoming | append . }}
       {{ range .Params.tags }}
@@ -49,7 +50,7 @@
 <h2 class="events-heading">Recent Past Events</h2>
 
   {{ $past := slice }}
-  {{ range .Pages }}
+  {{ range $eventPages }}
     {{ if lt (time .Params.event_end) $now }}
       {{ $past = $past | append . }}
     {{ end }}

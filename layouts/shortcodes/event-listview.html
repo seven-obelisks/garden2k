@@ -1,7 +1,7 @@
 {{ $tag := .Get "tag" }}
 {{ $tagsParam := .Get "tags" }}
 
-{{ $events := where site.RegularPages "Section" "events" }}
+{{ $events := where site.RegularPages "Type" "event" }}
 
 {{ $wantedTags := slice }}
 {{ with $tag }}
