@@ -17,8 +17,14 @@
 --color-on-bright: #ffffff;
 --color-card-primary: #ffffff;
 
---radius-sm: 0.25rem;
---radius-md: 0.5rem;
+--radius-sm: 1rem;
+--radius-md: 2rem;
+
+--shadow-sm: var(--color-shadow) 0 10px 10px -10px;
+--shadow-md: var(--color-shadow) 0 4px 10px -4px;
+--shadow-lg: var(--color-overlay) 0 6px 16px -2px;
+--shadow-slide: -1rem 0 3rem rgba(17, 24, 32, 0.22);
+--shadow-slide-mobile: 0 -1rem 3rem rgba(17, 24, 32, 0.18);
 }
 
 /* GLOBAL */
@@ -211,7 +217,7 @@ h4 {
     var(--color-headertext) 18%,
     transparent
   );
-  box-shadow: var(--color-shadow) 0 10px 10px -10px;
+  box-shadow: var(--shadow-sm);
 }
 
 .site-header,
@@ -309,7 +315,7 @@ h4 {
   border-radius: var(--radius-sm);
   background: var(--color-bg);
   text-align: left;
-  box-shadow: var(--color-shadow) 0 10px 10px -10px;
+  box-shadow: var(--shadow-sm);
 }
 
 .has-children:hover .site-nav__submenu-list,
@@ -528,7 +534,7 @@ button,
   border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
   background-color: var(--color-surface);
-  box-shadow: var(--color-shadow) 0 4px 10px -4px;
+  box-shadow: var(--shadow-md);
   text-decoration: none;
 }
 
@@ -596,7 +602,7 @@ button,
   border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
   background-color: var(--color-card-primary);
-  box-shadow: var(--color-shadow) 0 4px 10px -4px;
+  box-shadow: var(--shadow-md);
   text-decoration: none;
 }
 
@@ -648,7 +654,7 @@ button,
   border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
   background-color: var(--color-surface);
-  box-shadow: var(--color-shadow) 0 4px 10px -4px;
+  box-shadow: var(--shadow-md);
   text-decoration: none;
   height:100%;
 }
@@ -725,7 +731,7 @@ button,
   border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
   background: var(--color-surface);
-  box-shadow: var(--color-shadow) 0 4px 10px -4px;
+  box-shadow: var(--shadow-md);
   color: var(--color-text);
   text-decoration: none;
   transition:
@@ -1012,7 +1018,7 @@ div:has(> iframe[src*="youtube.com"]) {
   background-color: var(--color-header);
   background-position: center;
   background-size: cover;
-  box-shadow: var(--color-overlay) 0 6px 16px -2px;
+  box-shadow: var(--shadow-lg);
 }
 
 .banner--no-image::before {
@@ -1120,7 +1126,7 @@ div:has(> iframe[src*="youtube.com"]) {
   border-left: 4px solid var(--event-color, var(--color-primary));
   border-radius: var(--radius-sm);
   background-color: var(--color-surface);
-  box-shadow: var(--color-shadow) 0 4px 10px -4px;
+  box-shadow: var(--shadow-md);
   padding: 1.25rem;
   position: relative;
   transition:
@@ -1414,10 +1420,9 @@ div:has(> iframe[src*="youtube.com"]) {
   margin-bottom: 1.25rem;
   padding: 0.85rem 1.25rem;
   border: 1px solid var(--color-border);
-  border-left: 4px solid var(--event-color, var(--color-primary));
   border-radius: var(--radius-sm);
   background-color: color-mix(in srgb, var(--event-color, var(--color-primary)) 6%, var(--color-surface));
-  box-shadow: var(--color-shadow) 0 4px 10px -4px;
+  box-shadow: var(--shadow-md);
 }
 
 .event-single__ribbon-label {
@@ -1588,7 +1593,7 @@ div:has(> iframe[src*="youtube.com"]) {
   border-radius: var(--radius-sm);
   margin-top:50px;
   border:1px solid var(--color-accent);
-  box-shadow: var(--color-overlay) 0 6px 16px -2px;
+  box-shadow: var(--shadow-lg);
 }
 
 .home-search {

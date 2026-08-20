@@ -27,18 +27,14 @@ const monthEventCards = document.querySelectorAll("#calendar-month-events > li[d
 
 let current = new Date();
 
-const params = new URLSearchParams(window.location.search);
-const monthParam = params.get("month");
-if (monthParam && /^\d{4}-\d{2}$/.test(monthParam)) {
-  const [y, m] = monthParam.split("-").map(Number);
-  current = new Date(y, m - 1, 1);
-}
-
 function renderCalendar() {
   const year = current.getFullYear();
   const month = current.getMonth();
   const first = new Date(year, month, 1);
   const last = new Date(year, month + 1, 0);
+
+  const now = new Date();
+  const todayString = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}-${String(now.getDate()).padStart(2, "0")}`;
 
   title.textContent = first.toLocaleDateString(undefined, {
     month: "long",
@@ -69,11 +65,16 @@ function renderCalendar() {
 
     const cell = document.createElement("div");
     cell.className = "calendar__day";
+    if (dateString === todayString) {
+      cell.classList.add("is-today");
+    }
 
     const number = document.createElement("div");
     number.className = "calendar__day-number";
     number.textContent = dayNumber;
     cell.appendChild(number);
+
+    let hasEvent = false;
 
     for (const event of events) {
       const startNum = toNum(event.start);
@@ -87,10 +88,23 @@ function renderCalendar() {
         link.textContent = event.title;
         link.style.setProperty("--event-color", event.color);
         cell.appendChild(link);
+        hasEvent = true;
       }
     }
 
+    if (hasEvent) {
+      cell.classList.add("has-events");
+    }
+
     grid.appendChild(cell);
+  }
+
+  const totalCells = first.getDay() + last.getDate();
+  const trailingEmpty = (7 - (totalCells % 7)) % 7;
+  for (let i = 0; i < trailingEmpty; i++) {
+    const empty = document.createElement("div");
+    empty.className = "calendar__day is-empty";
+    grid.appendChild(empty);
   }
 }
 
