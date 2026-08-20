@@ -46,7 +46,7 @@ title = 'Garden2k'
 
 [[menu.main]]
   name = "Filtered Events"
-  url = "/event-lists/filtered-events"
+  url = "/events/filtered-events"
   parent = "events"
   weight = 10
 

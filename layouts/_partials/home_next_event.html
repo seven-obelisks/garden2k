@@ -1,7 +1,7 @@
 {{ $now := now }}
 {{ $upcoming := slice }}
 
-{{ range where site.RegularPages "Section" "events" }}
+{{ range where site.RegularPages "Type" "event" }}
   {{ if ge (time .Params.event_end) $now }}
     {{ $upcoming = $upcoming | append . }}
   {{ end }}
