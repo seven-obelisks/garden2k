@@ -164,6 +164,19 @@
     background: var(--color-primary);
   }
 
+  .site-nav__mega {
+    display: contents;
+  }
+
+  .site-nav__mega-intro,
+  .site-nav__mega-feature {
+    display: none;
+  }
+
+  .site-nav__mega-index {
+    display: none;
+  }
+
   .site-nav__toggle-bar {
     display: block;
     width: 1.5rem;

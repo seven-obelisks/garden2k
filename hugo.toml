@@ -35,6 +35,14 @@ title = 'Garden2k'
   pageRef = "/events"
   identifier = "events"
   weight = 10
+  [menu.main.params]
+    description = "Suspendisse rutrum, tellus quis euismod sollicitudin, leo mauris venenatis velit, sed elementum nulla nulla placerat turpis."
+    button_text = "View All Events"
+    button_url = "/events"
+    feature_title = "Stay in the loop"
+    feature_text = "Aenean hendrerit ut turpis lacinia feugiat. Nunc nec mi erat. Curabitur magna massa, malesuada ac purus eu."
+    feature_button_text = "View Calendar"
+    feature_button_url = "/calendar"
 
 [[menu.main]]
   name = "Filtered Events"
@@ -57,6 +65,12 @@ title = 'Garden2k'
   identifier = "examples"
   url = "/examples"
   weight = 40
+  [menu.main.params]
+    description = "In a iaculis lectus, ac blandit quam. Vestibulum porta, justo eu rhoncus consequat, ante leo ornare est, in tincidunt sem lacus a eros."
+    button_text = "Browse All Examples"
+    button_url = "/examples"
+    feature_image = "/uploads/subscribe.png"
+    feature_button_url = "https://google.com"
 
 [[menu.main]]
   name = "Banner Example Page"
