@@ -20,9 +20,9 @@
 --radius-sm: 1rem;
 --radius-md: 2rem;
 
---shadow-sm: var(--color-shadow) 0 10px 10px -10px;
---shadow-md: var(--color-shadow) 0 4px 10px -4px;
---shadow-lg: var(--color-overlay) 0 6px 16px -2px;
+--shadow-sm: var(--color-shadow) 0 2px 2px -1px;
+--shadow-md: var(--color-shadow) 0 3px 3px -2px;
+--shadow-lg: var(--color-overlay) 0 6px 8px -4px;
 --shadow-slide: -1rem 0 3rem rgba(17, 24, 32, 0.22);
 --shadow-slide-mobile: 0 -1rem 3rem rgba(17, 24, 32, 0.18);
 }
