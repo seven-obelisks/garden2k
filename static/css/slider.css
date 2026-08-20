@@ -56,7 +56,7 @@
     var(--color-surface) 85%,
     transparent
   );
-  box-shadow: -1rem 0 3rem rgba(17, 24, 32, 0.22);
+  box-shadow: var(--shadow-slide);
 }
 
 .home-slider__title {
@@ -186,7 +186,7 @@
     padding: 2rem;
     border-left: 0;
     border-top: 1px solid var(--color-border);
-    box-shadow: 0 -1rem 3rem rgba(17, 24, 32, 0.18);
+    box-shadow: var(--shadow-slide-mobile);
   }
 
   .home-slider__title {
