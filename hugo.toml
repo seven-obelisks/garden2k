@@ -70,7 +70,7 @@ title = 'Garden2k'
     button_text = "Browse All Examples"
     button_url = "/examples"
     feature_image = "/uploads/subscribe.png"
-    feature_button_url = "https://google.com"
+    feature_button_url = "https://garden2k.com"
 
 [[menu.main]]
   name = "Banner Example Page"
