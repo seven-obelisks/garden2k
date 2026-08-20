@@ -33,6 +33,13 @@ title = 'Garden2k'
 [[menu.main]]
   name = "Events"
   pageRef = "/events"
+  identifier = "events"
+  weight = 10
+
+[[menu.main]]
+  name = "Filtered Events"
+  url = "/event-lists/filtered-events"
+  parent = "events"
   weight = 10
 
 [[menu.main]]
