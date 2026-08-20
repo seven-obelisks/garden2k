@@ -6,12 +6,7 @@
 <nav class="site-nav__shell" role="navigation">
 <div class="site-nav__bar">
 
-<button
-class="site-nav__toggle"
-type="button"
-aria-label="Open menu"
-aria-expanded="false"
-aria-controls="site-menu">
+<button class="site-nav__toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-menu">
 <span class="site-nav__toggle-bar"></span>
 <span class="site-nav__toggle-bar"></span>
 <span class="site-nav__toggle-bar"></span>
@@ -27,10 +22,7 @@ aria-controls="site-menu">
 
 <div id="site-menu" class="site-nav__menu" aria-hidden="true">
 
-<button
-class="site-nav__close"
-type="button"
-aria-label="Close menu">
+<button class="site-nav__close" type="button" aria-label="Close menu">
         ×
 </button>
 
@@ -48,20 +40,66 @@ aria-label="Close menu">
 </a>
 
               {{ if .HasChildren }}
+<div class="site-nav__mega">
+<div class="site-nav__mega-inner">
+
+  {{ if or .Params.description .Params.button_text .Params.intro_image }}
+    {{ if .Params.intro_image }}
+<div class="site-nav__mega-intro site-nav__mega-intro--image">
+      {{ if .Params.button_url }}
+<a href="{{ .Params.button_url }}"><img class="site-nav__mega-image" src="{{ .Params.intro_image }}" alt=""></a>
+      {{ else }}
+<img class="site-nav__mega-image" src="{{ .Params.intro_image }}" alt="">
+      {{ end }}
+</div>
+    {{ else }}
+<div class="site-nav__mega-intro">
+    {{ with .Name }}<h3 class="site-nav__mega-intro-title">{{ . }}</h3>{{ end }}
+    {{ with .Params.description }}<p class="site-nav__mega-intro-text">{{ . }}</p>{{ end }}
+    {{ if and .Params.button_text .Params.button_url }}
+<a href="{{ .Params.button_url }}" class="site-nav__mega-button">{{ .Params.button_text }}</a>
+    {{ end }}
+</div>
+    {{ end }}
+  {{ end }}
+
 <ul class="site-nav__submenu-list">
-                  {{ range .Children }}
-                    {{ $childURL := .URL | relLangURL }}
+                  {{ range $i, $child := .Children }}
+                    {{ $childURL := $child.URL | relLangURL }}
                     {{ $isChildExact := eq $currentURL $childURL }}
                     {{ $isChildParent := and (ne $childURL "/") (hasPrefix $currentURL $childURL) }}
-                    {{ $isChildCurrent := or $isChildExact $isChildParent ($currentPage.IsMenuCurrent "main" .) }}
+                    {{ $isChildCurrent := or $isChildExact $isChildParent ($currentPage.IsMenuCurrent "main" $child) }}
 
 <li class="site-nav__submenu-item{{ if $isChildCurrent }} is-current{{ end }}">
-<a class="site-nav__submenu-link{{ if $isChildCurrent }} is-current{{ end }}" href="{{ .URL }}" title="{{ lang.Translate "pageTitle" . }}" {{ if $isChildExact }}aria-current="page"{{ end }}>
-                        {{ .Name }}
+<a class="site-nav__submenu-link{{ if $isChildCurrent }} is-current{{ end }}" href="{{ $child.URL }}" title="{{ lang.Translate "pageTitle" $child }}" {{ if $isChildExact }}aria-current="page"{{ end }}>
+<span class="site-nav__mega-index">{{ printf "%02d" (add $i 1) }}</span>{{ $child.Name }}
 </a>
 </li>
                   {{ end }}
 </ul>
+
+  {{ if .Params.feature_image }}
+<div class="site-nav__mega-feature site-nav__mega-feature--image">
+      {{ if .Params.feature_button_url }}
+<a href="{{ .Params.feature_button_url }}"><img class="site-nav__mega-image" src="{{ .Params.feature_image }}" alt=""></a>
+      {{ else }}
+<img class="site-nav__mega-image" src="{{ .Params.feature_image }}" alt="">
+      {{ end }}
+</div>
+  {{ else if or .Params.feature_title .Params.feature_text }}
+<div class="site-nav__mega-feature">
+    {{ with .Params.feature_title }}<h3 class="site-nav__mega-feature-title">{{ . }}</h3>{{ end }}
+    {{ with .Params.feature_text }}<p class="site-nav__mega-feature-text">{{ . }}</p>{{ end }}
+    {{ if and .Params.feature_button_text .Params.feature_button_url }}
+<a href="{{ .Params.feature_button_url }}" class="site-nav__mega-button">{{ .Params.feature_button_text }}</a>
+    {{ end }}
+</div>
+  {{ else }}
+<div class="site-nav__mega-feature"></div>
+  {{ end }}
+
+</div>
+</div>
               {{ end }}
 </li>
           {{ end }}
@@ -88,4 +126,9 @@ aria-label="Close menu">
 {{ $mobileMenuJS := resources.Get "js/mobile-menu.js" }}
 {{ if $mobileMenuJS }}
 <script defer src="{{ $mobileMenuJS.RelPermalink }}"></script>
+{{ end }}
+
+{{ $megaMenuJS := resources.Get "js/mega-menu.js" }}
+{{ if $megaMenuJS }}
+<script defer src="{{ $megaMenuJS.RelPermalink }}"></script>
 {{ end }}
