@@ -102,6 +102,50 @@ title = 'Garden2k'
   weight = 50
 
 [[menu.footer]]
+  name = "Explore"
+  identifier = "footer-explore"
+  weight = 10
+
+[[menu.footer]]
+  name = "Events"
+  url = "/events"
+  parent = "footer-explore"
+  weight = 10
+
+[[menu.footer]]
+  name = "Calendar"
+  url = "/calendar"
+  parent = "footer-explore"
+  weight = 20
+
+[[menu.footer]]
+  name = "Blog"
+  url = "/posts"
+  parent = "footer-explore"
+  weight = 30
+
+[[menu.footer]]
+  name = "Resources"
+  identifier = "footer-resources"
+  weight = 20
+
+[[menu.footer]]
+  name = "Page Examples"
+  url = "/examples"
+  parent = "footer-resources"
+  weight = 10
+
+[[menu.footer]]
+  name = "About"
+  url = "/about"
+  parent = "footer-resources"
+  weight = 20
+
+[[menu.footer]]
   name = "Login"
   url = "https://garden2k.com/admin"
-  weight = 10
+  weight = 30
+
+[params.social]
+  instagram = "https://instagram.com"
+  facebook = "https://facebook.com"

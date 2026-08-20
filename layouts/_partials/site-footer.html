@@ -1,27 +1,81 @@
 <footer class="site-footer" role="contentinfo">
   <div class="site-footer__shell">
 
-    <div class="site-footer__inner">
+    <div class="site-footer__columns">
 
-      <a class="site-footer__copyright" href="{{ .Site.Home.Permalink }}">
-        &copy;
-        {{ with .Site.Copyright | compare.Default .Site.Title }}
-          {{ . | safe.HTML }} {{ now.Format "2006" }}
-        {{ end }}
-      </a>
+      <div class="site-footer__column site-footer__column--copyright">
+        <a class="site-footer__copyright" href="{{ .Site.Home.Permalink }}">
+          &copy;
+          {{ with .Site.Copyright | compare.Default .Site.Title }}
+            {{ . | safe.HTML }} {{ now.Format "2006" }}
+          {{ end }}
+        </a>
 
-      {{ if .Site.Menus.footer }}
-        <nav class="site-footer__menu">
-          <ul class="site-footer__menu-list">
+        {{ $hasUtility := false }}
+        {{ range .Site.Menus.footer }}{{ if not .HasChildren }}{{ $hasUtility = true }}{{ end }}{{ end }}
+
+        {{ if $hasUtility }}
+          <ul class="site-footer__column-list site-footer__column-list--utility">
             {{ range .Site.Menus.footer }}
-              <li>
-                <a class="site-footer__link" href="{{ .URL }}">
-                 {{ .Name }}
-                </a>
-              </li>
+              {{ if not .HasChildren }}
+                <li>
+                  <a class="site-footer__column-link" href="{{ .URL }}">{{ .Name }}</a>
+                </li>
+              {{ end }}
             {{ end }}
           </ul>
-        </nav>
+        {{ end }}
+      </div>
+
+      {{ range .Site.Menus.footer }}
+        {{ if .HasChildren }}
+          <div class="site-footer__column">
+            {{ if .URL }}
+              <a href="{{ .URL }}" class="site-footer__column-title">{{ .Name }}</a>
+            {{ else }}
+              <h3 class="site-footer__column-title">{{ .Name }}</h3>
+            {{ end }}
+            <ul class="site-footer__column-list">
+              {{ range .Children }}
+                <li>
+                  <a class="site-footer__column-link" href="{{ .URL }}">{{ .Name }}</a>
+                </li>
+              {{ end }}
+            </ul>
+          </div>
+        {{ end }}
+      {{ end }}
+
+      {{ with .Site.Params.social }}
+        <div class="site-footer__column site-footer__column--social">
+          <div class="site-footer__social">
+            {{ with .instagram }}
+              <a class="site-footer__social-link" href="{{ . }}" target="_blank" rel="noopener" aria-label="Instagram">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+              </a>
+            {{ end }}
+            {{ with .facebook }}
+              <a class="site-footer__social-link" href="{{ . }}" target="_blank" rel="noopener" aria-label="Facebook">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M13.5 21v-7.5h2.5l.5-3h-3V8.2c0-.9.3-1.5 1.6-1.5H16.5V4.2C16.2 4.1 15.2 4 14 4c-2.5 0-4.2 1.5-4.2 4.4V10.5H7.3v3H9.8V21h3.7z"/></svg>
+              </a>
+            {{ end }}
+            {{ with .x }}
+              <a class="site-footer__social-link" href="{{ . }}" target="_blank" rel="noopener" aria-label="X">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M4 4l7.2 9.2L4.4 20h2.3l5.8-6.3L17 20h3l-7.5-9.6L19.4 4h-2.3l-5.4 5.9L7 4H4z"/></svg>
+              </a>
+            {{ end }}
+            {{ with .youtube }}
+              <a class="site-footer__social-link" href="{{ . }}" target="_blank" rel="noopener" aria-label="YouTube">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><rect x="2" y="5" width="20" height="14" rx="4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M10 9l6 3-6 3V9z"/></svg>
+              </a>
+            {{ end }}
+            {{ with .linkedin }}
+              <a class="site-footer__social-link" href="{{ . }}" target="_blank" rel="noopener" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><rect x="3" y="3" width="18" height="18" rx="3" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="7.5" cy="8" r="1.4"/><path d="M6.3 10.5h2.4V18H6.3zM11 10.5h2.3v1.1c.5-.8 1.4-1.3 2.5-1.3 1.9 0 3 1.2 3 3.7V18h-2.4v-3.6c0-1.1-.4-1.8-1.4-1.8-.8 0-1.3.6-1.5 1.1-.1.2-.1.5-.1.8V18H11z"/></svg>
+              </a>
+            {{ end }}
+          </div>
+        </div>
       {{ end }}
 
     </div>
