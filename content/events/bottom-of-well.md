@@ -1,6 +1,6 @@
 ---
 type: event
-title: A Journey to the Bottom of the Well
+title: A Journey to the Bottom of an Old, Creepy Water Well
 date: 2026-06-06T01:20:00.000-05:00
 event_start: 2026-08-09T01:20:00.000-05:00
 event_end: 2026-09-12T01:20:00.000-05:00
@@ -13,6 +13,8 @@ image: /uploads/well.jpg
 tags: ["underground", "spooky"]
 internal_tag: "filtered"
 summary: Morbi vulputate mauris eget arcu malesuada porttitor. Cras ultrices mauris magna, vitae molestie dui hendrerit sit amet.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non ipsum augue. Etiam dictum faucibus euismod. Quisque vel vestibulum nisl.
+custom_button_text: "Custom Button"
+custom_button_url: "https://altavista.com"
 ---
 
 Morbi vulputate mauris eget arcu malesuada porttitor. Cras ultrices mauris magna, vitae molestie dui hendrerit sit amet.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non ipsum augue. Etiam dictum faucibus euismod. Quisque vel vestibulum nisl. Fusce accumsan aliquam justo, vel laoreet tellus ultricies eget. In feugiat interdum ante a volutpat. 
