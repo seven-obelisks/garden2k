@@ -29,6 +29,16 @@ collections:
       - { label: "Tags", name: "tags", widget: "list", required: false }
       - { label: "Organizer", name: "event_organizer", widget: "string", required: false }
       - { label: "Event URL", name: "event_url", widget: "string", required: false }
+      - { label: "Event URL", name: "event_url", widget: "string", required: false }
+      - label: "Custom Button Text"
+        name: "custom_button_text"
+        widget: "string"
+        required: false
+        hint: "Optional third button (e.g. \"Buy Tickets\", \"Watch Livestream\"). Leave both this and the URL below blank to hide it."
+      - label: "Custom Button URL"
+        name: "custom_button_url"
+        widget: "string"
+        required: false
       - { label: "Event Image", name: "image", widget: "image", required: false }
       - { label: "Event Icon", name: "event_icon", widget: "image", required: false }
       - { label: "Summary", name: "summary", widget: "text", required: false }

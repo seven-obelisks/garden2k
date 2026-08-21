@@ -4,7 +4,7 @@
   {{ $eventColor := .Params.event_color | default "transparent" }}
 
 <div class="event-single__ribbon">
-<span class="event-single__ribbon-label"><span class="event-emoji" aria-hidden="true">🗓️</span>EVENT</span>
+<span class="event-single__ribbon-label"><img class="event-emoji" src="/images/icons/event.png" alt="">EVENT</span>
 <nav class="event-single__ribbon-nav">
 <a href="/events/" class="event-single__ribbon-link">← Back to Events</a>
     {{ with .Params.event_start }}
@@ -16,9 +16,10 @@
 <article class="event-single"
 style="--event-color: {{ $eventColor }};">
 
-    {{ with .Params.tags }}
+{{ with .Params.tags }}
 <p class="event-label">
-        🏷️ {{ range $i, $tag := . }}{{ if $i }}, {{ end }}<a href="/tags/{{ $tag | urlize }}/">{{ $tag }}</a>{{ end }}
+<img class="event-single__tag-icon" src="/images/icons/tag.png" alt="">
+<span>{{ range $i, $tag := . }}{{ if $i }}, {{ end }}<a class="event-single__tag-link" href="/tags/{{ $tag | urlize }}/">{{ $tag }}</a>{{ end }}</span>
 </p>
     {{ else }}
 <p class="event-label">Event</p>
@@ -42,28 +43,28 @@ alt="">
 <ul class="event-single__detail-list">
       {{ with .Params.event_organizer }}
 <li class="event-single__detail-item">
-<span class="event-single__detail-label"><span class="event-emoji" aria-hidden="true">👥</span>Organizer</span>
+<span class="event-single__detail-label"><img class="event-emoji" src="/images/icons/person.png" alt="">Organizer</span>
 <span class="event-single__detail-value">{{ . }}</span>
 </li>
       {{ end }}
 
       {{ with .Params.event_start }}
 <li class="event-single__detail-item">
-<span class="event-single__detail-label"><span class="event-emoji" aria-hidden="true">🗓️</span>Starts</span>
-<span class="event-single__detail-value">{{ time.Format "Monday, Jan 2, 2006, 3:04 PM" . }}</span>
+<span class="event-single__detail-label"><img class="event-emoji" src="/images/icons/calendar.png" alt="">Starts</span>
+<span class="event-single__detail-value">{{ time.Format "January 2, 2006, 3:04 PM" . }}</span>
 </li>
       {{ end }}
 
       {{ with .Params.event_end }}
 <li class="event-single__detail-item">
-<span class="event-single__detail-label"><span class="event-emoji" aria-hidden="true">🏁</span>Ends</span>
-<span class="event-single__detail-value">{{ time.Format "Monday, Jan 2, 2006, 3:04 PM" . }}</span>
+<span class="event-single__detail-label"><img class="event-emoji" src="/images/icons/finish.png" alt="">Ends</span>
+<span class="event-single__detail-value">{{ time.Format "January 2, 2006, 3:04 PM" . }}</span>
 </li>
       {{ end }}
 
       {{ with .Params.location }}
 <li class="event-single__detail-item">
-<span class="event-single__detail-label"><span class="event-emoji" aria-hidden="true">📍</span>Location</span>
+<span class="event-single__detail-label"><img class="event-emoji" src="/images/icons/location_pin.png" alt="">Location</span>
 <span class="event-single__detail-value">{{ . }}</span>
 </li>
       {{ end }}
@@ -80,14 +81,23 @@ alt="">
 href="{{ . }}"
 target="_blank"
 rel="noopener">
-          🎟️ Register Now
+          Register Now
 </a>
       {{ end }}
 
 <a class="event-button"
 href="{{ .RelPermalink }}event.ics">
-        🗓️ Add to Calendar
+        Add to Calendar
 </a>
+
+      {{ if and .Params.custom_button_text .Params.custom_button_url }}
+<a class="event-button"
+href="{{ .Params.custom_button_url }}"
+target="_blank"
+rel="noopener">
+          {{ .Params.custom_button_text }}
+</a>
+      {{ end }}
 
 </div>
 
