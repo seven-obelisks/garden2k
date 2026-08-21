@@ -80,7 +80,7 @@
       {{ end }}
 
       {{ if or $eventStart $eventEnd }}
-        <p class="event-card__meta-line"><img class="event-emoji" src="/images/icons/calendar.png" alt="">{{- with $eventStart -}}
+        <p class="event-card__meta-line"><img class="event-emoji" src="/images/icons/start.png" alt="">{{- with $eventStart -}}
             {{ time.Format "January 2, 3:04 PM" . }}
           {{- end -}}
           {{- if and $eventStart $eventEnd }} - {{ end -}}
