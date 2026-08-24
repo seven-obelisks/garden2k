@@ -29,7 +29,6 @@ collections:
       - { label: "Tags", name: "tags", widget: "list", required: false }
       - { label: "Organizer", name: "event_organizer", widget: "string", required: false }
       - { label: "Event URL", name: "event_url", widget: "string", required: false }
-      - { label: "Event URL", name: "event_url", widget: "string", required: false }
       - label: "Custom Button Text"
         name: "custom_button_text"
         widget: "string"
